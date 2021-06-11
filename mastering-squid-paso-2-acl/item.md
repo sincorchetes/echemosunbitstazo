@@ -1,12 +1,7 @@
----
-title: Mastering Squid - ACL
-date: 02:30 03/13/2018
-taxonomy: 
-	category: Network
-	tag: [network, proxy, squid, linux, windows, fedora, ubuntu, debian, opensuse, archlinux,gentoo, systemd,firewalld]
+# Mastering Squid - ACL
 
----
 # Introducción
+
 Bienvenid@s a la segunda parte de este "_Mastering in Squid_", en esta parte del curso, os explicaremos qué son las listas de control de acceso una parte de las directivas de Squid, para qué se utilizan y cómo utilizarlas, no nos lo podemos perder.
 
 # ¿Qué son las ACL?
@@ -16,8 +11,10 @@ Las ACL (_Access Control List_) o en español _Listas de Control de Acceso_ es u
 # ¿Cómo definimos las ACL?
 Existen dos tipos de sintaxis, en línea o apuntando a un archivo.
  * En línea: Es más cómodo cuando apuntamos 2,3 datos, más se puede volver ilegible y engorroso.
+
  	acl nombre_de_lista tipo_acl dato1 dato2 dato3
  * Apuntando a un archivo: Se utiliza cuando apuntamos más de 3 datos, se permiten comentarios.
+
  	acl nomnre_de_lista tipo_acl "/DIRECTORIO/ARCHIVO"
 
 # ¿Qué tipos de ACL tenemos?
@@ -266,7 +263,7 @@ IF USE_OPENSSL
 	  # Optional argument specifies the digest algorithm to use.
 	  # The SHA1 digest algorithm is the default and is currently
 	  # the only algorithm supported (-sha1).
-
+	
 	acl aclname at_step step
 	  # match against the current step during ssl_bump evaluation [fast]
 	  # Never matches and should not be used outside the ssl_bump context.
@@ -277,7 +274,7 @@ IF USE_OPENSSL
 	  #   SslBump1: After getting TCP-level and HTTP CONNECT info.
 	  #   SslBump2: After getting SSL Client Hello info.
 	  #   SslBump3: After getting SSL Server Hello info.
-
+	
 	acl aclname ssl::server_name [option] .foo.com ...
 	  # matches server name obtained from various sources [fast]
 	  #
@@ -319,10 +316,10 @@ IF USE_OPENSSL
 	  # For all options: If no SNI is available, then the CONNECT request
 	  # target (a.k.a. URI) is used instead of SNI (for an intercepted
 	  # connection, this target is the destination IP address).
-
+	
 	acl aclname ssl::server_name_regex [-i] \.foo\.com ...
 	  # regex matches server name obtained from various sources [fast]
-
+	
 	acl aclname connections_encrypted
 	  # matches transactions with all HTTP messages received over TLS
 	  # transport connections. [fast]

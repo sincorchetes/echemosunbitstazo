@@ -1,15 +1,4 @@
----
-title: 'Actualiza de Fedora 31 a Fedora 32'
-media_order: 'boot.jpg,instalando.jpg,login.jpg,post-update.png,restart.jpg'
-taxonomy:
-    category:
-        - sysadmin
-    tag:
-        - linux
-        - fedora
-        - gnu
-        - fedoraproject
----
+# Actualiza de Fedora 31 a Fedora 32
 
 Si tienes Fedora 31 y estás tan desesperado por tener la nueva versión como yo, entonces te voy a guiar en esta senda oscura y pantanosa sobre cómo hacerlo.
 

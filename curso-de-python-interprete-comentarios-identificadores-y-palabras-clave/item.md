@@ -1,14 +1,7 @@
----
-title: 'Curso de Python - Intérprete, comentarios, identificadores y palabras clave'
-taxonomy:
-    tag:
-        - linux
-        - Windows
-        - BSD
-        - Python
----
+# Curso de Python - Intérprete, comentarios, identificadores y palabras clave
 
 En esta entrega aprenderás:
+
 * Algunos consejos básicos para trabajar con el intérprete de Python y crear archivos dónde trabajar con nuestro código
 * Comentar en Python que es lo primero que deberíamos aprender cuando estamos aprendiendo lenguajes de programación
 * Qué son los identificadores y algunas pautas que debemos seguir

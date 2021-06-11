@@ -1,13 +1,7 @@
----
-title: Instalar Telnet en nuestro sistema
-date: 14:02 03/06/2018
-taxonomy: 
-	category: Network
-	tag: [observa,telecom,switch,router, cli,linux, windows,network, ccna, cisco, alcatel, telnet, ubuntu, debian, gentoo, archlinux, systemd, fedora, centos, opensuse]
-published: true
----
+# Instalar Telnet en nuestro sistema
 
 # Introducción
+
 Telnet es un protocolo cuya función es interconectar dos dispositivos de redes cualesquiera para obtener una administración o gestión remota. Su publicación fue en el 1983 bajo el RFC854 (_Request for Comments_). Este utiliza el protocolo TCP (_Transmission Control Protocol_) o lo que es lo mismo, Protocolo de Control de Transmisión con la finalidad de no perder información cuando se tiene una sesión abierta a través de Telnet.
 
 También se le ha atribuido algunos usos como enviar peticiones a servidores Web entre otras cosas. 
@@ -54,14 +48,17 @@ Procederemos a explicar cómo instalarlo mediante código fuente:
  1. Descargamos el src desde el siguiente [enlace](http://ftp.isr.tecnico.ulisboa.pt/pub/MIRRORS/ftp.suse.com/people/kukuk/ipv6/telnet-bsd-1.2.tar.bz2?target=_blank).
  2. Descomprimimos el archivo
  3. Configuramos el prefix
+
  	```
  	./configure --prefix=/usr
  	```
  4. Compilamos
+
  	```
  	make
  	```
  5. Instalamos
+
  	```
  	make install
  	```

@@ -1,10 +1,4 @@
----
-title: Como solucionar el problema de Netflix y Vivaldi en Linux
-date: 17:20 07/14/2018
-taxonomy:
-	category: Sysadmin
-	tag: [Netflix, Vivaldi, Linux, Fedora, openSUSE, Debian, Ubuntu, Gentoo, ArchLinux]
----
+# Como solucionar el problema de Netflix y Vivaldi en Linux
 
 En el [post anterior](https://echemosunbitstazo.es/blog/vivaldi-un-navegador-impresionante?target=_blank), estuvimos hablando sobre Vilvadi. Un navegador que se liberó en contraposición del rumbo que tomó Opera con su comunidad dando origen a su primera versión el 12 de abril del 2016.
 

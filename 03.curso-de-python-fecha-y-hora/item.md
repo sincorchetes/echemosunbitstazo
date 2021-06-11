@@ -1,18 +1,4 @@
----
-title: 'Curso de Python - Fecha y hora'
-taxonomy:
-    category:
-        - developer
-        - sysadmin
-    tag:
-        - Python
-        - date
-        - time
-        - linux
-        - gnu
-        - windows
-        - macos
----
+# Curso de Python - Fecha y hora
 
 ¿Qué tal mis queridos/as lectores/as? hace bastante tiempo que no redactaba en el blog, últimamente he estado ocupándome de tener un poco de tiempo para mí, como si tuviera unas mini vacaciones. Pero no importa, aquí vuelvo cargado de más conocimientos para todos.
 

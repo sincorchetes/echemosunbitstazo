@@ -1,16 +1,4 @@
----
-title: 'Como instalar Packet Tracer 7.3 en Linux'
-date: '13:10 09/26/2018'
-taxonomy:
-    category:
-        - sysadmin
-    tag:
-        - Linux
-        - Fedora
-        - GNU
-        - VirtualBox
-        - RPMFusion
----
+# Como instalar Packet Tracer 7.3 en Linux
 
 __NOTA: He vuelto a revisar el procedimiento para PT 7.3 en Fedora 32 y funciona perfectamente. He visto varios comentarios indicando que pueden obtener el software de servidores como Mediafire. Os pido que lo descarguéis directamente desde la página web de Cisco. El hecho de que no ponga el enlace de descarga a este software, es que Cisco no permite su difusión, por lo que os añado en este post una manera de cómo obtenerlo, gracias por vuestros reportes y aportes.__
 

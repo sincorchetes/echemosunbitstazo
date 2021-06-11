@@ -1,17 +1,4 @@
----
-title: 'Curso de Python - Introducción a la programación orientada a objetos'
-taxonomy:
-    category:
-        - developer
-    tag:
-        - linux
-        - windows
-        - sysadmin
-        - Python
-        - development
-        - macos
-        - devel
----
+# Curso de Python - Introducción a la programación orientada a objetos
 
 En este post aprenderás los principios básicos del POO o también llamada programación orientada a objetos que es uno de los paradigmas de la programación. En los post siguientes iré explicando más sobre lo que podemos hacer con ella además de mostrar algunos ejercicios.
 

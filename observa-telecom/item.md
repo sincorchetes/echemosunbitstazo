@@ -1,12 +1,7 @@
----
-title: Configuración Router BHS-RTA, Home Station
-date: 10:53 03/07/2018
-taxonomy: 
-	category: Network
-	tag: [observa,telecom, router,router, cli,linux, windows, web, portal]
----
+# Configuración Router BHS-RTA, Home Station
 
 # Introducción
+
 ![](router/fisico.jpg "Router Observa Telecom")
 
 Hemos rescatado este artículo de nuestro viejo blog publicado el 19 de marzo del 2014, debido al alto tráfico que recibía. En este artículo vamos a ver cómo acceder a la interfaz Web original del router que vamos a comentar y saltarnos la interfaz que nos impone Movistar en este modelo de router.

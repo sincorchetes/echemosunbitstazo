@@ -1,10 +1,5 @@
----
-title: Vivaldi un navegador Web impresionante
-date: 18:00 07/11/2018
-taxonomy:
-	category: end user
-	tag: [vivaldi, web, browser, linux, windows, mac, fedora, ubuntu, debian, centos, opensuse, arm, intel, amd]
----
+# Vivaldi un navegador Web impresionante
+
 Vivaldi es un navegador gratuito desarrollado por la empresa Vivaldi Technologies, cuya compañía fue fundada por el cofundador y ex-CEO de Opera Jon Stephenson von Tetzchner, y Tatsuki Tomita quiénes quedaron bastante descontentos por varias decisiones que tomó la empresa Opera Software hace bastante tiempo como el cierre del portal comunitario My Opera y dejando atrás las opiniones de las personas que ayudaban a su desarrollo y mejora.
 
 # ¿Qué nos aporta Vivaldi?
@@ -50,7 +45,7 @@ Incorpora un pequeño editor de notas para **tomar apuntes de cualquier tipo**, 
 
 ## Speed Dial múltiple
 Un pequeño mural que permite ver las últimas páginas visitadas o también existe la **posibilidad de añadir páginas como las que tenemos en favoritos**. No obstante, se pueden tener varios "Speed dial" para determinadas páginas y ponerles un nombre. Nos evita tener que ir buscando en la típica barra de marcadores página por página.
- 
+
 ## Barra de pestañas
 Se pueden desplazar las barras de pestañas a cualquier lateral del navegador, arriba, abajo, izquierda, derecha. **Así podemos aumentar nuestra productividad.**
 

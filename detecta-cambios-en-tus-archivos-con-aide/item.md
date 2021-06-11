@@ -1,10 +1,4 @@
----
-title: Detecta cambios en tus archivos con aide
-date: 20:20 01/16/2019
-taxonomy:
-  category: sysadmin
-  tag: [sysadmin, fedora, linux, aide, adis, intrusion, system, gpl, database]
----
+# Detecta cambios en tus archivos con AIDE
 
 Aide es un sistema avanzado de detección de intrusión que nos permite visualizar cambios en los archivos. Si una persona accede de forma ilegal a nuestro servidor y modifica un archivo que no tiene que tocar, este sistema de intrusión te lo detecta mediante el hash del archivo.
 

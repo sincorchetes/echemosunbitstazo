@@ -1,12 +1,7 @@
----
-title: Mastering Bash - Redireccionamientos y tuberías
-date: 19:05 05/02/2018
-taxonomy: 
-	category: Sysadmin
-	tag: [sysadmin, bash, scripting, shell, linux, windows, macos, ubuntu, gentoo, fedora, debian, opensuse, freebsd, openbsd, opensolaris]
----
+# Mastering Bash - Redireccionamientos y tuberías
 
 # Estamos de vuelta
+
 Bienvenidos a esta nueva entrega de 
 Mastering en Bash, los que ya nos siguen de las anteriores espero que disfrutéis con este post, si acabas de acceder y no tienes ni idea de que va esto, puedes ver nuestro viejo post [Primeros Pasos](../mastering-bash-primeros-pasos). En el siguiente post veremos que son los redireccionamientos y las tuberías antes de comenzar con scripting.
 

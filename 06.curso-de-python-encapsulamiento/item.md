@@ -1,6 +1,4 @@
----
-title: 'Curso de Python - Encapsulamiento y polimorfismo'
----
+# Curso de Python - Encapsulamiento y polimorfismo
 
 En este post haré una breve introducción a lo que es el encapsulamiento en Python y el poliformismo.
 

@@ -1,10 +1,4 @@
----
-title: ¿Cómo gestionar el software en Linux?
-date: 10:36 08/07/2018
-taxonomy:
-    category: sysadmin
-    tag: [Linux, Fedora, openSUSE, ArchLinux, Gentoo, Debian, Ubuntu]
----
+# ¿Cómo gestionar el software en Linux?
 
 Hoy en día, la forma en la que se desarrolla y se distribuye el software ha aumentado y cambiado tanto que alcanza ritmos realmente vertiginosos. Esto ha supuesto una modernización en cuanto al mantenimiento del mismo en todas las distribuciones de GNU/Linux y otros sistemas UNIX-like tipo FreeBSD. 
 

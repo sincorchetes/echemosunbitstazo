@@ -1,12 +1,7 @@
----
-title: Mastering en Bash - Trabajando con textos
-date: 12:35 05/13/2018 
-taxonomy: 
-	category: Sysadmin
-	tag:    [sysadmin, linux, freebsd, openbsd, fedora, opensuse, centos, debian, ubuntu, gentoo, archlinux]
----
+# Mastering en Bash - Trabajando con textos
 
 ## Trabajando con textos
+
 En esta entrega vamos a ver como trabajar con textos en Bash, tenemos una serie de comandos para trabajar con ellos que nos ayudarán cuando estemos avanzando en nuestra senda por este querido mundo que es el Software Libre.
 
 ## Comando `less(1)`
@@ -80,8 +75,8 @@ Este es muy utilizado para contar líneas, decimales o bytes, suele combinarse c
 |    -c      | Imprime los recuentos de bytes de una salida o fichero |
 |    -m      | Recuentos de caracteres |
 |    -l      | Muestra el número de líneas calculado de un archivo o salida |
-|    -L      | Imprime el número de la línea más larga | 
-|    -w      | Recuento de palabras | 
+|    -L      | Imprime el número de la línea más larga |
+|    -w      | Recuento de palabras |
 
 Veamos como funciona:
 

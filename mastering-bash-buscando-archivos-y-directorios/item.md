@@ -1,12 +1,7 @@
----
-title: Mastering en Bash - Buscando archivos y directorios
-date: 05/19/2018 22:11 
-taxonomy: 
-	category: [Sysadmin]
-	tag: [sysadmin, linux, bash, find, locate, search, directories, files, opensuse, macos, fedora, freebsd, openbsd, netbsd, debian, ubuntu, gentoo, archlinux, centos]
----
+# Mastering en Bash - Buscando archivos y directorios
 
 # En busca de Wally
+
 ¿A quién no le interesa encontrar a esta buscada ballena en medio de un océano tan grande? Pues a nosotros no la verdad, preferimos buscar otro tipo de cosas como archivos y directorios en nuestro sistema. Para ello haremos uso de los comandos `find(1)`, `locate(1)`, `whois(1)`,`whereis(1)`.
 
 # Diferencias

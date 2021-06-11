@@ -1,10 +1,5 @@
----
-title: Instalar NetBSD 8.0
-date: 00:58 08/09/2018
-taxonomy: 
-	category: Sysadmin
-	tag: [netbsd, bsd, 386bsd, amd, intel, arm, motorola, tostadora, unix]
----
+# Instalar NetBSD 8.0
+
 NetBSD a pesar de ser muy poco conocido, es uno de los sistemas operativos más portables en cuánto a plataformas se refie de todo el mundo. Es tan portable que incluso llega a funcionar en una tostadora como podemos ver en la siguiente imagen.
 
 ![Tostadora, imagen obtenida de https://www.flickr.com/photos/daveykun/99162805](toaster.jpg)
@@ -46,9 +41,9 @@ Vamos a simplificar la instalación y explicar lo necesario por cada punto.
   9. Utilizamos la consola BIOS, no vamos ha hacer uso de puertos COM
   10. Instalación completa
   11. CD-ROM / DVD / install image media
-  ![Instalación de NetBSD al disco duro, copiando archivos](instalando.png)
+    ![Instalación de NetBSD al disco duro, copiando archivos](instalando.png)
   12. Configuración de elementos adicionales, en este apartado podemos asignarle contraseña al usuario `root`, configurar el huso horario, shell de `root`...
-  ![Resumen de configuración adicional](resumencompo.png)
+    ![Resumen de configuración adicional](resumencompo.png)
   13. Si no tenemos nada más que añadir, podemos finalizar la instalación
 
 # Arranque
@@ -65,7 +60,6 @@ Cuando nos logueemos, veremos un mensaje de bienvenida del equipo de NetBSD
 # Referencias
   * [NetBSD History](http://www.netbsd.org/about/history.html?target=_blank)
   * [NetBSD Documentation](http://www.netbsd.org/docs/guide/en/chap-intro.html?target=_blank)
-
 
 
 

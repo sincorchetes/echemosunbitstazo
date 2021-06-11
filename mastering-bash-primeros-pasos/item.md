@@ -1,12 +1,7 @@
----
-title: Mastering Bash - Primeros pasos
-date: 23:00 04/21/2018
-taxonomy: 
-	category: Sysadmin
-	tag: [sysadmin, bash, scripting, shell, linux, windows, macos, ubuntu, gentoo, fedora, debian, opensuse, freebsd, openbsd, opensolaris]
----
+# Mastering Bash - Primeros pasos
 
 # ¿Qué es Bash?
+
 Bash es un intérprete de comandos también conocido en inglés como una "_shell_" desarrollada el 8 de junio de 1989 por Brian Fox en el lenguaje C como alternativa y mejora de SH (_Bourne Shell_). Hoy en día es multiplataforma ya que puede correr tanto en Linux como en Mac OS X (de hecho es shell por defecto), en Windows mediante [Cygwin](https://www.cygwin.com?target=_blank) o mediante la instalación oficial desde su apartado de añadir nuevas características de software.
 
 Actualmente existen multitudes de I.C pero mencionaremos las más destacadas como:
@@ -204,7 +199,7 @@ Podemos hacer uso del comando `cat(1)` para finalizar la edición, tendremos que
 ```
 cat >fichero_de_ejemplo
 Esto es un ejemplo.
-``` 
+```
 
 ## Copias de seguridad
 El comando por excelencia para elaborar copias de seguridad en Linux es haciendo uso del comando `tar(1)`

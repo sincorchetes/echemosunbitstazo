@@ -1,10 +1,4 @@
----
-title: Mastering HTML5
-date: 08:20 04/19/2018
-taxonomy: 
-	category: Web
-	tag: [development,web,html5, http,Web development]
----
+# Mastering HTML5
 
 ## ¿Qué es HTML?
 
@@ -30,7 +24,7 @@ Sin embargo, existen etiquetas que contienen el nombre del elemento junto con un
  |						  |
  |      Etiquetas 		  |
  __________________________
- ```
+```
 
 Además, veremos cómo las etiquetas configuran un árbol de familias padre-hijo ya que pueden anidarse indefinidamente. 
 

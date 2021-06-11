@@ -1,11 +1,4 @@
----
-title: Automatizar con Ansible es la clave
-date: 04:25 01/21/2019
-taxonomy: 
-	category: sysadmin
-	tag: [Ansible,Linux,SSH,Windows,BSD]
-published: true
----
+# Automatizar con Ansible es la clave
 
 ¿Qué pasa si eres camararero(a) y tienes que llenar 100 copas de agua en 5 minutos? ¿Cómo podrías solventar este problema sin que se derrame agua y que te de tiempo para rellenar estas 100 copas?
 La respuesta no es darse prisa, la respuesta se llama **ANSIBLE**.

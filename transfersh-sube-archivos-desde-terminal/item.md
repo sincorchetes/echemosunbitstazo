@@ -1,11 +1,5 @@
----
-title: Transfer.sh, sube archivos desde Bash
-date: 17:40 06/27/2018
-taxonomy:
-	category: Sysadmin
-	tag: [Sysadmin, bash, linux, macos, windows, transfersh, upload, files, sharing]
+# Transfer.sh, sube archivos desde Bash
 
----
 Si quieres compartir archivos desde Bash por ser un curioso, por subir ficheros de un servidor a otro sitio...etc puedes hacerlo mediante [transfer.sh](https://transfer.sh?target=_blank).
 
 Este servicio permite alojar archivos de hasta 10GB de capacidad sin coste alguno. También añade una serie de características como seguridad (_archivos alojados encriptados_), obtienes una URL para descargar los archivos desde cualquier navegador y todo con un plazo de hasta ¡14 días!

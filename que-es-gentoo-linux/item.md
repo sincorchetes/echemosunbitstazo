@@ -1,10 +1,4 @@
----
-title: ¿Qué es Gentoo Linux?
-date: 14:20 02/10/2019
-taxonomy: 
-	category: sysadmin
-	tag: [gentoo, portage, linux, gnu, gpl, emerge, equery, ebuild, gcc, bsd]
----
+# ¿Qué es Gentoo Linux?
 
 Gentoo Linux es una metadistribución que se caracteriza por ser altamente configurable y personalizable entre todas las existentes en el mundo de Linux. El usuario que utilice Gentoo Linux, no sólo puede compilar el software a su medida, escogiendo las características que quiere que tome; si no también, puede compilar ese software para su propio soporte de CPU acelerando aún más la fluidez y el consumo del mismo.
 

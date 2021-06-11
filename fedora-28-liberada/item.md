@@ -1,11 +1,4 @@
----
-title: Fedora 28 liberada
-date: 00:53 05/02/2018
-taxonomy: 
-	category: Sysadmin
-	tag: [sysadmin, bash, scripting, shell, linux, fedora, gnu, gpl, opensource, mit, bsd]
-published: true
----
+# Fedora 28 liberada
 
 # Un sabor agridulce
 

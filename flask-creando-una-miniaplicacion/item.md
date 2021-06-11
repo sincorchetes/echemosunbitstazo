@@ -1,8 +1,4 @@
----
-title: 'Flask - Creando una mini aplicación'
-media_order: 'hola_mundo.png,mi_pagina.png,ejemplo.png'
-published: true
----
+# Flask - Creando una mini aplicación
 
 En este tutorial aprenderás a utilizar Flask. Flask es un web framework elaborado en Python que te permite crear aplicaciones web bastante sencillas, pero potentes ya que el potencial se lo das tu elaborando tu propio sistema de validación, tus propios métodos de conexión a bases de datos... etc porque no olvidemos que es un microframework y no tiene muchas cosas como quizás tendría un framework como Django que contiene muchas más herramientas y desarrrollo.
 

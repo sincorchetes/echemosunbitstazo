@@ -1,15 +1,9 @@
----
-title: ¿Qué es PHP y cómo funciona?
-date: 09:40 02/16/2019
-taxonomy: 
-	category: developer
-	tag: [php,linux,bash,windows,bsd,linux,html,request]
----
+# ¿Qué es PHP y cómo funciona?
 
 Bienvenido a mi primera entrega de PHP, en esta entrega podrás conocer los conceptos básicos para saber qué es PHP y cómo trabaja. También verás ejemplos de un código PHP programado para una Web y también ejecutado directamente en una consola PHP en tu sistema operativo. 
 
 Una vez que acabes de leer esta entrada podrás:
- 
+
  * [Sabrás que es PHP](#que-es-php)
  * [¿Cómo funciona?](#como-funciona)
  * [Ejecutar código PHP en un cliente de terminal](#programar-terminal)

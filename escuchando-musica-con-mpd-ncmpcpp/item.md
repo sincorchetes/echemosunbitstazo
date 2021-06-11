@@ -1,12 +1,7 @@
----
-title: Escuchando música con MPD y ncmpcp
-date: 16:05 05/12/2018
-taxonomy: 
-    category: sysadmin
-    tag: [sysadmin, multimedia, linux, fedora, opensuse, debian, ubuntu, gentoo, archlinux, mpd, ncmpcpp, audio, multimedia]
----
+# Escuchando música con MPD y ncmpcp
 
 # ¿Vida sin música?
+
 ¿Cuántos de nosotr@s nos hemos hecho esta pregunta? ¿Qué sería de la vida sin música? ¿Qué sería de la vida sin letras de canciones que denuncien, que estimen, que compartan dolor, amor, qué irradien ira o revolución? ¿Qué solo contenga ritmo para hacer ejercicio físico sin problemas? ¿Cuándo estamos solos y afligidos, cuándo queremos compartir momentos de celebración?
 Parece mentira pero la música nos despierta y nos anima. Pero más nos anima si la escuchamos haciendo uso del mínimo de recursos posibles sin perder calidad. Entonces, eso es amor.
 
@@ -102,7 +97,7 @@ mpd ~/.mpd/mpd.conf
 Puede que nos aparezca un mensaje como este:
 ```
 exception: bind to '0.0.0.0:6600' failed (continuing anyway, because binding to '[::]:6600' succeeded): Failed to bind socket: Address already in use
-``` 
+```
 Comunicándonos que se está utilizando el puerto que usa MPD, no pasa nada, lo omitimos y listo.
 
 ## ncmpcpp
@@ -158,14 +153,14 @@ Bueno `ncmpcpp(1)` se utiliza mediante las flechas de dirección y algunas tecla
 
 | Combinación de teclas | Descripción |
 |-------|-------------|
-|   <kbd>a</kbd>   | Añade un tema a una lista de reproducción, ya puede ser nueva o actual | 
+|   <kbd>a</kbd>   | Añade un tema a una lista de reproducción, ya puede ser nueva o actual |
 | <kbd>&uarr;</kbd>| Sube por los elementos |
 | <kbd>&darr;</kbd>| Desciende por los elementos |
 | <kbd>Shift</kbd> + <kbd>&uarr;</kbd> | Selecciona elementos hacia arriba |
 | <kbd>Shift</kbd> + <kbd>&darr;</kbd> | Selecciona elementos hacia abajo |
 | <kbd>[</kbd> | Desciende por el álbum |
 | <kbd>]</kbd> | Asciende por el álbum |
-| <kbd>{</kbd> | Asciende según el artista | 
+| <kbd>{</kbd> | Asciende según el artista |
 | <kbd>}</kbd> | Desciende según el artista |
 | <kbd>Page Up</kbd> | Asciende muchos ítems |
 | <kbd>Pade Down</kbd> | Desciende muchos ítems |
@@ -178,7 +173,7 @@ Bueno `ncmpcpp(1)` se utiliza mediante las flechas de dirección y algunas tecla
 | <kbd>TAB</kbd> | Siguiente vista |
 | <kbd>Shift</kbd> +  <kbd>TAB</kbd> | Vista anterior |
 | <kbd>F1</kbd> | Muestra la ayuda |
-| <kbd>1</kbd> | Vista: Lista de reproducción | 
+| <kbd>1</kbd> | Vista: Lista de reproducción |
 | <kbd>2</kbd> | Vista: Buscador |
 | <kbd>3</kbd> | Vista: Modo navegador de archivos |
 | <kbd>4</kbd> | Vista: Interactuar con la biblioteca |
@@ -195,10 +190,10 @@ Bueno `ncmpcpp(1)` se utiliza mediante las flechas de dirección y algunas tecla
 | <kbd>Ctrl</kbd> + <kbd>h</kbd> | En el modo navegador de archivos, vuelve un directorio hacia atrás |
 | <kbd>Ctrl</kbd> + <kbd>h</kbd> | Repite la canción en modo reproducción |
 | <kbd>Backspace</kbd> | En modo navegador sube un directorio |
-| <kbd>Backspace</kbd> | En modo reproductor repite la canción | 
+| <kbd>Backspace</kbd> | En modo reproductor repite la canción |
 | <kbd>f</kbd> | Reproduce más rápido |
 | <kbd>b</kbd> | Rebovina |
-| <kbd>r</kbd> | Modo repetición | 
+| <kbd>r</kbd> | Modo repetición |
 | <kbd>z</kbd> | Reproducción aleatoria |
 | <kbd>y</kbd> | Tiene múltiples funciones, buscador de canciones, detecto de cambios en etiquetas, comenzar a buscar... |
 | <kbd>Y</kbd> | Modo reproducción de una única canción |

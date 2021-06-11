@@ -1,11 +1,4 @@
----
-title: 'Curso de Python - Función print, type y ver los diferentes tipos de datos'
-taxonomy:
-    tag:
-        - Python
-        - devel
-        - development
----
+# Curso de Python - Función print, type y ver los diferentes tipos de datos
 
 Como hemos visto en la entrega anterior qué son los identificadores, vamos a trabajar un poco con algunos de ellos como las variables y explicaremos los tipos de datos haciendo uso de ellas.
 

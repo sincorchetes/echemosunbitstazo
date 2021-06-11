@@ -1,12 +1,7 @@
----
-title: Conexión RS-232-USB 
-date: 19:08 02/19/2018
-taxonomy: 
-	category: Network
-	tag: [alcatel,cisco,switch,router,omniswitch, cli,rs232,serial,console,usb, linux, windows]
----
+# Conexión RS-232-USB
 
 # Introducción
+
 ![](rs232.jpg?cropResize=200,200 "Adaptador RS232-USB StarTech.com")
 
 En el siguiente artículo, vamos a ver cómo podemos conectarnos mediante fuera de banda a dispositivos de red como puede ser un switch o un router desde Linux.

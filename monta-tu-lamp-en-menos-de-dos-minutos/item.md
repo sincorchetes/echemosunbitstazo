@@ -1,11 +1,4 @@
----
-title: Monta tu LAMP+ en menos de dos minutos
-date: 10:25 07/10/2018
-taxonomy: 
-	category: Sysadmin
-	tag: [sysadmin, linux, debian, ubuntu, fedora, archlinux, opensuse, apache, nginx, php, vsftpd, mariadb, sql, web, development ]
-
----
+# Monta tu LAMP+ en menos de dos minutos
 
 Seguro que much@s de nosotr@s cuando hemos tenido que desarrollar alguna página Web en un entorno Windows montado alguna vez la suite de software [XAMPP](https://www.apachefriends.org/index.html?target=_blank) de Apache Friends para salir del paso y tener un entorno mínimo comenzar a programar, en vez de instalar un servicio uno por uno porque además de que en Windows es uno de los sistemas en los que este trabajo resulta algo más laborioso.
 
@@ -24,5 +17,5 @@ El script se puede obtener desde el repositorio de [Gitlab](https://gitlab.com/s
 
 ```
 git clone https://gitlab.com/sincorchetes/lampy.git
-``` 
+```
 ¡Un saludo y a disfrutarlo!

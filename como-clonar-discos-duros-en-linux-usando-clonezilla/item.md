@@ -1,10 +1,4 @@
----
-title: Como clonar discos duros en Linux usando Clonezilla
-date: 21:15 09/29/2018
-taxonomy:
-	category: sysadmin
-	tag: [Sysadmin, Debian, Linux, Clonezilla, GNU, VirtualBox, clon]
----
+# Como clonar discos duros en Linux usando Clonezilla
 
 Clonezilla es un proyecto de software libre muy conocido entre otras funciones como herramienta de clonación de dispositivos de almacenamiento como discos duros, memorias USB entre otros.
 

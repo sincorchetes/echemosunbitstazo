@@ -1,11 +1,4 @@
----
-title: Instala otras versiones de software en CentOS
-date: 22:10 01/17/2019
-taxonomy:
-  category: sysadmin
-  tag: [sysadmin, centos, sclo, csc, scl, yum, system, gpl, database]
----
-
+# Instala otras versiones de software en CentOS
 
 A veces se hace un poco complicado la opción de CentOS como servidor si no lo sabemos administrar. Ya que si nosotros queremos instalar nuevas versiones de PHP, MariaDB, MongoDB o que se yo, te resultará prácticamente imposible a menos que compiles el software directamente o bien hagas uso de repositorios externos tipo [Remi](https://rpms.remirepo.net?target=_blank), [Webtatic](https://webtatic.com?target=_blank) en el que ya tienes que confiar que eso vaya bien.
 

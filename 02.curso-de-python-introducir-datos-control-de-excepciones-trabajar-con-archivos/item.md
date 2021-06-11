@@ -1,19 +1,6 @@
----
-title: 'Curso de Python - Introducir datos, control de excepciones, trabajar con archivos'
-taxonomy:
-    category:
-        - developer
-    tag:
-        - Python
-        - gpl
-        - gnu
-        - bsd
-        - mit
-        - development
-        - linux
-        - windows
-        - mac
----
+# Curso de Python - Introducir datos, control de excepciones, trabajar con archivos
+
+
 
 Bienvenidos al nuevo post del curso de Python, al terminar este post ya sabrás como introducir datos por el teclado, cómo gestionar el control de excepciones y mostrar lo que te interesa según el error y sobre todo, trabajar con archivos de texto. 
 

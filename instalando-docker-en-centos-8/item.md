@@ -1,18 +1,4 @@
----
-title: 'Instalando Docker en CentOS 8'
-media_order: 'diagrama.png,docker.png'
-taxonomy:
-    category:
-        - sysadmin
-        - devops
-    tag:
-        - linux
-        - centos
-        - gnu
-        - opensource
-        - docker
-        - containers
----
+# Instalando Docker en CentOS 8
 
 ¿Te imaginas tener un sistema que te permitira probar aplicaciones sin tener que desplegar máquinas virtuales? Ese proceso tan engorroso de tener que estar descargando una .iso, esperar a que descargue, crear la máquina virtual, instalarla, actualizarla, buscar las dependencias... todo ese proceso engorroso que te afecta si lo único que quieres probar es tu aplicación.
 
@@ -176,7 +162,7 @@ $ systemctl enable docker.service
 Probamos a correr un contenedor `hello-world` de Docker:
 ```
  # docker run hello-world
- ```
+```
  Como explicamos anteriormente, como la imagen `hello-world` no está en nuestro registry local, va a buscarla a Docker Hub por defecto, la descargará y luego creará el contenedor. Esta es la salida correcta:
  ```
  Unable to find image 'hello-world:latest' locally

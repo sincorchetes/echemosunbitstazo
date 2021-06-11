@@ -1,12 +1,7 @@
----
-title: Gestiona tus frameworks frontend más populares desde Bash
-date: 19:20 06/25/2018
-taxonomy:
-	category: Developer
-	tag: [development, web, angularjs, vuejs, animatecss, jquery, bootstrap, javascript, framework, html5, css3, linux, bash]
----
+# Gestiona tus frameworks frontend más populares desde Bash
 
 # Tus front-end en dos segundos
+
 Buenas tardes compañer@s, siento no poder llegar a los plazos de las entregas, pero tenemos un ritmo frenético de trabajo, no obstante, tenemos muchas ideas para entregar y sobre todo queremos acabar nuestro Mastering en Bash para/con vosotr@s.
 
 Hemos ideado un script llamado ¡Twister!, ¡Sí!, porque mezclar _frameworks_ es divertido e incrementa las funcionalidades de nuestros sitios Web por menos tiempo!

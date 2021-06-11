@@ -1,12 +1,7 @@
----
-title: Entornos de escritorio y gestores de ventanas
-date: 16:30 05/05/2018
-taxonomy: 
-    category: sysadmin
-    tag: [system administrator, end user, gnome, kde, plasma, xfce, lxde, lxqt, razor-qt, awesome, dwm, wmii, i3wm, i3, mate, cde, linux, bsd, freebsd, fedora, opensuse, debian, ubuntu, centos, archlinux, setup, instalacion]
----
+# Entornos de escritorio y gestores de ventanas
 
 # Pasión gráfica
+
 Hoy en día es indispensable hacer uso de un servidor gráfico que nos permita visualizar páginas Web, escuchar música y ver películas o series entre otras cosas. Eso de estar con terminales y reproducción de contenido multimedia en formato ASCII como que no nos va mucho. Queremos visualizar el contenido cuánto más nítido y con calidad, se vive mejor.
 
 Sin embargo, hasta hace relativamente poco, solo disponíamos de terminales de texto y programas elaborados en una interfaz MS-DOS como suelen comentar las personas más veteranas (*ya que por mi edad, no pude vivirlo ni sentirlo*). La historia fue que hasta que Xerox PARC (*el centro de investigación del futuro para Xerox Corp.*), no sacó su primer Xerox Alto en 1973, no se utilizaba ningún tipo de interfaz gráfica y mucho menos, existía el concepto del cursor del ratón. Posteriormente, hubo una guerra entre Apple y Microsoft que se disputaron a ver quién copiaba mejor la interfaz gráfica y el ratón inventado de Xerox.

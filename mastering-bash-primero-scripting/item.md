@@ -1,13 +1,7 @@
----
-title: Mastering en Bash - Primero de Scripting
-date: 20:55 06/19/2018 
-taxonomy:
-	category: Sysadmin
-	tag: [sysadmin, fedora, linux, opensuse, archlinux, debian, ubuntu, bash, gnu, gpl]
-
----
+# Mastering en Bash - Primero de Scripting
 
 # ¡Empezamos la recta final!
+
 Hace un mes más o menos que empezamos a ver cómo operar con Bash utilizando comandos básicos, ya podemos decir que sabemos más que antes y podemos dar el paso al _Scripting_. ¿Qué es el "_Scripting_"? Para nosotros es la habilidad que uno tiene para desarrollar un fichero de texto plano con el fin de automatizar determinadas tareas dentro del sistema. Y un _script_ es el nombre que recibe este fichero.
 
 Cuando hablamos de automatizar tareas, hablamos de que en vez de escribir 6 veces las operaciones que solemos efectuar día a día, _un cambio de permisos_, _nuev@ usuari@_...etc podemos crear un _script_ que con tan solo ejecutarlo, lo haga todo por nosotr@s.
@@ -88,12 +82,12 @@ Tenemos a nuestra disposición el comando `env(1)` que nos enseña todas las var
 
 | Nombre de la variable | Descripción 						 |
 |:---------------------:|------------------------------------|
-|	HOME 				| Ruta de trabajo del usuario actual | 
-|	PATH 				| Lista de directorios dónde el shell buscará ejecutables (binarios, scripts...) | 
+|	HOME 				| Ruta de trabajo del usuario actual |
+|	PATH 				| Lista de directorios dónde el shell buscará ejecutables (binarios, scripts...) |
 |   PS1 				| _Prompt String_ 1, muestra el caracter, texto previo a la introducción de los comandos. `[sincorchetes@set0 ~]$` |
 | 	PS2					| _Prompt String_ 2, Prompt secundario, por ejemplo, si se nos olvidan " cat -f file, cerrar el doble comillado, nos aparecerá el caracter o el prompt esperando a que cerremos la petición con otra doble comilla por ejemplo. |
-| 	IFS 				| _Internal Field Separator_, separadores como tabulación, espacio, salto de línea, si está en blanco, se usan espacios | 
-| 	MAIL 				| Ruta y archivo de los mensajes del (la) usuari@ que tienen que ver con el e-mail | 
+| 	IFS 				| _Internal Field Separator_, separadores como tabulación, espacio, salto de línea, si está en blanco, se usan espacios |
+| 	MAIL 				| Ruta y archivo de los mensajes del (la) usuari@ que tienen que ver con el e-mail |
 | 	SHELL 				| Ruta del shell del usuario |
 | 	LANG 				| Idioma y codificación |
 | 	USER 				| Variable que identifica al/la usuari@ actual |

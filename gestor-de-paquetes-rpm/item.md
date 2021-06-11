@@ -1,10 +1,5 @@
----
-title: Gestor de paquetes y paquería RPM
-date: 21:45 08/13/2018
-taxonomy:
-  category: sysadmin
-  tag: [Sysadmin, linux, fedora, rhel, red hat, rpm, packaging, opensuse, mandrake, mandriva, mageia, openmandriva]
----
+# Gestor de paquetes y paquería RPM
+
 Como ya hemos hablado anteriormente sobre qué es un [gestor de paquetes](https://echemosunbitstazo.es/blog/como-gestionar-software-en-linux?target=_blank) comenzaremos a ver cómo trabajar con este gestor de paquetería.
 
 # Historia y antecedentes

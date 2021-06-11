@@ -1,17 +1,4 @@
----
-title: 'Curso de Python - Tipos de operadores e introducción con módulos'
-taxonomy:
-    category:
-        - developer
-    tag:
-        - Python
-        - linux
-        - bsd
-        - windows
-        - mac
-        - development
-visible: true
----
+# Curso de Python - Tipos de operadores e introducción con módulos
 
 En esta entrega vamos a ver cómo trabajar con los diferentes operadores que tenemos disponibles en Python, ¡que no son pocos! y además lo justo para trabajar con módulos.
 
@@ -30,10 +17,10 @@ Se utiliza para realizar operaciones matemáticas y se utilizando dos operandos 
 
 | Operador | Descripción |
 |:--:|--|
-|+| Se utiliza para realizar operaciones de adicción (suma) | 
-|-| Operaciones de sustracción (resta) | 
-|*| Multiplicación | 
-|/| División (cociente) | 
+|+| Se utiliza para realizar operaciones de adicción (suma) |
+|-| Operaciones de sustracción (resta) |
+|*| Multiplicación |
+|/| División (cociente) |
 |%| Módulo (_resto de una división_) |
 
 ### Adicción
@@ -70,8 +57,8 @@ Estos operadores permiten asignar valores, por norma general a variables, pero n
 |:--:|--|
 | = | Asigna un valor |
 | += | Suma un valor al valor actual y guardar el nuevo valor |
-| -= | Resta un valor al valor actual y guardar el nuevo valor | 
-| *= |  Multiplica un valor al valor actual y guardar el nuevo valor | 
+| -= | Resta un valor al valor actual y guardar el nuevo valor |
+| *= |  Multiplica un valor al valor actual y guardar el nuevo valor |
 
 ### Igual (=)
 ```
@@ -170,12 +157,12 @@ False
 
 ## Operadores _bitwise_
 
-| Operadores | Descripción | 
+| Operadores | Descripción |
 |:--:|--|
 | &| Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº. Cuando se encuentra 1 bit en el primer nº, y en el segundo también, se establece 1. Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 0. |
 | \| | Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº. Cuando se encuentra 1 bit en el primer nº, y en el segundo también, se establece 1. Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 1. |
 | >> | Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº. Cuando se encuentra 1 bit en el segundo nº, y se desplaza el bit en el segundo también, se establece 1. Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 1. |
-| << | Lo anterior pero desde la izquierda| 
+| << | Lo anterior pero desde la izquierda|
 | ~ | Devuelve el complemento del nº menos el nº que obtenemos cambiado cada 1 por un 0 y un 0 por un 1. Es lo mismo que -nº-1 |
 
 ### Ampersan (&)

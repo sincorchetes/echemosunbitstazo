@@ -1,17 +1,4 @@
----
-title: 'Instalando Gentoo con LVM,LUKS, SELinux'
-media_order: 'stage3-files.png,use-flags-gentoo.png,sha1.png,gentoo.png'
-taxonomy:
-    category:
-        - sysadmin
-    tag:
-        - linux
-        - bsd
-        - gpl
-        - gentoo
----
-
-<img src="https://echemosunbitstazo.es/user/pages/01.blog/instalando-gentoo-con-lvm-luks-y-selinux/gentoo.png" class="img-fluid">
+# Instalando Gentoo con LVM,LUKS, SELinux
 
 Hemos hablado una vez de Gentoo en un <a href="https://echemosunbitstazo.es/blog/que-es-gentoo-linux" target="blank">post anterior</a>, por lo que voy a ir más al grano en este post sobre cómo lo he conseguido instalar y cómo ayudarte si tienes dudas haciéndolo. Te recomiendo que si no tienes una pantalla dónde puedas consultar la información de este post, que utilices un medio live que te permita interactuar con todos estos pasos, porque es muy importante que no te pierdas al llevar a cabo este post. También es importante **TENER TIEMPO** para hacer esta instalación y no esperes que este proceso se hace en un par de horas. Se compilará mucho código fuente y este proceso **ES COSTOSO** en todos sus aspectos, por lo que te recomiendo **QUE NO HAGAS** muchas compilaciones a la vez.
 

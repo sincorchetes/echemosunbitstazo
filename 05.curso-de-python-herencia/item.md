@@ -1,16 +1,4 @@
----
-title: 'Curso de Python - Herencia'
-taxonomy:
-    category:
-        - developer
-    tag:
-        - windows
-        - bsd
-        - sysadmin
-        - Python
-        - development
-        - macos
----
+# Curso de Python - Herencia
 
 Vamos a tratar un poco la herencia de que pueden tener los objetos, que es una de las características que tienen los objetos.
 

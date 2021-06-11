@@ -1,12 +1,7 @@
----
-title: No-IP - ¿Cómo obtener un acceso fijo a un servidor?
-date: 18:51 03/02/2018
-taxonomy: 
-	category: Network
-	tag: [network, ip, linux, windows, noip, dns, fedora, debian, ubuntu, gentoo, archlinux, opensuse]
+# No-IP - ¿Cómo obtener un acceso fijo a un servidor?
 
----
 # Introducción
+
 Seguramente alguna que otra vez nos ha interesado montar un servidor casero ya sea para alojar contenido Web, enviar e-mails... o tener un gestor de descargas al que conectarnos a nuestra casa, dejar descargando cosa X y que al llegar esté listo para alojarlo en una unidad USB para un uso Y.
 
 Sin embargo, si nos damos cuenta, cada vez que reiniciamos el router, obtener otra IP diferente y se nos va todo al garete. Tenemos que volver a obtener la dirección de nuestra IP pública a través de un servicio como [What's my IP?](https://www.whatsmyip.org?target=_blank),[ipify](https://www.ipify.org?target=_blank)... esto es debido a que el ISP (_Proveedores de Servicio de Internet_) como Movistar otorga nuevas direcciones IP cuando detectan que se conecta un dispositivo a su pool de direcciones, machacando la vieja IP y obteniendo una nueva. Sin embargo, hay ISP como ONO (_ahora Vodafone_) que otorgan una IP fija y evita hacer uso de este post.

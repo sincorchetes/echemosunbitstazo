@@ -1,18 +1,4 @@
----
-title: '¡Ya está con nosotros Fedora 32!'
-taxonomy:
-    category:
-        - sysadmin
-    tag:
-        - linux
-        - centos
-        - fedora
-        - rhel
-        - Python
-        - ruby
-        - clang
-        - gcc
----
+# ¡Ya está con nosotros Fedora 32!
 
 Me enorgullece compartirles que el equipo del proyecto Fedora, el cuál elabora una magnífica distribución de Linux la cuál llevo casi 10 años utilizando nos trae una nueva versión, la versión número 32 que fue liberada ayer por la noche con una gran cantidad de cambios, vamos a comentar algunos de ellos.
 

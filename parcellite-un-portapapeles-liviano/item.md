@@ -1,12 +1,7 @@
----
-title: Parcellite - un portapapeles liviano
-date: 16:30 08/12/2018
-taxonomy:
-	category: Sysadmin
-	tag: [sysadmin, linux, parcellite, openbsd, netbsd, freebsd, trueos, fedora, gentoo, archlinux, ubuntu, debian, opensuse]
----
+# Parcellite - un portapapeles liviano
 
 # Quién recupera, remunera
+
 Esto es una gran frase, quién recupera información que la da por perdida y es valiosa para sí, obtiene una remuneración, sea económica, o en términos de tiempo. Y claro que sí, a quién no le ha pasado que ha copiado un código largo creyendo que tenía el portapapeles instalado, y de repente ¡zas!, lo perdiste después de haberte llevado horas intentando desarrollarlo.
 
 Pues bien, [Parcellite](http://parcellite.sourceforge.net?target=_blank) es una de las soluciones para estas urgencias y necesidades. Además de poder almacenar cuántos registros se le configure, es uno de los portapapeles que menos consumen para entornos gráficos tanto para Linux como otros sistemas BSD. Lo podemos obtener desde los repositorios en un periquete ya que está ampliamente soportado por la mayor parte de distribuciones y también por los sistemas BSD.
@@ -25,6 +20,6 @@ Parcellite suele utilizar poca memoria RAM (~14MB) como mucho y tiene unas funci
   * Pueden crearse acciones para lanzar programas y aplicaciones pulsando Ctrl+Clic en el icono de Parcellite que se genera en la bandeja de entrada.
   * Puede configurarse los atajos del teclado para interactuar con él
   * Permite exportar el historial en formato texto plano
-  
+
 ¿A qué esperas? [¡Pruébalo ya!](https://tinyurl.com/ybyasn9p?target=_blank)
 

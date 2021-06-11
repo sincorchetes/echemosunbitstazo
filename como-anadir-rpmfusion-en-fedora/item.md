@@ -1,10 +1,5 @@
----
-title: Como añadir RPM Fusion en Fedora
-date: 08:00 09/24/2018
-taxonomy:
-	category: sysadmin
-	tag: [Fedora, Linux, RPMFusion, GNU, VirtualBox, ffmpeg, mp3, avi]
----
+# Como añadir RPM Fusion en Fedora
+
 El Proyecto Fedora hace uso de una filosofía en la que pretende fomentar lo máximo que pueda el software libre y de _open source_ ya que si no lo hacen de esta manera, fomentarían el uso de lo privativo en primer lugar dejando a lo libre relegado porque tendería a ir conocíendose menos. Por ende es normal que no encontremos drivers de caracter privativo, códecs multimedia, virtualizadores del tipo VirtualBox...etc.
 
 # ¿Cómo remediarlo?

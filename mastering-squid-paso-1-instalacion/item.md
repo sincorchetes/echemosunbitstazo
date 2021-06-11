@@ -1,12 +1,7 @@
----
-title: Mastering Squid - Instalación
-date: 02:30 03/13/2018
-taxonomy: 
-	category: Network
-	tag: [network, proxy, squid, linux, windows, fedora, ubuntu, debian, opensuse, archlinux,gentoo, systemd,firewalld]
+# Mastering Squid - Instalación
 
----
 # Introducción
+
 ¡Bievenido al Mastering en Squid! Este es un curso extendido sobre cómo utilizar Squid dividido en varios posts para facilitar la lectura y ser más organizados. Advertimos que va a ser un curso bastante largo, y que puedana provecharlo al máximo. Disfruten del primer post, la instalación.
 
 ![Squid logo](squid.jpg)
@@ -353,7 +348,7 @@ $ sudo systemctl disable squid.service
 Para permitir las conexiones al proxy de forma temporal en `firewalld(1)` bastará con ejecutar:
 ```
 $ sudo firewall-cmd --add-port 3128/tcp --zone=public
-``` 
+```
 
 Permitir conexiones de forma permanente:
 ```

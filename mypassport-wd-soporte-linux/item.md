@@ -1,10 +1,4 @@
----
-title: No podemos montar My Passport WD en Linux
-date: 14:25 03/09/2018
-taxonomy: 
-	category: Hardware
-	tag: [storage, wd, western, digital, cli,usb, linux, microsoft, exfat, fedora, opensuse, centos, rhel, archlinux, ubuntu, debian, fuse]
----
+# No podemos montar My Passport WD en Linux
 
 # Introducción
 

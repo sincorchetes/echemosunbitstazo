@@ -1,18 +1,6 @@
----
-title: 'Curso de Python - Introducción y preparación del entorno'
-media_order: 'anaconda.png,idle.png,jupyterlabs.png,jupyternotebook.png,jupyternotebook2.png,jupyternotebook3.png,paso1.png,paso2.png,paso3.png,paso4.png,spyder.png,pycharm.png'
-published: true
-date: '13:50 04/10/2020'
-taxonomy:
-    category:
-        - Graphics
-    tag:
-        - Linux
-        - Windows
-        - FreeBSD
-        - Python
-        - OpenBSD
----
+# Curso de Python - Introducción y preparación del entorno
+
+
 
 # Historia
 Python es un lenguaje de programación interpretado, de alto nivel y de interés general. Este lenguaje tiene una filosofía de programación que se centra en la legibilidad del código, para ello implementa una serie de declaraciones y estándares que ha de respetarse para que el código funcione como es la indentación. Python es un lenguaje orientado a objetos que facilitan a los desarrolladores escribir un código limpio, eficaz, lógico y pequeño que sirve tanto para pequeños, como medianos y grandes proyectos.

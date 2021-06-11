@@ -1,12 +1,7 @@
----
-title: Trabajando con Alcatel OS6850
-date: 16:25 02/23/2018
-taxonomy: 
-	category: Network
-	tag: [alcatel,switch,omniswitch, cli]
----
+# Trabajando con Alcatel OS6850
 
 ## Introducción
+
 Bienvenidos a este nuevo post en el que hablaremos sobre como trabajar con switches OS6850 de Alcatel. Esta empresa lleva más de 13 años en el mercado de las telecomunicaciones y de otros dispositivos como cámaras IP, tablets, smartphones.
 
 ## Versiones
@@ -25,7 +20,7 @@ Todos los modelos de 24 puertos de la serie 6850
 |6850-P24L |     20        | Fast Ethernet      | Sí |      | 4   |      |		|
 |6850-24X  |     24        | Gigabit Ethernet   |    |      | 4   |      |  2   |
 |6850-P24X |     24        | Gigabit Ethernet   | Sí |      | 4   |  2   |  2   |
-|6850E-P24X|     20        | Gigabit Ethernet   | +  | Sí   | 4   |  2   |      | 
+|6850E-P24X|     20        | Gigabit Ethernet   | +  | Sí   | 4   |  2   |      |
 |6850E-24  |     20		   | Gigabit Ethernet   |    |      | 4   |      |      |
 |6850E-P24 |     20        | Gigabit Ethernet   | +  | Sí   | 4   |      |		|
 |6850E-24X |     20		   | Gigabit Ethernet   |    |      | 4   |  2   |		|

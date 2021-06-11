@@ -1,15 +1,4 @@
----
-title: 'Curso de Python - Tuplas, listas, diccionarios y sets'
-taxonomy:
-    category:
-        - developer
-    tag:
-        - Python
-        - linux
-        - gpl
-        - bsd
-        - mit
----
+# Curso de Python - Tuplas, listas, diccionarios y sets
 
 A continuación vamos a ver algunos de los tipos de datos clave en Python junto con alguno de sus métodos, de los cuáles nos serán útiles para empezar.
 

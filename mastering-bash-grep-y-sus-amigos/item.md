@@ -1,12 +1,7 @@
----
-title: Mastering en Bash - grep y sus amigos
-date: 14:00 05/12/2018
-taxonomy:
-    category: Sysadmin
-    tag: [sysadmin, bash, scripting, shell, linux, windows, macos, ubuntu, gentoo, fedora, debian, opensuse, freebsd, openbsd, opensolaris]
----
+# Mastering en Bash - grep y sus amigos
 
 # Volvemos a la carga
+
 Como hemos comentado en el post [anterior](https://echemosunbitstazo.es/blog/mastering-bash-redireccionamientos-tuberias?target=_blank) relacionado con este Mastering, queríamos dedicarle una publicación directamente a los comando `grep(1)` y `cut(1)`, pues aquí esta uno de ellos.
 Ya hemos visto lo siguiente en este Mastering en Bash:
  * Qué es una shell y qué es Bash
@@ -116,7 +111,6 @@ Pues ya los hemos dado en los dos ejemplos anteriores, aunque no lo creamos, `fg
 
 # Fuentes
 * man pages ~ `grep(1)`
-
 
 
 

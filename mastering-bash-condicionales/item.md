@@ -1,10 +1,4 @@
----
-title: Mastering en Bash - Condicionales
-date: 21:40 08/14/2018
-taxonomy: 
-	category: Sysadmin
-	tag: [Sysadmin, linux, bash, macos, windows, debian, ubuntu, fedora, opensuse, gentoo, pacman]
----
+# Mastering en Bash - Condicionales
 
 En esta entrega comenzaremos a ver los condicionales de los que disponemos en Bash. 
 
@@ -139,13 +133,13 @@ Las siguientes expresiones devuelven todas verdadero en su defecto en caso de qu
 | [ -r ARCHIVO ] | ARCHIVO existe y tiene permisos de lectura |
 | [ -s ARCHIVO ] | ARCHIVO existe y tiene un tamaño mayor que 0 |
 | [ -t ARCHIVO ] | La descripción del fichero de ARCHIVO está abierta y se refiere a una terminal |
-| [ -u ARCHIVO ] | ARCHIVO existe y tiene SUID asignado | 
+| [ -u ARCHIVO ] | ARCHIVO existe y tiene SUID asignado |
 | [ -w ARCHIVO ] | ARCHIVO existe y puede escribirse en él |
 | [ -x ARCHIVO ] | ARCHIVO existe y es un ejecutable |
-| [ -O ARCHIVO ] | ARCHIVO existe y está gestionado por su usario | 
+| [ -O ARCHIVO ] | ARCHIVO existe y está gestionado por su usario |
 | [ -G ARCHIVO ] | ARCHIVO existe y está gestionado por su grupo |
-| [ -L ARCHIVO ] | ARCHIVO existe y es enlace simbólico | 
-| [ -N ARCHIVO ] | ARCHIVO existe y se modificó desde la última vez que se leyó | 
+| [ -L ARCHIVO ] | ARCHIVO existe y es enlace simbólico |
+| [ -N ARCHIVO ] | ARCHIVO existe y se modificó desde la última vez que se leyó |
 | [ -S ARCHIVO ] | ARCHIVO existe y es un socket |
 | [ ARCHIVO1 -nt ARCHIVO2 ]  | ARCHIVO1 se modificó antes que ARCHIVO2, o si ARCHIVO1 existe y ARCHIVO2 no |
 | [ ARCHIVO1 -ot ARCHIVO2 ] |	ARCHIVO1 es más viejo que ARCHIVO2, o ARCHIVO2 existe y ARCHIVO1 no |
@@ -156,7 +150,7 @@ Las siguientes expresiones devuelven todas verdadero en su defecto en caso de qu
 | [ STR1 == STR2 ] ó [ STR1 = STR2 ] | Si las cadenas son iguales |
 | [ STR1 != STR2 ] | Si las cadenas no son iguales |
 | [ STR1 < STR2 ] |	STR1 se ordena antes que STR2 según como esté la localización configurada |
-| [ STR1 > STR2 ] |	STR1 ordena después de STR2 en base al idioma del sistema | 
+| [ STR1 > STR2 ] |	STR1 ordena después de STR2 en base al idioma del sistema |
 
 
 ### Expresiones para números

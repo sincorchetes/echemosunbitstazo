@@ -1,10 +1,4 @@
----
-title: Como crear tu propio repositorio en CentOS
-date: 18:15 10/21/2018
-taxonomy:
-	category: sysadmin
-	tag: [YUM, CentOS, RHEL, createrepo, SELinux, Apache]
----
+# Como crear tu propio repositorio en CentOS
 
 YUM o _Yellowdog Updater Modified_ es un gestor de paquetes de alto nivel utilizado por Fedora previo sa la salida de su nuevo gestor de paquetes DNF (basado en YUM), y el que utiliza CentOS y RHEL.
 

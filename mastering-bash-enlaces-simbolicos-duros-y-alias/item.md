@@ -1,12 +1,7 @@
----
-title: Mastering en Bash - Enlaces simbólicos o duros y alias
-date: 05/20/2018 18:00
-taxonomy:
-	category: sysadmin
-	tag: [opensuse, fedora, bash, linux, debian, ubuntu, freebsd, openbsd, netbsd, gnu, gpl, archlinux, gentoo, bash]
----
+# Mastering en Bash - Enlaces simbólicos o duros y alias
 
 # Acorta y vencerás
+
 En Echemos un bitstazo sabemos que no es así realmente el refrán, pero si que es cierto, que si acortamos mucho nos será más fácil aprendernos dónde está cada cosa haciendo uso de los enlaces para los ficheros y directorios y alias para comandos muy largos.
 
 # Alias

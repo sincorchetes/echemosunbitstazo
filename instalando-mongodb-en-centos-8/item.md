@@ -1,19 +1,4 @@
----
-title: 'Instalando MongoDB en CentOS 8'
-media_order: MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png
-taxonomy:
-    category:
-        - sysadmin
-    tag:
-        - linux
-        - centos
-        - database
-        - mongodb
-        - nosql
-        - db
-        - sgbd
-        - mongo
----
+# Instalando MongoDB en CentOS 8
 
 Bueno, antes de entrar en materia quiero comentar que las instrucciones que hay aquí descritas se han obtenido de la <a href="https://docs.mongodb.com/manual" target="blank">documentación oficial de MongoDB</a> y las he probado personalmente para asegurar que funciona este procedimiento.
 
@@ -106,7 +91,7 @@ EOF
 # checkmodule -M -m -o mongodb_cgroup_memory.mod mongodb_cgroup_memory.te
 # semodule_package -o mongodb_cgroup_memory.pp -m mongodb_cgroup_memory.mod
 # semodule -i mongodb_cgroup_memory.pp
-``` 
+```
 * Creamos un servicio que deshabilite el THP (_Transparent Huge Pages_) `/etc/systemd/system/disable-transparent-huge-pages.service`
 
 * __NOTA__: Según MongoDB en su documentación, comentan que deshabilitar este sistema de administración de memoria de Linux, reducirá la sobrecarga de las búsquedas de búfer de traducción (TLB) en máquinas con grandes cantidades de memoria mediante el uso de páginas de memoria más grandes. Por lo visto, MongoDB funciona mal con este sistema y se recomienda deshabilitarlo.
@@ -166,7 +151,7 @@ May 13 20:24:38 test systemd[1]: Started MongoDB Database Server.
 ```
 # Habilitando el control de acceso de usuarios basado en roles o RBAC
 A pesar de que MongoDB no permite aceptar conexiones remotas (se puede configurar editando `/etc/mongod.conf` en la directiva `bindIp`), no hay un sistema de control de acceso configurado por defecto, por lo que vamos a configurarlo aquí.
- 
+
 * Comprobamos que la instancia de Mongo está levantada:
 ```
 $ ps -e| grep 'mongod'

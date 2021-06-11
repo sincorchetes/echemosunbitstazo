@@ -1,20 +1,7 @@
----
-title: 'Curso de Python - Controles de flujo, condicionales y bucles'
-date: '21-05-2020 06:55'
-publish_date: '21-05-2020 06:55'
-taxonomy:
-    category:
-        - developer
-    tag:
-        - linux
-        - windows
-        - bsd
-        - gpl
-        - Python
-        - mit
----
+# Curso de Python - Controles de flujo, condicionales y bucles
 
 # Control de flujo
+
 Los controles de flujo se utilizan para definir cómo va actuar un script, aplicación... y qué va aplicarse inmediatamente después de evaluar la condición cuando se compare.
 
 ## `if`

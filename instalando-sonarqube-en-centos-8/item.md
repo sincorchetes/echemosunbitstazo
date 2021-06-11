@@ -1,21 +1,4 @@
----
-title: 'Instalando SonarQube en CentOS 8'
-media_order: index.png
-taxonomy:
-    category:
-        - developer
-        - sysadmin
-    tag:
-        - linux
-        - sysadmin
-        - centos
-        - SELinux
-        - development
-        - systemd
-        - code
-        - sonarqube
-visible: true
----
+# Instalando SonarQube en CentOS 8
 
 # Introducción
 

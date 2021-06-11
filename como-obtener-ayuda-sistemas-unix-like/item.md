@@ -1,12 +1,5 @@
----
-title: Como obtener ayuda en sistemas UNIX-like
-date: 22:11 05/06/2018
-taxonomy: 
-    category: Sysadmin
-    tag: [BSD, Linux, Fedora, openSUSE, Debian, Ubuntu, Gentoo, ArchLinux, CentOS, FreeBSD, openBSD, NetBSD]
----
+# Como obtener ayuda en sistemas UNIX-like
 
-# SOS
 ¿Qué pasa cuando tenemos algún problema con algún comando, no tenemos muy clara el parámetro que tendríamos que utilizar, saber bien si es realmente ese comando..etc?
 
 Bien los sistemas UNIX-like como FreeBSD, Linux... por excelencia poseen una serie de herramientas como el comando `man(1)`, `info(1)`, `help(1)`... que vienen con el sistema operativo que podemos utilizarlos para salvarnos de un buen apuro. Si bien son conocidos estos sistemas son por su extensa y grande documentación otorgándoles muchísima profesionalidad y calidad.
@@ -25,15 +18,15 @@ man [n] comando
 ### Categorías 
 |Nº cat | Descripción |
 |-------|-------------|
-|  1    | Ejecutables o comandos que tienen que ver con el shell | 
+|  1    | Ejecutables o comandos que tienen que ver con el shell |
 |  2    | Llamadas al sistema que son funciones provistas por el kernel |
-|  3    | Llamadas a librerías que son funciones dentro de las librerías de los programas | 
+|  3    | Llamadas a librerías que son funciones dentro de las librerías de los programas |
 |  4    | Ficheros especiales que suelen encontrarse en /dev |
 |  5    | Formatos y convenciones de archivos como por ejemplo `/etc/passwd` |
 |  6    | Juegos |
 |  7    | Miscelánea que también incluye macro paquetes y sus convenciones como `man(7)`, `groff(7)` |
 |  8    | Comandos de administración del sistema que suele utilizar el usuario `root` |
-|  9    | Rutinas del kernel que no son estándar | 
+|  9    | Rutinas del kernel que no son estándar |
 
 ## ¿Cómo funciona man?
 Seguramente que nos lo preguntemos por la cantidad de categorías que hay y sobre todo porque hay muchos comandos que posiblemente se encuentren repetidos. Bien, cuando nosotros llamamos a `man(1)` sin especificar una categoría, lo que hace es buscar en todas las categorías pero de forma consecutiva, es decir, 1 1p 8 2 3 3p 4 5 6 7 9 0p n lp o 1x 2x 3x 4x 5x 6x 7x 8x.
@@ -47,18 +40,18 @@ Cada página de manual contiene una serie de secciones que nos permiten organiza
 | SYNOPSIS| Sintaxis, parámetros y un poco cómo utilizar el comando |
 | CONFIGURATION | Apartado de configuración |
 | DESCRIPTION | En este apartado se explica qué hace el comando, finalidad... |
-| OPTIONS | Explicación intensiva de cada una de las opciones y parámetros del software | 
+| OPTIONS | Explicación intensiva de cada una de las opciones y parámetros del software |
 | EXIT STATUS | Número de salida de ejecución de un comando, script... |
 | RETURN VALUE | Tipo de valor que devuelve X cosa, generalmente suelen ser funciones |
-| ERRORS | Se explica por qué pueden producirse determinados errores controlados | 
-| ENVIRONMENT | Variables de entorno | 
+| ERRORS | Se explica por qué pueden producirse determinados errores controlados |
+| ENVIRONMENT | Variables de entorno |
 | FILES | Ficheros involucrados en el funcionamiento del comando o aplicación |
 | VERSIONS | Cambios añadidos en las versiones del software |
-| CONFORMING TO | Citando estándares o información en concreto | 
-| NOTES | Información adicional | 
-| BUGS | Aparta de información para reportar errores tipo Bugzilla | 
-| EXAMPLE | Ejemplos de cómo habría que ejecutarse o configurarse determinado software | 
-| AUTHORS | Responsables del diseño del programa | 
+| CONFORMING TO | Citando estándares o información en concreto |
+| NOTES | Información adicional |
+| BUGS | Aparta de información para reportar errores tipo Bugzilla |
+| EXAMPLE | Ejemplos de cómo habría que ejecutarse o configurarse determinado software |
+| AUTHORS | Responsables del diseño del programa |
 | SEE ALSO | Tipo README adicional |
 
 ## Preformateo en las secciones:
@@ -78,12 +71,12 @@ Para interactuar con `man(1)`, podemos hacer uso de las flechas direccionales, n
 
 | Atajo | Descripción |
 |-------|-------------|
-| h H   | Muestra la ayuda de navegación | 
+| h H   | Muestra la ayuda de navegación |
 | q :q Q :Q ZZ | Sale del man |
 | j e   | Desplaza la información hacia arriba línea a línea|
 |   k   | Mueve la información hacia abajo línea a línea|
 | d z f | Desplaza unas cuántas líneas hacia arriba |
-| b y   | Desplaza unas cuántas líneas hacia abajo | 
+| b y   | Desplaza unas cuántas líneas hacia abajo |
 | g w   | Comienzo de página |
 | 1,20,200...| Corre el texto tantos caracteres se le comunique |
 | /expresión | Busca en el texto alguna coincidencia con lo escrito |
@@ -142,7 +135,7 @@ Mandatory arguments to long options are mandatory for short options too.
       --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
                                e.g., '--block-size=M'; see SIZE format below
   -B, --ignore-backups       do not list implied entries ending with ~
-``` 
+```
 Como podemos ver nos da una breve explicación de lo que hace cada parámetro.
 
 Si no hacen uso de `--help`, otros comandos también disponen de `-h` como `dmesg(1)`:

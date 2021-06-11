@@ -1,10 +1,5 @@
----
-title: Gestiona máquinas virtuales en QEMU/KVM fácilmente con QEMUzier
-date: 20:00 10/17/2018
-taxonomy:
-	category: sysadmin
-	tag: [qemu, kvm, fedora, qemuzier, git, virt, linux, gpl, gnu]
----
+# Gestiona máquinas virtuales en QEMU/KVM fácilmente con QEMUzier
+
 QEMUzier es un pequeño script licenciado bajo GPL v2.0 que he laborado para gestionar de forma muy sencilla máquinas virtuales con el software de emulación QEMU modificado para utilizarlo con KVM para obtener virtualización completa en Linux.
 
 Por el momento está adaptado para utilizarlo en distribuciones Fedora.

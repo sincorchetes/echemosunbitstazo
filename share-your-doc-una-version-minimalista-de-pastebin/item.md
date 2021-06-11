@@ -1,11 +1,4 @@
----
-title: Share Your Doc una versión minimalista de Pastebin
-date: 20:40 01/15/2019
-taxonomy: 
-  category: tools
-  tag: [php,paste,share,code]
----
-
+# Share Your Doc una versión minimalista de Pastebin
 Hace unos días acabé una pequeña herramienta Web llamada Share Your Doc, que permite compartir código fuente, mensajes, scripts...etc via Web como si fuese un típico servicio de [Pastebin](http://pastebin.com?target=blank), [Fpaste](http://fpaste.org) como seguramente conocerás. 
 
 Sin embargo, lo bueno que tiene este, es que trabaja conjuntamente con el sistema operativo, no requiere de ningún método para validarse de usuarios, ni tampoco hace uso de conexiones FTP. Simplemente, añades tu código, creas el token y a correr.

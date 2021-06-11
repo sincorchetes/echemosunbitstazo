@@ -1,12 +1,7 @@
----
-title: Gestión y administración de usuari@s y grupos en Linux
-date: 22:10 06/12/2018 
-taxonomy:
-	category: Sysadmin
-	tag: [sysadmin, fedora, linux, opensuse, archlinux, debian, ubuntu, bash, gnu, gpl]
----
+# Gestión y administración de usuari@s y grupos en Linux
 
 # Algunos conceptos
+
 Linux al igual que otro sistema operativo basado en UNIX, por herencia obtiene uno de los hitos que marcó un antes y después en la era de los sistemas, y es el término **multiusuario**. Esto quiere decir que nos permite tener diferentes cuentas de distintos usuari@s iniciadas en el sistema corriendo **n** procesos a la vez pertenecientes a cada usuario. Anteriormente, si querías hacer uso del sistema y otra persona quería utilizarlo, no podías ya que tod@s disponían de una sola sesión de usuario, sin embargo con los avances que hicieron en el pasado, sacaron adelante esta magnífica característica, la del **multiusuario**.
 
 # Usuari@s
@@ -25,7 +20,7 @@ Como norma general y es altamente recomendado hacer uso de los comandos `useradd
 3. Creamos un grupo para nuestro usuario `/etc/group`
 	* `pepito:x:1004:`
 4. Creamos una entrada en `/etc/shadow` mediante haciendo uso de `vipw -s`:
-_NOTA:Para saber que algoritmo cifrado utilizar, podemos comprobarlo en el fichero `/etc/login.defs`, en la variable `ENCRYPT_METHOD` lo que pasa que utiliza el sistema un salto o varios (lo desconocemos) para generar la contraseña a parte de la codificiación. Para visualizar el prefijo que necesitamos se puede consultar en `man 3 crypt`_
+   _NOTA:Para saber que algoritmo cifrado utilizar, podemos comprobarlo en el fichero `/etc/login.defs`, en la variable `ENCRYPT_METHOD` lo que pasa que utiliza el sistema un salto o varios (lo desconocemos) para generar la contraseña a parte de la codificiación. Para visualizar el prefijo que necesitamos se puede consultar en `man 3 crypt`_
 	* `$1$`: MD5
     * `$2a$`: Blowfish
     * `$5$`: SHA-256
@@ -315,25 +310,26 @@ Ahora vamos a traducir las palabras en el lenguaje que lo interpreta el sistema,
  	* x: _executable_ solo ejecutable (_debe ir acompañado del permiso lectura para poder ejecutarse_)
 
  	|	     #         |  r   |  w |  x | rw   | rx   | wx   | rwx   |
-	|------------------|:-------------:|:-------------:|:-------------:|:----:|:----:|:----:|:-----:|
-	|    Usuario 	   | chmod u+r f1  |    u+w		   | u+x		   | u+rw | u+rx | u+wx | u+rwx |
-	|	  Grupo 	   | chmod g+r f1  |	g+r		   | g+x		   | g+rw | g+rx | g+wx | g+rwx |
-	|	Todo el mundo  | chmod o+r f1  |	o+r		   | o+x		   | o+rw | o+rx | o+wx | o+rwx |
-	| 	   Tod@s  	   | chmod a+r f1  |	a+r		   | a+x		   | a+rw | a+rx | a+wx | a+rwx |
+ 	|------------------|:-------------:|:-------------:|:-------------:|:----:|:----:|:----:|:-----:|
+ 	|    Usuario 	   | chmod u+r f1  |    u+w		   | u+x		   | u+rw | u+rx | u+wx | u+rwx |
+ 	|	  Grupo 	   | chmod g+r f1  |	g+r		   | g+x		   | g+rw | g+rx | g+wx | g+rwx |
+ 	|	Todo el mundo  | chmod o+r f1  |	o+r		   | o+x		   | o+rw | o+rx | o+wx | o+rwx |
+ 	| 	   Tod@s  	   | chmod a+r f1  |	a+r		   | a+x		   | a+rw | a+rx | a+wx | a+rwx |
 
  * Formato numérico basado en Octal: Se hace uso del 1 al 7 para definir los permisos
 
  	|	     #         |  r   |  w |  x | rw   | rx   | wx   | rwx   |
-	|------------------|:-------------:|:-------------:|:-------------:|:---:|:---:|:---:|:---:|:---:|
-	|    Usuario 	   | 400	 	   |	200		   | 100		   | 600 | 500 | 300 | 700 |
-	|	  Grupo 	   | 040	 	   |	020		   | 010		   | 060 | 050 | 030 | 070 |
-	|	Todo el mundo  | 004	 	   |	002		   | 001		   | 006 | 005 | 003 | 007 |
-	| Usuario + Grupo  | 440		   |    220        | 110		   | 660 | 550 | 330 | 770 |
-	| Grupo + Mundo    | 044		   | 	022		   | 011		   | 066 | 055 | 033 | 077 |
-	| Usuario + M      | 404		   |	202		   | 101		   | 606 | 505 | 303 | 707 |
-	| 	   Tod@s       | 444		   |	222		   | 111		   | 666 | 555 | 333 | 777 | 
+ 	|------------------|:-------------:|:-------------:|:-------------:|:---:|:---:|:---:|:---:|:---:|
+ 	|    Usuario 	   | 400	 	   |	200		   | 100		   | 600 | 500 | 300 | 700 |
+ 	|	  Grupo 	   | 040	 	   |	020		   | 010		   | 060 | 050 | 030 | 070 |
+ 	|	Todo el mundo  | 004	 	   |	002		   | 001		   | 006 | 005 | 003 | 007 |
+ 	| Usuario + Grupo  | 440		   |    220        | 110		   | 660 | 550 | 330 | 770 |
+ 	| Grupo + Mundo    | 044		   | 	022		   | 011		   | 066 | 055 | 033 | 077 |
+ 	| Usuario + M      | 404		   |	202		   | 101		   | 606 | 505 | 303 | 707 |
+ 	| 	   Tod@s       | 444		   |	222		   | 111		   | 666 | 555 | 333 | 777 | 
 
  * Mediante máscara: Esta es la forma menos común de declarar los permisos, pero también se utiliza. Para declarar un valor hay que hacer uso del comando `umask(1p)`
+
  	Si queremos asignar el valor 022 a la máscara, este es el valor que le tendremos que restar al número actual de permisos que se encuentre en el directorio actual.
  	Por ejemplo: 
  	 * 002 = 777 - 002 = 775 (rwrwxr-x)
@@ -344,7 +340,7 @@ Ahora vamos a traducir las palabras en el lenguaje que lo interpreta el sistema,
  	 umask 020
  	 ```
  	 Cuando se declara una máscara en un directorio, todos los archivos y rutas que se creen dentro de él, heredarán estos permisos. No es que se aplique directamente al archivo/directorio.
- 	
+
 ## ¿Cómo ver los permisos?
 Para visualizar los permisos tenemos el magnífico comando `ls(1)` como hemos visto en el post de [Mastering en Bash ~ Primeros pasos](https://echemosunbitstazo.es/blog/mastering-bash-primeros-pasos?target=_blank).
 

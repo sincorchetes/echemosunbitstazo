@@ -1,13 +1,7 @@
----
-title: Conversor HDMI-VGA Aukey
-date: 16:41 03/13/2018
-taxonomy: 
-   category: Graphics
-   tag: [Desktop,GNOME,Window Manager,KDE,Linux,Windows,fedora,ubuntu,debian,gentoo,opensuse,archlinux,rhel,centos]
-published: true
+# Conversor HDMI-VGA Aukey
 
----
 # Introducción
+
 Hemos adquirido a través de [Amazon](https://goo.gl/vr23iy?target=_blank), un conversor HDMI-VGA debido a que tenemos un portátil que no tiene toma VGA, solo un puerto HDMI y 2 micro-HDMI. Queriamos tan solo compartir lo bien que nos funciona este dispositivo y por lo que recomendamos su compra. 100% compatible con Linux. El conversor viene dentro de una caja de cartón fino, con un pequelo manual, una pegatina y el conversor con el puerto HDMI cubierto por un protector de plástico duro para evitar que se deteriore.
 
 ![Aukey](aukey.jpg)

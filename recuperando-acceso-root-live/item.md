@@ -1,12 +1,7 @@
----
-title: Recuperando el acceso al usuario root
-date: 15:00 06/02/2018
-taxonomy:
-	category: Sysadmin
-	tag: [sysadmin, linux, debian, fedora, opensuse, centos, rhel, gentoo, archlinux]
----
+# Recuperando el acceso al usuario root
 
 # ¿Qué pasa cuando nos olvidamos de la contraseña de root?
+
 > — Cariño, ¿A dónde vas?
 
 > — Pues a comprar

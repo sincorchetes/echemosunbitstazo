@@ -1,10 +1,4 @@
----
-title: Viendo el tiempo en tu terminal
-date: 22:20 01/18/2019
-taxonomy:
-  category: sysadmin
-  tag: [sysadmin, weather, clima, bash, curl, terminal, linux, bsd, unix]
----
+# Viendo el tiempo en tu terminal
 
 ¿Te gustaría ver el tiempo en tu terminal? No te gustan los plugins de los entornos de escritorio o usas un gestor de ventanas tipo _i3wm_ que no tiene ningún icono en la bandeja de notificación de _i3status_.
 

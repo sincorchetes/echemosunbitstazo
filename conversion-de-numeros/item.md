@@ -1,12 +1,7 @@
----
-title: Conversión de números
-date: 19:54 04/29/2018
-taxonomy: 
-    category: sysadmin
-    tag: [Decimal, Hexadecimal, Binary]
----
+# Conversión de números
 
 # Introducción
+
 En informática tendremos que enfrentarnos con varios problemas que requieren de soluciones distintas haciendo uso de la capacidad resolutiva para según que problemas con los que nos podamos encontrar en el ámbito de sistemas, haciendo uso de algoritmos para sacarnos de apuros en desarrollo Web, e incluso, haciendo un proceso de descartes en base a pruebas de rendimiento. 
 
 Aquí todo es posible, sin embargo, también debemos aprender las unidades básicas con la que las máquinas trabajan para enviar información a bajo nivel, obtener un color para nuestros desarrollos Web...etc Todo esto lo aprenderemos aquí.

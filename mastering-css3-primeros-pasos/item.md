@@ -1,13 +1,7 @@
----
-title: Mastering CSS - Primeros pasos
-date: 09:52 04/30/2018
-taxonomy: 
-    category: web
-    tag: [web development, web, css3, devel, browser]
-
----
+# Mastering CSS - Primeros pasos
 
 # ¿Qué es el CSS?
+
 CSS proviene del inglés _Cascade Style Sheet_ traducido al español como hoja de estilos en cascada que como su nombre propio indica, le atribuye estilo como colores, formas, bordes, dimensiones a determinados elementos o un conjunto de elementos de una página elaborada con lenguaje de etiquetado HTML.
 
 # ¿Por qué CSS y no CSS3?

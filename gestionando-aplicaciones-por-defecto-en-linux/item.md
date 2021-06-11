@@ -1,10 +1,5 @@
----
-title: Gestionando aplicaciones por defecto en Linux
-date: 11:20 09/25/2018
-taxonomy:
-	category: sysadmin
-	tag: [sysadmin, linux, xdg, freedesktop, mime, type, fedora, centos, ubuntu, debian, centos, rhel, opensuse, gentoo]
----
+# Gestionando aplicaciones por defecto en Linux
+
 Una de las formas que tiene Linux es que es tan configurable y tan versátil que podemos hacer lo que queramos con él, en este artículo veremos cómo configurar las aplicaciones por defecto para abrir X tipos de archivos.
 
 # ¿Aplicaciones por defecto?

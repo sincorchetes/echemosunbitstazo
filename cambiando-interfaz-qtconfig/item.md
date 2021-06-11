@@ -1,11 +1,4 @@
----
-title: Ajustando la apariencia en aplicaciones Qt
-date: 18:10 02/12/2018
-taxonomy: 
-	category: Qt
-	tag: [Desktop,GNOME,Window Manager,Qt Apps]
-published: true
----
+# Ajustando la apariencia en aplicaciones Qt
 
 # ¿Cuál es el problema?
 

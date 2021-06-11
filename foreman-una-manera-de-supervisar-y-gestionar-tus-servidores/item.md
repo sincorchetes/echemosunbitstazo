@@ -1,18 +1,4 @@
----
-title: 'Foreman - Una manera de supervisar y gestionar tus servidores'
-media_order: 'certificado.png,certificado2.png,foreman.png,foreman_dashboard.png,foreman_password.png'
-taxonomy:
-    category:
-        - sysadmin
-    tag:
-        - linux
-        - fedora
-        - ubuntu
-        - debian
-        - gentoo
-        - opensuse
-        - archlinux
----
+# Foreman - Una manera de supervisar y gestionar tus servidores
 
 Foreman es una plataforma Open Source que permite administrar y gestionar servidores tanto virtuales como físicos y que también ayuda a la hora de realizar tareas automatizadas de una forma muy interactiva y fácil de utilizar. En este entrega vamos a ver cómo podemos desplegar e instalar Foreman en CentOS 8.
 
