@@ -1,15 +1,4 @@
----
-title: 'Curso de Python - Imprimir valores y funciones'
-taxonomy:
-    category:
-        - developer
-    tag:
-        - linux
-        - windows
-        - bsd
-        - Python
-        - development
----
+# Curso de Python - Imprimir valores y funciones
 
 En esta entrega veremos:
 * Cómo imprimir valores de múltiples formas
