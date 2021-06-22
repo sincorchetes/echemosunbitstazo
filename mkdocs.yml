@@ -2,6 +2,8 @@ site_name: My Docs
 site_url: https://sincorchetes.github.io/echemosunbitstazo
 theme:
   name: material
+  include_sidebar: true
+
 nav:
     - Introduction: '01.curso-de-python-imprimir-valores-y-funciones/item.md'
     - 'about.md'
