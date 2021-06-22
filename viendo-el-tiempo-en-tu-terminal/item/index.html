@@ -1,0 +1,463 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/viendo-el-tiempo-en-tu-terminal/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Viendo el tiempo en tu terminal - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#viendo-el-tiempo-en-tu-terminal" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Viendo el tiempo en tu terminal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="viendo-el-tiempo-en-tu-terminal">Viendo el tiempo en tu terminal</h1>
+<p>¿Te gustaría ver el tiempo en tu terminal? No te gustan los plugins de los entornos de escritorio o usas un gestor de ventanas tipo <em>i3wm</em> que no tiene ningún icono en la bandeja de notificación de <em>i3status</em>.</p>
+<p>Bueno pues no pasa nada, puedes ver el tiempo que hará en tu ciudad con tan solo ejecutar un <code>curl</code> al dominio <a href="http://wttr.in?target=_blank">wttr.in</a> y por GeoIP te dará la climatología de tu lugar.</p>
+<h1 id="que-puedes-hacer">¿Qué puedes hacer?</h1>
+<ul>
+<li>Información de vuelta traducida a un idioma en concreto</li>
+<li>Definir los días que queramos que nos devuelva (0 si es solo el día de hoy)</li>
+<li>Definir la métrica, sistema internacional de unidades o sistema anglosajon</li>
+<li>Calendario lunar</li>
+<li>Buscar una ubicación</li>
+<li>Convertir el resultado en un .png</li>
+<li>Añadir transparencia a la imagen</li>
+<li>Añadir un marco a la imagen que has generado</li>
+</ul>
+<h1 id="visualizando-en-un-sitio-especifico">Visualizando en un sitio específico</h1>
+<pre><code>curl wttr.in/Palma?1q
+</code></pre>
+<p>Devolverá algo tal que así:</p>
+<pre><code>Palma, Spain
+
+    \  /       Partly cloudy
+  _ /&quot;&quot;.-.     6-7 °C         
+    \_(   ).   ↘ 6 km/h       
+    /(___(__)  10 km          
+               0.2 mm         
+</code></pre>
+<p>En mi caso como es Palma, porque vivo en ella. ¿Qué pasa si quiero otra ciudad?</p>
+<p>Pues puedes apoyarte de la ayuda:</p>
+<pre><code>[sincorchetes@keys0 ~]$ curl wttr.in/:help
+Usage:
+
+    $ curl wttr.in          # current location
+    $ curl wttr.in/muc      # weather in the Munich airport
+
+Supported location types:
+
+    /paris                  # city name
+    /~Eiffel+tower          # any location
+    /Москва                 # Unicode name of any location in any language
+    /muc                    # airport code (3 letters)
+    /@stackoverflow.com     # domain name
+    /94107                  # area codes
+    /-78.46,106.79          # GPS coordinates
+
+Special locations:
+
+    /moon                   # Moon phase (add ,+US or ,+France for these cities)
+    /moon@2016-10-25        # Moon phase for the date (@2016-10-25)
+
+Units:
+
+    m                       # metric (SI) (used by default everywhere except US)
+    u                       # USCS (used by default in US)
+    M                       # show wind speed in m/s
+
+View options:
+
+    0                       # only current weather
+    1                       # current weather + 1 day
+    2                       # current weather + 2 days
+    F                       # do not show the &quot;Follow&quot; line
+    n                       # narrow version (only day and night)
+    q                       # quiet version (no &quot;Weather report&quot; text)
+    Q                       # superquiet version (no &quot;Weather report&quot;, no city name)
+    T                       # switch terminal sequences off (no colors)
+
+PNG options:
+
+    /paris.png              # generate a PNG file
+    p                       # add frame around the output
+    t                       # transparency 150
+    transparency=...        # transparency from 0 to 255 (255 = not transparent)
+
+Options can be combined:
+
+    /Paris?0pq
+    /Paris?0pq&amp;lang=fr
+    /Paris_0pq.png          # in PNG the file mode are specified after _
+    /Rome_0pq_lang=it.png   # long options are separated with underscore
+
+Localization:
+
+    $ curl fr.wttr.in/Paris
+    $ curl wttr.in/paris?lang=fr
+    $ curl -H &quot;Accept-Language: fr&quot; wttr.in/paris
+
+Supported languages:
+
+    da de fr fa id it nb nl pl ru (supported)
+    az be bg bs ca cy cs el eo es et fi hi hr hu hy is ja jv ka kk ko ky lt lv mk ml nl nn pt ro sk sl sr sr-lat sv sw th tr te uk uz vi zh zu he (in progress)
+
+Special URLs:
+
+    /:help                  # show this page
+    /:bash.function         # show recommended bash function wttr()
+    /:translation           # show the information about the translators
+</code></pre>
+<h1 id="mostrando-la-fase-lunar">Mostrando la fase lunar</h1>
+<pre><code>[sincorchetes@keys0 ~]$ curl wttr.in/moon
+                  ------------.  
+              --'  o     . .   `--.  
+            '   .    O   .       . `-.   
+          @   @@@@@@@   .  @@@@@      `-.  
+         @  @@@@@@@@@@@   @@@@@@@   .    \   
+          o @@@@@@@@@@@   @@@@@@@       . \.   
+        o   @@@@@@@@@@@.   @@@@@@@   O      \  
+      @   .   @@@@@@@o    @@@@@@@@@@     @@@ \   
+     @@@               . @@@@@@@@@@@@@ o @@@@|   
+     @@  O  `.-./  .      @@@@@@@@@@@@    @@  \  First Quarter +
+     @@    --`-'       o     @@@@@@@@ @@@@    |  4 14:22:41
+     @@        `    o      .  @@   . @@@@@@@  |  Full Moon -
+         @@  @         .-.     @@@   @@@@@@@  |  2  8:08:13
+      @        @@@     `-'   . @@@@   @@@@  o /  
+         @@   @@@@@ .           @@   .       |   
+        @@@@  @\@@    /  .  O    .     o   . /   
+         @@     \ \  /         .    .       /  
+           .    .\.-.___   .      .   .-. /'   
+                  `-'                `-' /   
+             o   / |     o    O   .   .-'  
+            .   /     .       .    .-'   
+              --.       .      .--'  
+                  ------------'  
+
+
+Follow @igor_chubin for wttr.in updates
+
+</code></pre>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li>wtrr.info - <a href="https://github.com/chubin/wttr.in?target=_blank">repositorio GitHub</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

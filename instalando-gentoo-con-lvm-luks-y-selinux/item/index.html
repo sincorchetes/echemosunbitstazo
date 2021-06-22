@@ -1,0 +1,902 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/instalando-gentoo-con-lvm-luks-y-selinux/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Instalando Gentoo con LVM,LUKS, SELinux - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalando-gentoo-con-lvmluks-selinux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalando Gentoo con LVM,LUKS, SELinux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="instalando-gentoo-con-lvmluks-selinux">Instalando Gentoo con LVM,LUKS, SELinux</h1>
+<p>Hemos hablado una vez de Gentoo en un <a href="https://echemosunbitstazo.es/blog/que-es-gentoo-linux" target="blank">post anterior</a>, por lo que voy a ir más al grano en este post sobre cómo lo he conseguido instalar y cómo ayudarte si tienes dudas haciéndolo. Te recomiendo que si no tienes una pantalla dónde puedas consultar la información de este post, que utilices un medio live que te permita interactuar con todos estos pasos, porque es muy importante que no te pierdas al llevar a cabo este post. También es importante <strong>TENER TIEMPO</strong> para hacer esta instalación y no esperes que este proceso se hace en un par de horas. Se compilará mucho código fuente y este proceso <strong>ES COSTOSO</strong> en todos sus aspectos, por lo que te recomiendo <strong>QUE NO HAGAS</strong> muchas compilaciones a la vez.</p>
+<h1 id="consideraciones">Consideraciones</h1>
+<ul>
+<li>Configurar la BIOS de tu equipo para que <strong>arranque en modo UEFI y sin tener activado el secure boot</strong>.</li>
+<li>Tener mucho<strong> tiempo libre</strong> y <strong>pensar las cosas antes de ejecutarlas</strong></li>
+<li>Tener un tazón y una cafetera <strong>enorme de café al lado.</strong></li>
+<li>Tener un buen respaldo en la silla y tiene que ser cómodo, nada de taburetes de 100 montaditos</li>
+</ul>
+<h1 id="hardware-que-utilice">Hardware que utilicé</h1>
+<p>Estas son algunas de las especificaciones de Hardware con los que hice la instalación:
+* BIOS configurada para arrancar con UEFI sin secure boot.
+* Modelo: Portátil <a href="https://www.gigabyte.com/Laptop/Sabre-15#kf" target="blank">Gigabyte Sabre 15</a>
+* Procesador: <a href="https://ark.intel.com/content/www/us/en/ark/products/97185/intel-core-i7-7700hq-processor-6m-cache-up-to-3-80-ghz.html" target="blank"> Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz</a>
+* Memoria RAM: <a href="https://www.pccomponentes.com/kingston-342b803-so-dimm-ddr4-2400-pc4-19200-8gb-cl17" target="blank">Kingston 8GB 64 bits 2400MHz</a>
+* Disco NVME: <a href="https://www.amazon.com/Black-256GB-Performance-SSD-WDS256G1X0C/dp/B01MS6BYJD" target="blank">Western Digital Black HD 2018 256GB</a>
+* Audio integrado: <a href="https://ark.intel.com/content/www/us/en/ark/products/98087/mobile-intel-cm238-chipset.html" target="blank"> Intel CM238 HD Audio Controller</a>
+* Gráfica integrada: <a href="https://www.intel.es/content/www/es/es/support/products/98909/graphics/graphics-for-7th-generation-intel-processors/intel-hd-graphics-630.html" target="blank"> Intel HD Graphics 630</a>
+* Gráfica dedicada: <a href="https://www.nvidia.com/en-sg/geforce/products/10series/geforce-gtx-1050/" target="blank">NVIDIA GP107M GeForce GTX 1050 Mobile</a>
+* Audio dedicado: <a href="https://h-node.org/soundcards/view/en/2159/NVIDIA-Corporation-GP107GL-High-Definition-Audio-Controller--rev-a1-" target="blank">NVIDIA GP107GL High Definition Audio Controller</a>
+* USB con <strong>espacio mínimo de 4GB</strong></p>
+<h1 id="creando-un-live">Creando un live</h1>
+<p>En mi caso, como prefiero ver vídeos, distraerme y ver la documentación bien y de forma clara, prefiero realizar este proceso desde una imagen live con un entorno de escritorio como es Calculate Linux antes de utilizar la imagen que Gentoo libera para la instalación que es todo en terminal. No obstante, si quieres, puedes utilizar los siguientes comandos que utilicé para generar el pendrive con Calculate Linux para crearte tu pendrive con la imagen de <a href="https://www.gentoo.org/downloads/" target="blank">Gentoo</a>.</p>
+<p>Siguiendo la documentación de Calculate Linux, insertamos el USB. Ejecutamos <code>dmesg</code> veremos cuál es el pendrive reconocido en el sistema:</p>
+<pre><code>$ dmesg
+[ 6451.987041] usb 1-11: new high-speed USB device number 6 using xhci_hcd
+[ 6452.167412] usb 1-11: New USB device found, idVendor=0951, idProduct=1666, bcdDevice= 1.00
+[ 6452.167417] usb 1-11: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 6452.167421] usb 1-11: Product: DataTraveler 3.0
+[ 6452.167424] usb 1-11: Manufacturer: Kingston
+[ 6452.167426] usb 1-11: SerialNumber: 002618A369C3B1A0B7AC022F
+[ 6452.168867] usb-storage 1-11:1.0: USB Mass Storage device detected
+[ 6452.169331] scsi host3: usb-storage 1-11:1.0
+[ 6453.203673] scsi 3:0:0:0: Direct-Access     Kingston DataTraveler 3.0 PMAP PQ: 0 ANSI: 6
+[ 6453.204285] sd 3:0:0:0: Attached scsi generic sg1 type 0
+[ 6453.204565] sd 3:0:0:0: [sdb] 121110528 512-byte logical blocks: (62.0 GB/57.8 GiB)
+[ 6453.205397] sd 3:0:0:0: [sdb] Write Protect is off
+[ 6453.205403] sd 3:0:0:0: [sdb] Mode Sense: 2b 00 00 08
+[ 6453.206361] sd 3:0:0:0: [sdb] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+[ 6453.241654]  sdb: sdb1 sdb2
+[ 6453.244855] sd 3:0:0:0: [sdb] Attached SCSI removable disk
+</code></pre>
+<p>En mi caso, es el <code>/dev/sdb</code>, el cuál usaré de ejemplo.</p>
+<ol>
+<li>Descargamos una imagen de <a href="https://wiki.calculate-linux.org/desktop" target="blank">Calculate Linux</a></li>
+<li>Comprobamos que la suma de verificación para evitar que la imagen esté corrupta, el enlace para comprobar en MD5 o en SHA1 está justo al lado del enlace de descarga:</li>
+</ol>
+<p><img src="https://echemosunbitstazo.es/user/pages/01.blog/instalando-gentoo-con-lvm-luks-y-selinux/sha1.png" class="img-fluid"></p>
+<p>En mi caso, utilicé la imagen de Calculate Linux MATE 64 bits y con SHA1:</p>
+<pre><code>84ffa7fbce9c557b810f6204dd3e75b153aa5bf2  cldm-20-x86_64.iso
+</code></pre>
+<p>Comprobamos que sea el mismo hash:</p>
+<pre><code>$ sha1sum cldm-20-x86_64.iso
+84ffa7fbce9c557b810f6204dd3e75b153aa5bf2
+</code></pre>
+<p>Está perfecta, y no está corrupta.</p>
+<p>Generamos el pendrive live como dice la <a href="https://wiki.calculate-linux.org/create_a_bootable_usb_flash_drive" target="blank">documentación</a>:</p>
+<pre><code># dd if=IMAGEN_CALCULATE.iso of=/dev/sdN
+</code></pre>
+<ul>
+<li><code>dd</code> es un comando que permite copiar tal cual un archivo, y tiene múltiples usos entre ellos hacer imágenes live.</li>
+<li><code>if</code> ruta del archivo fuente</li>
+<li><code>IMAGEN_CALCULATE</code> nombre de la imagen</li>
+<li><code>/dev/sdN</code> el archivo dispositivo de bloques detectado por el SO</li>
+<li><code>of</code> ruta del archivo destino, no olvidemos que aunque hemos conectado un pendrive, este en Linux es un dispositivo de bloques y queda reflejado como si fuera un archivo.</li>
+</ul>
+<p>En mi caso:</p>
+<pre><code># dd if=cldm-20-x86_64.iso of=/dev/sdb
+</code></pre>
+<p>Reiniciamos el ordenador y <strong>arrancamos el SO del pendrive</strong>. Esperamos a que cargue el entorno de escritorio y estará la primera parte hecha.</p>
+<h1 id="particionando">Particionando</h1>
+<p>Particionamos el dispositivo, en mi caso es un SSD NVME que tiene otro conector diferente y el núcleo de Linux lo llama como <code>/dev/nvme0n1</code>.</p>
+<p>Definimos el siguiente esquema de particionamiento:</p>
+<table>
+<thead>
+<tr>
+<th>Partición</th>
+<th>Pto montaje</th>
+<th>Formato</th>
+<th>Nombre</th>
+<th>Tamaño</th>
+<th>Bandera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/dev/nvme0n1p1</code></td>
+<td><code>X</code></td>
+<td>FAT32</td>
+<td>grub</td>
+<td>2MB</td>
+<td><code>bios_grub</code></td>
+</tr>
+<tr>
+<td><code>/dev/nvme0n1p2</code></td>
+<td><code>/boot</code></td>
+<td>ext4</td>
+<td>boot</td>
+<td>512MB</td>
+<td><code>X</code></td>
+</tr>
+<tr>
+<td><code>/dev/nvme0n1p3</code></td>
+<td><code>/boot/efi</code></td>
+<td>FAT32</td>
+<td>efi</td>
+<td>128MB</td>
+<td><code>boot, esp</code></td>
+</tr>
+<tr>
+<td><code>/dev/nvme0n1p4</code></td>
+<td><code>*</code></td>
+<td>LVM</td>
+<td>rootfs</td>
+<td>*</td>
+<td><code>lvm</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTA</strong>: Si tienes un disco <code>sda|sdb|sdc</code>... adáptalo como gustes.</p>
+<p>Dentro del LVM, crearemos un grupo de volúmenes llamado <code>gentoo</code>, y dentro de él, crearemos un volúmen lógico para la swap, y le definiré un tamaño de 8GB porque suelo tirar mucho de ella, y crearemos otro volúmen lógico para root utilizando el resto de espacio libre.</p>
+<p><strong>NOTA</strong>: El primer * es un grupo de volúmen que haremos más adelante, y el segundo, todo el espacio libre restante.</p>
+<p>Abrimos una consola, escalamos privilegios para tener acceso como root:</p>
+<pre><code># parted -a optimal /dev/sdN
+GNU Parted 3.2
+Using /dev/sdN
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+</code></pre>
+<p>Creamos el esquema de particionamiento</p>
+<pre><code>(parted) mklabel
+(parted) unit mib
+(parted) mkpart primary 1 3
+(parted) name 1 grub
+(parted) set 1 bios_grub on
+(parted) mkpart primary 3 512
+(parted) name 2 boot
+(parted) mkpart primary 512 640
+(parted) name 3 efi
+(parted) set 3 boot on
+(parted) mkpart primary 640 -1
+(parted) name 4 rootfs
+(parted) quit
+</code></pre>
+<p>Ya tendremos nuestro esquema listo, ahora toca darle formato.</p>
+<p>Creamos las particiones EXT4 y FAT32 para la partición EFI</p>
+<pre><code># mkfs.ext4 /dev/nvme0n1p2
+# mkfs.fat  -F 32 /dev/nvme0n1p3
+</code></pre>
+<p>Creamos la partición cifrada:</p>
+<pre><code># cryptsetup luksFormat /dev/nvme0n1p3
+</code></pre>
+<p>Confirmamos en mayúsculas que si queremos <code>(YES)</code>.</p>
+<p>Descriframos la partición cifrada:</p>
+<pre><code># cryptsetup luksOpen /dev/nvme0n1p3 world
+</code></pre>
+<p>Creamos el volúmen físico:</p>
+<pre><code># pvcreate /dev/mapper/world
+</code></pre>
+<p>Creamos el grupo de volúmen:</p>
+<pre><code># vgcreate gentoo /dev/mapper/world
+</code></pre>
+<p>Creamos los volúmenes lógicos:</p>
+<pre><code># lvcreate -L 8G -n swap gentoo
+# lvcreate -l100%FREE -n root gentoo
+</code></pre>
+<p>Formateamos los volúmenes lógicos:</p>
+<pre><code># mkfs.ext4 /dev/mapper/gentoo-root
+# mkswap /dev/mapper/gentoo-swap
+</code></pre>
+<p>Activamos la swap:</p>
+<pre><code># swapon /dev/mapper/gentoo-swap
+</code></pre>
+<p>Creamos el directorio <code>/mnt/gentoo</code>:</p>
+<pre><code># mkdir /mnt/gentoo
+</code></pre>
+<p>Montamos la partición raíz:</p>
+<pre><code># mount /dev/mapper/gentoo-root /mnt/gentoo
+</code></pre>
+<p>Creamos la partición <code>/boot</code> y <code>/boot/efi</code>:</p>
+<pre><code># mkdir /mnt/gentoo/boot
+# mount /dev/nvme0n1p2 /boot
+# mkdir /mnt/gentoo/boot/efi
+# mount /dev/nvme0n1p3 /boot/efi
+</code></pre>
+<p>Hemos terminado el particionamiento, el formato y el montaje de los sistemas de archivos que hemos formateado.</p>
+<h1 id="descargando-e-instalando-el-stage3">Descargando e instalando el stage3</h1>
+<p>El stage3 es un <strong>conjunto de librerías y binarios precompilados</strong> por el grupo de desarrollo de Gentoo que está casi listo para utilizar. El stage2 y stage1 son para personas que quieren armarse Gentoo casi desde 0, no es recomendado hasta que lleves <strong>una cierta soltura</strong> con el sistema. Además, hay un stage4 que es un nivel más arriba de abstracción pero que nunca he probado. </p>
+<p>Descargamos el stage3 de Gentoo <code>hardened+selinux</code> desde este <a href="https://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/releases/amd64/autobuilds/current-stage3-amd64-hardened-selinux/" target="blank">espejo mismo</a>.  Si no va bien, hay una amplia lista de espejos que tiene Gentoo disponibles para probar.</p>
+<p><img src="https://echemosunbitstazo.es/user/pages/01.blog/instalando-gentoo-con-lvm-luks-y-selinux/stage3-files.png" class="img-fluid"></p>
+<p>Descargamos los archivos <code>.tar.xz</code> y <code>.DIGESTS</code> con <code>wget</code> situados en el directorio <code>/mnt/gentoo</code></p>
+<pre><code># cd /mnt/gentoo
+# wget https://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/releases/amd64/autobuilds/current-stage3-amd64-hardened-selinux/stage3-amd64-hardened-selinux-20200422T214502Z.tar.xz
+# wget https://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/releases/amd64/autobuilds/current-stage3-amd64-hardened-selinux/stage3-amd64-hardened-selinux-20200422T214502Z.tar.xz.DIGESTS
+</code></pre>
+<p>Nos fijamos en la suma de verificación SHA512 del stage3 en el <code>.DIGESTS</code>:</p>
+<pre><code># cat stage3-amd64-hardened-selinux-20200422T214502Z.tar.xz.DIGESTS
+# SHA512 HASH
+0ac73366478b4c0ac2f35b1f19a64e8041f666a9f9afd2a67691f77e9ab67d6a8f672d740b2faeb8851c4095e54cdb04f3d6e08a262ce5135840db5ac5bf0181  stage3-amd64-hardened-selinux+nomultilib-20200422T214502Z.tar.xz
+</code></pre>
+<p>Comprobamos que es la misma que el stage3:</p>
+<pre><code># sha512sum stage3-amd64-hardened-selinux-20200422T214502Z.tar.xz
+</code></pre>
+<p>Si es correcta, descomprimimos el tarball</p>
+<pre><code># tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner --selinux --acls
+</code></pre>
+<h1 id="configuraciones-iniciales">Configuraciones iniciales</h1>
+<p>Editamos el archivo <code>/mnt/gentoo/etc/portage/make.conf</code></p>
+<p><strong>NOTA</strong>: En este archivo se define <strong>todo lo que tenga que ver con la compilación</strong> de los paquetes del sistema entre otras cosas.</p>
+<h2 id="anadiendo-optimizacion-en-la-compilacion">Añadiendo optimización en la compilación</h2>
+<p>Y en la variables <code>CFLAGS</code> añadimos el parámetro <code>-march=native</code>. Este parámetro tomará de forma <strong>automática todas las instrucciones de tu procesador</strong> y lo compilará solo y exclusivamente para que esté soportado por él. Si tienes intención de portal el software a otras tipos de CPU, entonces no lo pongas.</p>
+<p><strong>NOTA</strong>: Las <code>CFLAGS</code> y otras variables permiten pasar una serie de instrucciones al compilador para que el código compilado en C y C++ <strong>sea más óptimo y reducido</strong> (o por lo menos eso es lo que se busca). Puedes leer más información en la <a href="https://wiki.gentoo.org/wiki/GCC_optimization/es" target="blank">documentación de Gentoo.</a></p>
+<p>Y lo dejamos así por el momento, si en el futuro quieres añadir más parámetros o modificadores en el comportamiento de la compilación de los programas lo dejo a libre elección.</p>
+<pre><code> These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS=&quot;-march=native -O2 -pipe&quot;
+CFLAGS=&quot;${COMMON_FLAGS}&quot;
+CXXFLAGS=&quot;${COMMON_FLAGS}&quot;
+FCFLAGS=&quot;${COMMON_FLAGS}&quot;
+FFLAGS=&quot;${COMMON_FLAGS}&quot;
+</code></pre>
+<h2 id="anadiendo-los-mirrors">Añadiendo los mirrors</h2>
+<p>Creamos una variable llamada <code>GENTOO_MIRRORS="https://ftp.fau.de/gentoo"</code> y añadimos este mirror, si quieres otro puedes añadirlo también consultando la lista de espejos <a href="https://www.gentoo.org/downloads/mirrors/" target="blank">aquí</a> y seguidos de un espacio.</p>
+<pre><code># echo 'GENTOO_MIRRORS=&quot;https://ftp.fau.de/gentoo&quot;' &gt;&gt; /etc/portage/make.conf
+</code></pre>
+<h2 id="anadiendo-soporte-multihilo">Añadiendo soporte multihilo</h2>
+<p>Añadimos otra variable que se llama <code>MAKEOPTS="-jN"</code>, dónde N equivale al número de CPUS que tienes + 1. Por ejemplo, en mi caso tengo 8, pues le asigno <code>MAKEOPTS="-j9"</code>. ¿Cómo puedes ver la cantidad de CPU (CPU e hilos) que tienes? con el comando <code>lscpu</code>:</p>
+<pre><code>$ lscpu
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+Address sizes:                   39 bits physical, 48 bits virtual
+CPU(s):                          8******
+</code></pre>
+<p>El valor mostrado en el apartado CPU(s), es el que cuenta.</p>
+<h2 id="configurando-el-repositorio-de-gentoo">Configurando el repositorio de Gentoo</h2>
+<p>Creamos directorios necesarios para portage:</p>
+<pre><code># mkdir --parents /mnt/gentoo/etc/portage/repos.conf
+</code></pre>
+<p>Creamos este archivo <code>/mnt/gentoo/etc/portage/repos.conf/gentoo.conf</code> y le añadimos:</p>
+<pre><code>[DEFAULT]
+main-repo = gentoo
+
+[gentoo]
+location = /var/db/repos/gentoo
+sync-type = rsync
+sync-uri = rsync://rsync.gentoo.org/gentoo-portage
+auto-sync = yes
+sync-rsync-verify-jobs = 1
+sync-rsync-verify-metamanifest = yes
+sync-rsync-verify-max-age = 24
+sync-openpgp-key-path = /usr/share/openpgp-keys/gentoo-release.asc
+sync-openpgp-key-refresh-retry-count = 40
+sync-openpgp-key-refresh-retry-overall-timeout = 1200
+sync-openpgp-key-refresh-retry-delay-exp-base = 2
+sync-openpgp-key-refresh-retry-delay-max = 60
+sync-openpgp-key-refresh-retry-delay-mult = 4
+</code></pre>
+<h2 id="copiando-los-dns-a-lo-que-sera-nuestro-so">Copiando los DNS a lo que será nuestro SO</h2>
+<p>Copiamos la información de los DNS</p>
+<pre><code># cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+</code></pre>
+<h1 id="pasos-previos-a-la-instalacion">Pasos previos a la instalación</h1>
+<p>Estos pasos son necesarios para poder continuar, hay que asegurarse de que todo está correctamente.</p>
+<h2 id="montando-los-pseudos-sistemas-de-archivos">Montando los pseudos sistemas de archivos</h2>
+<p>Montamos los pseudosistemas de archivos necesarios para poder hacer un chroot:</p>
+<pre><code>root #mount --types proc /proc /mnt/gentoo/proc
+root #mount --rbind /sys /mnt/gentoo/sys
+root #mount --rbind /dev /mnt/gentoo/dev
+</code></pre>
+<p><strong>NOTA</strong>: Estamos haciendo una "redirección" de estos pseudo sistemas de archivos para que podamos ejecutar comandos que interactúen con el hardware de nuestro equipo. </p>
+<p><strong>NOTA</strong>: Si haces la <strong>instalación con algún live que <em>use systemd</em></strong>, tienes que ejecutar estos comandos adicionales, si no, ignora este paso:</p>
+<pre><code># mount --make-rslave /mnt/gentoo/sys
+# mount --make-rslave /mnt/gentoo/dev
+</code></pre>
+<p><strong>NOTA</strong>: <strong>Si no utilizas el live de instalación de Gentoo</strong> como yo usando Calculate Linux, ejecuta los siguientes comandos como dice la documentación, de lo contrario omite este paso:</p>
+<pre><code># test -L /dev/shm &amp;&amp; rm /dev/shm &amp;&amp; mkdir /dev/shm
+# mount --types tmpfs --options nosuid,nodev,noexec shm /dev/shm
+# chmod 1777 /
+</code></pre>
+<h1 id="accediendo-a-nuestro-futuro-sistema">Accediendo a nuestro futuro sistema</h1>
+<p>El <code>chroot</code> permite "aislar" el sistema que vamos configurar del actual evitando accidentes, por lo que habrán variables, comandos y directorios que no existan, y lo que era <code>/mnt/gentoo</code> se volverà <code>/</code>. ¡Cuidado con no confundirse dónde estás trabajando!</p>
+<pre><code># chroot /mnt/gentoo /bin/bash
+# source /etc/profile
+# export PS1=&quot;(chroot) ${PS1}&quot;
+</code></pre>
+<p><strong>NOTA</strong>: Ejecutamos un <code>mount</code> y tenemos que ver que las particiones <code>/boot</code>, <code>/boot/efi</code> se encuentren montadas, si no habrá que salir del <code>chroot</code> y montarlas de nuevo como en comento en los primeros pasos.</p>
+<h1 id="configurando-portage">Configurando Portage</h1>
+<p>Portage es un conjunto de directorios bien organizados por categorías basadas en el criterio de los desarrolladores de Gentoo, y que cada una de ellas, hay un directorio con el nombre del software cuyo interior hay scripts como .ebuilds, parches...etc necesarios para instalar los paquetes.</p>
+<p>Descargamos todos el árbol de portage para poder instalar software necesario.</p>
+<pre><code># emerge-webrsync
+# emerge --sync
+</code></pre>
+<p>Por lo general en la documentación te recomiendan que <strong>leas las noticias de Portage</strong>, en mi caso no tuve ningún problema, pero si lees este post y ha pasado un tiempo, es preferible que te informes:</p>
+<pre><code># eselect news list
+News items:
+  [1]      2016-06-19  L10N USE_EXPAND variable replacing LINGUAS
+  [2]      2018-08-07  Migration required for OpenSSH with LDAP
+  [3]      2019-05-23  Change of ACCEPT_LICENSE default
+  [4]   N  2019-12-30  Genkernel 4 changed default filenames
+  [5]   N  2020-02-07  Python 2.7 went EOL
+  [6]   N  2020-02-20  OpenSSH 8.2_p1 running sshd breakage
+  [7]      2020-04-22  Python 3.7 to become the default target
+</code></pre>
+<p>Para leer una a una:</p>
+<pre><code># eselect news read 1
+2016-06-23-l10n-use_expand
+  Title                     L10N USE_EXPAND variable replacing LINGUAS
+  Author                    Mart Raudsepp &lt;leio@gentoo.org&gt;
+  Author                    Ulrich Müller &lt;ulm@gentoo.org&gt;
+  Posted                    2016-06-19
+  Revision                  1
+
+The L10N variable is replacing LINGUAS as a USE_EXPAND, to avoid a
+conceptual clash with the standard gettext LINGUAS behaviour.
+[...]
+</code></pre>
+<h2 id="seleccionando-el-perfil">Seleccionando el perfil</h2>
+<p>Comprobamos que el perfil que tenemos es el correcto:</p>
+<pre><code># eselec profile list
+Available profile symlink targets:
+  [1]   default/linux/amd64/17.0 (stable)
+  [2]   default/linux/amd64/17.0/selinux (stable)
+  [3]   default/linux/amd64/17.0/hardened (stable)
+[...]
+</code></pre>
+<p><strong>NOTA</strong>: Los perfiles tienen una serie de configuraciones de USE, CFLAGS, paquetes que no deben compilarse para evitar incompatibilidades...etc que están definidas por el equipo de desarrolladores de Gentoo. Puedes ver que USE contiene este perfil<code>emerge --info | grep ^USE</code></p>
+<p><strong>NOTA</strong>: Las USE flags, son <strong>características que queremos que tenga el paquete</strong>, puede que existan incompatibilidades entre paquetes al definirlas, otras no estén disponibles, y otras pueden estar bloqueadas por motivos de estabilidad <em>package.mask</em>.</p>
+<p>En esta lista, debe estar marcado con asterisco esta opción:</p>
+<pre><code>  [19]  default/linux/amd64/17.1/hardened/selinux (stable) *
+</code></pre>
+<h1 id="configurando-los-locales">Configurando los locales</h1>
+<p>Los "locales" es el soporte idiomático/codificación que queremos que tenga soportada por defecto nuestro sistema. En mi caso, he configurado que el idioma por defecto sea el inglés norteamericano y el español como idioma secundario. Ambos idiomas tienen soporte UTF-8.</p>
+<pre><code># echo &quot;en_US.UTF-8 UTF-8&quot; &gt;&gt; /etc/locale.gen
+# echo &quot;es_ES.UTF-8 UTF-8&quot; &gt;&gt; /etc/locale.gen
+</code></pre>
+<p>Generamos los locales:</p>
+<pre><code># locale-gen
+</code></pre>
+<p>Seleccionamos el locale por defecto:</p>
+<pre><code># eselect locale list
+Available targets for the LANG variable:
+  [1]   C *
+  [2]   C.utf8
+  [3]   en_US.utf8
+  [4]   es_ES.utf8
+  [5]   POSIX
+  [ ]   (free form)
+</code></pre>
+<p>Lo cambiamos:</p>
+<pre><code># eselect profile set 3
+</code></pre>
+<p>Regeneramos toda la configuración de nuestro entorno:</p>
+<pre><code># env-update &amp;&amp; source /etc/profile &amp;&amp; export PS1=&quot;(chroot) ${PS1}&quot;
+</code></pre>
+<h1 id="haciendo-un-pequeno-tunning-al-etcportagemakeconf">Haciendo un pequeño tunning al <code>/etc/portage/make.conf</code></h1>
+<p>Los siguientes pasos nos ayudarán en la instalación de los paquetes.</p>
+<h2 id="soporte-de-instrucciones-de-procesamiento-en-paquetes">Soporte de instrucciones de procesamiento en paquetes</h2>
+<p>Instalamos el paquete <code>app-portage/cpuid2cpuflags</code>:</p>
+<pre><code># emerge -av app-portage/cpuid2cpuflags
+</code></pre>
+<p>Ejecutamos:</p>
+<pre><code># cpuid2cpuflags &gt;&gt; /etc/portage/make.conf
+</code></pre>
+<p>Editamos el archivo <code>/etc/portage/make.conf</code> y cambiamos:</p>
+<pre><code>CPU_FLAGS_X86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3
+</code></pre>
+<p>Por esto:</p>
+<pre><code>CPU_FLAGS_X86=&quot;aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3&quot;
+</code></pre>
+<p>Esto nos añadirá el soporte específico para los paquetes que definen las instrucciones que tiene nuestro procesador para aquellos paquetes que lo permitan mediante USE. Puedes ver los paquetes que usan estas USE si lo buscas en una sección de la <a href="https://packages.gentoo.org/useflags" target="blank">página de paquetes de Gentoo.</a></p>
+<p><img src="https://echemosunbitstazo.es/user/pages/01.blog/instalando-gentoo-con-lvm-luks-y-selinux/use-flags-gentoo.png" class="img-fluid"></p>
+<h2 id="soporte-idiomatico-en-las-aplicaciones">Soporte idiomático en las aplicaciones</h2>
+<p>También añadiremos la variable <code>L10N="es en"</code> para tener soporte idiomático de los paquetes que instalemos en nuestro sistema. </p>
+<pre><code># echo 'L10N=&quot;es en&quot;' &gt;&gt; /etc/portage/make.conf
+</code></pre>
+<h2 id="definir-la-version-de-python-por-defecto-para-el-sistema">Definir la versión de Python por defecto para el sistema</h2>
+<p>Podemos optar por:
+* Python 2.7: Intentar evitarlo porque su <strong>soporte finalizó el 31 de diciembre de 2019</strong>, aún así pueden haber programas que lo necesiten. No obstante, si no lo defines no importa.
+* Python 3.6
+* Python 3.7 
+* Python 3.8
+* Python 3.9</p>
+<p>En mi caso, escogí el 3.7 porque vi que no tenía problemas con él, en contra posición con el 3.8 o 3.9 que hay paquetes que no están todavía migrados como <code>sys-apps/policycoreutils</code>, también puedes mezclarlos, pero a mí no me gusta mucho esa idea.</p>
+<pre><code># echo 'PYTHON_TARGETS=&quot;python3_7&quot;' &gt;&gt; /etc/portage/make.conf
+</code></pre>
+<p>Dejando la versión por defecto 3.7 en el sistema:</p>
+<pre><code># eselect python list
+Available Python interpreters, in order of preference:
+  [1]   python3.7
+  [2]   python3.6 (uninstalled)
+  [3]   python3.8 (fallback)
+  [4]   python2.7 (fallback)
+</code></pre>
+<p>En mi caso, pues dejo por defecto 3.7</p>
+<pre><code># eselect set 1
+</code></pre>
+<h2 id="instalando-y-configurando-ccache">Instalando y configurando ccache</h2>
+<p>ccache permite ahorrarte tiempo en la compilación porque queda almacenado código compilado en un directorio definido en su configuración, siguiendo las <a href="https://wiki.gentoo.org/wiki/Ccache" target="blank">notas de la documentación</a>.</p>
+<pre><code># emerge -av dev-util/ccache
+</code></pre>
+<p>Ejecutamos los siguientes comandos:</p>
+<pre><code># echo 'FEATURES=&quot;ccache&quot;' &gt;&gt; /etc/portage/make.conf
+# echo 'CCACHE_DIR=&quot;/var/cache/ccache&quot;' &gt;&gt; /etc/portage/make.conf
+</code></pre>
+<p>Creamos un directorio específico y aplicamos permisos:</p>
+<pre><code># mkdir -p /var/cache/ccache
+# chown root:portage /var/cache/ccache
+# chmod 2775 /var/cache/ccache
+</code></pre>
+<p>Editamos el archivo de configuración <code>/var/cache/ccache/ccache.conf</code> y lo dejamos como este:</p>
+<pre><code># Maximum cache size to maintain
+max_size = 100.0G
+
+# Allow others to run 'ebuild' and share the cache.
+umask = 002
+
+# Preserve cache across GCC rebuilds and
+# introspect GCC changes through GCC wrapper.
+compiler_check = %compiler% -v
+
+# I expect 1.5M files. 300 files per directory.
+cache_dir_levels = 3
+
+compression = true
+compression_level = 1
+</code></pre>
+<p>Regeneramos toda la configuración de nuestro entorno:</p>
+<pre><code># env-update &amp;&amp; source /etc/profile &amp;&amp; export PS1=&quot;(chroot) ${PS1}&quot;
+</code></pre>
+<h1 id="instalando-el-nucleo-del-sistema-y-algunas-utilidades">Instalando el núcleo del sistema y algunas utilidades</h1>
+<p>Ejecutamos los siguientes comandos:</p>
+<pre><code># echo &quot;&gt;=sys-kernel/linux-firmware-20200519 initramfs&quot; &gt;&gt; /etc/portage/package.use/usevars
+# echo &quot;&gt;=sys-firmware/intel-microcode-20200520_p20200601 initramfs&quot; &gt;&gt; /etc/portage/package.use/usevars
+# echo &quot;&gt;=sys-kernel/linux-firmware-20200519 linux-fw-redistributable no-source-code&quot; &gt;&gt; /etc/portage/package.license
+# echo &quot;&gt;=sys-firmware/intel-microcode-20200520_p20200601 intel-ucode&quot; &gt;&gt; /etc/portage/package.license
+</code></pre>
+<p>Añadimos las USE para todo <code>/etc/portage/make.conf</code>:</p>
+<pre><code>USE=&quot;device-mapper lvm audit&quot;
+</code></pre>
+<p>Instalamos los siguientes paquetes <code>ys-kernel/gentoo-sources sys-apps/pciutils sys-kernel/genkernel sys-kernel/linux-firmware</code>:</p>
+<pre><code># emerge -av sys-kernel/gentoo-sources sys-apps/pciutils sys-kernel/genkernel sys-kernel/linux-firmware
+</code></pre>
+<p>Editamos el <code>/etc/fstab</code></p>
+<pre><code>/dev/nvme0n1p2      /boot       ext4        noauto,noatime  1 2
+/dev/nvme0n1p3      /boot/efi   vfat        noauto,noatime  1 2
+/dev/mapper/gentoo-root /       ext4        noatime 0 0
+/dev/mapper/gentoo-swap  none       swap        sw      0 0
+</code></pre>
+<p>Compilamos el núcleo y lo instalamos:</p>
+<pre><code># genkernel all --lvm --luks
+</code></pre>
+<p><strong>NOTA</strong>: En mi caso, preferí compilar el kernel con opciones personalizadas, es un proceso más engorroso y necesitas tener un poco más de conocimiento. Más adelante haré un pequeño tutorial de tres cosas básicas para optimizarlo, pero de momento, instalamos todo.</p>
+<p><strong>NOTA</strong>: Este proceso dura bastante, tómate 7-8 cafés...</p>
+<p>Cuando termine, podemos verificar que se han instalado correctamente:</p>
+<pre><code># ls /boot/vmlinu* /boot/initramfs*
+/boot/initramfs-5.4.38-gentoo-x86_64.img  /boot/vmlinuz-5.4.38-gentoo-x86_64
+</code></pre>
+<h1 id="configurando-la-red">Configurando la red</h1>
+<p>Configuramos el nombre de nuestra máquina a nivel de red, editamos el archivo <code>/etc/conf.d/hostname</code>:</p>
+<pre><code># Set to the hostname of this machine
+hostname=&quot;shark&quot;
+</code></pre>
+<p><code>shark</code> es el nombre que le asigno a mi máquina.</p>
+<p>Le asignamos un dominio local, editamos <code>/etc/conf.d/net</code>:</p>
+<pre><code># Set the dns_domain_lo variable to the selected domain name
+dns_domain_lo=&quot;lan&quot;
+</code></pre>
+<p>Mi máquina será identificada en la red como <code>shark.lan</code></p>
+<p>Instalamos el paquete <code>net-misc/netifrc</code>:</p>
+<pre><code># emerge --ask --noreplace net-misc/netifrc
+</code></pre>
+<p>Editamos el archivo <code>/etc/hosts</code> y definimos el nombre de nuestra máquina en él:</p>
+<pre><code>127.0.0.1     shark.lan shark localhost
+::1                shark.lan shark localhost
+</code></pre>
+<h2 id="gestionando-los-usuarios-del-sistema">Gestionando los usuarios del sistema</h2>
+<p>Ejecutamos:</p>
+<pre><code># passwd
+</code></pre>
+<p>Creamos un usuario sin privilegios:</p>
+<pre><code># useradd -m sincorchetes
+# passwd sincorchetes
+# gpasswd -a sincorchetes wheel
+</code></pre>
+<h2 id="cambiando-el-idioma-del-teclado">Cambiando el idioma del teclado</h2>
+<p>Editamos el archivo <code>/etc/conf.d/keymaps</code>:</p>
+<pre><code># Use keymap to specify the default console keymap.  There is a complete tree
+# of keymaps in /usr/share/keymaps to choose from.
+keymap=&quot;es&quot;
+</code></pre>
+<h2 id="cambiando-la-hora-del-equipo">Cambiando la hora del equipo</h2>
+<p>Editamos el archivo <code>/etc/conf.d/hwclock</code></p>
+<pre><code># Set CLOCK to &quot;UTC&quot; if your Hardware Clock is set to UTC (also known as
+# Greenwich Mean Time).  If that clock is set to the local time, then
+# set CLOCK to &quot;local&quot;.  Note that if you dual boot with Windows, then
+# you should set it to &quot;local&quot;.
+clock=&quot;local&quot;
+</code></pre>
+<h2 id="instalando-herramientas-del-sistema">Instalando herramientas del sistema</h2>
+<p>Instalamos el gestor de logs <code>app-admin/syslog-ng</code> y el un software de rotado de logs <code>app-admin/logrotate</code></p>
+<pre><code># emerge -av app-admin/syslog-ng app-admin/logrotate
+# rc-update add syslog-ng default
+</code></pre>
+<p>Instalamos el gestor de tareas <code>sys-process/cronie</code>:</p>
+<pre><code># emerge -av sys-process/cronie
+# rc-update add cronie default
+</code></pre>
+<p>Instalamos los paquetes <code>net-misc/dhcpcd</code>, <code>net-wireless/iw</code> y <code>net-wireless/wpa_supplicant</code></p>
+<pre><code># emerge -av net-misc/dhcpcd net-wireless/wpa_supplicant net-wireless/iw
+</code></pre>
+<h2 id="dejando-selinux-en-modo-permissive">Dejando SELinux en modo permissive</h2>
+<p>Cómo tenemos que aprender a tratar y gestionar nuestras propias políticas, tenemos que dejarlo en modo permissive y no targeted. En modo permissive, el sistema envía alertas de políticas incorrectas como una posible vulneración de se seguridad por ejecutar determinado software.</p>
+<p>Editamos el archivo <code>/etc/config/selinux</code> y cambiamos:</p>
+<pre><code>SELINUX=targeted
+</code></pre>
+<p>Por:</p>
+<pre><code>SELINUX=permissive
+</code></pre>
+<h2 id="configurando-el-gestor-de-arranque">Configurando el gestor de arranque</h2>
+<p>Añadimos las USE necesarias para compilar el software:</p>
+<pre><code># echo &quot;&gt;=sys-boot/grub-2.04-r1 device-mapper truetype mount&quot; &gt;&gt; /etc/portage/package.use/usevars
+</code></pre>
+<p>Añadimos el soporte EFI para el GRUB</p>
+<pre><code># echo 'GRUB_PLATFORMS=&quot;efi-64&quot;' &gt;&gt; /etc/portage/make.conf
+</code></pre>
+<p>Instalamos el GRUB y además actualizamos todo el software que necesite tomar las nuevas variables USE configuradas:</p>
+<pre><code># emerge --ask --update --newuse --verbose sys-boot/grub:2
+</code></pre>
+<p>Instalamos el gestor de arranque, en mi caso fue con un nvme0n1:</p>
+<pre><code># grub-install --target=x86_64-efi --efi-directory=/boot/efi
+</code></pre>
+<p>Generamos la configuración del gestor de arranque, editamos <code>/etc/default/grub</code></p>
+<pre><code>GRUB_DISTRIBUTOR=&quot;Gentoo&quot;
+GRUB_CMDLINE_LINUX=&quot;dolvm crypt_root=/dev/nvme0n1p4&quot;
+</code></pre>
+<p><strong>NOTA</strong>: En el caso de que tengas la partición de LVM en <code>/dev/sda4</code>, cambia <code>/dev/nvme0n1p4</code> por esa.</p>
+<p>Guarda el archivo y genera el fichero de configuración del grub:</p>
+<pre><code># grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<p>Saliendo del <code>chroot</code>:</p>
+<pre><code># exit
+</code></pre>
+<p>En la terminal del pendrive live:</p>
+<pre><code># cd /
+# umount -l /mnt/gentoo/dev{/shm,/pts,}
+# umount -R /mnt/gentoo
+# reboot
+</code></pre>
+<h1 id="arrancando-el-sistema">Arrancando el sistema</h1>
+<p>Cuando arranquemos el sistema, podemos hacer login con nuestro usuario y escalar a <code>root</code>. Para poder conectarnos via Wi-Fi, podemos usar <code>wpa_supplicant</code>.</p>
+<h2 id="conectandonos-a-una-red-wi-fi">Conectándonos a una red Wi-Fi</h2>
+<p>Identificamos nuestra interfaz Wi-Fi</p>
+<pre><code># ip addr
+</code></pre>
+<p>Por regla general, las tarjetas wireless son mapeadas por el sistema con el nombre de <code>wlpNsM</code>, en mi caso es <code>wlp0s4</code>.</p>
+<p>Generamos el archivo de conexión:</p>
+<pre><code># wpa_passphrase SSID contraseña &gt; /root/config
+</code></pre>
+<p>Conectamos:</p>
+<pre><code># wpa_supplicant -D nl80211 -i wlan0 -c /root/config &amp;
+</code></pre>
+<p>Asignamos una IP dinámica:</p>
+<pre><code># dhcpcd wlp4s0
+</code></pre>
+<p>Si hacemos un <code>ip addr</code>, veremos que ya tendremos conexión, si no, probamos:</p>
+<pre><code># ping google.es
+</code></pre>
+<p>Ahora podemos continuar instalando paquetes, en los próximos tutoriales, veremos cómo instalar X.org con los drivers de NVIDIA y MATE Desktop, las políticas de SELinux...etc</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

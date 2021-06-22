@@ -1,0 +1,690 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-squid-paso-2-acl/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering Squid - ACL - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-squid-acl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering Squid - ACL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-squid-acl">Mastering Squid - ACL</h1>
+<h1 id="introduccion">Introducción</h1>
+<p>Bienvenid@s a la segunda parte de este "<em>Mastering in Squid</em>", en esta parte del curso, os explicaremos qué son las listas de control de acceso una parte de las directivas de Squid, para qué se utilizan y cómo utilizarlas, no nos lo podemos perder.</p>
+<h1 id="que-son-las-acl">¿Qué son las ACL?</h1>
+<p>Las ACL (<em>Access Control List</em>) o en español <em>Listas de Control de Acceso</em> es un concepto de seguridad informática que utiliza para fomentar la separación de privilegios, en nuestro caso, ayudará a separar url, ips o nombres de máquinas para posteriormente hacer algo con ellas, como por ejemplo, en un instituo, permitir el acceso a redes sociales a los profesores, pero no a los ordenadores de los alumnos...</p>
+<h1 id="como-definimos-las-acl">¿Cómo definimos las ACL?</h1>
+<p>Existen dos tipos de sintaxis, en línea o apuntando a un archivo.
+ * En línea: Es más cómodo cuando apuntamos 2,3 datos, más se puede volver ilegible y engorroso.</p>
+<pre><code>acl nombre_de_lista tipo_acl dato1 dato2 dato3
+</code></pre>
+<ul>
+<li>
+<p>Apuntando a un archivo: Se utiliza cuando apuntamos más de 3 datos, se permiten comentarios.</p>
+<p>acl nomnre_de_lista tipo_acl "/DIRECTORIO/ARCHIVO"</p>
+</li>
+</ul>
+<h1 id="que-tipos-de-acl-tenemos">¿Qué tipos de ACL tenemos?</h1>
+<p>Tenemos multitud de ellos como:</p>
+<ul>
+<li><code>arp [DIRECCION_MAC]</code>: Crea una ACL con una o varias dirección(es) MAC.</li>
+<li>_Notas:<ul>
+<li>No funciona con todos los sistemas operativos, según la documentación trabaja correctamente con Linux, Solaris, Windows, FreeBSD y otras variantes de BSD.</li>
+<li>Squid solo puede determinar la dirección MAC/EUI para clientes IPv4 que se encuentren en la misma subred, si están en otras subredes Squid no puede reconocer qué equipo es.</li>
+<li>El protocolo IPv6 no contiene ARP, se utiliza ND (Neighbor Discovery) que es parecido, con lo que esta directiva no funciona para IPv6._</li>
+</ul>
+</li>
+<li>clientside mark[/mask]
+        -Esta aplicación hay que investigarla</li>
+<li><code>srcdomain .google.es</code>: Permite definir un dominio o dirección IP/direcciones origen</li>
+<li><code>dstdomain dirección_destino</code>: Puede ser una url, ip o conjunto de direcciones ips.</li>
+<li><code>srcdom_regex \.google\.*</code>: Igual que srdomain pero con la opción de usar expresiones regulares.</li>
+<li><code>dstdom_regex \.google\.*</code>: Especifica dirección destino haciendo uso de expresiones regulares.<ul>
+<li>src_as number</li>
+<li>dst_as number</li>
+</ul>
+</li>
+<li><code>time [DIA DE LA SEMANA] [HORA1]-[HORA2]</code>: Establece un periodo de conexión:<ul>
+<li>Se define la semana como:<ul>
+<li>M -&gt; Lunes</li>
+<li>T -&gt; Martes</li>
+<li>W -&gt; Miércoles</li>
+<li>H -&gt; Jueves</li>
+<li>F -&gt; Viernes</li>
+<li>A -&gt; Sábado</li>
+</ul>
+</li>
+<li>Se define la HORA1 y HORA2 como: hh:mm</li>
+</ul>
+</li>
+<li><code>url_regex ^http://</code>: Permite bloquear urls haciendo uso de expresiones regulares.</li>
+<li><code>urllogin [^a-zA-Z0-9]</code>: Busca una expresión regular que coincida con un campo login</li>
+<li><code>urlpath_regex \.exe(\?.*)?$</code>: Encuentra un directorio y permite filtrar contenido</li>
+<li><code>port 80 70 120</code>: Permite definir un puerto o varios, se permiten rangos destino TCP</li>
+<li><code>localport 3128</code>: Puerto de cliente TCP conectado a</li>
+<li><code>myportname 3128</code>: Refleja si los detalles de conexión TCP equivalen al puerto declarado en el fichero de configuración de Squid.</li>
+<li><code>proto HTTP FTP...</code>: Se pueden bloquear protocolos como FTP para que no se pueda acceder.</li>
+<li><code>method GET PUT POST</code>: Especifica si se puede utilizar o no los métodos de solicitud del protocolo HTTP.</li>
+<li><code>http_status 404 200</code>: Especifica el código de respuesta del servidor</li>
+<li><code>browser Mozilla</code>: Especifica el navegador al que bloquear o no, se identifica mediante el UserAgent.</li>
+<li><code>referer_regex regexp</code>: Permite encontrar un patrón relacionado con la expresión regular que definimos, es muy difícil de aplicar, por lo que hay que tener cuidado.</li>
+<li><code>ident cadena</code>: Busca una cadena</li>
+<li><code>ident_regex patrón</code>: Busca una cadena relacionada con lo declarado.</li>
+<li>
+<p><code>acl aclname proxy_auth [-i] username</code>: ...
+    acl aclname proxy_auth_regex [-i] pattern ...
+      # perform http authentication challenge to the client and match against
+      # supplied credentials [slow]
+      #
+      # takes a list of allowed usernames.
+      # use REQUIRED to accept any valid username.
+      #
+      # Will use proxy authentication in forward-proxy scenarios, and plain
+      # http authenticaiton in reverse-proxy scenarios
+      #
+      # NOTE: when a Proxy-Authentication header is sent but it is not
+      # needed during ACL checking the username is NOT logged
+      # in access.log.
+      #
+      # NOTE: proxy_auth requires a EXTERNAL authentication program
+      # to check username/password combinations (see
+      # auth_param directive).
+      #
+      # NOTE: proxy_auth can't be used in a transparent/intercepting proxy
+      # as the browser needs to be configured for using a proxy in order
+      # to respond to proxy authentication.</p>
+<p>acl aclname snmp_community string ...
+  # A community string to limit access to your SNMP Agent [fast]
+  # Example:
+  #
+  # acl snmppublic snmp_community public</p>
+<p>acl aclname maxconn number
+  # This will be matched when the client's IP address has
+  # more than <number> TCP connections established. [fast]
+  # NOTE: This only measures direct TCP links so X-Forwarded-For
+  # indirect clients are not counted.</p>
+<p>acl aclname max_user_ip [-s] number
+  # This will be matched when the user attempts to log in from more
+  # than <number> different ip addresses. The authenticate_ip_ttl
+  # parameter controls the timeout on the ip entries. [fast]
+  # If -s is specified the limit is strict, denying browsing
+  # from any further IP addresses until the ttl has expired. Without
+  # -s Squid will just annoy the user by "randomly" denying requests.
+  # (the counter is reset each time the limit is reached and a
+  # request is denied)
+  # NOTE: in acceleration mode or where there is mesh of child proxies,
+  # clients may appear to come from multiple addresses if they are
+  # going through proxy farms, so a limit of 1 may cause user problems.</p>
+<p>acl aclname random probability
+  # Pseudo-randomly match requests. Based on the probability given.
+  # Probability may be written as a decimal (0.333), fraction (1/3)
+  # or ratio of matches:non-matches (3:5).</p>
+<p>acl aclname req_mime_type [-i] mime-type ...
+  # regex match against the mime type of the request generated
+  # by the client. Can be used to detect file upload or some
+  # types HTTP tunneling requests [fast]
+  # NOTE: This does NOT match the reply. You cannot use this
+  # to match the returned file type.</p>
+<p>acl aclname req_header header-name [-i] any.regex.here
+  # regex match against any of the known request headers.  May be
+  # thought of as a superset of "browser", "referer" and "mime-type"
+  # ACL [fast]</p>
+<p>acl aclname rep_mime_type [-i] mime-type ...
+  # regex match against the mime type of the reply received by
+  # squid. Can be used to detect file download or some
+  # types HTTP tunneling requests. [fast]
+  # NOTE: This has no effect in http_access rules. It only has
+  # effect in rules that affect the reply data stream such as
+  # http_reply_access.</p>
+<p>acl aclname rep_header header-name [-i] any.regex.here
+  # regex match against any of the known reply headers. May be
+  # thought of as a superset of "browser", "referer" and "mime-type"
+  # ACLs [fast]</p>
+<p>acl aclname external class_name [arguments...]
+  # external ACL lookup via a helper class defined by the
+  # external_acl_type directive [slow]</p>
+<p>acl aclname user_cert attribute values...
+  # match against attributes in a user SSL certificate
+  # attribute is one of DN/C/O/CN/L/ST or a numerical OID [fast]</p>
+<p>acl aclname ca_cert attribute values...
+  # match against attributes a users issuing CA SSL certificate
+  # attribute is one of DN/C/O/CN/L/ST or a numerical OID  [fast]</p>
+<p>acl aclname ext_user username ...
+acl aclname ext_user_regex [-i] pattern ...
+  # string match on username returned by external acl helper [slow]
+  # use REQUIRED to accept any non-null user name.</p>
+<p>acl aclname tag tagvalue ...
+  # string match on tag returned by external acl helper [fast]
+  # DEPRECATED. Only the first tag will match with this ACL.
+  # Use the 'note' ACL instead for handling multiple tag values.</p>
+<p>acl aclname hier_code codename ...
+  # string match against squid hierarchy code(s); [fast]
+  #  e.g., DIRECT, PARENT_HIT, NONE, etc.
+  #
+  # NOTE: This has no effect in http_access rules. It only has
+  # effect in rules that affect the reply data stream such as
+  # http_reply_access.</p>
+<p>acl aclname note [-m[=delimiters]] name [value ...]
+  # match transaction annotation [fast]
+  # Without values, matches any annotation with a given name.
+  # With value(s), matches any annotation with a given name that
+  # also has one of the given values.
+  # If the -m flag is used, then the value of the named
+  # annotation is interpreted as a list of tokens, and the ACL
+  # matches individual name=token pairs rather than whole
+  # name=value pairs. See "ACL Options" above for more info.
+  # Annotation sources include note and adaptation_meta directives
+  # as well as helper and eCAP responses.</p>
+<p>acl aclname adaptation_service service ...
+  # Matches the name of any icap_service, ecap_service,
+  # adaptation_service_set, or adaptation_service_chain that Squid
+  # has used (or attempted to use) for the master transaction.
+  # This ACL must be defined after the corresponding adaptation
+  # service is named in squid.conf. This ACL is usable with
+  # adaptation_meta because it starts matching immediately after
+  # the service has been selected for adaptation.</p>
+<p>acl aclname transaction_initiator initiator ...
+  # Matches transaction's initiator [fast]
+  #
+  # Supported initiators are:
+  #  esi: matches transactions fetching ESI resources
+  #  certificate-fetching: matches transactions fetching
+  #     a missing intermediate TLS certificate
+  #  cache-digest: matches transactions fetching Cache Digests
+  #     from a cache_peer
+  #  htcp: matches HTCP requests from peers
+  #  icp: matches ICP requests to peers
+  #  icmp: matches ICMP RTT database (NetDB) requests to peers
+  #  asn: matches asns db requests
+  #  internal: matches any of the above
+  #  client: matches transactions containing an HTTP or FTP
+  #     client request received at a Squid *_port
+  #  all: matches any transaction, including internal transactions
+  #     without a configurable initiator and hopefully rare
+  #     transactions without a known-to-Squid initiator
+  #
+  # Multiple initiators are ORed.</p>
+<p>acl aclname has component
+  # matches a transaction "component" [fast]
+  #
+  # Supported transaction components are:
+  #  request: transaction has a request header (at least)
+  #  response: transaction has a response header (at least)
+  #  ALE: transaction has an internally-generated Access Log Entry
+  #       structure; bugs notwithstanding, all transaction have it
+  #
+  # For example, the following configuration helps when dealing with HTTP
+  # clients that close connections without sending a request header:
+  #
+  #  acl hasRequest has request
+  #  acl logMe note important_transaction
+  #  # avoid "logMe ACL is used in context without an HTTP request" warnings
+  #  access_log ... logformat=detailed hasRequest logMe
+  #  # log request-less transactions, instead of ignoring them
+  #  access_log ... logformat=brief !hasRequest
+  #
+  # Multiple components are not supported for one "acl" rule, but
+  # can be specified (and are ORed) using multiple same-name rules:
+  #
+  #  # OK, this strange logging daemon needs request or response,
+  #  # but can work without either a request or a response:
+  #  acl hasWhatMyLoggingDaemonNeeds has request
+  #  acl hasWhatMyLoggingDaemonNeeds has response</p>
+</li>
+</ul>
+<p>IF USE_OPENSSL
+    acl aclname ssl_error errorname
+      # match against SSL certificate validation error [fast]
+      #
+      # For valid error names see in /usr/local/squid/share/errors/templates/error-details.txt
+      # template file.
+      #
+      # The following can be used as shortcuts for certificate properties:
+      #  [ssl::]certHasExpired: the "not after" field is in the past
+      #  [ssl::]certNotYetValid: the "not before" field is in the future
+      #  [ssl::]certUntrusted: The certificate issuer is not to be trusted.
+      #  [ssl::]certSelfSigned: The certificate is self signed.
+      #  [ssl::]certDomainMismatch: The certificate CN domain does not
+      #         match the name the name of the host we are connecting to.
+      #
+      # The ssl::certHasExpired, ssl::certNotYetValid, ssl::certDomainMismatch,
+      # ssl::certUntrusted, and ssl::certSelfSigned can also be used as
+      # predefined ACLs, just like the 'all' ACL.
+      #
+      # NOTE: The ssl_error ACL is only supported with sslproxy_cert_error,
+      # sslproxy_cert_sign, and sslproxy_cert_adapt options.</p>
+<pre><code>acl aclname server_cert_fingerprint [-sha1] fingerprint
+  # match against server SSL certificate fingerprint [fast]
+  #
+  # The fingerprint is the digest of the DER encoded version 
+  # of the whole certificate. The user should use the form: XX:XX:...
+  # Optional argument specifies the digest algorithm to use.
+  # The SHA1 digest algorithm is the default and is currently
+  # the only algorithm supported (-sha1).
+
+acl aclname at_step step
+  # match against the current step during ssl_bump evaluation [fast]
+  # Never matches and should not be used outside the ssl_bump context.
+  #
+  # At each SslBump step, Squid evaluates ssl_bump directives to find
+  # the next bumping action (e.g., peek or splice). Valid SslBump step
+  # values and the corresponding ssl_bump evaluation moments are:
+  #   SslBump1: After getting TCP-level and HTTP CONNECT info.
+  #   SslBump2: After getting SSL Client Hello info.
+  #   SslBump3: After getting SSL Server Hello info.
+
+acl aclname ssl::server_name [option] .foo.com ...
+  # matches server name obtained from various sources [fast]
+  #
+  # The ACL computes server name(s) using such information sources as
+  # CONNECT request URI, TLS client SNI, and TLS server certificate 
+  # subject (CN and SubjectAltName). The computed server name(s) usually
+  # change with each SslBump step, as more info becomes available:
+  # * SNI is used as the server name instead of the request URI,
+  # * subject name(s) from the server certificate (CN and
+  #   SubjectAltName) are used as the server names instead of SNI.
+  #
+  # When the ACL computes multiple server names, matching any single
+  # computed name is sufficient for the ACL to match.
+  #
+  # The "none" name can be used to match transactions where the ACL
+  # could not compute the server name using any information source
+  # that was both available and allowed to be used by the ACL options at
+  # the ACL evaluation time.
+  #
+  # Unlike dstdomain, this ACL does not perform DNS lookups.
+  #
+  # An ACL option below may be used to restrict what information 
+  # sources are used to extract the server names from:
+  #
+  # --client-requested
+  #   The server name is SNI regardless of what the server says.
+  # --server-provided
+  #   The server name(s) are the certificate subject name(s), regardless
+  #   of what the client has requested. If the server certificate is
+  #   unavailable, then the name is "none".
+  # --consensus
+  #   The server name is either SNI (if SNI matches at least one of the
+  #   certificate subject names) or "none" (otherwise). When the server
+  #   certificate is unavailable, the consensus server name is SNI.
+  #
+  # Combining multiple options in one ACL is a fatal configuration
+  # error.
+  #
+  # For all options: If no SNI is available, then the CONNECT request
+  # target (a.k.a. URI) is used instead of SNI (for an intercepted
+  # connection, this target is the destination IP address).
+
+acl aclname ssl::server_name_regex [-i] \.foo\.com ...
+  # regex matches server name obtained from various sources [fast]
+
+acl aclname connections_encrypted
+  # matches transactions with all HTTP messages received over TLS
+  # transport connections. [fast]
+  #
+  # The master transaction deals with HTTP messages received from
+  # various sources. All sources used by the master transaction in the
+  # past are considered by the ACL. The following rules define whether
+  # a given message source taints the entire master transaction,
+  # resulting in ACL mismatches:
+  #
+  #  * The HTTP client transport connection is not TLS.
+  #  * An adaptation service connection-encryption flag is off.
+  #  * The peer or origin server transport connection is not TLS.
+  #
+  # Caching currently does not affect these rules. This cache ignorance
+  # implies that only the current HTTP client transport and REQMOD
+  # services status determine whether this ACL matches a from-cache
+  # transaction. The source of the cached response does not have any
+  # effect on future transaction that use the cached response without
+  # revalidation. This may change.
+  #
+  # DNS, ICP, and HTCP exchanges during the master transaction do not
+  # affect these rules.
+</code></pre>
+<p>ENDIF
+    acl aclname any-of acl1 acl2 ...
+      # match any one of the acls [fast or slow]
+      # The first matching ACL stops further ACL evaluation.
+      #
+      # ACLs from multiple any-of lines with the same name are ORed.
+      # For example, A = (a1 or a2) or (a3 or a4) can be written as
+      #   acl A any-of a1 a2
+      #   acl A any-of a3 a4
+      #
+      # This group ACL is fast if all evaluated ACLs in the group are fast
+      # and slow otherwise.</p>
+<pre><code>acl aclname all-of acl1 acl2 ... 
+  # match all of the acls [fast or slow]
+  # The first mismatching ACL stops further ACL evaluation.
+  #
+  # ACLs from multiple all-of lines with the same name are ORed.
+  # For example, B = (b1 and b2) or (b3 and b4) can be written as
+  #   acl B all-of b1 b2
+  #   acl B all-of b3 b4
+  #
+  # This group ACL is fast if all evaluated ACLs in the group are fast
+  # and slow otherwise.
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

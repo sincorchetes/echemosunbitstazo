@@ -1,0 +1,671 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/usuarios-y-grupos-linux/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Gestión y administración de usuari@s y grupos en Linux - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gestion-y-administracion-de-usuaris-y-grupos-en-linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gestión y administración de usuari@s y grupos en Linux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="gestion-y-administracion-de-usuaris-y-grupos-en-linux">Gestión y administración de usuari@s y grupos en Linux</h1>
+<h1 id="algunos-conceptos">Algunos conceptos</h1>
+<p>Linux al igual que otro sistema operativo basado en UNIX, por herencia obtiene uno de los hitos que marcó un antes y después en la era de los sistemas, y es el término <strong>multiusuario</strong>. Esto quiere decir que nos permite tener diferentes cuentas de distintos usuari@s iniciadas en el sistema corriendo <strong>n</strong> procesos a la vez pertenecientes a cada usuario. Anteriormente, si querías hacer uso del sistema y otra persona quería utilizarlo, no podías ya que tod@s disponían de una sola sesión de usuario, sin embargo con los avances que hicieron en el pasado, sacaron adelante esta magnífica característica, la del <strong>multiusuario</strong>.</p>
+<h1 id="usuaris">Usuari@s</h1>
+<p>L@s usuari@s son personas que tienen un determinado nivel de acceso tanto a la empresa dónde resida el equipo al que pueden acceder y operar, como en su equipo personal. A nivel lógico, esto se conoce como cuentas de usuari@, las cuáles contienen como mínimo un nombre para la cuenta siendo este el nombre de usuari@ y una contraseña. No obstante, l@s desarrolladores de sistemas operativos o de cualquier otro tipo de software intentan simplificar el tratamiento de las cuentas de usuarios mediante un ID numérico, ya que se consume menos recursos buscando números que letras.</p>
+<p>En Linux, esos ID asignados a los usuarios se les denominan UID <em>User Identifier</em> o identificador de usuario. Según la distribución, el primer usuario o la primera usuaria del sistema, este establece un UID de 1000, y comienza a sumarse +1 a los posteriores UID creados. También, se añade un grupo nuevo al sistema con el mismo nombre de la cuenta del usuario o de la usuaria y se establece como un grupo primario con el mismo ID.</p>
+<h2 id="como-crear-una-usuari">¿Cómo crear un(a) usuari@?</h2>
+<p>Como norma general y es altamente recomendado hacer uso de los comandos <code>useradd(8)</code> o <code>adduser(8)</code> podríamos crear un(a) usuari@ a mano, haciendo los siguientes pasos y como usuario root o haciendo uso de <code>sudo(1)</code>:</p>
+<ol>
+<li>Averiguamos cual es el último UID/GID antes de crear nuestr@ usuari@<ul>
+<li><code>grep 100* /etc/group</code></li>
+<li><code>grep 100* /etc/passwd</code></li>
+</ul>
+</li>
+<li>Modificar la entrada del fichero <code>/etc/passwd</code> <strong>haciendo uso de <code>vipw(8)</code></strong> añadiendo la información mínima para tener un(a) usuari@, vamos ha hacerlo con "pepito":<ul>
+<li><code>pepito:x:1004:1004::/home/pepito:/bin/bash</code></li>
+</ul>
+</li>
+<li>Creamos un grupo para nuestro usuario <code>/etc/group</code><ul>
+<li><code>pepito:x:1004:</code></li>
+</ul>
+</li>
+<li>Creamos una entrada en <code>/etc/shadow</code> mediante haciendo uso de <code>vipw -s</code>:
+   <em>NOTA:Para saber que algoritmo cifrado utilizar, podemos comprobarlo en el fichero <code>/etc/login.defs</code>, en la variable <code>ENCRYPT_METHOD</code> lo que pasa que utiliza el sistema un salto o varios (lo desconocemos) para generar la contraseña a parte de la codificiación. Para visualizar el prefijo que necesitamos se puede consultar en <code>man 3 crypt</code></em><ul>
+<li><code>$1$</code>: MD5</li>
+<li><code>$2a$</code>: Blowfish</li>
+<li><code>$5$</code>: SHA-256</li>
+<li><code>$6$</code>: SHA-512</li>
+</ul>
+</li>
+</ol>
+<p>Sin embargo, es <strong>altamente recomendable</strong> generar una contraseña nueva haciendo uso del comando <code>passwd(1)</code>, ya que esta genera la contraseña con el salto correcto, el algoritmo correcto y se genera automáticamente la entrada en <code>/etc/shadow</code>: <code>passwd pepito</code></p>
+<ol>
+<li>Creamos el directorio: <code>/home/nombre_usuari@</code></li>
+<li>Creamos el archivo: <code>/var/spool/mail/nombre_usuari@</code></li>
+<li>Copiamos los archivos <code>/etc/skel/* en /home/nombre_usuari@</code></li>
+<li>Fijamos los permisos correspondientes usuari@/grupo al directorio <code>/home/nombre_usuari@</code> <code>nombre_usuari@:grupo_usuari@</code> + <code>chmod 700</code></li>
+<li>Declaramos los permisos <code>chmod 660 /var/spool/mail/nombre_usuari@</code></li>
+</ol>
+<p>Y listo, tendremos a nuestr@ usuari@ cread@. No obstante, este proceso, además de ser tedioso, complejo y propenso a errores, es preferible hacer uso de unos comandos que nos facilitan crearlo.</p>
+<h3 id="useradd8"><code>useradd(8)</code></h3>
+<p>Con este comando generamos un(a) usuari@ en ¡menos que canta un gallo! Todo lo que tenemos que hacer es:</p>
+<pre><code>sudo useradd pepito -m 
+sudo passwd pepito
+</code></pre>
+<p>Y ya directamente tenemos usuari@ con su directorio <code>/home</code> y <code>/var/spool/mail</code> por defecto con sus correspondientes permisos, con la entrada correctamente creada en el fichero <code>/etc/passwd</code>, <code>/etc/shadow</code> y <code>/etc/group</code> listo para identificarse.</p>
+<p>¿Fácil verdad? También hay que tener en cuenta, que la configuración por defecto del comando <code>useradd(8)</code> que se encuentra en <code>/etc/default/useradd</code>, ya que puede haber otras distribuciones que tengan otros parámetros, o directamente, no contenga ningún fichero y hay que especificarlo de forma manual tal que así:</p>
+<pre><code>sudo useradd pepito -m -k /etc/skel -U
+sudo passwd pepito
+</code></pre>
+<ul>
+<li><code>-m</code>: Genera un directorio en <code>/home</code> con el nombre de pepito</li>
+<li><code>-k /etc/skel</code>: Copia los archivos básicos para que funcione plenamente <code>bash(1)</code></li>
+<li><code>-U</code>: Crea un grupo con el mismo nombre que el usuario</li>
+</ul>
+<h3 id="adduser8"><code>adduser(8)</code></h3>
+<p>Si no tenemos suficiente con el anterior, podemos hacer uso de <code>adduser(8)</code>. Es un comando parecido al anterior, no hay mucha diferencia de usabilidad al menos en Linux. En FreeBSD, este comando tiene por defecto un asistente interactivo que nos va preguntando paso por paso cómo crearlo facilitándonos un poco la tarea. Este comando toma los valores para crear el usuario del fichero <code>/etc/default/useradd</code> como el comando anterior.</p>
+<h2 id="ficheros-implicados-en-el-uso-de-ambos-comandos">Ficheros implicados en el uso de ambos comandos</h2>
+<p>Según el <code>man</code> de ambos comandos, tenemos una serie de ficheros implicados cuando ejecutamos uno de los dos comandos para crear el o la usuari@.</p>
+<ul>
+<li><code>/etc/passwd</code>: Archivo clave con la información de la cuenta de usuari@</li>
+<li><code>/etc/shadow</code>: Información sobre la seguridad de la cuenta de usuari@</li>
+<li><code>/etc/group</code>: Grupos con sus correspondienes GID, usuari@s unid@s...</li>
+<li><code>/etc/gshadow</code>: Información relevante sobre la seguridad de los grupos</li>
+<li><code>/etc/default/useradd</code>: Esquema por defecto sobre cómo crear la cuenta de usuari@</li>
+<li><code>/etc/skel/</code>: Directorio que contiene ficheros por defecto para el/la usuari@</li>
+<li><code>/etc/login.defs</code>: Configuración del cifrado de las contraseñas, permisos...etc</li>
+</ul>
+<h2 id="como-autenticarse-con-una-usuari-en-nuestra-sesion">¿Cómo autenticarse con un(a) usuari@ en nuestra sesión?</h2>
+<p>Si nos encontramos logeados mediante nuestr@ usuari@ rutinario, pero queremos acceder a otras cuentas del sistema, podemos hacerlo haciendo uso del comando <code>su(1)</code>.</p>
+<p>Estamos en la cuenta de pepito, y queremos pasar a la de susana.</p>
+<pre><code>su - susana
+</code></pre>
+<h2 id="como-modificar-la-informacion-de-una-usuari">¿Cómo modificar la información de un(a) usuari@?</h2>
+<p>Tenemos un comando (<em>¿Cómo no?</em>), para modificar y actualizar la información de nuestr@ usuari@. Este comando se llama <code>usermod(8)</code>. Entre otras cosas, nos permite bloquear una cuenta, actualizar y gestionar lá fecha de demora y fecha límite para cambiar la contraseña, añadir un usuario a grupos secundarios...</p>
+<p>Por ejemplo, bloquear una cuenta</p>
+<pre><code>sudo usermod -L pepito
+</code></pre>
+<p>Si vemos el <code>/etc/passwd</code>, habrá añadido delante de la contraseña una (!), eso quiere decir que se encuentra bloqueada la cuenta.</p>
+<p>Desbloqueando la cuenta:</p>
+<pre><code>sudo usermod -U pepito
+</code></pre>
+<p>Añadiendo un(a) usuari@ a un grupo nuevo</p>
+<pre><code>sudo usermod -a -G pepito video
+</code></pre>
+<p>Cambiando el grupo principal</p>
+<pre><code>sudo usermod -g users pepito
+</code></pre>
+<p>Modificando el shell del/la usuari@</p>
+<pre><code>sudo usermod -s /bin/bash pepito
+</code></pre>
+<p>Cambiando el directorio de trabajo</p>
+<pre><code>sudo usermod -d /srv pepito
+</code></pre>
+<p>Insertando un comentario</p>
+<pre><code>sudo usermod -c &quot;Comentario&quot; pepito
+</code></pre>
+<p>Podemos obtener más información accediendo al <code>man(1)</code> de <code>usermod(8)</code></p>
+<h2 id="como-eliminar-una-usuari">¿Cómo eliminar un(a) usuari@?</h2>
+<p>Como la mayor parte de las cosas en Linux o sistemas UNIX-like, se puede hacer prácticamente todo a mano, esto se puede hacer al sentido inverso cuando creamos el/la usuari@ en el sistema.</p>
+<ol>
+<li>Eliminar la entrada del usuario pepito de <code>/etc/passwd</code> haciendo uso de <code>vipw(8)</code></li>
+<li>Destruir el directorio <code>/home/pepito</code> o el asignado, en caso de haber escogido otro directorio</li>
+<li>Eliminar el fichero del directorio <code>/var/spool/mail/pepito</code></li>
+<li>Quitar el grupo que se creó junto con el/la usuari@ por defecto del fichero <code>/etc/groups</code> pero haciendo uso de <code>vigr(8)</code></li>
+</ol>
+<p>Y si queremos evitarnos tanta historia, bastará con hacer uso del comando <code>userdel(8)</code>
+Tan solo con ejecutar:</p>
+<pre><code>sudo userdel -r pepito
+</code></pre>
+<p>Habremos hecho todos los pasos anteriores con un sencillo comando.</p>
+<h2 id="directorio-de-trabajo">¿Directorio de trabajo?</h2>
+<p>Tod@s l@s usuari@s poseen un entorno de trabajo por defecto que se encuentra en el directorio <code>/home</code>. Este entorno de trabajo contiene el nombre de la cuenta del/la usuari@ y le permite trabajar en él y que, por defecto, se van almacenando archivos de configuración de programas entre un largo etcétera.</p>
+<h2 id="super-usuario">¿Super usuario?</h2>
+<p>Existe un usuario por defecto creado en el sistema llamado <em>root</em>. Este usuario por defecto en todos los sistemas UNIX, UNIX-like como Liux, FreeBSD, Minix...etc tiene acceso a tod@s los archivos, carpetas, operaciones con dispositivos, procesos... del sistema. Es muy importante utilizarlo lo menos posible y <strong>nunca</strong> revelar su contraseña, o ejecutar aplicaciones sobre todo gráficas con este usuario.</p>
+<h1 id="grupos">Grupos</h1>
+<p>Por lo general, los grupos son agrupaciones de personas que tienen un objetivo en común, si bien pueden ser personas que tienen el mismo gusto por ver a su cantante favorito como obtener los mejores diseños de sus productos para una empresa. En nuestro caso, los grupos permiten formar un conjunto de usuari@s que desempeñen un rol determinado dentro del sistema. Creando, modificando documentos que ell@s hayan generado pero que otr@s que no pertenezca a dicho grupo no tengan permisos para hacerlo. Un usuario, o una usuaria puede formar parte de más de un grupo a la vez, pero por defecto, tienen un grupo primario al que pertenecen.</p>
+<p>Los grupos como l@s usuari@s, contienen un ID que faciliten su recuperación dentro del sistema, en este caso se llama GID de <em>Group Identifier</em> o Identificador de grupo. El sistema por defecto tiene unos grupos ya asignados para determinadas actividades del mismo para diferentes tareas como el acceso a los dispositivos de audio y video entre otras cosas.</p>
+<h2 id="grupos-primarios">¿Grupos primarios?</h2>
+<p>Los grupos primarios son algo así como el grupo principal al que pertenece un/una usuari@. Cada archivo que cree o modifique deberá contener el mismo grupo o si no, no podrá hacerlo a menos que se encuentre añadido a un grupo secundario. Un grupo primario como su nombre indica, es el primer grupo al que pertenece y por ende solo podrá tener un GID asociado a la cuenta. Sin embargo, una cuenta de usuari@ puede pertenecer a muchos grupos secundarios.</p>
+<h1 id="como-linux-sabe-que-hace-una-cosa-y-un-grupo-otra">¿Cómo Linux sabe qué hace una cosa y un grupo otra?</h1>
+<p>Existen una serie de ficheros clave que todo administrador debe saber que existen:
+ * <code>/etc/passwd</code>: Contiene los nombres de usuario, contraseñas (en antiguas versiones que no usen <code>shadow(5)</code>, UID, GID, descripción, directorio de trabajo y el intérprete de comandos que utilice. Cuando en el campo de la contraseña se encuentra una "x" quiere decir que hace uso del archivo <code>/etc/shadow</code>
+ * <code>/etc/shadow</code>: Es un fichero que contiene todas las contraseñas ya sean de grupos o de usuari@s cifradas en un algoritmo determinado por el sistema, se utiliza para evitar que las contraseñas se puedan leer en <code>/etc/passwd</code> ya que tod@s l@s usuari@s tienen acceso lectura. Este archivo contiene:
+    * Nombre de la cuenta de usuari@
+    * Contraseña encriptada, o bien puede incluir (!) que aparece como cuenta bloqueada en el sistema, un ejemplo de esto es cuando creamos una nueva cuenta sin haberle asignado una contraseña.
+    * Fecha del último cambio de contraseña, si se encuentra vacío, es que no están habilitadas las gestiones de cuentas de l@s usuari@s.
+    * Fecha mínima para efectuar un cambio de contraseña
+    * Fecha máxima límite para modificar la contraseña
+    * Periodo de aviso para cambiarla
+    * Número de días con el usuario inactivo después de que haya expirado la contraseña
+    * Fecha de expiración de la cuenta
+    * Campo reservado
+ * <code>/etc/shadow-</code>: Copia de seguridad del fichero anterior
+ * <code>/etc/group</code>: Contiene nombre del grupo, contraseña (en caso de no usar <code>shadow(5)</code>), GID, lista de usuarios adjuntos</p>
+<p>Son los archivos principales y que tod@s tenemos que tener hechos una copia de seguridad en caso de que falle el sistema o nos equivoquemos editando alguno de ellos.</p>
+<p><strong>NOTA: A pesar de no ser altamente recomendable su edición, si queremos editar a mano los ficheros <code>passwd(5)</code> o <code>shadow(5)</code> tenemos que utilizar los comandos <code>vigr(1)</code> para edición de grupos y <code>vipw(1)</code> para edición de los ficheros tanto <code>passwd(5)</code> como <code>shadow(5)</code>.</strong></p>
+<h2 id="como-crear-un-grupo">¿Cómo crear un grupo?</h2>
+<p>Los grupos se pueden crear manualmente al igual que l@s usuari@s haciendo uso del comando <code>vigr(8)</code>. No obstante, es preferible como siempre hacer uso de los comandos que nos faciliten las cosas más que nada para evitar incorrecciones de cualquier índole.</p>
+<h3 id="groupadd8"><code>groupadd(8)</code></h3>
+<p><code>groupadd(8)</code> es una bella herramienta con la que crear un grupo, edita el fichero <code>/etc/group</code> y a su vez actualiza el <code>/etc/gshadow</code> para añadir la contraseña asignada</p>
+<p>Creando un grupo</p>
+<pre><code>sudo groupadd sysadmins
+</code></pre>
+<p>Creando un grupo con GID específico</p>
+<pre><code>sudo groupadd -g 1200 sysadmins 
+</code></pre>
+<p>Asignando contraseña a un grupo</p>
+<pre><code>sudo groupadd -p contraseña sysadmins
+</code></pre>
+<h2 id="como-modificar-un-grupo">¿Cómo modificar un grupo?</h2>
+<p>Como podemos modificar l@s usuari@s, ¿Por qué no los grupos? Pues claro que sí podemos hacerlo con <code>groupmod(8)</code>.</p>
+<h3 id="groupmod8"><code>groupmod(8)</code></h3>
+<p>Este comando nos permitirá modificar cierta información de los grupos que tenemos como por ejemplo:</p>
+<p>Cambiando el nombre del grupo</p>
+<pre><code>sudo groupmod -n devels sysadmins
+</code></pre>
+<p>Cambiando el GID</p>
+<pre><code>sudo groupmod -g 1203 devels
+</code></pre>
+<p>Modificando la contraseña</p>
+<pre><code>sudo groupmod -p &quot;Contraseña&quot; devels
+</code></pre>
+<h2 id="como-eliminar-el-grupo">¿Cómo eliminar el grupo?</h2>
+<p>También es otra operación que podemos hacer con <code>vigr(8)</code>, pero es mejor utilizando este método.</p>
+<pre><code>sudo groupdel devels
+</code></pre>
+<h2 id="como-cambiar-temporalmente-nuestr-grupo-primario">¿Cómo cambiar temporalmente nuestr@ grupo primario?</h2>
+<p>Los usuarios siempre utilizamos un grupo primario que permite identificarnos con diversas partes o áreas del sistema. En caso de haber actualizado algo que requiera de una persona conectada al ordenador, se puede hacer pasar por la otra persona para saber que...
+Entonces existen una serie de restricciones intrínsecas como no editar un documento a la vez, si has instalado un software reciente que requiere permisos y por tanto reiniciar la sesión gráfica, se puede evitar.</p>
+<p>Básicamente es gracias al comando <code>newgrp(1)</code></p>
+<pre><code>newgrp finance
+</code></pre>
+<p>Y con esto, se activa nuestro grupo secundario como primario.</p>
+<h2 id="visualizando-los-grupos-en-los-que-estoy">Visualizando los grupos en los que estoy</h2>
+<p>Se puede ver fácilmente haciendo uso del comando</p>
+<pre><code>groups
+</code></pre>
+<h2 id="comodin">Comodín</h2>
+<p>Tenemos un pequeño comodín que nos permite modificar ciertas cosas de nuestr@ usuari@ o de un grupo en concreto como su contraseña. Esta herramienta se llama <code>gpasswd(1)</code> y la tenemos instalada por defecto.</p>
+<p>Añadiendo un(a) usuari@ a un grupo</p>
+<pre><code>sudo gpasswd -a pepito users
+</code></pre>
+<p>Eliminando un(a) usuari@ de un grupo</p>
+<pre><code>sudo gpasswd -d pepito users
+</code></pre>
+<p>Suprimir contraseña en un grupo</p>
+<pre><code>sudo gpasswd -r users
+</code></pre>
+<h1 id="permisos">Permisos</h1>
+<p>Poco sentido tiene diferenciar usuarios y grupos si no les atribuímos algún permiso especial que permita establecer una cierta jerarquía o distinción, ya que si no, estaríamos dejando un sistema horizontal en el que tod@s l@s usuari@s puedan hacer lo que quieran dentro del sistema. Aquí entra en juego el factor permisos.</p>
+<p>Los permisos en UNIX se rigen por una serie de campos</p>
+<ul>
+<li>Usuario: Solo el autor puede leer, escribir, ejecutar, o una combinación de los mismos, el poder en este caso sobre el fichero solo lo tiene él o ella o el usuario <code>root</code>.</li>
+<li>Grupo: Tod@s l@s usuari@s que formen parte del grupo, dependiendo de los permisos que tenga establecido en este apartado el fichero o directorio podrán o no leer, escribir, o ejecutar en caso de ser un fichero ejecutable.</li>
+<li>Todo el mundo: El resto de usuari@s del sistema que no pertenezcan ni al grupo, ni sea el autor del fichero, dependiendo de los permisos podrá o no acceder a los directorios y ficheros.</li>
+</ul>
+<p>Imaginemos que tenemos el siguiente ejemplo:</p>
+<p>Somos jefes(as) de un proyecto de desarrollo, y tenemos vari@s emplead@s a nuestro cargo. Nosotr@s como jefe(as) del proyecto, tenemos plena acción sobre todos los ficheros (somos autores). Y, seleccionamos determinados ficheros para determinados grupos, por ejemplo, todos aquellos ficheros que tengan que ver con el departamento de comunicación que tiene múltiples usuari@s, solo podrán acceder los de comunicación; el grupo de desarrolladores(as) tiene sus ficheros a cargo...etc Y cada usuari@ dentro de su grupo, tiene acceso pleno a los ficheros, sin embargo, las personas de otros grupos no pueden acceder a dichos archivos por las restricciones. Y luego, tenemos un apartado público, que solo podrá leer determinados archivos. ¡Voilá! hemos explicado el funcionamiento de usuarios y grupos de una forma sencilla.</p>
+<pre><code>
+               Jefes(as) de proyecto
+                       \º/ \ª/
+                          |
+                  |-------------------|
+                  | Contabilidad      |
+                  | Directivas        |
+                  | Contratos         |
+                  |-------------------|
+          ________________|______________
+         /                               \
+    Comunicación                     Desarrollo
+      \º/ \ª/                          \º/ \ª/
+         |                                |
+  |-----------------|            |-----------------|
+  | Inventario RRSS |            | Código fuente   |
+  | Inversores      |            | Contraseñas OS  |
+  | Media           |            | Servidores      |
+  | ...             |            | ...             | 
+  |-----------------|            |-----------------|
+         |                                |
+         |                          Todo el mundo
+         |                          \º/ \ª/\º/ \ª/
+         *-------------------------&gt;  \º/ \ª/\º/ 
+                                        \ª/ \ª/
+                                          |
+                                    |-------------|
+                                    | index.html  |
+                                    | setup.sh    |
+                                    | screenshots |
+                                    | Twitter     |
+                                    | Facebook    |
+                                    | Google+     |
+                                    |-------------|
+
+</code></pre>
+<p>Ahora vamos a traducir las palabras en el lenguaje que lo interpreta el sistema, tenemos hasta tres formas de conceder, modificar o leer permisos:
+ * Formato verbal o por carácter: Se hacen uso de las letras para asignar, modificar o simplemente leer los permisos.
+    * r: <em>read</em> solo lectura
+    * w: <em>writable</em> solo escritura (<em>debe ir acompañado de lectura para que pueda modificarse</em>)
+    * x: <em>executable</em> solo ejecutable (<em>debe ir acompañado del permiso lectura para poder ejecutarse</em>)</p>
+<pre><code>|        #         |  r   |  w |  x | rw   | rx   | wx   | rwx   |
+|------------------|:-------------:|:-------------:|:-------------:|:----:|:----:|:----:|:-----:|
+|    Usuario       | chmod u+r f1  |    u+w        | u+x           | u+rw | u+rx | u+wx | u+rwx |
+|     Grupo        | chmod g+r f1  |    g+r        | g+x           | g+rw | g+rx | g+wx | g+rwx |
+|   Todo el mundo  | chmod o+r f1  |    o+r        | o+x           | o+rw | o+rx | o+wx | o+rwx |
+|      Tod@s       | chmod a+r f1  |    a+r        | a+x           | a+rw | a+rx | a+wx | a+rwx |
+</code></pre>
+<ul>
+<li>
+<p>Formato numérico basado en Octal: Se hace uso del 1 al 7 para definir los permisos</p>
+<p>|        #         |  r   |  w |  x | rw   | rx   | wx   | rwx   |
+|------------------|:-------------:|:-------------:|:-------------:|:---:|:---:|:---:|:---:|:---:|
+|    Usuario       | 400           |    200        | 100           | 600 | 500 | 300 | 700 |
+|     Grupo        | 040           |    020        | 010           | 060 | 050 | 030 | 070 |
+|   Todo el mundo  | 004           |    002        | 001           | 006 | 005 | 003 | 007 |
+| Usuario + Grupo  | 440           |    220        | 110           | 660 | 550 | 330 | 770 |
+| Grupo + Mundo    | 044           |    022        | 011           | 066 | 055 | 033 | 077 |
+| Usuario + M      | 404           |    202        | 101           | 606 | 505 | 303 | 707 |
+|      Tod@s       | 444           |    222        | 111           | 666 | 555 | 333 | 777 | </p>
+</li>
+<li>
+<p>Mediante máscara: Esta es la forma menos común de declarar los permisos, pero también se utiliza. Para declarar un valor hay que hacer uso del comando <code>umask(1p)</code></p>
+<p>Si queremos asignar el valor 022 a la máscara, este es el valor que le tendremos que restar al número actual de permisos que se encuentre en el directorio actual.
+Por ejemplo: 
+ * 002 = 777 - 002 = 775 (rwrwxr-x)
+ * 444 = 644 - 444 = 200 (-w-------)
+ * 020 = 660 - 020 = 640 (rw--r----)
+ Para declarar el valor de una máscara se hace uso de <code>umask(1p)</code> tal que así:
+ <code>umask 020</code>
+ Cuando se declara una máscara en un directorio, todos los archivos y rutas que se creen dentro de él, heredarán estos permisos. No es que se aplique directamente al archivo/directorio.</p>
+</li>
+</ul>
+<h2 id="como-ver-los-permisos">¿Cómo ver los permisos?</h2>
+<p>Para visualizar los permisos tenemos el magnífico comando <code>ls(1)</code> como hemos visto en el post de <a href="https://echemosunbitstazo.es/blog/mastering-bash-primeros-pasos?target=_blank">Mastering en Bash ~ Primeros pasos</a>.</p>
+<pre><code>ls -al
+</code></pre>
+<p>Este comando muestra todos los archivos y directorios que se encuentren en el directorio actual además de los ocultos. En suma, muestra los enlaces tanto duros como simbólicos. En la siguiente salida, si nos fijamos en la primera columna de la izquierda veremos los permisos y el tipo de archivo.</p>
+<pre><code>lrwxrwxrwx.  1 sincorchetes sincorchetes    37 May 19 21:51  .steampath -&gt; /home/sincorchetes/.steam/sdk32/steam
+lrwxrwxrwx.  1 sincorchetes sincorchetes    35 May 19 21:51  .steampid -&gt; /home/sincorchetes/.steam/steam.pid
+drwxrwxr-x.  3 sincorchetes sincorchetes  4096 Mar  7 14:17  .subversion
+-rw-rw-r--.  1 sincorchetes sincorchetes     8 Mar 28 22:29  .tasks
+drwxrwxr-x.  2 sincorchetes sincorchetes  4096 Jan 20 04:25  .themes
+drwx------.  3 sincorchetes sincorchetes  4096 Feb 12 01:10  .thumbnails
+drwx------.  3 sincorchetes sincorchetes  4096 Jan 20 11:05  .thunderbird
+drwxrwxr-x.  3 sincorchetes sincorchetes  4096 May 27 19:56  .tmux
+-rw-rw-r--.  1 sincorchetes sincorchetes   370 May 27 19:57  .tmux.conf
+drwxrwxr-x.  7 sincorchetes sincorchetes  4096 Jun  2 12:38  .vagrant.d
+drwxr-xr-x.  2 sincorchetes sincorchetes  4096 Jun  4 17:08  Videos
+</code></pre>
+<p>Los archivos que contienen una "l" en los permisos denotan que son enlaces simbólicos y se puede además saber porque apuntan a otro directorio/fichero "-&gt;".</p>
+<p>Aquellos que contienen una "d", denotan que son directorios y los que no contienen nada más que un "-" se interpretan como archivos.</p>
+<h2 id="modificando-la-autoria-de-archivosdirectorios">Modificando la autoría de archivos/directorios</h2>
+<p>Como podemos ver, se pueden asignar múltiples permisos a los archiv@s, ahora bien, ¿Qué pasa si queremos cambiar el autor del fichero, el grupo o ambos?</p>
+<p>Podemos hacerlo gracias al comando <code>chown(1)</code>:
+* <code>chown usuario fichero/directorio</code>: Cambiando el autor del fichero y/o directorio
+* <code>chown usuario:grupo</code>: Cambiando el autor y el <strong>grupo</strong> al fichero y/o directorio</p>
+<p>Se puede asignar un autor a un fichero y tener un grupo diferente, el autor podrá modificarlo, leerlo o ejecutarlo en cualquier momento, es indiferente.</p>
+<h2 id="sticky-bit">Sticky Bit</h2>
+<p>¿Qué pasa si tenemos much@s usuari@s dentro de un grupo cuyo grupo tiene asignado un directorio de trabajo y el usuario "Pepe" crea un fichero y la usuaria "Susana" intenta eliminarlo? Que podrá hacerlo siempre y cuando, se aplique una restricción llamada "<em>Sticky Bit</em>" del inglés, "bit pegajoso". Este permiso especial, permite restringir los archivos creados y modificados por l@s miembr@s de un grupo y evitar que se genere un "autosabotaje" o un borrado por error.</p>
+<p>Para habilitarlo bastará con efectuar:</p>
+<pre><code>chmod 1000 archivo/directorio
+</code></pre>
+<p>ó</p>
+<pre><code>chmod u+t archivo/directorio
+</code></pre>
+<p>Aplicar permisos recursivos en los ficheros y subdirectorios de un directorio</p>
+<pre><code>chmod 1000 -R directorio
+</code></pre>
+<p>Cuando ejecutemos un <code>ls(1)</code>, veremos que en los permisos se habrá añadido un "t" al final tanto para directorios como para ficheros, esto nos indica la activación del <em>Sticky Bit</em>, también aparecerá modo de ejecución permitido. Si aparece una "T" en vez de una "t", esto quiere decir, que se ha activado el <em>Sticky Bit</em> pero solo para el usuario actual, si vemos el resultado, no contienen permisos de ejecución y por lo tanto no se permitirá crear archivos/directorios.</p>
+<p>Salida con <em>Sticky Bit</em> activado:</p>
+<pre><code>ls -al
+total 8
+drwxrwxrwt. 2 root root  4096 Jun 11 07:41 .
+drwxrwxrwt. 3 root users 4096 Jun 11 07:41 ..
+</code></pre>
+<p>Salida con <em>Sticky Bit</em> activado para el usuari@ actual:</p>
+<pre><code>ls -al
+total 8
+drwxrwxrwx. 2 root         users        4096 Jun 11 07:38 .
+drwxrwxrwx. 3 sincorchetes sincorchetes 4096 Jun 11 07:37 ..
+-rwxrw-rwT. 1 sincorchetes sincorchetes    0 Jun 11 07:38 12
+</code></pre>
+<p>Aquí os podemos mostrar con más claridad el funcionamiento:</p>
+<script src="https://asciinema.org/a/186545.js" id="asciicast-186545" async></script>
+
+<h2 id="suid-y-sguid">SUID y SGUID</h2>
+<p>En Linux existen una serie de condiciones especiales para determinados ejecutables, archivos... que pueden editarse o ejecutarse sin ser el propietario de los mismos. Esta característica nos otorga una cierta ventaja como por ejemplo, si queremos cambiar la contraseña de nuestr@ usuari@ podemos hacerlo sin ser usuario "root".</p>
+<p>Si nos fijamos en los permisos del comando <code>passwd</code>, veremos que tiene la letra "s" dentro de la ristra de permisos.</p>
+<pre><code>ls -al /usr/bin
+-rwsr-xr-x. 1 root root         29008 Apr 12 11:24 passwd
+</code></pre>
+<p>Digamos que el/la usuari@ se hace pasar por "root" para intentar cambiar su contraseña y lo puede hacer gracias a estos permisos. Estos se llaman SUID <em>Set User ID Bit</em> o SGID <em>Set Group ID Bit</em>. Podemos verificar si un archivo o directorio lo tiene activado porque en los permisos del usuario tiene una "s" o en los permisos del grupo contiene "s". Solo el propietario del fichero/directorio puede declarar estos permisos "extendidos".</p>
+<p><em>NOTA: En caso de contener una "S", esto quiere decir, que tanto el autor del archivo/directorio como el grupo y el resto del mundo no podrá editar, modificar y/o ejecutar archivos dentro del directorio. De hecho, veremos como se encuentra reducida la salida de permisos.</em></p>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li><a href="https://www.google.es?target=_blank">Google</a></li>
+<li><a href="https://linux.die.net/man?target=_blank">man pages</a></li>
+<li><a href="https://www.tldp.org?target=_blank">The Linux Document Project</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

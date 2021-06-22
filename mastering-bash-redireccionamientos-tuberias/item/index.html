@@ -1,0 +1,495 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-bash-redireccionamientos-tuberias/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering Bash - Redireccionamientos y tuberías - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-bash-redireccionamientos-y-tuberias" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering Bash - Redireccionamientos y tuberías
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-bash-redireccionamientos-y-tuberias">Mastering Bash - Redireccionamientos y tuberías</h1>
+<h1 id="estamos-de-vuelta">Estamos de vuelta</h1>
+<p>Bienvenidos a esta nueva entrega de 
+Mastering en Bash, los que ya nos siguen de las anteriores espero que disfrutéis con este post, si acabas de acceder y no tienes ni idea de que va esto, puedes ver nuestro viejo post <a href="../mastering-bash-primeros-pasos">Primeros Pasos</a>. En el siguiente post veremos que son los redireccionamientos y las tuberías antes de comenzar con scripting.</p>
+<h1 id="que-es-un-redireccionamiento">¿Qué es un redireccionamiento?</h1>
+<p>Un redireccionamiento, como su propio nombre indica lo que hace es una redirección a un determinado sitio. En nuestro caso, utilizaremos los redireccionamientos para gestionar tanto las salidas, como entradas así como los niveles de error que de un comando o una aplicación para utilizarlos en nuestro beneficio.</p>
+<p>Podemos decirle a un comando, que si tiene un error X, no lo muestre en pantalla y lo rediriga a un archivo de texto para que haga de log. También podemos añadir una frase, sentencias... a un archivo ya existente o en caso de que no exista que lo cree; comentar el número de palabras que tiene un texto... y un sin fin de cosas más.</p>
+<h2 id="operadores-de-redireccionamiento">Operadores de redireccionamiento</h2>
+<p>Estos son los operadores que utilizaremos en la elaboración de scripts sobre todo, capítulo que introduciremos estos días con las siguientes entregas.</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;</td>
+<td>Redirecciona una salida hacia un archivo o comando. Si el archivo no existe, lo crea, y si existe, lo sobreescribe</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>Igual que el anterior, pero si el archivo existe no lo destruye, añade la salida después de la última línea</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Redirecciona una entrada hacia un comando para que este emita una salida (si lo hace), puede ser la salida de un comando hacia otro, un fichero...</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>Redirecciona el contenido de un fichero hasta que se encuentre la palabra especificada en la redirección para finalizarla</td>
+</tr>
+</tbody>
+</table>
+<h2 id="canales">Canales</h2>
+<p>Nuestra terminal tiene una serie de canales por los que se toman la entrada, salida y errores.</p>
+<p>| Canal | Descripción | Ubicación |
+|-------|-------------|-----|------|
+|  0    | Es el canal por defecto de la entrada estándar | /dev/stdin |
+|  1    | Especifica la salida de un comando. Por ejemplo ls 2&gt; file.txt |  /dev/stdout |
+|  2    | Muestra la presencia de errores. Por ejemplo ls -lklk 3&gt; error.txt | /dev/stderr |</p>
+<h2 id="ejemplos">Ejemplos</h2>
+<p>Almacenar la salida del comando <code>ls -al</code> en un fichero <code>lista.txt</code>:</p>
+<pre><code>ls -al &gt; lista.txt
+</code></pre>
+<p>Veremos como no se muestra nada en pantalla, pero se ha creado el archivo <code>lista.txt</code></p>
+<p>Mostrar el contenido de <code>lista.txt</code></p>
+<pre><code>cat lista.txt
+total 568
+drwxrwxr-x.  2 sincorchetes sincorchetes  4096 May  2 01:43 .
+drwx------. 55 sincorchetes sincorchetes  4096 May  2 17:10 ..
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 20E2MC8SVX-9423.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 36712GXM3C-865.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 4SASA426RU.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  2 01:43 5ODFPGZXOI-25637.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  2 01:43 5PYBWDCZWK.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 6A21WJKHWL.png
+
+</code></pre>
+<p><em>NOTA: Recordemos que el operador <code>&gt;</code> sobreescribe todo lo que haya, si queremos añadir información nueva al archivo debemos utilizar el operador <code>&gt;&gt;</code></em></p>
+<pre><code>ls -al &gt;&gt; lista.txt
+cat lista.txt
+total 568
+drwxrwxr-x.  2 sincorchetes sincorchetes  4096 May  2 01:43 .
+drwx------. 55 sincorchetes sincorchetes  4096 May  2 17:10 ..
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 20E2MC8SVX-9423.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 36712GXM3C-865.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 4SASA426RU.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  2 01:43 5ODFPGZXOI-25637.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  2 01:43 5PYBWDCZWK.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 6A21WJKHWL.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  2 01:43 6FG92BUEDM-12977.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  2 01:43 A6XZFBO1TK-18309.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  2 01:43 FBEBPAR2O9-16637.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  2 01:43 FP9EZ05Y3E-16753.png
+-rw-rw-r--.  1 sincorchetes sincorchetes 25277 May  1 12:55 FZRD6D42BI-875.png
+</code></pre>
+<p>Guardar todos los errores que surjan en la ejecución del programa</p>
+<pre><code>cat ks 2&gt; error.txt
+</code></pre>
+<p>No se mostrará nada en pantalla, pero nos daremos cuenta el error que nos da <code>cat(1)</code> en el fichero que se ha creado llamado <code>error.txt</code></p>
+<pre><code>cat error.txt
+cat: jk: No such file or directory
+</code></pre>
+<p>Mostrar en pantalla tanto la salida estándar como los errores</p>
+<pre><code>ls -al 2&gt;&amp;1 info.txt
+</code></pre>
+<p>Guardar en un fichero tanto la salida como los errores</p>
+<pre><code>ls -al 2&gt;&amp;1 info.txt &gt; file.txt
+</code></pre>
+<p>Calcular las líneas que tiene un fichero de texto</p>
+<pre><code>wc -l &lt; file.text
+</code></pre>
+<p>Añadir información a un fichero e interrumpirlo utilizando una palabra clave declarada por el usuario</p>
+<pre><code>cat add &lt;&lt; EOF
+</code></pre>
+<p>Crear un fichero de texto utilizando la canal de entrada y utilizando una palabra clave para finalizar la adicción</p>
+<pre><code>cat &gt; create_text.txt &lt;&lt; EOF
+</code></pre>
+<p>Adherir la salida estándar de múltiples textos y redireccionándolos a un archivo</p>
+<pre><code>cat lista.txt error.txt info.txt create_text.txt &gt; salida_multiple
+</code></pre>
+<h1 id="tuberias">Tuberías</h1>
+<p>Una tubería es una secuencia de uno o más comandos separados por operadores de control como <code>|</code> o <code>&amp;</code>. Suelen utilizarse mucho junto con el comando <code>grep(1)</code>, <code>egrep(1)</code> y <code>fgrep(1)</code> para filtrar resultados, o el comando <code>cut(1)</code> para recortar la salida estándar, generalmente producida por comandos. Estos comandos que hemos mencionado les dedicaremos un post especial debido a la importancia de los mismos. Sobre todo cuando demos scripting más adelante.</p>
+<p>Este es el formato de una tubería común:</p>
+<pre><code>comando [+parámetros] | ó &amp; [comando1]
+</code></pre>
+<h2 id="ejemplos_1">Ejemplos</h2>
+<p>Ejemplos basándonos en esta estructura de directorios:</p>
+<pre><code>.
+├── fichero-0
+├── fichero-1
+├── fichero-10
+├── fichero-11
+├── fichero-12
+├── fichero-13
+├── fichero-14
+├── fichero-15
+├── fichero-16
+├── fichero-17
+├── fichero-18
+├── fichero-19
+├── fichero-2
+├── fichero-3
+├── fichero-4
+├── fichero-5
+├── fichero-6
+├── fichero-7
+├── fichero-8
+└── fichero-9
+</code></pre>
+<p>Mostrar un valor relacionado con <code>dmesg(1)</code></p>
+<pre><code>dmesg |grep Bluetooth
+
+[   23.265232] Bluetooth: Core ver 2.22
+[   23.265247] Bluetooth: HCI device and connection manager initialized
+[   23.265250] Bluetooth: HCI socket layer initialized
+[   23.265251] Bluetooth: L2CAP socket layer initialized
+[   23.265256] Bluetooth: SCO socket layer initialized
+[   24.078796] Bluetooth: hci0: read Intel version: 370810225019140f18
+[   24.078797] Bluetooth: hci0: Intel device is already patched. patch num: 18
+[   35.047963] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[   35.047967] Bluetooth: BNEP filters: protocol multicast
+[   35.047974] Bluetooth: BNEP socket layer initialized
+[   85.419671] Bluetooth: RFCOMM TTY layer initialized
+[   85.419675] Bluetooth: RFCOMM socket layer initialized
+[   85.419722] Bluetooth: RFCOMM ver 1.11
+[60146.891379] Bluetooth: hci0: read Intel version: 370810225019140f00
+[60147.826024] Bluetooth: hci0: Intel Bluetooth firmware file: intel/ibt-hw-37.8.10-fw-22.50.19.14.f.bseq
+[60148.097374] Bluetooth: hci0: Intel firmware patch completed and activated
+[60151.506132] Bluetooth: hci0: command 0x0c56 tx timeout
+
+</code></pre>
+<p>Mostrar un valor relacionado con la salida del comando <code>lspci(8)</code></p>
+<pre><code>lspci |grep VGA
+00:02.0 VGA compatible controller: Intel Corporation Device 591b (rev 04)
+</code></pre>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li><a href="https://linux.die.net?target=_blank">manpages</a></li>
+<li><a href="https://www.ibm.com/support/knowledgecenter?target=_blank">IBM Knowledge Center</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,671 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/instalando-sonarqube-en-centos-8/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Instalando SonarQube en CentOS 8 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalando-sonarqube-en-centos-8" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalando SonarQube en CentOS 8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="instalando-sonarqube-en-centos-8">Instalando SonarQube en CentOS 8</h1>
+<h1 id="introduccion">Introducción</h1>
+<p>SonarQube es un software de código abierto desarrollado por una sociedad anónima fundada en 2008 cuya sede está en Suiza y que permite evaluar la calidad del código que se desarrolla y permite que los equipos de desarrollo crezcan elaborando software de calidad. Actualmente lo estoy descubriendo y me gustaría compartir un poco la instalación que hice en un CentOS 8. Actualmente hay una versión comunitaria y otras versiones que contienen más características pero que son de pago, nosotros nos vamos a centrar en la comunitaria.</p>
+<h1 id="requisitos-recomendados">Requisitos recomendados</h1>
+<p>Los <a href="https://docs.sonarqube.org/latest/requirements/requirements/" target="blank">requisitos mínimos</a> para poder funcionar son los siguientes:
+ - Mínimo 3 GB de RAM, 2GB que utilizará SonarQube y 1 GB que utilizará y debe quedar libre para el sistema. Aunque yo lo he podido hacer funcionar en un SO con 2GB de RAM.</p>
+<ul>
+<li>Tener instalado un sistema gestor de base de datos como:</li>
+<li>PostgreSQL, será con el que trabajaremos.</li>
+<li>Microsoft SQL Server</li>
+<li>
+<p>Oracle</p>
+</li>
+<li>
+<p>Tenemos que tener almacenamiento bastante rápido para las operaciones de I/O que realiza Elastic Search, sin embargo, si lo quieres para tu uso personal, no hace falta a menos que vayas a calcular la materia oscura del universo.</p>
+</li>
+</ul>
+<p><strong>Recomendaciones:</strong> Si estamos trabajando con máquinas virtuales, es indispensable hacer snapshot antes de empezar, o crear una máquina plantilla, anotar los cambios y luego hacerlos en nuestra futura máquina que irá a producción.</p>
+<h1 id="tareas-y-pasos-previos">Tareas y pasos previos</h1>
+<h2 id="instalar-el-servicio-solucionador-de-problemas-de-selinux">Instalar el servicio solucionador de problemas de SELinux</h2>
+<p>Recordemos que CentOS hace uso de unas políticas de seguridad que trabajan junto con el kernel de Linux llamadas SELinux, y que permiten que no se ejecuten exploits 0 day entre otras cosas. Por eso es importante lidiar con las políticas y NO desactivarlas bajo ningún concepto.</p>
+<p>Verificar que tenemos SELinux activo:</p>
+<pre><code>$ sestatus
+</code></pre>
+<p>Devolverá una salida como esta:</p>
+<pre><code>SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      31
+</code></pre>
+<p>Si el valor <code>SELinux status: enabled</code> y <code>Current mode</code> es <code>enforcing</code>, está bien, si no tendremos que:
+1. Revisar si tenemos el paquete <code>selinux-policy-targeted</code> y <code>selinux-policy</code> instalados.
+2. Si tenemos desactivado SELinux, hacer un snapshot, y activarlo, editamos <code>/etc/selinux/config</code></p>
+<pre><code>SELINUX=enforcing
+</code></pre>
+<ol>
+<li>Activarlo ahora</li>
+</ol>
+<pre><code># setenforce 1
+</code></pre>
+<p>Por otro lado, si tenemos las políticas instaladas y activadas instalamos el servidor que nos ayudará a solucionar los problemas con las políticas.</p>
+<pre><code># dnf install setroubleshoot-server
+</code></pre>
+<p>Revisar si tenemos algún ejecutable que se ha intentado saltarse las políticas:</p>
+<pre><code># sealert -a /var/log/audit.log
+</code></pre>
+<p>El archivo de configuración de este servidor está: <code>/etc/setroubleshoot/setroubleshoot.conf</code></p>
+<h2 id="crear-usuariogrupo-y-home">Crear usuario/grupo y home</h2>
+<p>Para crearlo:</p>
+<pre><code># useradd sonarqube -m -d /opt/sonarqube
+# passwd sonarqube 
+</code></pre>
+<p>Este creará el usuario con un home específico en <code>/opt/sonarqube</code> y le asignaremos una contraseña.</p>
+<h2 id="asignar-los-valores-requeridos">Asignar los valores requeridos</h2>
+<p>Tenemos que tener en cuenta estos valores:</p>
+<ul>
+<li><code>vm.max_map_count</code> tiene que ser &gt;= 262144</li>
+<li><code>fs.file-max</code> es &gt;= 65536</li>
+<li>El usuario que ejecute SonarQube podrá abrir hasta un total de 65536 descriptores de archivos y también abrir al menos un total de 4096 hilos.</li>
+</ul>
+<p>Podemos revisar estos valores:</p>
+<pre><code>$ sysctl vm.max_map_count
+$ sysctl fs.file-max
+$ ulimit -n
+$ ulimit -u
+</code></pre>
+<p>Asignamos los valores si son inferiores:</p>
+<pre><code># sysctl -w vm.max_map_count=262144
+# sysctl -w fs.file-max=65536
+# ulimit -n 65536
+# ulimit -u 4096
+</code></pre>
+<p>Para que se conserven estos valores al arranque, creamos el siguiente archivo: <code>/etc/sysctl.d/99-sonarcube.conf</code></p>
+<pre><code>vm.max_map_count=262144
+fs.file-max=65536
+</code></pre>
+<p>Y creamos otro archivo: <code>/etc/security/limits.d/99-sonarqube.conf</code></p>
+<pre><code>sonarqube - nofile 65536
+sonarqube - nproc 4096
+</code></pre>
+<p>Recomiendan verificar si tenemos SECCOMP habilitado en el kernel de Linux, lo he comprobado y efectivamente está habilitado en el kernel oficial de CentOS 8. Sin embargo, conviene siempre hacerlo, en caso de que no lo tengans, tendrás que especificar la siguiente línea en su archivo de configuración o recompilar el kernel con estas opciones (<strong>algo no recomendado</strong>).</p>
+<pre><code>$ grep SECCOMP /boot/config-$(uname -r)
+</code></pre>
+<p>Si te devuelve esta salida, no hace falta que añadas nada.</p>
+<pre><code>CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
+CONFIG_SECCOMP_FILTER=y
+CONFIG_SECCOMP=y
+</code></pre>
+<p>Si te devuelve lo contrario "y" por un "n", o no salen las líneas, tendrías que añadir esta línea al archivo en la <code>$HOME</code> de SonarQube: <code>$HOME/conf/sonar.properties</code> más adelante.</p>
+<pre><code>sonar.search.javaAdditionalOpts=-Dbootstrap.system_call_filter=false
+</code></pre>
+<h2 id="instalando-openjdk-11">Instalando OpenJDK 11</h2>
+<p>Es necesario tenerlo instalado para poder continuar:</p>
+<pre><code># dnf install java-11-openjdk-headless.x86_64
+</code></pre>
+<h2 id="instalando-y-configurando-postgresql">Instalando y configurando PostgreSQL</h2>
+<p>Por defecto, tenemos la versión 10.6 disponible en los repositorios AppStream.</p>
+<p><strong>NOTA:</strong> Aconsejo trabajar con tmux cuando estamos en el servidor para poder tener multisesión en la terminal virtual (<em>tty</em>).</p>
+<p>Segundo, instalar PostgreSQL:</p>
+<pre><code># dnf install postgresql-server
+</code></pre>
+<p><strong>NOTA</strong>: Que sepamos que se ha creado un usuario y grupo <code>postgres</code> y que tiene por defecto el UID y GID 26 cuyo home es <code>/var/lib/pgsql</code>. Si vamos a utilizar alguna aplicación que precise de alguna configuración y necesite tener variables de entorno configuradas, tendremos que editar el archivo <code>/var/lib/pgsql/.bash_profile</code></p>
+<p>Inicializamos la base de datos:</p>
+<pre><code># postgresql-setup --initdb
+</code></pre>
+<p>Si tenemos la siguiente salida es que ha ido todo bien:</p>
+<pre><code> * Initializing database in '/var/lib/pgsql/data'
+ * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
+</code></pre>
+<p>Arrancando el servidor</p>
+<pre><code># systemctl start postgresql.service
+</code></pre>
+<p>Si vemos la salida del <code>netstat -ptna</code> veremos que hay un servicio escuchando por el puerto 5432.</p>
+<pre><code>tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN      21159/postmaster    
+tcp6       0      0 ::1:5432                :::*                    LISTEN      21159/postmaster    
+</code></pre>
+<p>No vamos a configurar el acceso de manera remota porque es darle los caramelos a los niños directamente. </p>
+<h2 id="cambiando-la-contrasena-del-usuario-postgres">Cambiando la contraseña del usuario postgres</h2>
+<pre><code>$ psql
+postgres=# ALTER USER postgres WITH PASSWORD 'cambiaLaContrasenaAqui';
+ALTER ROLE
+</code></pre>
+<h2 id="crear-los-objetos-en-la-bd">Crear los objetos en la BD</h2>
+<p>Los usuarios/grupos existen en PostgreSQL como ROLE, comento este paso para que no nos liemos administrando la base de datos en un futuro.</p>
+<pre><code>$ createuser -U postgres -W -D -l -P -R -S sonarqube
+</code></pre>
+<p>Opciones:
+- <code>-U postgres</code>: Utilizamos el superusuarios de PostgreSQL
+- <code>-D</code> evita que el ROLE nuevo cree bases de datos
+- <code>-l</code> permite hacer login
+- <code>-P</code> Nos pregunta la contraseña sin emitir caracteres como en el comando <code>passwd</code> o el login en una terminal virtual <code>tty</code>.
+- <code>-R</code> el usuario no creará otros ROLE
+- <code>-S</code> evita tener superprivilegios en todo el sistema</p>
+<p>Revisamos que se creó el usuario correctamente, escalamos privilegios en el sistema y hacemos sesión como usuario <code>postgres</code>:</p>
+<pre><code>$ su - 
+# su - postgres
+$ psql -U postgres
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of                                   
+-----------+------------------------------------------------------------+-----------                                  
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}                                          
+ sonarqube | | {} 
+</code></pre>
+<p>Salimos de la sesión en PostgreSQL utilizando <code>\l</code> y creamos la base de datos con el comando <code>createdb</code>:</p>
+<pre><code>$ createdb -U postgres -E UTF-8 -l en_US.UTF-8 -O sonarqube sonarqube
+</code></pre>
+<p>Opciones:
+- <code>-U postgres</code>: Utilizamos el superusuarios de PostgreSQL
+- <code>-E UTF-8</code>: Estamos diciendo que la base de datos debe tener UTF-8 como codificación por defecto.
+- <code>-l en_US.UTF-8</code>: Le decimos que el idioma y codificación serán inglés americano y UTF-8
+- <code>-O sonarqube</code>: Es el propietario de la DB
+- <code>sonarqube</code>: Usuario que hemos creado</p>
+<p>Revisamos que se ha creado la base de datos correctamente:</p>
+<pre><code>$ psql -U postgres
+postgres=# \l
+                                  List of databases
+   Name    |   Owner   | Encoding |   Collate   |    Ctype    |   Access privileges                                   
+-----------+-----------+----------+-------------+-------------+-----------------------                                
+ postgres  | postgres  | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                                                       
+ sonarqube | sonarqube | UTF8     | en_US.UTF-8 | en_US.UTF-8 |   
+</code></pre>
+<p>Damos privilegios al usuario sonarqube:</p>
+<pre><code>postgres=# GRANT ALL PRIVILEGES ON DATABASE sonarqube TO sonarqube;
+</code></pre>
+<p>Y revisamos que ya los tiene:</p>
+<pre><code>postgres-# \l
+                                   List of databases
+   Name    |   Owner   | Encoding |   Collate   |    Ctype    |    Access privileges    
+-----------+-----------+----------+-------------+-------------+-------------------------
+ postgres  | postgres  | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ sonarqube | sonarqube | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =Tc/sonarqube          +
+           |           |          |             |             | sonarqube=CTc/sonarqube
+
+</code></pre>
+<p>Hacemos copia de seguridad del archivo <code>/var/lib/pgsql/data/pg_hba.conf</code> </p>
+<pre><code># cp -av /var/lib/pgsql/data/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf.bck.$(date +%d-%m-%y-%H:%M)
+</code></pre>
+<p>Editamos el archivo con nuestro editor favorito y comentamos las siguientes líneas:</p>
+<pre><code>#host    all             all             127.0.0.1/32            ident
+#host    all             all             ::1/128                 ident
+#local   replication     all                                     peer
+#host    replication     all             127.0.0.1/32            ident 
+#host    replication     all             ::1/128                 ident
+</code></pre>
+<p>Y añadimos las siguientes:</p>
+<pre><code>host    sonarqube       sonarqube       127.0.0.1/32            md5
+host    sonarqube       sonarqube       ::1/128                 md5
+</code></pre>
+<p><strong>NOTA</strong>: Si no tenemos IPv6 habilitado, evitamos copiar las líneas <code>::1/128</code>.
+<strong>NOTA</strong>: Por otro lado, con este cambio, evitamos la conexión indiscriminada, y hacemos una política de denegamos todo y vamos permitiendo de forma controlada.</p>
+<p>Reiniciamos el servicio:</p>
+<pre><code># systemctl restart postgresql.service
+</code></pre>
+<p>Probamos a loguearnos:</p>
+<pre><code>$ psql -U sonarqube -W -h localhost -d sonarqube
+</code></pre>
+<p>Obtendremos el prompt:</p>
+<pre><code>psql (10.6)
+Type &quot;help&quot; for help.
+
+sonarqube=&gt; 
+</code></pre>
+<p>Habilitamos el servicio en el arranque:</p>
+<pre><code># systemctl enable postgresql.service
+</code></pre>
+<h2 id="que-pasa-si-nos-hemos-equivocado">¿Qué pasa si nos hemos equivocado?</h2>
+<p>Pues podemos deshacer nuestros pasos de la siguiente forma:</p>
+<p><strong>NOTA</strong>: Es importante eliminar primero la base de datos que está asociada al role sonarqube porque PostgreSQL <strong>no permite eliminar</strong> el usuario si hay permisos asociados al role.</p>
+<p>Eliminar la base de datos:</p>
+<pre><code>$ dropdb --if-exists sonarqube
+</code></pre>
+<p>Eliminar el usuario:</p>
+<pre><code>$ dropuser --if-exists sonarqube
+</code></pre>
+<h1 id="instalando-sonarqube">Instalando SonarQube</h1>
+<p>Accedemos al sistema como usuario <code>sonarqube</code>  y descargamos el archivo de su <a href="https://www.sonarqube.org/downloads/" target="blank">sitio oficial.</a></p>
+<p>Recordemos que el usuario <code>sonarqube</code> tiene su <code>$HOME</code> en <code>/opt/sonarqube</code>.</p>
+<pre><code>$ unzip sonarqube*.zip
+$ mv sonarqube*/* .
+$ rm -rf sonarqube-*
+</code></pre>
+<p>Retiquetamos las etiquetas para SELinux, si te interesa guardar en un archivo el resultado puedes ejecutarlo con una redireccionando la salida a un archivo:</p>
+<pre><code># restorecon -vR /opt/sonarqube/
+</code></pre>
+<p>No te asustes si aparecen muchas líneas como estas:</p>
+<pre><code>Relabeled /opt/sonarqube/lib/common/netty-buffer-4.1.32.Final.jar from unconfined_u:object_r:usr_t:s0 to unconfined_u:object_r:lib_t:s0
+Relabeled /opt/sonarqube/lib/common/commons-io-2.6.jar from unconfined_u:object_r:usr_t:s0 to unconfined_u:object_r:lib_t:s0
+Relabeled /opt/sonarqube/lib/jsw from unconfined_u:object_r:usr_t:s0 to unconfined_u:object_r:lib_t:s0
+Relabeled /opt/sonarqube/lib/jsw/wrapper-3.2.3.jar from unconfined_u:object_r:usr_t:s0 to unconfined_u:object_r:lib_t:s0
+</code></pre>
+<p>Forman parte del proceso y al estar en modo <em>verbose</em>, se muestran.</p>
+<p>Creamos un directorio para el almacenamiento de datos por parte de ElasticSearch</p>
+<pre><code># mkdir -p /var/sonarqube/{data,temp}
+# chown sonarqube:sonarqube /var/sonarqube/{data,temp}
+</code></pre>
+<p>Hacemos una copia de seguridad de este archivo: <code>/opt/sonarqube/conf/sonar.properties</code></p>
+<pre><code>$ cp -av $HOME/conf/sonar.properties $HOME/conf/sonar.properties.bck.$(date +%d-%m-%Y-%H:%M)
+</code></pre>
+<p>Editamos el archivo <code>opt/sonarqube/conf/sonar.properties</code> añadiendo las siguientes líneas al final del archivo:</p>
+<pre><code>sonar.jdbc.username=sonarqube
+sonar.jdbc.password=example@
+sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
+sonar.path.data=/var/sonarqube/data
+sonar.path.temp=/var/sonarqube/temp
+sonar.web.host=IP_DE_TU_HOST
+sonar.web.port=9000
+sonar.web.context=/sonarqube
+</code></pre>
+<p><strong>NOTA</strong>: Si tratas de configurar el puerto por defacto del 1024, no podrás hacerlo si no eres <code>root</code>. Para ello tendrás que mirar alternativas con <code>setcap</code> o explorar otras vías, por lo que perderás más tiempo haciéndolo que creando una redirección en el cortafuegos.</p>
+<p>Guardamos e iniciamos el proceso:</p>
+<pre><code>$ cd /opt/sonarqube/bin/linux-x86-64
+$ ./sonar.sh start
+</code></pre>
+<p>Veremos una salida como esta:</p>
+<pre><code>Starting SonarQube...                                                                                                  
+Started SonarQube.  
+</code></pre>
+<p>Habilitando el acceso al puerto desde <code>firewalld</code>:</p>
+<pre><code># firewall-cmd --add-port 9000/tcp --permanent
+# firewall-cmd --reload
+</code></pre>
+<p>¡Voilá! tendremos SonarQube arrancado y funcionando, puedes revisarlo en http://IP_SERVIDOR:9000/sonarqube</p>
+<p><img alt="" src="../index.png" /></p>
+<p>Si de lo contrario, has recibido un mensaje como este:</p>
+<pre><code>Starting SonarQube...                                                                                                  
+Stopped SonarQube.  
+</code></pre>
+<p>Hay algo que no está funcionando. ¿Cómo revisarlo?
+- Revisar los logs de: <code>/opt/sonarqube/logs</code> 
+- Revisar que no hayan problemas en SELinux con <code># sealert -a /var/log/audit/audit.log</code>
+- Comprobar que estamos ejecutándolo con el usuario y grupo <code>sonarqube</code>
+- Comprobar que los permisos de los directorios y ejecutables son del usuario que tocan:</p>
+<pre><code># find /opt/sonarqube/ ! -user sonarqube
+# find /opt/sonarqube/ ! -group sonarqube
+# find /var/sonarqube/ ! -user sonarqube
+# find /var/sonarqube/ ! -group sonarqube
+</code></pre>
+<p>Si devuelven salidas quiere decir que esos archivos/directorios no tienen los permisos correspondientes.
+- Comprobar que tenemos OpenJDK correctamente instalado:</p>
+<pre><code>$ whereis java
+java: /usr/bin/java /usr/lib/java /etc/java /usr/share/java /usr/share/man/man1/java.1.gz
+</code></pre>
+<ul>
+<li>Verificar que el servicio de PostgreSQL está corriendo:</li>
+</ul>
+<pre><code>$ systemctl status postgresql.service
+</code></pre>
+<ul>
+<li>Verificar que podemos acceder mediante usuario <code>sonarqube</code> a la base de datos de <code>sonarqube</code>:</li>
+</ul>
+<pre><code>$ psql -U sonarqube -W -h localhost -d sonarqube
+</code></pre>
+<ul>
+<li>Revisar que la configuración de base de datos, servidor web... corresponde con la realidad. <code>/opt/sonarqube/conf/sonar.properties</code></li>
+<li>Mirar si los archivos tienen los valores que tocan en <code>/etc/sysctl.d/99-sonarqube.conf</code> y <code>/etc/security/limits.d/99-sonarqube.conf</code></li>
+</ul>
+<h2 id="creando-un-servicio">Creando un servicio</h2>
+<p>¡Ahora que ya funciona! Es hora de crear un servicio para que arranque con la máquina.</p>
+<p>Creamos en el directorio <code>/etc/systemd/system/multi-user.target.wants/sonarqube.service</code></p>
+<p>Y añadimos las siguientes líneas:</p>
+<pre><code>[Unit]
+Description=Servicio que gestiona SonarQube
+After=postgresql.service
+
+[Service]
+Type=forking
+User=sonarqube
+Group=sonarqube
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+PIDFile=/opt/sonarqube/bin/linux-x86-64/SonarQube.pid
+LimitNOFILE=65536
+LimitNPROC=4096
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+</code></pre>
+<p>Recargamos la nueva configuración del servicio:</p>
+<pre><code># systemctl daemon-reload
+</code></pre>
+<p>Iniciamos el servicio</p>
+<pre><code># systemctl start sonarcube.service
+</code></pre>
+<p>Habilitamos el servicio al arranque:</p>
+<pre><code> systemctl enable sonarcube.service
+</code></pre>
+<p>Para confirmar que todo va a funcionar si hay un apagón o un reinicio programado, hay que hacer un reinicio del servidor y comprobarlo, no basta con <em>ya lo haré</em>, <em>cuando se pueda</em>, hay que hacerlo.</p>
+<pre><code># systemctl reboot
+</code></pre>
+<p>Y con esto, habremos instalado SonarQube en CentOS 8 y con SELinux habilitado (por favor seguir las buenas prácticas). Más adelante, según vaya viendo más sobre SonarQube iré publicando más tutoriales.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

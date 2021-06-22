@@ -1,0 +1,474 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/rs232-link/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Conexión RS-232-USB - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conexion-rs-232-usb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Conexión RS-232-USB
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="conexion-rs-232-usb">Conexión RS-232-USB</h1>
+<h1 id="introduccion">Introducción</h1>
+<p><img alt="" src="../rs232.jpg?cropResize=200,200" title="Adaptador RS232-USB StarTech.com" /></p>
+<p>En el siguiente artículo, vamos a ver cómo podemos conectarnos mediante fuera de banda a dispositivos de red como puede ser un switch o un router desde Linux.</p>
+<h1 id="que-es-conexion-fuera-de-banda">¿Qué es conexión fuera de banda?</h1>
+<p>Es un enlace entre un dispositivo (host) hacia el otro dispositivo que queramos acceder como un router o un switch haciendo uso de un cable especial como un RS-232, USB-MicroUSB, o un adaptador RS-232-USB. Esta conexión no requiere ningún tipo de direccionamiento IP y sólo puede accederse físicamente, a menos que tengamos un sistema de soporte de fuera de banda pero ya eso es otra historia.</p>
+<h1 id="tengo-el-adaptador-cable-como-me-conecto">Tengo el adaptador, cable... ¿Cómo me conecto?</h1>
+<p>Para conectarnos necesitaremos un programa especial llamado "Emulador de terminal". Consiste en un software que nos permite ejecutar comandos en los dispositivos a los que queremos conectarnos. Este contiene una serie de parámetros como la velocidad, bit de paridad... que por regla general están determinados en el manual del dispositivo ya sea switch, router...</p>
+<p>En los siguientes apartados veremos cómo conectarnos desde Linux, Windows.</p>
+<h2 id="linux">Linux</h2>
+<p>Tenemos una serie de programas en modo CLI como <code>minicom(1))</code>,  o también en modo GUI como <code>cutecom</code>, <code>putty(1)</code>.</p>
+<p>Preferiblemente utilizo <code>screen(1)</code>, fácil, rápido y sencillo.</p>
+<h3 id="instalando-screen">Instalando screen</h3>
+<p>Lo tenemos disponible en la mayoría de distribuciones de Linux, si es que, no viene ya incluido por defecto.</p>
+<h4 id="fedora-27">Fedora 27</h4>
+<pre><code>su -c &quot;dnf install screen&quot;
+</code></pre>
+<h4 id="archlinux">Archlinux</h4>
+<pre><code>sudo pacman -S screen
+</code></pre>
+<h4 id="gentoo">Gentoo</h4>
+<pre><code>sudo emerge -av screen
+</code></pre>
+<h4 id="debian-ubuntu-linux-mint">Debian, Ubuntu, Linux Mint...</h4>
+<pre><code>sudo apt-get install screen
+</code></pre>
+<h4 id="codigo-fuente">Código fuente</h4>
+<ol>
+<li>Descargar código fuente</li>
+<li>Extraer</li>
+<li>Instalar dependencias requeridas para la compilación</li>
+<li>Configurar opciones y parámetros opcionales</li>
+<li>Compilar</li>
+<li>Instalar</li>
+<li>Limpiar</li>
+</ol>
+<h5 id="descargar-codigo-fuente">Descargar código fuente</h5>
+<p>Obtenemos el código fuente desde <a href="http://ftp.gnu.org/gnu/screen/screen-4.6.2.tar.gz?target=_blank">aquí</a>, o bien mediante <code>wget(1)</code>. Posteriormente, descargamos la firma para verificar que el archivo no ha sufrido ninguna alteración, puedes hacerlo desde el siguiente <a href="http://ftp.gnu.org/gnu/screen/screen-4.6.2.tar.gz.sig?target=_blank">enlace</a></p>
+<h5 id="extraer">Extraer</h5>
+<p>Extraemos los archivos en un directorio, por ejemplo <code>/home/sincorchetes/screen</code>, y nos situamos en él.</p>
+<h5 id="dependencias-para-la-compilacion">Dependencias para la compilación</h5>
+<p>Instalamos todos aquellos archivos que se nos pide en el proceso de compilación. Generalmente suelen venir en un fichero README.</p>
+<ul>
+<li>GCC</li>
+<li>autoconf</li>
+<li>make</li>
+<li>binutils</li>
+<li>automake</li>
+<li>ncurses-devel</li>
+</ul>
+<h5 id="configurar-opciones">Configurar opciones</h5>
+<p>Según las instrucciones encontradas en el fichero INSTALL:
+1. Ejecutar <code>./autogen.sh</code>
+2. Establecer la configuración que queremos que tenga screen, incluyendo el directorio raíz dónde se instalará este software, en mi caso <code>/usr</code>:</p>
+<pre><code>./configure --prefix=/usr
+</code></pre>
+<ol>
+<li>Compilar el código</li>
+</ol>
+<p><strong>NOTA: Puedes hacer uso de CFLAGS (instrucciones que contiene el procesador para llevar a cabo la compilación más rápida entre otras cosas), o la compilación paralela con -jN, dónde N equivale al número total de CPUs detectados en <code>/proc/cpuinfo</code></strong></p>
+<pre><code>make
+</code></pre>
+<ol>
+<li>Instalar</li>
+</ol>
+<pre><code>make install clean
+</code></pre>
+<ol>
+<li>Ejecutar</li>
+</ol>
+<pre><code>screen
+</code></pre>
+<h3 id="identificando-el-dispositivo">Identificando el dispositivo</h3>
+<p>En Linux las conexiones seriales se encuentran en <code>/dev/ttySN</code>, sin embargo, al utilizar un adaptador USB se renombra a <code>/dev/ttyUSBN</code> siendo N el número de dispositivo detectado por orden de conexión.</p>
+<p>Una vez que conectemos el adaptador USB, RS-232=USB, ejecutamos:
+<code>dmesg</code></p>
+<p>Y en las últimas ĺíneas nos debería de aparecer el siguiente mensaje:</p>
+<pre><code>[13194.083292] usb 3-1: new full-speed USB device number 2 using xhci_hcd
+[13194.232019] usb 3-1: New USB device found, idVendor=0557, idProduct=2008
+[13194.232025] usb 3-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[13194.232028] usb 3-1: Product: USB-Serial Controller D
+[13194.232044] usb 3-1: Manufacturer: Prolific Technology Inc. 
+[13195.175447] usbcore: registered new interface driver pl2303
+[13195.175477] usbserial: USB Serial support registered for pl2303
+[13195.175523] pl2303 3-1:1.0: pl2303 converter detected
+[13195.204173] usb 3-1: pl2303 converter now attached to ttyUSB0
+</code></pre>
+<p>Ahí podemos ver cómo el dispositivo se encuentra en <code>/dev/ttyUSB0</code></p>
+<h2 id="conectandonos-al-dispositivo">Conectándonos al dispositivo</h2>
+<p>Abrimos una terminal:</p>
+<pre><code>$ screen /dev/ttyUSB0
+</code></pre>
+<p>Deberá salirte un mensaje como este de información previa al acceso al dispositivo en caso de que lo tuviese:</p>
+<pre><code>SAT FEB 17 06:53:48 : LANPOWER (108) info message:
++++ Power Supply #1 Present(0xc)!
++++ 48v Present(0x6)!
++++ Power Supply #1 Up(0xc)!
+Successfully sent the I2C read message to NISUP!!
+
+SAT FEB 17 06:53:58 : INTERFACE (6) info message:
++++  NIs are ready 
+
+SAT FEB 17 06:54:28 : REMOTE_CONFIG (142) error message:
++++  DHCP Response not received in 30s. Failed!
+
+SAT FEB 17 06:54:28 : REMOTE_CONFIG (142) info message:
++++ Remote Configuration Download cannot proceed.
+
+login : 
+</code></pre>
+<h2 id="windows">Windows</h2>
+<p>Para conectarnos desde Windows, tenemos software como PuTTY, TeraTerm...</p>
+<ol>
+<li>Descargamos <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html?target=_blank">PuTTY for Windows</a></li>
+<li>Instalamos </li>
+<li>Verificamos qué ID tiene el adaptador conectado accediendo a:<ul>
+<li>Panel de control -&gt; Administrador de dispositivos -&gt; Puertos (COM &amp; LPT)</li>
+</ul>
+</li>
+<li>Una vez que lo sepamos, lanzamos PuTTY -&gt; Serial -&gt; "Serial Line escribimos": COM5</li>
+</ol>
+<p>Como podemos ver en la siguiente imagen: <img alt="" src="putty_windows.png &quot;Ventana de administración de dispositivos de Windows y PuTTY" /></p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>En este apartamos intentamos resolver algún que otro problema que nos pueda surgir en los diferentes sistemas.</p>
+<h2 id="linux_1">Linux</h2>
+<p>No se establece la conexión porque devulve:</p>
+<pre><code>/dev/ttyUSB0: Permission denied
+</code></pre>
+<p>Esto es debido a que la distribución que actualmente utilizamos gestiona los dispositivos seriales a través de un grupo como puede ser <code>dialout</code>. Para solucionar este problema:</p>
+<pre><code># gpasswd -a USUARIO dialout
+$ newgrp dialout
+screen /dev/ttyUSB0
+</code></pre>
+<h2 id="windows_1">Windows</h2>
+<p>El sistema no detecta el driver automáticamente, o no viene incluido con el cable.
+Por lo general hay un driver genérico que podemos obtener a través del siguiente <a href="http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=225&amp;pcid=41?target=_blank">enlace</a></p>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li>Google </li>
+<li>LPIC-I Ediciones ENI - Tercera edición</li>
+<li><a href="https://wiki.archlinux.org/index.php/working_with_the_serial_console?target=_blank">ArchLinux</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

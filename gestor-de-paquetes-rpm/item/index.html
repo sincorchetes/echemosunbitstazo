@@ -1,0 +1,710 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/gestor-de-paquetes-rpm/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Gestor de paquetes y paquería RPM - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gestor-de-paquetes-y-paqueria-rpm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gestor de paquetes y paquería RPM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="gestor-de-paquetes-y-paqueria-rpm">Gestor de paquetes y paquería RPM</h1>
+<p>Como ya hemos hablado anteriormente sobre qué es un <a href="https://echemosunbitstazo.es/blog/como-gestionar-software-en-linux?target=_blank">gestor de paquetes</a> comenzaremos a ver cómo trabajar con este gestor de paquetería.</p>
+<h1 id="historia-y-antecedentes">Historia y antecedentes</h1>
+<p>Los orígenes del gestor de paquetes RPM (<em>Red hat Package Manager</em>) se remonta en el año 1997. Cuando Marc Ewing, Erik Troan y el resto de desarrolladores de Red Hat lo sacaron como mejora de los gestores de paquetes que existían en aquella época como es el caso de: PMS (Package Management System) desarrollado por Rik Faith, Doug Hoffman y Kevin Martin para su distribución llamada BOGUS en el año 1993; o RPP (Red Hat Software Program Packages) que vio la luz en 1994 en las primeras distribuciones beta de las versión Red Hat Commercial Linux (RCL) y por último, en 1994 también, Ian Murdock fundador de la distribución Debian GNU/Linux, saca a la luz DPKG.</p>
+<h2 id="notas-adicionales">Notas adicionales</h2>
+<pre><code>La Linux Standard Base propuso RPM como un sistema de paquetes estándar que debería formar parte de toda distribución Linux. La LSB ha definido multitud de directorios para mantener un estándar en cuanto configuraciones entre otras muchas más cosas. Sin embargo, muchas distribuciones no respetaron esta proposición, y se dedicaron a mantener su propio sistema de paquetería. 
+RPM es ampliamente utilizado sobre todo por las distribuciones openSUSE, Red Hat * como RHEL, Oracle Linux, CentOS, Fedora, Mageia, OpenMandriva, ROSA Linux, PCLinuxOS...
+
+Los objetivos de su diseño era ser fácil de utilizar; tener un enfoque orientado solo a paquetes; actualización de versión superiores de paquetes; llevar un seguimiento de las dependencias internas de los paquetes; capacidad de llevar a cabo consultas; verficación; soporte para múltiples arquitecturas y utilizar fuentes originales.
+</code></pre>
+<h1 id="facilidad-de-uso">Facilidad de uso</h1>
+<p>No es necesario efectuar una compilación de código fuente de un software como por ejemplo:</p>
+<pre><code>tar zxf software_package
+cd software_package
+./configure
+make
+su
+make install
+</code></pre>
+<p>Este proceso conlleva a realizar 6 pasos, de los cuáles, 3 de ellos (pasos 3,4,6) pueden dar origen a fallos de compilación por no haber dependencias que se encuentren resultas; fallos en el Makefile (script de compilación); parámetros inestables....etc</p>
+<p>A esto, que sería:</p>
+<pre><code>wget ftp://servidor.com/pub/RPM/software.rpm
+rpm -ivh software.rpm
+</code></pre>
+<p>Sin duda alguna, reduce de forma notoria la complejidad, y el tiempo, ya que, cuando se compila de código fuente, suele consumir muchos recursos de la máquina, pero sobre todo tiempo de compilación.</p>
+<h1 id="enfoque-sobre-un-sistema-que-sea-orientado-a-paquetes">Enfoque sobre un sistema que sea orientado a paquetes</h1>
+<p>Comentamos que pueden manipularse y/o gestionarse cientos y miles de paquetes de forma simultánea. Mientras que eliminar paquetes con el viejo proceso que se ha utilizado antaño make unistall clean (cuando existía), había que ir, de directorio en directorio efectuando dicha desinstalación. Por lo que se vuelve una ardúa y costosa tarea.</p>
+<h1 id="actualizacion-de-paquetes">Actualización de paquetes</h1>
+<p>En la que se elimina el paquete que ha sido previamente instalado reemplazándolo por el nuevo sin afectar a la estabilidad del sistema. Y por si los administradores poseen ficheros de configuración generales, estos quedan como están, así se evitan perder esos ficheros. Para efectuar una migración completa de los ficheros nuevos de configuración a los nuevos, se crean los famosos .rpmnew. Estos son los ficheros que acompañan a la actualización y que se tratan utilizando rpmconf -a.</p>
+<h1 id="interdependencia-de-paquetes">Interdependencia de paquetes.</h1>
+<p>Estos poseen una información de seguimiento para saber que otros paquetes son necesarios, en caso de actualización, instalación o eliminación de software. Ya que puede haber software que precise de otros programas y estos, si no contuvieran esta información de seguimiento. Puede que no se lleguen a instalar y no funcionaría correctamente el software.</p>
+<h1 id="capacidad-de-realizar-consultas">Capacidad de realizar consultas</h1>
+<p>Característica que forma parte del sistema de paquetes RPM. Este trabaja en conjunto con una base de datos llamada Berkeley DB en la que se almacena toda la información que tenga que ver con los paquetes que se encuentren instalados en el sistema, incluyendo si, añaden documentación.</p>
+<h1 id="verificacion-de-paquetes">Verificación de paquetes</h1>
+<p>Característica que evita que se mantengan ficheros corruptos instalados en el sistema. RPM contiene un conjunto de información como el tamaño y los permisos sobre cada uno de los ficheros que se han instalado en el sistema. Esto evita que sucedan errores garrafales que puedan desembocar problemas de fallo de memoria en los programas que se han instalado. Como por ejemplo, un administrador modifica un fichero y este lo desborda con código erróneo, aumentando drásticamente su tamaño. Esto puede detectarlo RPM con su base de datos.</p>
+<h1 id="disponibilidad-multiples-arquitecturas">Disponibilidad múltiples arquitecturas</h1>
+<p>RPM en suma, está portado a múltiples arquitecturas, no solo está para x86, x86_64. Se puede encontrar para procesadores DEC, SPARC, Motorola 68000, ARM...</p>
+<h1 id="fuentes-originales">Fuentes originales</h1>
+<p>Nosotros con RPM podemos encontrarnos 2 tipos de paquetes. Un paquete contiene el código fuente que suelen contener las letras SRC en mayúsculas; y otro paquete que contienen los binarios pre-compilados.</p>
+<p>Aquellos paquetes que contienen el SRC, facilitan la vida a los desarrolladores, porque contienen todo lo necesario para llevar a cabo el proceso de empaquetación binaria.</p>
+<h1 id="terminologia-yo-nomenclatura">Terminología y/o nomenclatura</h1>
+<p>Ahora comentaremos un poco qué terminología utiliza RPM en sus paquetes. La terminología nos sirve para identificar determinadas características y funcionalidades que tiene un paquete. Ya que este puede contener multitud de parámetros que nos puede ayudar para saber la arquitectura que utiliza; la versión y sobre todo que tipo de versión ya que puede incluir alguna característica fuera de lo común; nombre del paquete...etc</p>
+<p>En RPM, nos podemos encontrar 2 tipos de paquetes en el siguiente ejemplo extraído de Fedora 24:</p>
+<pre><code>phpMyAdmin-4.6.3-1.fc24.noarch
+phpMyAdmin.src
+</code></pre>
+<ul>
+<li>Identifica el nombre del paquete</li>
+<li>Identifica la versión e incluyendo revisión, en caso de que tuviese</li>
+<li>Identifica la versión de Fedora que se está utilizando</li>
+<li>Identifica la arquitectura, o, si el paquete es un paquete que contenga código fuente.</li>
+<li>Sistemas 64 bits y soporte 32 bits (multilib)</li>
+</ul>
+<p>En caso de que utilices arquitectura 64 bits, en las distribuciones RPM es fácilmente instaurable una capa de compatibilidad para software de 32 bits. No hace falta más que instalar el software que se encuentre en su terminología i686, poco más hay que hacer aparte de satisfacer las dependencias de dichos paquetes.</p>
+<h1 id="contenido-de-los-paquetes-rpm">Contenido de los paquetes .RPM</h1>
+<p>Como hemos dicho anteriormente, existen 2 tipos de paquete, binario y source. Vamos a ver la diferencia que aguarda cada uno de ellos y que contienen de una forma más visual.</p>
+<pre><code>.
+
+├── phpMyAdmin-4.6.1-all-languages.tar.xz
+
+├── phpMyAdmin-4.6.1-all-languages.tar.xz.asc
+
+├── phpMyAdmin-config.inc.php
+
+├── phpMyAdmin.htaccess
+
+├── phpMyAdmin.nginx
+
+└── phpMyAdmin.spec
+</code></pre>
+<p>Este es el contenido de un SRC. Como se puede apreciar, no incluye nada más que:</p>
+<ul>
+<li>Código fuente comprimido en .tar.xz</li>
+<li>Suma de verificación del tarball</li>
+<li>Ficheros específicos de configuración del software phpMyAdmin</li>
+<li>Fichero .SPEC que hablaremos de ello más adelante. </li>
+</ul>
+<p>Sin embargo, si nos fijamos en el contenido de un paquete binario obtendremos la siguiente salida:</p>
+<pre><code>.
+
+├── etc
+
+│   ├── httpd
+
+│   │   └── conf.d
+
+│   │       └── phpMyAdmin.conf
+
+│   ├── nginx
+
+│   │   └── default.d
+
+│   │       └── phpMyAdmin.conf
+
+│   └── phpMyAdmin
+
+│       └── config.inc.php
+
+├── usr
+
+│   └── share
+
+│       ├── doc
+
+│       │   └── phpMyAdmin
+
+│       │       ├── ChangeLog
+
+│       │       ├── DCO
+
+│       │       ├── examples
+
+│       │       │   ├── config.manyhosts.inc.php
+
+│       │       │   ├── config.sample.inc.php
+</code></pre>
+<p>Podemos observar, como ya incluye directorios del sistema con sus respectos ficheros necesarios para su funcionamiento. Y no incluye nada de código fuente que precise de su compilación.</p>
+<h1 id="gestionando-paquetes">Gestionando paquetes</h1>
+<p>Dentro de lo que cabe en nuestro sistema, podemos hacer las funciones básicas de gestión de paquetes como es el caso de eliminar, instalar o reinstalar entre otras más.</p>
+<h2 id="instalar-un-paquete-bastara-con-efectuar-el-comando">Instalar un paquete, bastará con efectuar el comando:</h2>
+<pre><code>$ rpm -ivh nombre_paquete.rpm
+-i: Instala el paquete
+-v: Añade información extra sobre el proceso de instalación
+-h: Muestra un porcentaje en # sobre su instalación.
+[root@keys0 sincorchetes]# rpm -ivh tcsh-6.19.00-10.fc24.x86_64.rpm 
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:tcsh-6.19.00-10.fc24             ################################# [100%]
+</code></pre>
+<h2 id="reinstalar-un-paquete">Reinstalar un paquete:</h2>
+<pre><code>$ rpm -vh --reinstall nombre_paquete.rpm
+--reinstall: Reinstala el paquete
+-v: Añade información extra sobre el proceso de reinstalación
+-h: Muestra un porcentaje en # sobre su reinstalación.
+
+[root@keys0 sincorchetes]# rpm --reinstall -vh tcsh-6.19.00-10.fc24.x86_64.rpm
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:tcsh-6.19.00-10.fc24             ################################# [ 50%]
+Cleaning up / removing...
+   2:tcsh-6.19.00-10.fc24             ################################# [100%]
+</code></pre>
+<h2 id="eliminar-un-paquete-ejecutaremos-el-comando">Eliminar un paquete, ejecutaremos el comando:</h2>
+<pre><code>$ rpm -evh nombre_paquete.rpm 
+-e: Elimina un paquete.
+-v: Añade información extra sobre el proceso de eliminación
+-h: Muestra un porcentaje en # sobre su eliminación
+
+[root@keys0 sincorchetes]# rpm -evh tcsh
+Preparing...                          ################################# [100%]
+Cleaning up / removing...
+   1:tcsh-6.19.00-10.fc24             ################################# [100%]
+</code></pre>
+<h1 id="trabajar-con-la-db">Trabajar con la DB</h1>
+<p>Como hemos comentado, RPM utiliza un conjunto de base de datos, la cual utiliza Berkeley DB, que nos sirve para mantener toda la información de los paquetes que se encuentren instalado en nuestro sistema.</p>
+<p>Los ficheros los podemos encontrar en <code>/var/lib/rpm</code>:
+ * Basenames
+ * Conflictname
+ * __db.001
+ * __db.002
+ * __db.003
+ * Dirnames
+ * Enhancename
+ * Filetriggername
+ * Group
+ * Installtid
+ * Name
+ * Obsoletename
+ * Packages
+ * Providename
+ * Recommendname
+ * Requirename
+ * Sha1header
+ * Sigmd5
+ * Suggestname
+ * Supplementname
+ * Transfiletriggername
+ * Triggername</p>
+<p>Sin embargo, no nos vamos a parar en cada uno de ellos, nos podemos hacer una idea que contenido puede tener cada uno.</p>
+<p>Vamos a llevar a cabo una serie de ejemplo para trabajar con esta base de datos para así, en algunos casos, no llevarnos un chasco *  *  *  *  * .</p>
+<h2 id="consultar-la-informacion-de-un-paquete-utilizamos">Consultar la información de un paquete, utilizamos:</h2>
+<pre><code>$ rpm -q nombre_del_paquete
+Salida de ejemplo: 
+[sincorchetes@keys0 rpm]$ rpm -q libcaca## C99-0.28.beta19.fc24.x86_64
+</code></pre>
+<p>Como hemos visto, nos ha devuelto la información del paquete que se encuentra instalada en nuestro sistema, en este caso, Fedora 24.</p>
+<pre><code>sincorchetes@keys0 rpm]$ rpm -q openshot 
+package openshot is not installed
+</code></pre>
+<p>Obtener el listado de todos los paquetes instalados en el sistema:</p>
+<pre><code>[sincorchetes@keys0 rpm]$ rpm -qa |less
+pated-3.2-20.fc24.x86_p64
+perl-XML-SAX-0.99-16.fc24.noarch
+libuser-python-0.62-3.fc24.x86_64
+dconf-editor-3.20.3-1.fc24.x86_64
+teamviewer-11.0.57095-0.i686
+libedit-3.1-14.20150325cvs.fc24.x86_64
+mate-notification-daemon-1.14.1-1.fc24.x86_64
+[...]
+</code></pre>
+<p>Utilizando el comando anterior, y una tubería, se pueden filtrar resultados. Muy válido cuando se quiere obtenr listado de muchos programas que contienen diferentes versiones instaladas como es el caso del kernel.</p>
+<pre><code>[sincorchetes@keys0 rpm]$ rpm -qa |grep kernel
+kernel-debug-devel-4.6.4-301.fc24.x86_64
+kernel-4.6.4-301.fc24.x86_64
+kernel-debug-modules-extra-4.6.4-301.fc24.x86_64
+kernel-devel-4.6.4-301.fc24.x86_64
+[...]
+</code></pre>
+<p>Otra forma de filtrar, es utilizando <code>rpm -qa --pipe "grep kernel"</code></p>
+<p>Para saber en qué paquete se encuentra un determinado fichero incluido rutas simbólicas.</p>
+<pre><code>$ rpm -qf ruta_fichero
+[sincorchetes@keys0 rpm]$ rpm -qf /bin/bash 
+bash-4.3.42-5.fc24.x86_64
+</code></pre>
+<p>Si queremos saber la información de un paquete instalado:</p>
+<pre><code>$ rpm -qi nombre_paquete
+[sincorchetes@keys0 sbin]$ rpm -qi bash
+Name        : bash
+Version     : 4.3.42
+Release     : 5.fc24
+Architecture: x86_64
+Install Date: Sat 06 Aug 2016 09:51:46 AM WEST
+Group       : System Environment/Shells
+Size        : 6373152
+License     : GPLv3+
+Signature   : RSA/SHA256, Thu 19 May 2016 06:29:51 PM WEST, Key ID 73bde98381b46521
+Source RPM  : bash-4.3.42-5.fc24.src.rpm
+Build Date  : Tue 17 May 2016 03:25:18 PM WEST
+Build Host  : buildvm-22.phx2.fedoraproject.org
+Relocations : (not relocatable)
+Packager    : Fedora Project
+Vendor      : Fedora Project
+URL         : http://www.gnu.org/software/bash
+Summary     : The GNU Bourne Again shell
+Description : The GNU Bourne Again shell (Bash) is a shell or command language interpreter that is compatible with the Bourne shell (sh). Bash incorporates useful features from the Korn shell (ksh) and the C shell (csh). Most sh scripts can be run by bash without modification.
+</code></pre>
+<p>Obteniendo listado de grupos de paquete. RPM puede alojar un listado de grupos de paquetes para automatizar la instalación de los mismos.</p>
+<pre><code>$ rpm -qg nombre_grupo
+[sincorchetes@keys0 sbin]$ rpm -qg Development/Debuggers
+lsof-4.89-4.fc24.x86_64
+libunwind-1.1-11.fc24.x86_64
+gdb-7.11.1-75.fc24.x86_64
+</code></pre>
+<p>Listando los ficheros que incluye un paquete instalado:</p>
+<pre><code>$rpm -ql nombre_paquete
+[sincorchetes@keys0 ~]$ rpm -ql bash
+/etc/skel/.bash_logout
+/etc/skel/.bash_profile
+/etc/skel/.bashrc
+/usr/bin/alias
+/usr/bin/bash
+/usr/bin/bashbug
+/usr/bin/bashbug-64
+/usr/bin/bg
+/usr/bin/cd
+/usr/bin/command
+/usr/bin/fc
+[...] 
+</code></pre>
+<h2 id="listando-ficheros-por-paquete">Listando ficheros por paquete</h2>
+<pre><code>$ rpm -q --filesbypkg bash
+[sincorchetes@keys0 ~]$ rpm -q --filesbypkg bash 
+bash                      /etc/skel/.bash_logout 
+bash                      /etc/skel/.bash_profile 
+bash                      /etc/skel/.bashrc 
+bash                      /usr/bin/alias 
+bash                      /usr/bin/bash
+[...]
+</code></pre>
+<h2 id="obteniendo-una-lista-con-mas-informacion">Obteniendo una lista con más información:</h2>
+<pre><code>$ rpm -qlv bash
+[sincorchetes@keys0 ~]$ rpm -qlv bash 
+-rw-r--r--    1 root    root                       18 May 17 15:22 /etc/skel/.bash_logout 
+-rw-r--r--    1 root    root                      193 May 17 15:22 /etc/skel/.bash_profile 
+-rw-r--r--    1 root    root                      231 May 17 15:22 /etc/skel/.bashrc 
+-rwxr-xr-x    1 root    root                       29 May 17 15:22 /usr/bin/alias 
+-rwxr-xr-x    1 root    root                  1072056 May 17 15:22 /usr/bin/bash 
+lrwxrwxrwx    1 root    root                       10 May 17 15:22 /usr/bin/bashbug -&gt; bashbug-64
+[...]
+</code></pre>
+<h2 id="listando-ficheros-de-configuracion-de-x-paquete">Listando ficheros de configuración de x paquete:</h2>
+<pre><code>$ rpm -qc bash
+[sincorchetes@keys0 ~]$ rpm -qc bash 
+/etc/skel/.bash_logout 
+/etc/skel/.bash_profile 
+/etc/skel/.bashrc
+</code></pre>
+<p>Listando archivos de configuración con más información de salida:</p>
+<pre><code> $ rpm -qcv bash
+[sincorchetes@keys0 ~]$ rpm -qcv bash
+-rw-r--r--    1 root    root                       18 May 17 15:22 /etc/skel/.bash_logout
+-rw-r--r--    1 root    root                      193 May 17 15:22 /etc/skel/.bash_profile
+-rw-r--r--    1 root    root                      231 May 17 15:22 /etc/skel/.bashrc 
+</code></pre>
+<h2 id="listando-los-scripts-dentro-de-un-paquete">Listando los scripts dentro de un paquete:</h2>
+<pre><code>rpm -q --scripts bash
+[sincorchetes@keys0 ~]$ rpm -q --scripts bash
+postinstall scriptlet (using &lt;lua&gt;):
+nl        = '\n'
+sh        = '/bin/sh'..nl
+bash      = '/bin/bash'..nl
+f = io.open('/etc/shells', 'a+')
+if f then
+  local shells = nl..f:read('*all')..nl
+  if not shells:find(nl..sh) then f:write(sh) end
+  if not shells:find(nl..bash) then f:write(bash) end
+  f:close()
+end
+[...] 
+</code></pre>
+<h2 id="obteniendo-la-hoja-de-cambios-del-paquete-changelog">Obteniendo la hoja de cambios del paquete (Changelog):</h2>
+<pre><code>$ rpm -q --changelog bash
+[sincorchetes@keys0 ~]$ rpm -q --changelog bash
+* Tue May 17 2016 Siteshwar Vashisht &lt;svashisht@redhat.com&gt; - 4.3.42-5
+- Do not set terminate_immediately and interrupt_immediately while expanding tilda
+  Resolves: #1336800
+* Wed Feb 03 2016 Fedora Release Engineering &lt;releng@fedoraproject.org&gt; - 4.3.42-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+[... ]
+</code></pre>
+<h2 id="listar-los-paquetes-que-han-sido-instalados-recientemente">Listar los paquetes que han sido instalados recientemente:</h2>
+<pre><code>$ rpm -qa --last |head
+[sincorchetes@keys0 ~]$ rpm -qa --last |head 
+qemu-system-aarch64-2.6.0-5.fc24.x86_64       Sun 07 Aug 2016 12:09:07 AM WEST 
+qemu-2.6.0-5.fc24.x86_64                      Sun 07 Aug 2016 12:09:07 AM WEST 
+edk2-aarch64-20160418gita8c39ba-4.fc24.noarch Sun 07 Aug 2016 12:09:07 AM WEST 
+qemu-system-ppc-2.6.0-5.fc24.x86_64           Sun 07 Aug 2016 12:09:05 AM WEST 
+SLOF-0.1.git20160223-1.fc24.noarch            Sun 07 Aug 2016 12:09:04 AM WEST 
+qemu-system-x86-2.6.0-5.fc24.x86_64           Sun 07 Aug 2016 12:09:04 AM WEST
+[...]
+</code></pre>
+<p>Hay multitud de opciones y parámetros que se pueden combinar. Pero que los daremos más adelante.</p>
+<h2 id="trabajando-externamente-con-rpm-y-su-base-de-datos">Trabajando externamente con RPM y su base de datos.</h2>
+<p>Anteriormente, hemos mencionado que se puede realizar una base de datos de nuestras DB que mantiene RPM de una manera sencilla que no supone tanta complejidad. También podemos reconstruirla y restaurarla con tan solo varios comandos.</p>
+<p>Para llevar a cabo una copia de seguridad, basta con efectuar los siguientes comandos:</p>
+<pre><code># cd /var/lib
+# tar cvf rpmdb.tar ./rpm
+# gzip rpmdb.tar
+</code></pre>
+<p>Estos comandos crean un archivo tar de los ficheros que contienen el directorio rpm.</p>
+<h2 id="reconstruir-la-db">Reconstruir la DB</h2>
+<pre><code>$ rpm --rebuilddb
+</code></pre>
+<p>Antes de ejecutarlo, siempre es bueno hacer una copia de seguridad. Ya que si, surgen problemas, y no se pueda regenerar la DB. Habrá que tirar de la copia de seguridad. Si el proceso va bien, el tamaño de la base de datos de "Packages" bajará un poco de peso al no contener entradas que antes si contenía pero por desinstalación de algún programa. Una vez se reconstruya "Packages" se comenzarán a actualizar el resto de bases de datos.</p>
+<h2 id="crear-una-base-de-datos-nueva">Crear una base de datos nueva</h2>
+<pre><code>$ rpm --initdb
+</code></pre>
+<h2 id="trabajando-con-dependencias">Trabajando con dependencias</h2>
+<p>Cada paquete .RPM suele contener una serie de dependencias que debe suplir, antes de efectuar una instalación correctamente. Para ello, podemos utilizar este potente gestor de paquetes y averiguar que .RPM necesitamos suplir.</p>
+<pre><code>[sincorchetes@keys0 ~]$ rpm -ivh openshot-2.0.7-3.fc24.noarch.rpm 
+error: Failed dependencies:
+    python3-httplib2 is needed by openshot-2.0.7-3.fc24.noarch
+    python3-libopenshot is needed by openshot-2.0.7-3.fc24.noarch
+    python3-qt5 is needed by openshot-2.0.7-3.fc24.noarch
+    python3-qt5-webkit is needed by openshot-2.0.7-3.fc24.noarch
+</code></pre>
+<p>Tenemos que buscar las dependencias, bien en los repositorios oficiales e instalarlas manualmente RECOMENDADO SIEMPRE. O bien mediante portales como RPMForge o RPMpbone adecuada para tu distribución.</p>
+<h1 id="ver-dependencias-de-un-paquete-cuando-lo-queremos-eliminar">Ver dependencias de un paquete cuando lo queremos eliminar:</h1>
+<pre><code>$ rpm -e nombre_paquete
+[sincorchetes@keys0 ~]$ rpm -e bash
+error: Failed dependencies: 
+/bin/bash is needed by (installed) fedora-release-24-2.noarch 
+/bin/bash is needed by (installed) nss-softokn-freebl-3.25.0-1.0.fc24.x86_64 
+/bin/bash is needed by (installed) kmod-22-4.fc24.x86_64 
+/bin/bash is needed by (installed) iproute-4.4.0-3.fc24.x86_64 
+/bin/bash is needed by (installed) openssl-1:1.0.2h-1.fc24.x86_64
+</code></pre>
+<p>Si este paquete posee múltiples paquetes que dependen de él, no se efectuará el proceso de eliminación. </p>
+<p>En definitiva, con RPM podemos hacer de todo, podemos llevar a cabo instalación de más de 100 paquetes simultáneamente, eliminarlos, reinstalarlos; hacer copias de seguridad de las bases de datos de este magnífico gestor, restaurarlas, exportarlas...; verificar la integridad de los archivos instalados en el sistema con un simple comando; listar todos aquellos que se encuentren instalados y como lidiar con sus dependencias. Las cosas básicas que uno debería saber cuando trabaja con este tipo de sistema de paquetes. </p>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li>Fedora Documentation</li>
+<li>RPM5 doc</li>
+<li>Red Hat Doc</li>
+<li>Google</li>
+<li>Wikipedia</li>
+<li>Eni ediciones ~ LPIC</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

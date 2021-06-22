@@ -1,0 +1,631 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-squid-paso-1-instalacion/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering Squid - Instalación - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-squid-instalacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering Squid - Instalación
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-squid-instalacion">Mastering Squid - Instalación</h1>
+<h1 id="introduccion">Introducción</h1>
+<p>¡Bievenido al Mastering en Squid! Este es un curso extendido sobre cómo utilizar Squid dividido en varios posts para facilitar la lectura y ser más organizados. Advertimos que va a ser un curso bastante largo, y que puedana provecharlo al máximo. Disfruten del primer post, la instalación.</p>
+<p><img alt="Squid logo" src="../squid.jpg" /></p>
+<h1 id="que-es-un-proxy">¿Qué es un proxy?</h1>
+<p>Es un software que permite facilitar la comunicación entre un cliente y un servidor sin modificar peticiones o respuestas. Cuando nosotros iniciamos una petición hacia una fuente para obtener algo, el proxy lo que hace es "secuestrar" esa conexión y representarse así mismo como un cliente de cara al servidor. Una vez devuelta la respuesta, esta llega al proxy y depende de sus políticas, esos datos quedan guardadados o se borran, y posteriormente se envía al cliente que solicitó los datos desde el principio.</p>
+<p>Por lo tanto, actúa también como un potente filtro de peticiones basado en una serie de reglas que validen o no las peticiones que se vayan a realizar. Si por ejemplo, intentamos entrar a chachacha.com, y resulta que en la configuración del proxy se nos deniega el acceso, evidentemente, el proxy nos betará la conexión a dicha página con lo que se mejora la seguridad de la red mediante esta serie de políticas. También incrementa la defensa contra virus o malware ya que al analizar el tráfico puede ver si los sitios son o no de confianza.</p>
+<p>Y no sólo por filtra el tráfico evitando que usuarios X accedan a sitios que no deben, o porque el proxy tiene una IP y la usaremos en vez de relevar la nuestra (en caso de ser remoto), también es útil, porque la información que solicitamos se almacena haciendo un "caching" permitiéndonos no tener que volver a descargar todo el contenido de una página Web, con lo que hace el acceso más rápido y reduciendo el consumo ancho de banda. Además, esto permite visualizar el tráfico que se está enviando y recibiendo, y si el consumo de ancho de banda es elevado, podemos darle un toque a los usuarios de que se están pasando de la ralla.</p>
+<p>Y por último, si tenemos un servidor Web al que accede constantemente a CDNs para obtener documentos, imágenes, frameworks basados en JS, CSS3, HTML...etc, puede mantener todo almacenado y evitar incrementar el ancho de banda por petición, con lo que mejora el propio rendimiento del servidor web.</p>
+<h1 id="que-es-un-proxy-inverso">¿Qué es un proxy inverso?</h1>
+<p>Es una técnica que permite almacenar los archivos que se obtienen de CDN o de otros sitios remotos para almacenarlos en el servidor web local, con lo que, como hemos dicho anteriormente, aprovechar el ancho de banda para otros servicios de la red, gestionar bien el espacio de almacenamiento y evitar problemas de sobrecarga en el servidor.</p>
+<p>Esta técnica es muy útil principalmente por el ahorro de ancho de banda, y como consecuencia, los clientes que se conecten al servidor web evitaran tener que enviar muchas peticiones a multitud de sitios (CDN mayormente) para obtener librerías JS, estilos CSS3...etc, ya que está almacenado en el proxy permitiendo reducir su gasto en datos móviles.</p>
+<h1 id="instalando-squid">Instalando Squid</h1>
+<p>En este apartado, encontraremos los pasos para poder instalar Squid en nuestra distribución, sistema. También incluimos los pasos de cómo compilar Squid en caso de que las características que busquemos no formen parte de los binarios pre-compilados.</p>
+<h2 id="fedora">Fedora</h2>
+<p>Para instalar Squid en Fedora, tan solo tenemos que ejecutar:</p>
+<pre><code>$ su -c &quot;dnf install squid&quot;
+</code></pre>
+<h2 id="archlinux">Archlinux</h2>
+<p>En esta fantástica distro:</p>
+<pre><code>$ sudo pacman -S squid
+</code></pre>
+<p>Que se encuentra en los repositorios "Community"</p>
+<h2 id="ubuntudebian">Ubuntu/Debian</h2>
+<p>Corremos en una terminal:</p>
+<pre><code>$ sudo apt-get install squid
+</code></pre>
+<h2 id="opensuse">openSUSE</h2>
+<p>Tan sencillo cómo:</p>
+<pre><code>$ sudo zypper in squid
+</code></pre>
+<h2 id="centos-rhel">CentOS / RHEL</h2>
+<pre><code>$ sudo yum install squid
+</code></pre>
+<p><strong>NOTA: Si ya tienes instalado Squid, es mejor que te saltes el siguiente punto.</strong></p>
+<h2 id="compilando">Compilando</h2>
+<p>En otras distribuciones que no mencionamos, siempre es mejor utilizar las fuentes oficiales, en caso de que no sea posible o que queramos tener ciertas caracterísiticas habilitadas, tendremos que compilar.</p>
+<ol>
+<li>Descargar el archivo fuente</li>
+<li>Instalar dependencias necesarias para compilar el paquete</li>
+<li>Configurar las opciones de compilación</li>
+<li>Compilar e instalar</li>
+<li>Probar</li>
+</ol>
+<p>Descargamos el tarball desde el siguiente <a href="http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.27.tar.gz">enlace</a>, lo descomprimimos y nos situamos en el directorio mediante una terminal.</p>
+<h3 id="configurando-las-opciones-de-compilacion">Configurando las opciones de compilación</h3>
+<p>Aquí tenemos un listado enorme explicando un poco las opciones que podemos configurar en Squid:</p>
+<pre><code>--prefix=DIR
+</code></pre>
+<p>Como no, definimos el directorio dónde lo queremos instalar.</p>
+<pre><code>--enable-gnuregex
+</code></pre>
+<p>Esta característica permite habilitar las expresiones regulares cuando se construyen listas de control de acceso en Squid. En principio no hace falta habilitarlo, solo en aquellos sistemas que no soporten expresiones regulares.</p>
+<pre><code>--disable-inline
+</code></pre>
+<p>Cuando compilamos Squid por defecto, lo hace todo en línea y esto conlleva compilar todo el código. Sin embargo, si queremos que el proceso sea veloz pero para usarlo en un entorno de pruebas, podemos utilizar esta opción.</p>
+<pre><code>--disable-optimizations
+</code></pre>
+<p>Squid se compila por defecto con optimizaciones para generar un binario con mayor rendimiento. Esta opción al igual que la anterior es mejor dejarla solo para casos en desarrollo o pruebas.</p>
+<pre><code>--enable-storeio
+</code></pre>
+<p>Cuánto más rápido Squid pueda leer/escribir archivo desde caché, menos tardará en satisfacer una solicitud dando menos retrasos. Existen diferentes técnicas que permiten obtener un rendimiento más optimizado según el tipo de tráfico y el uso. Podemos construir Squid con varios tipos de módulos de almacenamiento de entrada/salida.</p>
+<p>Podemos echarle un bitstazo a los módulos soportados ubicados en el directorio src/fs del código fuente de Squid.</p>
+<pre><code>--enable-removal-policies
+</code></pre>
+<p>Squid al estar almacenando páginas o documentos que se descargan cuando navegamos, es lógico que cada cierto tiempo tenga problemas con el espacio que hemos especificado y por lo tanto, necesitará más espacio. Squid decide que hacer con los archivos viejos si deberían eliminarse o limpiarlos para obtener más espacio y almacenar nuevos archivos. Hay diferentes políticas para limpiar los documentos almacenados en caché para obtener un mejor rendimiento.</p>
+<p>Las políticas están basadas en heap (basadas en montículos, estructura de árbol de datos) y/o en listas de datos estructurados. Las listas de datos estructurados están habilitadas por defecto. Podemos comprobar en el código fuente src/repl/ las políticas disponibles.</p>
+<pre><code>--enable-icmp
+</code></pre>
+<p>La habilitamos sÓlo si utilizamos otras soluciones que almacenen datos en caché, ya que permiten determinar latencia entre ellas.</p>
+<pre><code>--enable-delay-pools
+</code></pre>
+<p>Permite limitar el ancho de banda de la red para que no se congestione. Es útil cuando tenemos un grupo de usuarios que efectúan multitud de operaciones sobre cuando descargan archivos que suelen saturar completamente el tráfico.
+Squid hace uso de unos "<em>espacios de retardo</em>", filtra el tráfico y reduce la velocidad para que no se utilice todo el ancho de banda disponible.</p>
+<pre><code>--enable-esi
+</code></pre>
+<p>Permite a Squid utilizar <em>Edge Side</em>, un tipo de lenguaje de marrcas para definir los componentes de una página web para construirlos de forma dinámica y hacerlos llegar a las aplicaciones web en el borde de Internet. Si se habilita, Squid ignorará el control de almacenamiento por cabecera desde los clientes. Esta opción solo interesa si está en modo acelerador.</p>
+<pre><code>--enable-useragent-log
+</code></pre>
+<p>Permite registrar qué tipo de navegador está utilizando</p>
+<pre><code>--enable-referer-log
+</code></pre>
+<p>Squid podrá escribir un campo de encabezado de referencia en solicitudes HTTP</p>
+<pre><code>--disable-wccp
+</code></pre>
+<p>Esta opción deshabilita la compatibilidad con el protocolo (WCCP) de comunicaciones de servidores de almacenamiento en caché Web de Cisco. Permite la comunicación entre cachés y a su vez, ayuda a localizar el tráfico. Por defecto, está habilitada.</p>
+<pre><code>--disable-wccpv2
+</code></pre>
+<p>Deshabilita la versión 2 del protocolo anterior. Este es una versión mejorada que permite balanceo de carga, escalamiento, tolerancia a fallos, y un servicio con mecanismos de garantías. Por defecto está habilitado.</p>
+<pre><code>--disable-snmp
+</code></pre>
+<p><em>Simple Network Management Protocol</em> (SNMP) está habilitado por defecto y lo suelen utilizar los administradores de sistemas para monitorizar servidores o dispositivos de red como switches o routers.</p>
+<pre><code>--enable-cachemgr-hostname
+</code></pre>
+<p>El gestor de Caché (cachemgr.cgi) es una utilidad elaborada en CGI para gestionar la caché de Squid, también permite ver las estadísticas a través de un portal web. Por defecto podemos acceder al portal web mediante localhost o la IP de nuestro Squid.</p>
+<pre><code>--enable-arp-acl
+</code></pre>
+<p>Squid soporta la construcción de Listas de Control de Acceso por dirección MAC o Ethernet. Esta característica está deshabilitada por defecto. Si queremos controlar el acceso a los clientes basándonos en direcciones Ethernet, tenemos que habilitar esta características.</p>
+<pre><code>--disable-htcp
+</code></pre>
+<p>El protocolo HTCP (<em>Hypertext Caching Protocol</em>) puede utilizarlo Squid para enviar y recibir actualizaciones periódicas de software que almacene en caché. Esta opción deshabilita.</p>
+<pre><code>--enable-ssl
+</code></pre>
+<p>Squid pueden terminar con las conexiones SSL. Cuando se configura Squid en modo inverso, puede terminar con las conexiones SSL que hayan iniciado los clientes y manejarlas en nombre del servidor web en el back-end. Eso quiere decir, que el servidor Web en el backend como Apache con PHP, NGINX... no tiene que hacer trabajos de SSL, por lo que la conexión entre servidor web-Squid será en HTTP limpio, mientras que los clientes verán que acceden en modo seguro.
+Solo es útil si está configurado en modo inverso o en modo acelerador.</p>
+<pre><code>--enable-cache-digests
+</code></pre>
+<p>Los resúmenes periódicos es la manera que tiene Squid para compartir información con otros servidores Squid acerca de los documentos web, en un formato comprimido.</p>
+<pre><code>--enable-default-err-language
+</code></pre>
+<p>Cuando no se puede acceder a una determinada página ya sea porque ha obtenido un error 404, o 503... Squid utiliza páginas predeterminadas para mostrar dichos errores en el idioma X. Por defecto son inglesas.</p>
+<pre><code>--enable-err-languages
+</code></pre>
+<p>Por defecto, Squid se compila con soporte a múltiples idiomas. Si solo queremos utilizar algunos, o uno en cuestión, podemos definirlo aquí.</p>
+<pre><code>--disable-http-violations
+</code></pre>
+<p>Deshabilitar las violaciones del protocolo HTTP, no permitir X los paquetes con la cabecera modificada se acepten por Squid.</p>
+<pre><code>--enable-linux-netfilter
+</code></pre>
+<p>Netfilter es un framework de filtrado de paquetes que apareció en los kernels 2.4.x y 2.6.x. Esta opción solo es útil si utilizamos un proxy transparente en sistemas Linux.</p>
+<pre><code>--enable-follow-x-forwarder-for
+</code></pre>
+<p>Cuando Squid envía una solicitud HTTP, Squid rellena con su IP el encabezado, sin embargo, añade información sobre el cliente para que se pueda encontrar si se usan más servidores proxy.</p>
+<pre><code>--disable-ident-lookups
+</code></pre>
+<p>Evita que Squid busque las identidades de los clientes, sin embargo, esto puede causar un DoS (<em>Denial Of Service</em>) si un cliente hace muchas peticiones largas de conexiones.</p>
+<pre><code>--disable-internal-dns
+</code></pre>
+<p>Deshabilitamos su propio sistema de Dirección de Resolución de Nombres, y utilizar DNS externos.</p>
+<pre><code>--enable-default-hostfile
+</code></pre>
+<p>Seleccionamos la ruta por defecto del fichero <code>/etc/hosts(5)</code></p>
+<pre><code>--enable-auth
+</code></pre>
+<p>Provee de mecanismos de autenticación.</p>
+<p>Sintaxis vieja</p>
+<p>Habilitar sistemas de autenticación:</p>
+<pre><code>./configure --enable-auth=basic,digest,ntlm
+</code></pre>
+<p>Nueva sintaxis
+La sintaxis que vamos a ver ahora es para seleccionar el esquema de autenticación que queremos utilizar. En este apartado hay programas de autenticación externos que nos pueden ayudar durante el proceso.</p>
+<pre><code>--enable-auth-basic
+</code></pre>
+<p>Habilita la compatibilidad con un esquema de autenticación básica y construye listas de software específicos necesarios en la compilación. Si la lista de software no se provee, habilitará por defecto todos los software. Hay una lista que contiene todos ellos en <code>helpers/basic_auth</code> Para deshabilitar esta opción: <code>--disable-auth-basic</code></p>
+<p>Si no queremos habilitar esta opción, pero no queremos compilar ningún ayudante, utilizamos "none".</p>
+<pre><code>--enable-auth-ntlm
+</code></pre>
+<p>Squid soporta el esquema de autenticación llamado NTLM. Los ayudantes para este esquema específico reside en el directorio helpers/ntlm_auth Para deshabilitarlo: <code>--disable-auth-ntlm</code></p>
+<pre><code>--enable-auth-negotiate
+</code></pre>
+<p>Esta opción permite utilizar un esquema de negociación.</p>
+<pre><code>--enable-auth-digest
+</code></pre>
+<p>Permite utilizar el esquema de autenticación de resumen.</p>
+<pre><code>--enable-ntlm-fail-open
+</code></pre>
+<p>Permite a un ayudante fallar en el proceso de autenticación de un usuario. Es mejor que no utilicemos esta opción según la documentación.</p>
+<pre><code>--enable-external-acl-helpers
+</code></pre>
+<p>Permite utilizar listas de control de acceso externas. Las podemos encontrar aquí <code>helpers/external_acl</code></p>
+<pre><code>--disable-translation
+</code></pre>
+<p>Deshabilita que se muestren páginas de error en el idioma local.</p>
+<pre><code>--disable-auto-locale
+</code></pre>
+<p>Se basa en la cabecera de peticiones en un cliente. Squid intenta de forma automática proveer de una página de error con el idioma local. Esto lo deshabilita.</p>
+<pre><code>--disable-unlinkd
+</code></pre>
+<p>Deshabilita el soporte unlinkd No es buena idea si se queda bloqueado el software.</p>
+<pre><code>--with-default-user
+</code></pre>
+<p>Squid corre por defecto como usuario nobody . Podemos seleccionar con que usuario correrlo.</p>
+<pre><code>--with-logdir
+</code></pre>
+<p>Squid almacena los logs en <code>/var/log/squid</code>, aquí podemos modificar la ruta de almacenado.</p>
+<pre><code>--with-pidfile
+</code></pre>
+<p>Modifica la ruta en la que se almacenará el .pid</p>
+<pre><code>--with-aufs-threads
+</code></pre>
+<p>Definimos el número de hilos que queremos que utilice el sistema de almacenamiento en caché llamado aufs. No se suele utilizar esta opción, Squid ya lo calcula.</p>
+<pre><code>--without-pthreads
+</code></pre>
+<p>Las versiones más viejas se compilan sin el soporte paralelo de POSIX. Por defecto las nuevas versiones se compilan con <code>pthreads</code> por defecto.</p>
+<pre><code>--with-openssl
+</code></pre>
+<p>Si queremos construir Squid con soporte OpenSSL, podemos utilizar esta opción:</p>
+<pre><code>--with-large-files
+</code></pre>
+<p>Squid registra todo y los ficheros de <code>/var/log/</code> especialmente los de acceso, crecen muy deprisa. Esto permite soportar los archivos pesados.</p>
+<pre><code>--with-filedescriptors
+</code></pre>
+<p>Los sistemas operativos utilizan descriptores de ficheros (números enteros) para seguirle la pista a los ficheros y sockets que estén abiertos. Por defecto, el límite en las conexiones normalmente es 2014. Una vez que Squid tiene conexiones aceptadas que tienen consumido todos los ficheros descriptores disponibles para el usuario Squid, no puede aceptar más conexiones si no cuando se liberen más ficheros descriptores.</p>
+<p>Para saber qué límite tenemos:</p>
+<pre><code>ulimit -n
+</code></pre>
+<p>Para añadir más, hay que añadir las siguientes líneas:
+<code>/etc/security/limits.conf(5)</code></p>
+<pre><code>username hard nofile 8192
+username soft nofile 8192
+</code></pre>
+<h3 id="aplicando-opciones-de-configuracion">Aplicando opciones de configuración</h3>
+<p>Una vez que tengamos nuestra lista de características, procedemos a aplicarlas en la fase de pre-compilado.</p>
+<pre><code>./configure --prefix=/usr --disable-wccp --disable-wccpv2 --disable-snmp --enable-arp-acl --disable-htcp --enable-ssl --enable-cache-digests --enable-default-err-language=Spanish --enable-linux-netfliter --disable-ident-lookups --disable-internal-dns --enable-default-hostsfile --with-default-user=squid --with-openssl --with-large-files
+</code></pre>
+<h3 id="compilamos-e-instalamos">Compilamos e instalamos</h3>
+<p>Básicamente efectuaremos la compilación de <code>squid(8)</code></p>
+<p><strong>NOTA: Podemos hacer uso de los hilos para que la compilación vaya más rápida <code>make -jN</code> dónde N, va el número total de núcleos + hilos, ejemplo 2 núclos, 4 hilos = make -j6</strong></p>
+<pre><code>$ make &amp;&amp; sudo make install clean
+</code></pre>
+<p>Y ya lo tendremos instalado en nuestro sistema.</p>
+<h3 id="crear-el-servicio">Crear el servicio</h3>
+<p>Creamos un nuevo archivo en <code>/etc/systemd/system/squid.service</code> con el siguiente contenido:</p>
+<pre><code>[Unit]
+Description=Squid
+After=network.target
+
+[Service]
+ExecStartPre=/usr/libexec/squid/cache_swap.sh
+ExecStart=/usr/sbin/squid -f /etc/squid/squid.conf
+ExecReload=/usr/sbin/squid -k reconfigure -f /etc/squid/squid.conf
+ExecStop=/usr/sbin/squid -k shutdown -f /etc/squid/squid.conf
+</code></pre>
+<p><strong>NOTA: Sustituimos los directorios <code>/usr...</code> por aquel dónde se instaló.</strong></p>
+<h3 id="gestionando-el-servicio">Gestionando el servicio</h3>
+<p>Iniciar el servicio temporalmente:</p>
+<pre><code>$ sudo systemctl start squid.service
+</code></pre>
+<p>Parar el servicio momentáneamente:</p>
+<pre><code>$ sudo systemctl start squid.service
+</code></pre>
+<p>Reiniciar Squid:</p>
+<pre><code>$ sudo systemctl restart squid.service
+</code></pre>
+<p>Habilitar Squid al inicio:</p>
+<pre><code>$ sudo systemctl enable squid.service
+</code></pre>
+<p>Deshabilitar el servicio:</p>
+<pre><code>$ sudo systemctl disable squid.service
+</code></pre>
+<h3 id="gestionando-el-firewall-con-fw">Gestionando el firewall con FW</h3>
+<p>Para permitir las conexiones al proxy de forma temporal en <code>firewalld(1)</code> bastará con ejecutar:</p>
+<pre><code>$ sudo firewall-cmd --add-port 3128/tcp --zone=public
+</code></pre>
+<p>Permitir conexiones de forma permanente:</p>
+<pre><code>$ sudo firewall-cmd --add-port 3128/tcp --zone=public --permanent
+</code></pre>
+<p>Para eliminar la apertura del puerto de forma temporal</p>
+<pre><code>$ sudo firewall-cmd --remove-port 3128/tcp --zone=public
+</code></pre>
+<p>Eliminarlo de forma permanente</p>
+<pre><code>$ sudo firewall-cmd --remove-port 3128/tcp --zone=public --permanent
+</code></pre>
+<p>Eso es todo</p>
+<h2 id="windows">Windows</h2>
+<p>Existe una versión portada para Windows elaborada por un tercero, una empresa llamada Diladele BV, ubicada en Amsterdam. Se puede obtener desde <a href="http://packages.diladele.com/squid/3.5.27/squid.msi">aquí</a>.
+<strong>NOTA: Si encontramos algún fallo en el instalador, podemos reportarlo a través de este <a href="https://github.com/diladele/squid-windows/issues?target=_blank">git</a></strong></p>
+<h3 id="instalando">Instalando</h3>
+<p>Una vez descargado, lo instalamos y seguimos los pasos a continuación.</p>
+<p>[owl-carousel items=1 margin=10 loop=true autoplay=true autoplayHoverPause=true nav=true]
+<img alt="" src="../windows/1.png" title="Ventana de Windows" />
+<img alt="" src="../windows/2.png" title="Licencia GPL" />
+<img alt="" src="../windows/3.png" title="Directorio de instalación" />
+<img alt="" src="../windows/4.png" title="Instalación" />
+<img alt="" src="../windows/5.png" title="Instalando" />
+<img alt="" src="../windows/6.png" title="Completado" />
+[/owl-carousel]</p>
+<h3 id="configuracion-puertos-y-mas">Configuración, puertos y más</h3>
+<p>Podemos ver en el escritorio cómo se nos han creado 2 iconos de escritorio relacionados con Squid. "Squid Console" y "Squid Server Tray", el primero nos permite interactuar con el servidor a través de una <code>cmd.exe</code> y el segundo, nos permite arrancar el servidor en modo silencioso, es decir, minimizado en el área de notificación o bandeja del sistema.</p>
+<p>Si hacemos clic derecho en el icono de Squid en la bandeja del sistema, tendremos una serie de opciones como:
+ * Editar el fichero de configuración
+ * Ver la carpeta de Squid
+ * Iniciar el servicio
+ * Parar el servicio
+ * Acerca de
+ * Salir</p>
+<p>[owl-carousel items=1 margin=10 loop=true autoplay=true autoplayHoverPause=true nav=true]
+<img alt="Iconos creados por el instalador de Squid" src="../windows/1-1.png" />
+<img alt="Directorio de instalación" src="../windows/1-2.png" />
+<img alt="Archivo de configuración" src="../windows/1-3.png" />
+[/owl-carousel]</p>
+<p>Tenemos que revisar que Squid arranca como servicio en Windows, para ello hay que ejecutar el programa <code>services.msc</code> y mirar las propiedades de "Squid" tal y como se muestra en la siguiente imagen:</p>
+<p><img alt="Squid services.msc" src="../windows/1-6.png" /></p>
+<p>Por defecto Squid utiliza el puerto 3128, por ende, tenemos que habilitarlo en el firewall de Windows "Inicio-&gt; En el buscador escribimos-&gt; Firewall Windows".
+<img alt="FW Básico de Windows" src="../windows/1-5.png" /></p>
+<p>Si queremos modificar el puerto por defecto, tendremos que editar el fichero de configuración de Squid que se encuentra en <code>C:\Squid\etc\squid.conf</code>, en la directiva </p>
+<pre><code>Port 3128
+</code></pre>
+<p>Cambiarla por el puerto que queramos, y posteriormente, tenemos que dirigirnos a "Inicio -&gt; Buscar Configuración avanzada del FW Windows -&gt; Reglas de entrada -&gt; Modificar Squid Cache Server" y poner el puerto que queramos, tal y como se ve en la imagen.</p>
+<p><img alt="Configurando el puerto" src="../windows/1-7.png" /></p>
+<p>Posteriormente, reiniciamos el servidor Squid desde la bandeja del sistema y ya tendremos Squid funcionando con el nuevo puerto que le hemos asignado.</p>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li>Google</li>
+<li>Squid-cache ~ <a href="http://squid-cache.org?target=_blank">Página oficial</a></li>
+<li><a href="http://squid.diladele.com?target=_blank">Diladele</a></li>
+<li>Wikipedia ~ <a href="https://es.wikipedia.org/wiki/Servidor_proxy?target=_blank">Proxy</a></li>
+<li>Squid Server Proxy 3.1 ~ Book</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,528 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/05.curso-de-python-herencia/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Curso de Python - Herencia - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-python-herencia" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Curso de Python - Herencia
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="curso-de-python-herencia">Curso de Python - Herencia</h1>
+<p>Vamos a tratar un poco la herencia de que pueden tener los objetos, que es una de las características que tienen los objetos.</p>
+<h1 id="herencia">Herencia</h1>
+<p>Una de las propiedades que mencionamos que podían tener los objetos es la herencia, por lo que una clase hija puede contener propiedades y métodos de una clase padre. Veamos un ejemplo:</p>
+<pre><code># Definimos la clase padre:
+class ClasePadre:
+# Decimos que se ejecute el código sin hacer nada.
+  pass
+
+# Y aquí la clase hija:
+class ClaseHija(ClasePadre):
+  pass
+
+# Creamos el objeto
+Objeto = ClaseHija()
+</code></pre>
+<p>Este es un ejemplo:</p>
+<pre><code># Definimos la clase Familia
+class Familia():
+
+  # Con sus propiedades que se rellenarán cuando se inicialice el objeto.
+  def __init__(self, miembros, apellidos):
+    self.miembros = miembros
+    self.apellidos = apellidos
+
+    # Cuando se cree la clase, mostrará el apellido que ha recibido.
+    print(&quot;Apellidos: %s&quot; % (self.apellidos))
+
+# Creamos la clase Hijo que hereda de Familia
+class Hijo(Familia):
+
+  # Se rellenarán propiedades para este objeto.
+  def __init__(self, nombre, apellidos):
+
+# Si queremos heredar propiedades y métodos, tendremos que hacer uso de la función super()
+# super() lo explicaremos más adelante.
+# Aquí llamamos la propiedad específica de Familia, Familia.apellidos y la inicializamos
+    super().__init__(self,apellidos)
+
+    # Definimos aquí los valores que tendrán estas propiedades
+    self.nombre = nombre
+    self.apellidos = apellidos
+
+# Añadimos un método para el Hijo
+  def mostrar_info(self):
+
+    # Decimos que imprima self.nombre y self.apellidos.
+    print(&quot;Soy %s y soy de la familia %s&quot; % (self.nombre,self.apellidos))
+
+# Creamos el objeto
+Pugsley = Hijo(&quot;Pugsley&quot;,&quot;Adams&quot;)
+
+# Llamamos al método mostrar_info()
+Pugsley.mostrar_info()
+</code></pre>
+<p>Seguro que te preguntas sobre <code>super().__init__(...)</code>, esta función como comentamos permite heredar propiedades y métodos de otra clase. Vendría a ser lo mismo que:</p>
+<pre><code>class A:
+  def __init__(self, ejemplo):
+    self.ejemplo = ejemplo
+
+class B(A):
+  def __init__(self, x, y, z):
+
+    # Este procedimiento es más complicado y más tedioso de hacer.
+    self.guardar_info = A(x)
+
+obj = B(2,3,4)
+print(obj.guardar_info.ejemplo)
+</code></pre>
+<h4 id="sobreescribiendo-metodos-en-clases-hijas">Sobreescribiendo métodos en clases hijas</h4>
+<p>Se puede hacer evidentemente, si en la clase A tenemos un método llamado <code>saludar()</code>, y la clase B que hereda de la clase A, le podemos definir el contenido del mensaje que devolverá el método <code>saludar()</code>.</p>
+<pre><code>class A:
+  def saludar(self):
+    print(&quot;Hola mundo&quot;)
+
+class B(A):
+  def saludar(self):
+    print(&quot;Hello everybody&quot;)
+
+obj = B
+obj.saludar()
+</code></pre>
+<p>Y devolverá "Hello everybody".</p>
+<h2 id="tipos-de-herencia">Tipos de herencia</h2>
+<p>Bien, habiendo visto un ejemplo de herencia, también os cuento, que hay distintos ejemplos de herencia:
+* Simple
+* Múltiple
+* Multi nivel
+* Jerárquica
+* Híbrida</p>
+<h3 id="simple">Simple</h3>
+<p>Es el tipo de herencia que hemos visto hasta ahora.</p>
+<pre><code>class A:
+  pass
+class B(A):
+  pass
+</code></pre>
+<h3 id="multiple">Múltiple</h3>
+<p>Es una clase que hereda desde otras clases, por lo que tendrá propiedades y métodos de ambas clases (A y B).</p>
+<pre><code>class A:
+  pass
+class B:
+  pass
+class C(A,B):
+  pass
+
+# Establecemos una comparación para ver si realmente son subclases o no.
+# Devolverá True o False dependiendo de si es correcto o no.
+issubclass(C,A) and issubclass(C,B)
+</code></pre>
+<h3 id="multinivel">Multinivel</h3>
+<p>Esto se refiere, a que tenemos una clase abuelo, de la cuál hereda una clase padre, del cuál hereda una clase hijo.</p>
+<pre><code>class A:
+  pass
+class B(A):
+  pass
+class C(B):
+  pass
+</code></pre>
+<p>Como vemos, la clase C hereda de la clase B, la clase B de la clase A, y A es la clase principial de primer nivel. Por lo tanto, la clase C herederá propiedades y métodos de todas sus clases superiores a menos que se establezca qué propiedades o métodos se podrán heredar, esto forma parte del encapsulamiento que veremos más tarde.</p>
+<h3 id="jerarquica">Jerárquica</h3>
+<p>Tenemos múltiples clases que heredan de una sola clase, es decir.</p>
+<pre><code>class A:
+  pass
+class B(A):
+  pass
+class C(A):
+  pass
+class D(A):
+  pass
+</code></pre>
+<p>Un ejemplo puede ser, clase Jefe/Jefa de una empresa que tiene el rol más alto de una organización y que por debajo de ellos hay otros roles acordes a la labor de la empresa que tienen menos privilegios, otras funciones...etc</p>
+<h3 id="hibrido">Híbrido</h3>
+<p>Es la combinación de una o múltiples clases con una o múltiples clases por ejemplo:
+Imaginamos que tenemos 5 clases (A,B,C,D,E).
+* Clase A es una clase padre.
+* Clase B,C,D heredan de la clase A
+* Clase E, hereda de la clase B y D.
+* Clase E es la clase padre de B y D. </p>
+<p>Aquí podemos identificar varios tipos de herencia:
+* A, B, C, D, C = <strong>Herencia híbrida</strong>
+* B, C, D que heredan de A = <strong>Herencia jerárquica</strong>
+* E que hereda de B y D = <strong>Herencia múltiple</strong>
+* C hereda de A = <strong>Herencia simple</strong></p>
+<p>Un ejemplo de sintaxis:</p>
+<pre><code>class A:
+  pass
+class B(A):
+  pass
+class C(A):
+  pass
+class D(A):
+  pass
+class E(B,D)
+</code></pre>
+<p>Si añadimos una variable en la clase A, creamos un objeto que referencie a E:</p>
+<pre><code>class A:
+  hello_world = &quot;Hola Mundo&quot;
+class B(A):
+  pass
+class C(A):
+  pass
+class D(A):
+  pass
+class E(B,D):
+  pass
+obj = E()
+print(obj.hello_world)
+</code></pre>
+<p>´obj<code>habrá impreso</code>"Hola Mundo".`</p>
+<h2 id="funcion-super">Función <code>super()</code></h2>
+<p>Se utiliza para llamar a métodos de una clase padre, hemos visto en un ejemplo anterior como llamábamos a <code>super().__init__(self, nombre, apellidos)</code> en el ejemplo de la Familia Adams. Aquí estábamos llamando al método inicializador de la clase <code>Familia</code>. Pero podemos llamar a otros métodos también.
+<code>super().método()</code>.</p>
+<pre><code>class Vehiculo:
+  def arrancar(self):
+    print(&quot;Arrancamos el coche&quot;)
+  def parar(self):
+    print(&quot;Paramos el coche&quot;)
+
+class Conductor(Vehiculo):
+  def soplar(self):
+    print(&quot;Soplando, soplando y soplando...&quot;)
+
+  def control_policia(self):
+    super().parar()
+    print(&quot;Persona - Hola agente, buenos días&quot;)
+    print(&quot;Policía - Hola, vamos hacerle una prueba de alcoholemia, por favor, sople en la boquilla&quot;)
+    print(&quot;Persona - Vale&quot;)
+    self.soplar()
+    print(&quot;Policía - Genial, puede usted proseguir&quot;)
+    super().arrancar()
+
+Antonio = Conductor()
+Antonio.control_policia()
+</code></pre>
+<p>Como vemos, no hace falta que llamemos a <code>__init__</code> porque <strong>no estamos inicializando ningún valor en ninguna propiedad</strong> y como se ejecutan los métodos <code>parar()</code> y <code>arrancar()</code> que forman parte de la clase <code>Vehiculo</code>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

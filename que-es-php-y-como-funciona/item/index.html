@@ -1,0 +1,428 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/que-es-php-y-como-funciona/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>¿Qué es PHP y cómo funciona? - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#que-es-php-y-como-funciona" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ¿Qué es PHP y cómo funciona?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="que-es-php-y-como-funciona">¿Qué es PHP y cómo funciona?</h1>
+<p>Bienvenido a mi primera entrega de PHP, en esta entrega podrás conocer los conceptos básicos para saber qué es PHP y cómo trabaja. También verás ejemplos de un código PHP programado para una Web y también ejecutado directamente en una consola PHP en tu sistema operativo. </p>
+<p>Una vez que acabes de leer esta entrada podrás:</p>
+<ul>
+<li><a href="#que-es-php">Sabrás que es PHP</a></li>
+<li><a href="#como-funciona">¿Cómo funciona?</a></li>
+<li><a href="#programar-terminal">Ejecutar código PHP en un cliente de terminal</a></li>
+<li><a href="#programar-web">Ejecutar código PHP en un servidor Web a través de páginas <code>*.php</code></a></li>
+<li><a href="#referencias">Conocer dónde se encuentran ubicados los ficheros de configuración</a></li>
+</ul>
+<h1 id="que-es-php">¿Qué es PHP? <a id="que-es-php"></a></h1>
+<p>PHP viene de las siglas un tanto recursivas en inglés PHP: <em>Hypertext Preprocessor</em>.Es uno de los lenguajes de programación de código abierto más populares que existen en el desarrollo de páginas Web cuyo contenido sea dinámico como puede ser un blog como es el caso de Wordpress; una herramienta de administración de monitorización como puede ser Nconf... por lo que los desarrolladores lo conocerán como un lenguaje que se ejecuta en el lado del servidor y no en el lado del cliente como es el caso de Javascript.</p>
+<p>Además de poder trabajar con él generando páginas Web cuyo contenido sea dinámico, también se pueden crear scripts y rutinas conjuntamente con el sistema operativo, ya que posee una consola con la que poder interactuar con él. </p>
+<p>Esto permite a PHP ser un lenguaje versátil con el que puedes programar procesos o rutinas que se ejecuten en el sistema mediante metodología de scripting, o bien, programar procesos que trabajen con un servidor Web, un sistema gestor de base de datos... que puedan generar contenido dinámico.</p>
+<h1 id="como-funciona">¿Cómo funciona? <a id="como-funciona"></a></h1>
+<p>A nivel de sistema operativo, cuando tienes una consola, los comandos que se ejecuten en ella, directamente se ejecutará y devolverá un resultado. Esto es válido también para el desarrollo de scripts junto con el sistema operativo. Se pueden crear rutinas y ejecutar código bash a través de una shell de PHP.</p>
+<p>Sin embargo, también se puede ejecutar código PHP y que inserte el resultado en una página web con contenido HTML siempre y cuando su extensión sea <code>.php</code>. Además, se puede controlar qué código HTML dependiendo de un resultado como por ejemplo,  que quieres que se muestre si estás logueado o no, o si incorporas un sistema con mecanismos de control.</p>
+<p>Aquí tienes una explicación simple del funcionamiento de un servidor Web con PHP.</p>
+<p><img alt="" src="../PHP.png" /></p>
+<h1 id="programando-con-php-en-terminal">Programando con PHP en terminal <a id="programar-terminal"></a></h1>
+<p>Para abrir una terminal y empezar a trabajar con PHP directamente hay que ejecutar:</p>
+<pre><code>php -a
+Interactive shell
+
+php &gt;
+</code></pre>
+<p>Verás que el prompt del sistema a cambiado a <code>php &gt;</code></p>
+<p>Se puede ejecutar el código desde un fichero:</p>
+<pre><code>Contenido del archivo ejemplo.php
+$foo = &quot;Hello world&quot;;
+echo $foo;
+
+Ejecutamos:
+php -f ejemplo.php
+Hello world $
+</code></pre>
+<ul>
+<li><strong>NOTA</strong>: <em>No necesariamente hay que utilizar la extensión <code>.php</code> para que ejecute el código PHP que haya dentro de un archivo.</em></li>
+</ul>
+<h1 id="trabajando-con-php-con-un-servidor-web">Trabajando con PHP con un servidor Web <a id="programar-web"></a></h1>
+<p>Para trabajar con un servidor Web como NGINX, Apache, Lighthttpd, Cherokee... habrá que respetar la extensión <code>.php</code> en tus archivos. y añadir una etiqueta de <a href="http://php.net/manual/es/language.basic-syntax.phptags.php?target=_blank">apertura</a> para que el servidor interpete el código PHP como código PHP y no código HTML.</p>
+<p>Por ejemplo:</p>
+<p>/var/www/html/index.php en un servidor X existe el siguiente código:</p>
+<pre><code>&lt;?php
+
+    echo &quot;Hello World!&quot; # Contenido de ejemplo que muestra la frase Hello world
+?&gt; 
+</code></pre>
+<p>Si el servidor Web y el PHP están correctamente instalados, devolverá el siguiente mensaje:</p>
+<pre><code>Hello world!
+</code></pre>
+<p>Automáticamente, se traduce en HTML como un párrafo <code>&lt;p&gt;Hello world!&lt;/p&gt;</code></p>
+<p>Se puede mezclar código HTML y PHP siempre y cuando tenga la extensión <code>.php</code> tu archivo:</p>
+<p>En /var/www/html/foo.php de un servidor Y:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+&lt;title&gt;&lt;?php echo$titulo; ?&gt; &lt;/title&gt;
+
+&lt;meta charset=”utf-8”&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;?php $titulo = “Esto es untitulo”; ?&gt;
+
+
+&lt;?php $texto= “Esto es unalínea de código”; ?&gt;
+
+&lt;p&gt;&lt;?php echo $texto;?&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre>
+<p>Esto va a generar una página con el siguiente resultado, que será interpretado por el navegador como dos párrafos:</p>
+<pre><code>&lt;p&gt;Esto es un título&lt;/p&gt;
+&lt;p&gt;Esto es una línea de código&lt;/p&gt;
+</code></pre>
+<p>Si queremos saber toda la información que tiene la versión que tienes instalada de PHP bastará con:</p>
+<pre><code>&lt;?php
+
+    phpinfo():
+
+?&gt;
+</code></pre>
+<p><img alt="" src="../screenshot.png" /></p>
+<p>En la siguiente entrega te encontrarás con:
+ * ¿Cómo instalar PHP?
+ * ¿Cómo configurarlo?</p>
+<h1 id="referencias">Referencias <a id="referencias"></a></h1>
+<ul>
+<li><a href="http://php.org?target?_blank">PHP manual online</a></li>
+<li>Google</li>
+<li>Wikipedia</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

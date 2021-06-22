@@ -1,0 +1,477 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/curso-de-python-interprete-comentarios-identificadores-y-palabras-clave/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Curso de Python - Intérprete, comentarios, identificadores y palabras clave - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-python-interprete-comentarios-identificadores-y-palabras-clave" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Curso de Python - Intérprete, comentarios, identificadores y palabras clave
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="curso-de-python-interprete-comentarios-identificadores-y-palabras-clave">Curso de Python - Intérprete, comentarios, identificadores y palabras clave</h1>
+<p>En esta entrega aprenderás:</p>
+<ul>
+<li>Algunos consejos básicos para trabajar con el intérprete de Python y crear archivos dónde trabajar con nuestro código</li>
+<li>Comentar en Python que es lo primero que deberíamos aprender cuando estamos aprendiendo lenguajes de programación</li>
+<li>Qué son los identificadores y algunas pautas que debemos seguir</li>
+<li>Qué son las palabras clave y por qué no se usan</li>
+</ul>
+<h1 id="como-usar-python">¿Cómo usar Python?</h1>
+<p>Sin duda un elemento imprescindible para poder trabajar con Python son los modos en los qué podemos trabajar con él. Podemos hacerlo de dos formas, mediante intérprete de comandos o elaborando un archivo de Python.</p>
+<h2 id="interprete-de-comandos">Intérprete de comandos</h2>
+<p>Si estas en Linux o BSD, puedes ver las múltiples (si hay), versiones instaladas en tu sistema si haces un simple: <code>whereis python</code> verás una salida como esta:</p>
+<pre><code>python: /usr/bin/python3.7-config 
+/usr/bin/python2.7 
+/usr/bin/python3.7m-x86_64-config 
+/usr/bin/python /usr/bin/python3.7 
+/usr/bin/python3.7m 
+/usr/bin/python3.7m-config 
+/usr/lib/python2.7 
+/usr/lib/python3.7 
+/usr/lib64/python2.7 
+/usr/lib64/python3.7 
+/usr/include/python2.7 
+/usr/include/python3.7m
+</code></pre>
+<p>Como podemos ver, en mi sistema tengo instalados una versión de Python 3.7 como una 2.7. Es importante destacar que en el curso SIEMPRE trabajaremos con la rama 3.7 o superior porque la versión 2.7 quedó fuera de soporte desde el 31 de diciembre de 2019 y que prestaré más atención a SO Linux que *BSD.</p>
+<h3 id="como-se-que-version-tengo-por-defecto-en-el-sistema">¿Cómo sé que versión tengo por defecto en el sistema?</h3>
+<p>Si hacemos un <code>ls /usr/bin |grep python</code> veremos que un enlace simbólico está apuntado a una versión concreta.</p>
+<pre><code>lrwxrwxrwx.  1 root root              9 Jan 30 10:18 python -&gt; ./python3
+lrwxrwxrwx.  1 root root              9 Oct 21 15:13 python2 -&gt; python2.7
+-rwxr-xr-x.  1 root root          16072 Oct 21 15:13 python2.7
+</code></pre>
+<p>También se puede saber desde el gestor de paquetes que utilices a menudo en tu distribución de Linux o sistemas *BSD y/o ejecutando <code>python -V</code> que este te devolverá la versión:</p>
+<pre><code>$ python -V
+Python 3.7.6
+</code></pre>
+<h3 id="acceder-al-interprete-de-python">Acceder al intérprete de Python</h3>
+<p>Basta con que ejecutemos el comando <code>python</code> para <a href="https://docs.python.org/3.8/tutorial/interpreter.html" target="blank"> empezar a trabajar.</a></p>
+<pre><code>$ python
+Python 3.7.6 (default, Jan  8 2020, 19:59:22) 
+[GCC 7.3.0] :: Anaconda, Inc. on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre>
+<p>Vemos una información de todo un poco, con qué compilador fue compilado Python, qué versión estamos utilizando...etc</p>
+<p>Hay una sintaxis mínima que tenemos que entender del promp cuando usamos el intérprete:
+<code>&gt;&gt;&gt;</code> se refiere a un código que puede ejecutarse sin identación por ejemplo cuando definimos una variable, una función...</p>
+<pre><code>&gt;&gt;&gt; variable = 1
+</code></pre>
+<p><code>...</code> aquí está mencionando que tenemos que indentar, es decir, añadir los espacios (4) correspondientes para respetar la sintaxis de Python.</p>
+<pre><code>&gt;&gt;&gt; def func():
+...    variable = 1
+</code></pre>
+<p><code>'SALIDA'</code>: Cuando solo salen estas comillas simples, está informando de un valor o imprimiendo la salida de una función, variable...etc</p>
+<pre><code>&gt;&gt;&gt; import sys
+&gt;&gt;&gt; sys.version
+'3.7.6 (default, Jan  8 2020, 19:59:22) \n[GCC 7.3.0]'
+</code></pre>
+<h4 id="usarlo-como-calculadora">Usarlo como calculadora</h4>
+<p>Se pueden realizar operaciones aritméticas (<em>ya las veremos más adelante</em>) como suma, resta, división, multiplicación...</p>
+<pre><code>&gt;&gt;&gt; 3 + 2
+5
+</code></pre>
+<h4 id="como-salir-de-la-terminal">¿Cómo salir de la terminal?</h4>
+<p>Para salir podemos usar la función <code>exit()</code> o pulsar la combinación de teclas <kbd>Ctrl</kbd> + <kbd>C</kbd></p>
+<h2 id="repl-tu-interprete-en-linea">REPL tu intérprete en línea</h2>
+<p><a href="https://repl.it" target="blank">REPL.it</a> es una página que utilizaré mucho para dinamizar los ejemplos, se trata de un intérprete en línea que permite crear un entorno pequeño de Python y poder trabajar con él. En casi todos los ejemplos pondré un enlace para aquellas personas que quieran probar el código y no dispongan de intérprete.</p>
+<h2 id="creando-un-archivo-python">Creando un archivo Python</h2>
+<p>Los archivos de Python tienen la extensión <code>.py</code>, y comienzan siempre declarando la ruta del intérprete, a esto se le conoce como <a href="https://es.wikipedia.org/wiki/Shebang" target="blank">SheBang</a>. Por lo general, se suele utilizar la siguiente cabecera para evitar solapamientos con la versión 2.7.
+<code>#!/usr/bin/env python3</code></p>
+<p>Python 3 utiliza la codificación <a href="https://docs.python.org/3/howto/unicode.html#unicode-literals-in-python-source-code" target="blank">UTF-8 por defecto</a>, por lo que si queremos trabajar con otro tipo de codificación tendremos que especificarla justamente debajo del SheBang.</p>
+<pre><code>#!/usr/bin/env python3
+# -*- coding: latin-1 -*-
+</code></pre>
+<p>A partir de aquí añadimos nuestro código, que iremos aprendiendo a lo largo de las entregas de Python.</p>
+<p>También es importante, que se le den permisos de escritura al archivo de Python para poderlo ejecutar desde terminal, si no obtendremos el error de permisos:</p>
+<pre><code>$ ./hola.py
+bash: ./hola.py: Permission denied
+$ chmod +x hola.py
+$ ./hola.py
+Hello world
+</code></pre>
+<p>Ya que sabemos esto, cuando en los comandos de ejemplo haga referencia a los diferentes tipos de prompt (<code>&gt;&gt;&gt;</code>, <code>...</code> o <code>' '</code>) usamos directamente el intérprete y cuando no lo haga, estamos haciendo un archivo en Python. </p>
+<p>¡Una vez que sabemos esto, adelante!</p>
+<h1 id="comentarios">Comentarios</h1>
+<p>Algo muy importante sobre todo en nuestro código es comentar. Comentar nos permite recordar los cambios que hemos hecho en el código o tener al menos un punto de retorno porque cuando llevas muchas horas programando y programando, y revisando... dejas el código unos días, y te costará mucho entender y comprender todo el código de nuevo sin tener una ayuda de por qué decidimos hacer un cambio en la estructura, en el flujo del código...etc</p>
+<h2 id="como-se-comenta-en-python">¿Cómo se comenta en Python?</h2>
+<p>Si quieres <a href="https://docs.python.org/3.8/reference/lexical_analysis.html#comments" target="blank">comentar</a> una línea, puedes usar:</p>
+<pre><code># Comentamos con la almohadilla
+</code></pre>
+<p>Cuando queremos comentar múltiples líneas, utilizaremos esta sintaxis:</p>
+<pre><code>&quot;&quot;&quot;
+Este es un comentario multilínea.
+:D
+&quot;&quot;&quot;
+</code></pre>
+<p><em><a href="https://repl.it/@sincorchetes/comentarios" target="blank">Ver ejemplo dinámico aquí.</a></em></p>
+<h1 id="identificadores">Identificadores</h1>
+<p>Los identificadores son el nombre que se utilizan para identificar una variable, función, clases o un objeto.
+Las principales reglas que se deben respetar son las siguientes:
+* No se utilizan caracteres especiales o numéricos menos ( _ ) que se puede utilizar como un identificador
+* Las palabras clave no se utilizan
+* Python discrimina de mayúsculas y minúsculas por lo que no es lo mismo llamar a una función o variable <code>var</code> si está definida como <code>Var</code>.
+* Indentar es obligatorio, hay que respetar los espacios cuando se crean funciones, clases o métodos.</p>
+<h2 id="variable">Variable</h2>
+<p>Las variables permiten almacenar un valor que le asignes como una cadena, un dato númerico, listas, tuplas... el tipo de valor lo veremos con más profundidad en entregas posteriores, pero hay que saber lo que hace este identificador y para que nos puede servir.</p>
+<pre><code>&gt;&gt;&gt; variable = &quot;Hello world&quot;
+</code></pre>
+<h2 id="funciones">Funciones</h2>
+<p>Permiten ejecutar un fragmento de código específico el cuál puede solicitar o no datos para la ejecución de dicho código.</p>
+<pre><code>&gt;&gt;&gt; def nombre_funcion(argumentos):
+...    # Bloque de código
+</code></pre>
+<p>Los argumentos se separan por comas.</p>
+<h2 id="bucles">Bucles</h2>
+<p>Permiten recorrer un conjunto de datos como un <code>set|lista|tupla|collection</code>...etc o ejecutarse desde un rango específico como por ejemplo, de 0 a 100 o de 1 a 5...etc</p>
+<h3 id="bucle-for">Bucle <code>for</code></h3>
+<pre><code>&gt;&gt;&gt; for x in a:
+...    # Bloque de código
+</code></pre>
+<p>Es el más común, pero no nos alarmemos que veremos más sobre los bucles en otras entregas posteriores.</p>
+<h2 id="clases">Clases</h2>
+<p>Las clases son la plantilla de los objetos, Python es un lenguaje de programación orientado a objetos, por lo que es indispensable este identificador.</p>
+<h3 id="propiedades">Propiedades</h3>
+<p>Son los atributos que tiene una clase, a fin de cuentas es como usar variables en otro contexto de programación.</p>
+<h3 id="metodos">Métodos</h3>
+<p>Son las funciones o acciones que tiene una clase.</p>
+<h2 id="modulo">Módulo</h2>
+<p>Son fragmentos de códigos externos o integrados en Python que realizan una serie de cosas, se puede conocer en otros lenguajes como librerías.</p>
+<p>Pero no nos alarmamemos, todos estos identificadores los veremos más adelante de una forma más profunda.</p>
+<h1 id="palabras-clave">Palabras clave</h1>
+<p>Python como otros lenguajes, tienen una serie de palabras que no se deben utilizar bajo ningún concepto para utilizarlos como identificadores. Podemos averiguar cuáles son desde su <a href="https://docs.python.org/3/reference/lexical_analysis.html#keywords" target="blank">documentación oficial</a> o importando el módulo <code>keyword</code> y su propiedad <code>.kwlist</code></p>
+<pre><code>&gt;&gt;&gt; import keyword
+&gt;&gt;&gt; print(keyword.kwlist)
+</code></pre>
+<p>Nos devolverá esta salida:</p>
+<pre><code>['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+</code></pre>
+<p><em>NOTA: Ver <a href="https://repl.it/@sincorchetes/palabrasclave" target="blank">ejemplo dinámico aquí</a>.</em>
+Todas estas palabras no se podrán utilizar como variables, nombres de lista, tuplas, diccionarios... porque su uso está reservado para otras finalidades.</p>
+<p>También podemos averiguar si la palabra que estamos utilizando puede estar dentro de esta lista con su método <code>.iskeyword()</code>.</p>
+<pre><code>&gt;&gt;&gt; keyword.iskeyword('pass')
+</code></pre>
+<p>Esto devolverá como resultado <code>True</code> porque es una palabra reservada.</p>
+<p>Y con esto nos veremos en la siguiente entrega, espero que os haya gustado, un saludo.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

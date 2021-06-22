@@ -1,0 +1,407 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/cambiando-interfaz-qtconfig/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Ajustando la apariencia en aplicaciones Qt - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ajustando-la-apariencia-en-aplicaciones-qt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ajustando la apariencia en aplicaciones Qt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ajustando-la-apariencia-en-aplicaciones-qt">Ajustando la apariencia en aplicaciones Qt</h1>
+<h1 id="cual-es-el-problema">¿Cuál es el problema?</h1>
+<p>Seguro que muchas veces nos ha pasado que hemos instalado aplicaciones que utilizan Qt y se ven muy feas en entornos de escritorio ajenos a Plasma (aka KDE) o LXQT. En este post descubriremos cómo ponerle fin a este suceso, y cómo afrontarlo.</p>
+<h1 id="que-es-qt">¿Qué es Qt?</h1>
+<p>Qt es un framework multiplataforma orientado a objetos utilizado para desarrollar aplicaciones que utilicen interfaz grafica. Actualmente este framework es el que utiliza el equipo de Plasma (antes KDE) para su desarrollo y continuación en todo su software de escritorio; la suite de ofimática Calligra Suite (antes llamado KOffice) también lo utiliza; el famoso reproductor multimedia VLC; reproductor y conversor de archivos de audio Clementine...etc.</p>
+<h1 id="existe-algun-metodo-para-solucionarlo">¿Existe algún método para solucionarlo?</h1>
+<p>Sí, efectivamente, tenemos varios métodos, uno de ellos es hacer uso de scripts, pero vamos a simplificarlo haciendo de la herramienta gráfica que nos proporciona el equipo de Qt llamada <code>qt5ct</code> para obtenerla en nuestro sistema bastará con instalarla.</p>
+<h2 id="instalacion">Instalación</h2>
+<p>En este proceso tenemos la instalación mediante binarios que se obtienen mediante los repositorios de los gestores de paquetes, o bien, mediante código fuente.</p>
+<h3 id="binarios">Binarios</h3>
+<p>Distribuciones más populares:</p>
+<ul>
+<li>Fedora:</li>
+</ul>
+<p><code># dnf install qt5ct</code></p>
+<ul>
+<li>Archlinux</li>
+</ul>
+<p><code># pacman -S qt5ct</code></p>
+<ul>
+<li>Ubuntu y Debian</li>
+</ul>
+<p><code># apt-get install qt5ct</code></p>
+<ul>
+<li>Gentoo</li>
+</ul>
+<p><code># emerge -av qt5ct</code></p>
+<h3 id="codigo-fuente">Código fuente</h3>
+<p>Para poder compilar el código fuente, hay una serie de pasos que debemos seguir:</p>
+<p><strong>NOTA: Dependiendo de la distribución, pueden variar algunos nombres respecto al qmake porque puede haber más de una versión de Qt instalada en nuestro sistema como es el caso de Fedora que tiene qmake-qt5 para Qt5 y qmake para Qt4.</strong></p>
+<ol>
+<li>Descargar el archivo comprimido que contiene el código fuente desde <a href="https://sourceforge.net/projects/qt5ct/files/latest/download?target=_blank">aquí</a></li>
+<li>Descomprimirlo en el directorio que queramos</li>
+<li>Instalar software adicional requerido para el proceso de compilación</li>
+<li>Compilar el código fuente</li>
+<li>Instalar en nuestro sistema</li>
+<li>Ejecutar dicho software.</li>
+</ol>
+<h4 id="paquetes-necesarios">Paquetes necesarios</h4>
+<p>Esta es la lista de los paquetes que necesitaremos para compilar <code>qt5ct</code>, a la izquierda, el nombre común, a la derecha, el nombre de los paquetes en Fedora.</p>
+<pre><code class="language-bash">- qttools-devel =&gt; qt5-qttools-devel
+- qtbase-devel =&gt; qt5-qtbase-devel
+- qtbase-static =&gt; qt5-qtbase-static
+- qtsvg-devel =&gt; qt5-qtsvg-devel
+- g++ =&gt; gcc-c++
+- make =&gt; make
+- gcc =&gt; gcc
+</code></pre>
+<h4 id="compilando">Compilando</h4>
+<p>Según el README:</p>
+<pre><code>$ qmake PREFIX=/DIRECTORIO_A_INSTALAR
+$ make
+# make install
+</code></pre>
+<p>Para instalarlo en el sistema (Fedora):</p>
+<pre><code>$ qmake-qt5 PREFIX=/usr
+$ make
+# make install
+</code></pre>
+<p>Ya lo tendremos instalado, sin embargo, actualizamos la base de datos de los ficheros .desktop para que aparezca en los menús de nuestro entorno de escritorio <code>update-desktop-database(1)</code>.</p>
+<pre><code># update-desktop-database
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>No puedo iniciar el programa porque obtengo este error:</p>
+<blockquote>
+<p>The QT_QPA_PLATFORMTHEME environment variable is not set correctly.</p>
+</blockquote>
+<p>Para solucionarlo, añadimos el siguiente código a un archivo nuevo dentro del directorio <code>/etc/profile.d/</code> , guardamos con extensión <code>.sh</code> y salimos de la sesión, ya debería estar arreglado.</p>
+<pre><code>export QT_QPA_PLATFORMTHEME=qt5ct
+</code></pre>
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications?target=_blank">Archlinux wiki</a></li>
+<li>Qt5ct README</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

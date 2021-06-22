@@ -1,0 +1,680 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-bash-primero-scripting/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering en Bash - Primero de Scripting - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-en-bash-primero-de-scripting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering en Bash - Primero de Scripting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-en-bash-primero-de-scripting">Mastering en Bash - Primero de Scripting</h1>
+<h1 id="empezamos-la-recta-final">¡Empezamos la recta final!</h1>
+<p>Hace un mes más o menos que empezamos a ver cómo operar con Bash utilizando comandos básicos, ya podemos decir que sabemos más que antes y podemos dar el paso al <em>Scripting</em>. ¿Qué es el "<em>Scripting</em>"? Para nosotros es la habilidad que uno tiene para desarrollar un fichero de texto plano con el fin de automatizar determinadas tareas dentro del sistema. Y un <em>script</em> es el nombre que recibe este fichero.</p>
+<p>Cuando hablamos de automatizar tareas, hablamos de que en vez de escribir 6 veces las operaciones que solemos efectuar día a día, <em>un cambio de permisos</em>, <em>nuev@ usuari@</em>...etc podemos crear un <em>script</em> que con tan solo ejecutarlo, lo haga todo por nosotr@s.</p>
+<h1 id="como-aprender">¿Cómo aprender?</h1>
+<p>Realmente cuando hablamos de desarrollo se traduce literalmente en <em>por mucho que sepas, siempre aprenderás</em>. Porque se te olvida un <em>done</em> en bucle, <em>fi</em> en un condicional, una variable mal declarada...etc, esto es así y hay que sumarle que debemos estar constantemente mirando otros <em>scripts</em> elaborados por terceras personas, practicar siempre que podamos porque esto nos ayudará a fianzar más los conocimientos que hemos aprendido aquí. Esto no es como memorizar un texto, haces examen y ¡ciao! ¡Implican muchas cosas! Como comprender conceptos abstractos, saber qué implica la ejecución de determinados comandos, conocer el sistema...etc</p>
+<p>Pero no tenemos de que preocuparnos, todo es posible. Ahora le daremos paso a las variables y <em>arrays</em></p>
+<h1 id="variables-que-son">Variables, ¿Qué son?</h1>
+<p>Las variables como hemos visto en su día en matemáticas, es un conjunto de caracteres alfanuméricos (peras, melones, X<sub>1</sub>, abc<sub>12</sub>) cuyo valor asignado varía o está sujeto a algún cambio.</p>
+<p>En Bash las variables las podemos declarar directamente o mediante el uso del comando <code>declare(1)</code> que lo hablaremos más adelante ya que permite generar diferentes tipos de </p>
+<h2 id="restricciones-y-usos">Restricciones y usos</h2>
+<p>Por norma general, las variables en mayúsculas se reservan para temas de administración y gestión del sistema.</p>
+<p>Si utilizamos el comando <code>env(1)</code>, veremos toda la ristra de variables de entorno que tenemos:</p>
+<pre><code>LANG=en_US.utf8
+GDM_LANG=en_US.utf8
+HISTCONTROL=ignoredups
+DISPLAY=:0.0
+GUESTFISH_RESTORE=\e[0m
+HOSTNAME=set0.lan
+GTK_OVERLAY_SCROLLING=0
+COLORTERM=truecolor
+GUESTFISH_INIT=\e[1;34m
+IMSETTINGS_INTEGRATE_DESKTOP=yes
+KDEDIRS=/usr
+XDG_VTNR=1
+SSH_AUTH_SOCK=/home/sincorchetes/.cache/keyring-RYPSKZ/ssh
+XDG_SESSION_ID=2
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/sincorchetes
+USER=sincorchetes
+GUESTFISH_PS1=\[\e[1;32m\]&gt;&lt;fs&gt;\[\e[0;31m\] 
+DESKTOP_SESSION=mate
+PT7HOME=/opt/pt
+[SALIDA ACORTADA]
+</code></pre>
+<p>No pueden empezar con números, signos @#~½!, deberán comenzar con al menos una letra y luego si es posible usar números:</p>
+<p>Ejemplo de errores:</p>
+<pre><code>@hola=23
+h!ola=23
+#o#=23
+3hola=23
+</code></pre>
+<p>Correcto:</p>
+<pre><code>hola=23
+h014=23
+hola=&quot;Esto es un valor&quot;
+</code></pre>
+<h2 id="declarando-variables-con-texto">Declarando variables con texto</h2>
+<p>Si queremos añadir valores con cadenas a las variables, es muy importante comprender estas dos diferencias.
+Podemos declarar ambas con doble comillado "", ó, comillado simple ''. El problema erradica, en que no son lo mismo, el ("") permite mostrar el contenido de una variable dentro de un texto, mientras que ('') interpreta el texto tal cual.</p>
+<pre><code>$hw = &quot;Hello World&quot;
+echo &quot;$hw for everyone&quot;
+
+Hello World for everyone
+</code></pre>
+<pre><code>$hw = &quot;Hello World&quot;
+echo '$hw for everyone'
+$hw for everyone
+</code></pre>
+<h2 id="visualizando-las-variables-de-entornosistema">Visualizando las variables de entorno/sistema</h2>
+<p>Tenemos a nuestra disposición el comando <code>env(1)</code> que nos enseña todas las variables de entorno y de sistema que debemos respetar, vamos a comentar algunas de ellas.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Nombre de la variable</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">HOME</td>
+<td>Ruta de trabajo del usuario actual</td>
+</tr>
+<tr>
+<td align="center">PATH</td>
+<td>Lista de directorios dónde el shell buscará ejecutables (binarios, scripts...)</td>
+</tr>
+<tr>
+<td align="center">PS1</td>
+<td><em>Prompt String</em> 1, muestra el caracter, texto previo a la introducción de los comandos. <code>[sincorchetes@set0 ~]$</code></td>
+</tr>
+<tr>
+<td align="center">PS2</td>
+<td><em>Prompt String</em> 2, Prompt secundario, por ejemplo, si se nos olvidan " cat -f file, cerrar el doble comillado, nos aparecerá el caracter o el prompt esperando a que cerremos la petición con otra doble comilla por ejemplo.</td>
+</tr>
+<tr>
+<td align="center">IFS</td>
+<td><em>Internal Field Separator</em>, separadores como tabulación, espacio, salto de línea, si está en blanco, se usan espacios</td>
+</tr>
+<tr>
+<td align="center">MAIL</td>
+<td>Ruta y archivo de los mensajes del (la) usuari@ que tienen que ver con el e-mail</td>
+</tr>
+<tr>
+<td align="center">SHELL</td>
+<td>Ruta del shell del usuario</td>
+</tr>
+<tr>
+<td align="center">LANG</td>
+<td>Idioma y codificación</td>
+</tr>
+<tr>
+<td align="center">USER</td>
+<td>Variable que identifica al/la usuari@ actual</td>
+</tr>
+<tr>
+<td align="center">LOGNAME</td>
+<td>Nombre del login utilizado en inicio de sesión, por lo general suele ser el mismo que $USER</td>
+</tr>
+<tr>
+<td align="center">HISTFILE</td>
+<td>Ruta de archivo del historial de comandos ejecutados en la shell</td>
+</tr>
+<tr>
+<td align="center">HISTSIZE</td>
+<td>Tamaño del archivo historial de comandos ejecutados en shell</td>
+</tr>
+<tr>
+<td align="center">OLDPWD</td>
+<td>Directorio accedido anteriormente</td>
+</tr>
+<tr>
+<td align="center">PWD</td>
+<td>Ruta actual</td>
+</tr>
+<tr>
+<td align="center">RANDOM</td>
+<td>Genera un número aleatorio comprendido entre 0 y 31767</td>
+</tr>
+</tbody>
+</table>
+<h2 id="eliminando-una-variable">Eliminando una variable</h2>
+<p>Para eliminar una variable y su contenido, bastará con ejecutar el comando:</p>
+<pre><code>unset variable
+</code></pre>
+<h2 id="variable-con-acceso-solo-lectura">Variable con acceso solo lectura</h2>
+<p>Se puede establecer una variable cuyo contenido no cambia como si fuese una constante haciendo uso del comando <code>readonly(1)</code></p>
+<pre><code>readonly ejemplo=2
+</code></pre>
+<h2 id="visualizando-el-contenido-de-una-variable">Visualizando el contenido de una variable</h2>
+<p>Para visualizar una variable, bastará con utilizar el comando <code>echo(1)</code>.</p>
+<pre><code>ejemplo=&quot;Hola que tal&quot;
+
+echo $ejemplo
+</code></pre>
+<h2 id="convertir-una-variable-en-global">Convertir una variable en global</h2>
+<p>En desarrollo, se puede entender variable global como aquella que es accesible en todo momento por el programa a pesar de encontrarse en una función de manera cerrada, y una variable local aquella que solo se produce una vez y posteriormente, una vez efectuada la ejecución del bloque de código acaba por auto-suprimirse como un mensaje del inspector Gadget.</p>
+<p>Para poder hacerla accesible deberemos hacer uso del comando <code>source(1)</code>. Si tenemos un archivo con variables y queremos cargarlas, bastará con ejecutar:</p>
+<pre><code>source ruta_script
+</code></pre>
+<p>Y podremos acceder desde dónde queramos desde la shell dónde hayamos ejecutado dicho comando.</p>
+<h2 id="utilizando-variable-para-ayudarnos-con-los-comandos">Utilizando variable para ayudarnos con los comandos</h2>
+<p>Por supuestísimo que podemos hacer uso de las variables para obtener una automatización.</p>
+<pre><code>ejemplo=`pwd`
+ls $ejemplo
+</code></pre>
+<p><strong>NOTA: No obstante, si tratamos de copiar archivos, directorios cuyas rutas se encuentran en variables, puede dar error, y es porque interpreta uno de los dos el nombre tal cual dando error. Para ello tendremos que utilizar el {}.</strong></p>
+<pre><code>ruta_archivo_origen = /etc/group
+ruta_archivo_destino = /home/$USER/Documentos
+
+cp ${ruta_archivo_origen} ${ruta_archivo_destino}
+</code></pre>
+<h2 id="sustituir-cadenas-en-variables">Sustituir cadenas en variables</h2>
+<p>Podemos sustituir los valores que se encuentran en las variables sin tener que reasignarlas, solo utilizando llaves.</p>
+<p>Si la variable está vacía o no existe, el texto se autoasignará. Probaremos con una variable cualquiera que al hacerle un <code>echo(1)</code> no mostrará valor alguno. Si está definida, mostrará el valor de la variable.</p>
+<pre><code>echo $ejemplo
+
+</code></pre>
+<p>Posteriormente efectuamos:</p>
+<pre><code>echo ${ejemplo:-Está aprobado}
+Está aprobado
+</code></pre>
+<p>Pero el valor y la variable desaparecen. Si está definida, mostrará el valor de la variable. Si queremos que perduren, haremos los siguiente:</p>
+<pre><code>echo ${ejemplo:=Está aprobado}
+Está aprobado
+echo $ejemplo
+Está aprobado
+</code></pre>
+<p>Por otro lado, si nos encontramos con una variable previamente declarada, pero no vacía, se puede sustituir utilizando el ":+", no es un cambio permanente.</p>
+<pre><code>echo ${PS1:+[${USER}@`pwd`]}
+</code></pre>
+<p>Y por último, si tenemos una variable que está vacía o que no exista, se interrumpe el script y mostrará el mensaje de error que le asignemos, si existe, devolverá el contenido de la variable:</p>
+<pre><code>echo ${dsfsd:?[${USER}@`pwd`]}
+bash: dsfsd: [sincorchetes@/home/sincorchetes]
+</code></pre>
+<h2 id="obtener-el-valor-de-una-cadena">Obtener el valor de una cadena</h2>
+<p>Si queremos obtener el número de caracteres que constituyen el valor de una variable podemos hacerlo:</p>
+<pre><code>ejemplo=&quot;Hola que tal&quot;
+echo ${#ejemplo}
+12
+</code></pre>
+<h2 id="operaciones-aritmeticas-con-variables">Operaciones aritméticas con variables</h2>
+<p>Se pueden hacer operaciones aritméticas con variables si primeramente declaramos el tipo de dato a través del comando <code>typeset(1)</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ - * /</td>
+<td>Sumar, restar, multiplicar, dividir</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Nos da el módulo de la operación</td>
+</tr>
+<tr>
+<td>&lt; &gt; &lt;= =&gt;</td>
+<td>Establece comparaciones, 1=True; 0=False</td>
+</tr>
+<tr>
+<td>==</td>
+<td>Igual que</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Diferente de</td>
+</tr>
+</tbody>
+</table>
+<p>Mostrar el resultado de la siguiente suma:</p>
+<pre><code>typeset -i a
+a=1200+2200
+
+echo $a
+3200
+</code></pre>
+<p>¿Son iguales estos resultados?</p>
+<pre><code>typeset -i resultado
+a=1200
+b=1200
+resultado=${a}==${b}
+
+echo $resultado
+1
+</code></pre>
+<p>Podemos encontrar muchos más operadores <code>help let</code>.</p>
+<h2 id="variables-especiales">Variables especiales</h2>
+<p>No se pueden utilizar, suelen ser de solo lectura y notifican de algo ocurrido por lo general.</p>
+<h3 id="saber-si-un-comando-se-ejecuto-con-exito-o-nop">Saber si un comando se ejecutó con éxito o nop</h3>
+<pre><code>echo $?
+</code></pre>
+<p>Nos devolverá un código al haber ejecutado un comando. Por lo general, 0 es que se ejecutó con éxito, 1 falló la ejecución del comando, 127 no encontró el ejecutable. Según el comando, ejecutable, binario... devuelve un código de error distinto.</p>
+<h3 id="obtener-el-pid-del-shell-actual">Obtener el PID del shell actual</h3>
+<p>El PID proviene de <em>Process ID</em>, es el número que identifica un proceso, (<em>más adelante explicaremos qué son los procesos</em>) de la shell actual</p>
+<pre><code>echo $$
+25382
+</code></pre>
+<h3 id="pid-del-ultimo-proceso-iniciado-en-segundo-plano">PID del último proceso iniciado en segundo plano</h3>
+<p>Si hemos ejecutado un binario y/o ejecutable en segundo plano, nos chivará el número de identificación de proceso.</p>
+<pre><code>echo $!
+25982
+</code></pre>
+<h3 id="opciones-del-shell">Opciones del shell</h3>
+<p>Son las características que tiene habilitadas la shell por defecto, en Fedora muestran las siguientes:</p>
+<pre><code>echo $-
+himBHs
+</code></pre>
+<p>El significado lo podemos encontrar <code>bash(1)</code>, sección <em>SHELL BUILTIN COMMANDS</em>:</p>
+<p>h: Recuerda la ubicación de los comandos a medida de que se buscan para ejecutarse.  Activado por defecto.
+i: Interactiva
+m: Modo monitor. El control de trabajos está activado.
+B: El intérprete de comandos permite una expansión del uso de las llaves y las varibles. Por ejemplo, <code>echo a{d,c,d,b}e</code> devolverá <code>ade ace abe</code>. Viene habilitado por defecto.
+H: Permite sustituir el estilo del histórico de comandos, se habilita por defecto pero debe tener la característica de interactivo (i).</p>
+<h1 id="arrays-vectores">Arrays (vectores)</h1>
+<p>Los vectores, o también conocidos como <em>arrays</em> permiten almacenar un conjunto de datos en un solo espacio de la memoria. En otros lenguajes como PHP pueden anidarse y confinar múltiples conjuntos de datos dentro de un solo espacio de memoria creando <em>arrays</em> multidimensionales. </p>
+<p>Sin embargo, en Bash, esto no es posible, ya que solo podremos crear vectores de una sola dimensión y sin un índice personalizado mediante su creación. a menos que declaremos la posición como el resultado de una variable (<em><code>pagina1=1</code> = <code>array[pagina1]="Valor"</code></em>). El índice en este caso, se identifica mediante un número comprendido entre 0-(n) dónde "n" es el número de datos que hemos añadido cuando declaramos un <em>array</em>.</p>
+<pre><code>    $array = (a b c d )     Datos almacenados en cada una de las posiciones
+      ^      \_|_|_|_/        /*----------------------*\
+      |         |||          /   ==&gt; a = 1234           \   
+    Nombre     Datos        /    ==&gt; b = &quot;Hello world&quot;   \
+     del        de  -------*     ==&gt; c = `pwd`           *
+    Array    Declarados     \    ==&gt; d = $resultado     /
+                             \*-----------------------*/
+</code></pre>
+<p>En este caso, para acceder al valor de cada letra correspondiente, tendremos que hacer uso de: <code>$nombre_array</code> + [<code>n</code>]. Dónde n es la posición del dato que queremos obtener.</p>
+<p>Ejemplo:</p>
+<pre><code>echo $array[0]
+|
+|----&gt; Obtendremos: 1234
+echo $array[1]
+|
+|----&gt; Obtendremos: Hello world
+echo $array[2]
+|
+|----&gt; Obtendremos: /home/sincorchetes (en mi caso)
+</code></pre>
+<h2 id="como-obtener-la-longitud-de-un-array">¿Cómo obtener la longitud de un <em>array</em>?</h2>
+<p>Básicamente, de la siguiente forma:</p>
+<pre><code>echo ${#array[*]}
+</code></pre>
+<p>Nos tendrá que dar como resultado "4", que son los valores declarados. (a= 1234, b = "Hello world"...)</p>
+<h2 id="como-obtener-todos-los-valores-de-un-array">¿Cómo obtener todos los valores de un <em>array</em>?</h2>
+<p>Sustituiremos el número de la posición por una @.</p>
+<pre><code>echo ${array[@]}
+</code></pre>
+<h2 id="como-anadir-un-nuevo-valor-a-un-indice-especifico-de-un-array-declarado">¿Cómo añadir un nuevo valor a un índice específico de un <em>array</em> declarado?</h2>
+<p>Bastará con mencionar el número de posición que queremos asignar el nuevo dato:</p>
+<pre><code>$array[10]=&quot;Hola que tal&quot;
+</code></pre>
+<h2 id="visualizar-el-numero-de-posiciones-ocupadas-dentro-de-un-array">Visualizar el número de posiciones ocupadas dentro de un <em>array</em></h2>
+<p>Simplemente si queremos ver que posiciones están ocupadas para utilizar las que estén libres:</p>
+<pre><code>echo ${!array[*]}
+</code></pre>
+<h2 id="ver-cuanto-tamano-contiene-de-largo-una-posicion">Ver cuánto tamaño contiene de largo una posición</h2>
+<p>Para comprobar el tamaño, simplemente hacemos:</p>
+<pre><code>echo ${#array[1]}
+</code></pre>
+<h2 id="como-anadir-un-nuevo-valor-sin-declarar-posicion-en-un-array">¿Cómo añadir un nuevo valor sin declarar posición en un <em>array</em>?</h2>
+<p>Simplemente si queremos añadir un dato nuevo sin especificar un índice en cuestión.</p>
+<pre><code>array+=(nuevo_valor)
+</code></pre>
+<h2 id="eliminar-una-posicion-del-array">Eliminar una posición del array</h2>
+<p>Utilizaremos el comando <code>unset(1)</code> como se ha utilizado para eliminar variables declaradas.</p>
+<pre><code>unset array[n]
+</code></pre>
+<h2 id="resultado-de-un-comando-que-se-separe-como-valores-y-que-estos-ocupen-una-posicion-dentro-del-array">Resultado de un comando que se separe como valores y que estos ocupen una posición dentro del <em>array</em></h2>
+<p>Esto quiere decir, que si asignamos un solo valor, cuyo valor sea el resultado de un comando, este generará una salida y todos los datos expuestos en la salida del comando se convertirán en un valor dentro de una posición. Por ejemplo, si hacemos un <code>cat /etc/group</code>, obtendremos una salida similar a esta:</p>
+<pre><code>root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+[SALIDA ACORTADA]
+</code></pre>
+<p>Bien, si le decimos al <em>array</em> que nos almacene esta lista para luego visualizarla, podemos hacerlo.</p>
+<pre><code>array=(`cat /etc/group`)
+</code></pre>
+<p>Si hacemos un <code>echo ${array[0]}</code> veremos que nos saldrá la primera línea del documento:</p>
+<pre><code>root:x:0:
+</code></pre>
+<p>Si queremos obtener toda la lista:</p>
+<pre><code>echo ${array[@]}
+</code></pre>
+<p>Y hasta aquí nuestra entrega de hoy.</p>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li>Ediciones ENI ~ LPIC-1</li>
+<li>StackOverflow - <a href="https://stackoverflow.com/questions/35432562/why-echo-outputs-himbh-on-man-bash-shell?target=_blank"><em>Why echo outputs himBH on man bash shell</em></a></li>
+<li>Gulvi ~ <a href="https://gulvi.com/serie/curso-programacion-bash/capitulo/arrays-bash?target=_blank">Curso programación Bash</a></li>
+<li>StackExchange ~ <a href="https://unix.stackexchange.com/questions/68322/how-can-i-remove-an-element-from-an-array-completely?target=_blank"><em>How can I remove an element from an array...</em></a></li>
+<li>LinuxQuestions ~ <a href="https://www.linuxquestions.org/questions/programming-9/bash-array-add-function-example-using-indirect-array-reference-as-function-argument-815329?target=_blank"><em>Bash array Add function example using indirect..</em></a></li>
+<li>GNU.org ~ <a href="https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html?target=_blank">Brace Expansion</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

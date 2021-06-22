@@ -1,0 +1,997 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-html5/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering HTML5 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-html5" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering HTML5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-html" class="md-nav__link">
+    ¿Qué es HTML?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionamiento" class="md-nav__link">
+    Funcionamiento
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxis" class="md-nav__link">
+    Sintaxis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-atributo" class="md-nav__link">
+    Tipos de atributo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etiquetas" class="md-nav__link">
+    Etiquetas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    Comentarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estilizando" class="md-nav__link">
+    Estilizando
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encabezados" class="md-nav__link">
+    Encabezados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parrafo" class="md-nav__link">
+    Párrafo
+  </a>
+  
+    <nav class="md-nav" aria-label="Párrafo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enfasis-dentro-de-un-parrafo" class="md-nav__link">
+    Énfasis dentro de un párrafo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#separadores-de-contenido" class="md-nav__link">
+    Separadores de contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matizando-el-contenido" class="md-nav__link">
+    Matizando el contenido
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#salto-de-linea" class="md-nav__link">
+    Salto de línea
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listas" class="md-nav__link">
+    Listas
+  </a>
+  
+    <nav class="md-nav" aria-label="Listas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lista-sin-orden" class="md-nav__link">
+    Lista sin orden
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lista-ordenada" class="md-nav__link">
+    Lista ordenada
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vinculos" class="md-nav__link">
+    Vínculos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creando-un-anclaje" class="md-nav__link">
+    Creando un anclaje
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boton" class="md-nav__link">
+    Botón
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imagenes" class="md-nav__link">
+    Imágenes
+  </a>
+  
+    <nav class="md-nav" aria-label="Imágenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pero-como-lee-una-imagen-un-lector-de-pantalla" class="md-nav__link">
+    ¿Pero cómo lee una imagen un "lector de pantalla"?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadiendo-un-video" class="md-nav__link">
+    Añadiendo un video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadiendo-un-audio" class="md-nav__link">
+    Añadiendo un audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tablas" class="md-nav__link">
+    Tablas
+  </a>
+  
+    <nav class="md-nav" aria-label="Tablas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anadiendo-espacio" class="md-nav__link">
+    Añadiendo espacio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularios" class="md-nav__link">
+    Formularios
+  </a>
+  
+    <nav class="md-nav" aria-label="Formularios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etiqueta" class="md-nav__link">
+    Etiqueta 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementos-del-formulario" class="md-nav__link">
+    Elementos del formulario
+  </a>
+  
+    <nav class="md-nav" aria-label="Elementos del formulario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#informacion-tipeada" class="md-nav__link">
+    Información tipeada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fecha-y-hora" class="md-nav__link">
+    Fecha y hora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opciones-yo-elecciones" class="md-nav__link">
+    Opciones y/o elecciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select" class="md-nav__link">
+    Select
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-input" class="md-nav__link">
+    Otros input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviando-datos" class="md-nav__link">
+    Enviando datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atributos-adicionales" class="md-nav__link">
+    Atributos adicionales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    Fuentes:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-html5">Mastering HTML5</h1>
+<h2 id="que-es-html">¿Qué es HTML?</h2>
+<p>HTML proviene de las siglas en inglés HyperText Markup Language, traducido al español "Lenguaje de etiquetas de Hipertexto". Es un lenguaje (no de programación) interpretado que principalmente se caracteriza por el uso de unas "etiquetas". Estas permiten generar y organizador una serie de elementos que se representarán dentro de una página Web. </p>
+<h2 id="funcionamiento">Funcionamiento</h2>
+<p>El código que se escribe será interpretado por un navegador Web como es el caso de Google Chrome, Mozilla Firefox, Opera, Microsoft Edge. Estos exploradores leerán lo que se ha escrito, lo interpretará y lo representará dentro de nuestro documento Web en cuestión de milisegundos.</p>
+<h2 id="sintaxis">Sintaxis</h2>
+<p>El 95% de las etiquetas empiezan siempre empiezan y acaban con elemento que queramos representar en el documento Web.</p>
+<p><code>&lt;h1&gt;Ejemplo de encabezado&lt;/h1&gt;</code>, esto representará un encabezado con un tamaño de fuente superior al resto de encabezados y con un sombreado añadido.</p>
+<p>Sin embargo, existen etiquetas que contienen el nombre del elemento junto con una serie de atributos pero sin mencionar el nombre del elemento en el cierre.
+<code>&lt;input type="button"&gt;</code>, esta etiqueta por ejemplo generará un tipo de elemento de información de entrada en modo botón.</p>
+<pre><code>   Atributo     Contenido
+   ________     _________
+     |              |
+&lt;p attr=&quot;valor&quot;&gt;Texto ej&lt;/p&gt;
+---      -----           ---
+ |                        |
+ |      Etiquetas         |
+ __________________________
+</code></pre>
+<p>Además, veremos cómo las etiquetas configuran un árbol de familias padre-hijo ya que pueden anidarse indefinidamente. </p>
+<h2 id="tipos-de-atributo">Tipos de atributo</h2>
+<p>Existen una serie de atributos globales estandarizados para los elementos de nuestro documento que nos permiten definir eventos como cuando pulsemos un clic que haga una determinada acción (esto es en relación con JavaScript que veremos más adelante), identificación de un elemento como único como es el caso del atributo id... podemos encontrar una lista de estos atributos <a href="https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales?target=_blank">aquí</a></p>
+<p>Por otro lado, también existen tributos sin valor como podemos destacar placeholder, controls... de los cuáles hablaremos de ellos más tarde.</p>
+<h2 id="etiquetas">Etiquetas</h2>
+<p><code>&lt;!DOCTYPE html&gt;</code>
+Nos permite definir que lenguaje de etiquetas debe interpretar el navegador. En este caso comunicamos al explorador que debe interpetar la versión 5 de HTML.</p>
+<p><code>&lt;html&gt;&lt;/html&gt;</code>
+Constituye el comienzo y final del documento, si el contenido junto con los elementos se encuentran fuera de estas etiquetas, nos arriesgamos a que los navegadores no logren interpretarlo.</p>
+<p><strong>Nota: El atributo <code>lang=""</code> permite definir el idioma del documento, si es español deberá llevar como valor "es", si es Francés, "fr" y viceversa. Más información en la página de la <a href="https://www.w3.org/International/questions/qa-html-language-declarations.es?target=_blank">w3</a></strong></p>
+<p><code>&lt;head&gt;&lt;/head&gt;</code>
+Permite definir una cabecera en nuestro documento en el cual, le otorgamos cierta información descriptiva al mismo con el uso de las siguientes etiquetas:
+<code>&lt;title&gt;&lt;/title&gt;</code>: Define el título del documento, este lo veremos representado en el título de la pestaña y de la ventana del explorador Web.</p>
+<p>Las etiquetas <code>&lt;meta&gt;</code>
+Estas permiten definir la información tanto del autor como palabras clave, descripción, codificación...</p>
+<p><code>&lt;meta author="Nombre del autor"&gt;</code>
+<code>&lt;meta keywords="Palabras, clave``&lt;meta description="Descripción del documento"&gt;</code>
+<code>&lt;meta charset="utf-8"&gt;</code></p>
+<p>Etiquetas opcionales
+<code>&lt;link&gt;</code>: Es una etiqueta muy utilizada cuando se quiere vincular una hoja de estilos elaborada con CSS3. Las hojas de estilos permiten añadir determinados diseños personalizados para cada elemento de nuestro documento Web. Tienen una sintaxis propia que explicaremos más adelante.</p>
+<p><code>&lt;body&gt;</code>
+La etiqueta <code>&lt;body&gt;&lt;/body&gt;</code> permite definir el cuerpo de nuestro documento Web. Aquí añdiremos todos los elementos con los que el usuario interactuará como es el caso de los párrafos, imágenes, videos, enlaces...etc</p>
+<p><code>&lt;footer&gt;&lt;/footer&gt;</code>
+Este elemento es el último dentro del documento Web que estemos redactando, permite añadir un pie de página al documento con la información que nosotr@s estimemos oportuna.</p>
+<h2 id="comentarios">Comentarios</h2>
+<p>Los comentarios nos permiten puntualizar determinadas partes del código para explicar que sirve, anotar cómo hemos llegado hasta ahí o simplemente salvarnos de una metedura de pata. Muchas personas no hacen uso de los comentarios arriesgandose sobre todo en un proyecto en el que hay más personas involucradas frene productivamente su desarrollo.</p>
+<p>Para comentar simplemente tendremos que utilizar estos caracteres <code>&lt;!--</code> para la apertura y <code>--&gt;</code> para el cierre.</p>
+<p><code>&lt;!-- --&gt;</code></p>
+<h2 id="estilizando">Estilizando</h2>
+<p>Todos los elementos poseen una serie de atributos por defecto sobre su estilo que pueden modificarse aplicando una serie palabras clave que se basan en un lenguaje de estilos llamado CSS que veremos en los siguientes posts.</p>
+<p>Con él, podemos definir un fondo de pantalla mucho más vistoso, modificar el tamaño y familia de la tipografía que queremos utilizar, modificar la posición de los elementos...</p>
+<p>Para poder modificar los estilos se pueden hacer de 3 maneras.
+* Etiqueta
+    * Añadiendo la etiqueta <code>&lt;style&gt;&lt;/style&gt;</code> dentro del elemento <code>&lt;head&gt;&lt;/head&gt;</code>
+* Atributo de un elemento
+    * <code>&lt;div style="background-color:black"&gt;&lt;/div&gt;</code>
+* Hoja referenciada
+    * Adjuntando en <code>&lt;head&gt;&lt;/head&gt;</code> un enlace a una hoja de estilos de la siguiente manera:
+    <code>&lt;link rel="stylesheet" href="ruta_absoluta_o_relativa_de_la_hoja_de_estilos.css"&gt;</code></p>
+<p>La norma de un buen desarrollador es, <strong>nunca mezclarás</strong>. Con esto queremos decir, que debemos escoger siempre la 3 opción ya que es más legible para los demás y para uno mismo, ya que si no funciona determinado estilo y tenemos todos ellos desperdigados por los elementos, nos volveríamos loc@s para encontrarlos.</p>
+<h2 id="encabezados">Encabezados</h2>
+<p>Los encabezados nos permiten pre-formatear un texto con un sombreado y un tamaño específico. Nos permiten describir el contenido que vamos a comentar. Un ejemplo sencillo son los titulares de un periódico.</p>
+<p>Otorgando estilo al texto</p>
+<p>Existen hasta 6 tipos de encabezados:</p>
+<h1>Encabezado</h1>
+<p><code>&lt;h1&gt;Encabezado 1&lt;/h1&gt;</code></p>
+<h2>Encabezado 2</h2>
+<p><code>&lt;h2&gt;Encabezado 2&lt;/h2&gt;</code></p>
+<h3>Encabezado 3</h3>
+<p><code>&lt;h3&gt;Encabezado 3&lt;/h3&gt;</code></p>
+<h4>Encabezado 4</h4>
+<p><code>&lt;h4&gt;Encabezado 4&lt;/h4&gt;</code></p>
+<h5>Encabezado 5</h5>
+<p><code>&lt;h5&gt;Encabezado 5&lt;/h5&gt;</code></p>
+<h6>Encabezado 6</h6>
+<p><code>&lt;h6&gt;Encabezado 6&lt;/h6&gt;</code> </p>
+<h2 id="parrafo">Párrafo</h2>
+<p>Nos permiten representar el contenido en forma de párrafos. Esto genera un salto de línea cada vez que lo definimos.
+<code>&lt;p&gt;&lt;/p&gt;</code></p>
+<h3 id="enfasis-dentro-de-un-parrafo">Énfasis dentro de un párrafo</h3>
+<p>Si queremos destacar un determinado contenido dentro de un párrafo, utilizaremos la etiqueta <code>&lt;span&gt;&lt;/span&gt;</code>.</p>
+<h2 id="separadores-de-contenido">Separadores de contenido</h2>
+<p>Cuando queremos representar un contenido debidamente estructurado y organizado no lo podemos representar solamente con etiquetas que den formato al contenido. Necesitaremos unas etiquetas que nos permitan representar el contenido como queramos. </p>
+<p>Para esto se inventaron los div's. La palabra proviene del inglés "division" o lo que es lo mismo, un contenedor que divide la página en secciones. Estas secciones son muy útiles para agrupar elementos en un documento HTML.</p>
+<p>Con la llegada de HTML5 los divs cobran un significado semántico y ahora tenemos las siguientes etiquetas:
+* <code>&lt;header&gt;&lt;/header&gt;</code>: Dónde especificamos qué añadir en la cabecera de la página, el equivalente en el viejo estándar es <code>&lt;div class="header"&gt;&lt;/div&gt;</code>
+<img alt="Divs en HTML5" src="../z.png" />{.right}
+* <code>&lt;nav&gt;&lt;/nav&gt;</code>: Utilizado para generar una barra de navegación, en el viejo estándar sería <code>&lt;div class="menu"&gt;&lt;/div&gt;</code></p>
+<ul>
+<li>
+<p><code>&lt;section&gt;&lt;/section&gt;</code>: Representa una sección general dentro de un documento. Antes se hacía uso de <code>&lt;div class="content"&gt;&lt;/div&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;article&gt;&lt;/article&gt;: Se utiliza para representar un artículo, que si se anidan, quiere decir que todos los artículos estarán relacionados con el artículo padre. Antes se utilizaba, &lt;div class="article"&gt;&lt;/div&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;aside&gt;&lt;/aside&gt;</code>: Se considera un elemento independiente del contenido ya que se suele utilizar para elaborar barras laterales, elementos publicitarios...</p>
+</li>
+<li>
+<p><code>&lt;footer&gt;&lt;/footer&gt;</code>: Añadimos un pie de págin al documento. <code>&lt;div id="footer"&gt;&lt;/div&gt;</code></p>
+</li>
+</ul>
+<h2 id="matizando-el-contenido">Matizando el contenido</h2>
+<p>Se puede añadir ciertos matices al contenido mediante las siguientes etiquetas:
+* <code>&lt;em&gt;</code>: <em>Permite mostrar el texto en cursiva</em>
+* <code>&lt;strong&gt;</code>: <strong>Añade un énfasis en negrita</strong>
+* <code>&lt;u&gt;&lt;/u&gt;</code>: <u>Subrayado de texto</u>
+* <code>&lt;strike&gt;&lt;/strike&gt;</code>: <strike>Tacha el texto</strike>
+* <code>&lt;sup&gt;&lt;/sup&gt;</code>: <sup>Crear un texto con formato de exponente</sup>
+* <code>&lt;sub&gt;&lt;/sub&gt;</code>: <sub>Crea un texto con formato de texto más bajo y más pequeño.</sub></p>
+<h2 id="salto-de-linea">Salto de línea</h2>
+<p>Si queremos añadir un espacio entre elementos, se puede llevar a cabo haciendo uso de <code>&lt;br&gt;</code>. También podemos añadirlo dentro de un párrafo y dividirlo sin afectar la posición completa del mismo con respecto al resto de elementos.</p>
+<p><code>&lt;p&gt;</code>Esto es un ejemplo de un párrafo que dividiremos en dos. <code>&lt;br&gt;</code>
+Se visualizará un salto de línea dentro de este párrafo<code>&lt;/p&gt;</code></p>
+<h2 id="listas">Listas</h2>
+<p>En HTML tenemos a disposición 2 tipos de listas, una lista ordenada con la que tendremos ítems organizados por números y por otro lado, una lista sin ordenar con otros tipos de símbolos para representar a los ítems de la lista.</p>
+<h3 id="lista-sin-orden">Lista sin orden</h3>
+<p>Para elaborarla utilizamos <code>&lt;ul&gt;</code> "unordered list" <code>&lt;/ul&gt;</code> junto con los ítems <code>&lt;li&gt;&lt;/li&gt;</code> "list items".</p>
+<p>Por ejemplo, categoría de Frutas con algunas de ellas:</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;Pomelo&lt;/li&gt;
+    &lt;li&gt;Fresa&lt;/li&gt;
+    &lt;li&gt;Melocotón&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<ul>
+    <li>Pomelo</li>
+    <li>Fresa</li>
+    <li>Melocotón</li>
+</ul>
+<h3 id="lista-ordenada">Lista ordenada</h3>
+<p>Para construirla utilizamos la etiqueta <code>&lt;ol&gt;&lt;/ol&gt;</code> además de <code>&lt;li&gt;&lt;/li&gt;</code> para definir los ítems.</p>
+<p>ToDo, tareas que hacer</p>
+<pre><code>&lt;ol&gt;
+    &lt;li&gt;Hacer la comida&lt;/li&gt;
+    &lt;li&gt;Desfragentar Windows&lt;/li&gt;
+    &lt;li&gt;Instalar Antivirus Windows&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<ol>
+    <li>Hacer la comida</li>
+    <li>Desfragentar Windows</li>
+    <li>Instalar Antivirus Windows</li>
+</ol>
+<h2 id="vinculos">Vínculos</h2>
+<p>Los vínculos permiten conectar una página con otra, pueden utilizarse rutas relativas o absolutas siempre y cuando el fichero exista.
+<code>&lt;a href="https://www.echemosunbitstazo.es"&gt;Echemos un bitstazo&lt;/a&gt;</code></p>
+<p><code>&lt;a&gt;</code> proviene del inglés "anchor" que en español quiere decir "<em>ancla</em>".</p>
+<p>Hay un atributo que es bastante útil y muy utilizado para definir el comportamiento del enlace. Este atributo recibe el nombre de target. Es muy útil sobre todo para los visitantes que quieran consultar una información enlazada en el documento sin tener que perderlo de vista. 
+Para abrir el enlace en una nueva ventana, se hace uso del atributo <code>target="_blank"</code>. Tambien tenemos los valores:
+* <code>_self</code>: Acción por defecto, se abre la página en la misma página
+* <code>_parent</code>: Se abre el documento a cuerpo completo en una ventana
+* <code>framename</code>: Se abre el documento en un frame</p>
+<h2 id="creando-un-anclaje">Creando un anclaje</h2>
+<p>Podemos enlazar varios contenidos en el mismo documento. Una de las utilidades es la construcción de un índice a partir de los encabezados de título.</p>
+<p>Especificamos en un encabezado el id, y mediante una lista, generamos un enlace que apunte hacia ese id seguido de almohadilla.</p>
+<pre><code>&lt;body&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href=&quot;#intro&quot;&gt;Introducción&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#howto&quot;&gt;¿Cómo hacerlo?&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#resources&quot;&gt;Fuentes&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;h1 id=&quot;intro&quot;&gt;Introducción&lt;/h1&gt;
+    &lt;p&gt;Lorem Ipsum&lt;/p&gt;
+    &lt;h1 id=&quot;howto&quot;&gt;¿Cómo hacerlo?&lt;/h1&gt;
+    &lt;p&gt; Ipsum Lorem&lt;/p&gt;
+    &lt;h1 id=&quot;resources&quot;&gt;Fuentes&lt;/h1&gt;
+    &lt;p&gt;LoIpSum&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<h2 id="boton">Botón</h2>
+<p>Se puede añadir un botón.
+<code>&lt;button&gt;Texto a mostrar&lt;/button&gt;</code></p>
+<p>Nos puede servir cuando desarrollemos en JavaScript que cada vez que pulsemos el botón ocurra algo como en el siguiente ejemplo:
+<button onclick="alert('Esto es un botón')">Púlsame</button></p>
+<h2 id="imagenes">Imágenes</h2>
+<p>Para añadir imágenes tipo .jpeg, .png, .jpg, .gif... tenemos que utilizar la etiqueta <code>&lt;img src="ubicación.img" /&gt;</code>. El valor que recibirá el atributo SRC es la URL de la imagen que puede añadirse desde una rula relativa o absoluta.</p>
+<p>Hay un atributo específico que se utiliza para aquellas personas que tengan dificultades en la visión o no puedan ver directamente, existen "lectores de pantalla" que leen el texto generando un audio para que puedan escuchar cuál es el contenido del documento.
+<img src="/blog/mastering-html5/w3c.gif"></p>
+<h3 id="pero-como-lee-una-imagen-un-lector-de-pantalla">¿Pero cómo lee una imagen un "lector de pantalla"?</h3>
+<p>No la lee, básicamente toma el valor del atributo, que en este caso suele ser una descripción y se lo comunica a la persona que accedió al documento.</p>
+<p><code>&lt;img src="ubicación.img" alt="Paseo de Gracia"/&gt;</code>
+<img src="blog/mastering-html5/w3c.gif" alt="Problema con la imagen"></p>
+<p>En caso de que falle la carga de la imagen, también podemos leer la descripción, o si situamos el cursor encima de ella.</p>
+<p>Por otro lado permite mejorar el SEO (Search Engine Optimization) ya que los motores de búsqueda como Google no pueden indexar las imágenes, no las lee directamente y utilizan este atributo para tener una descripción y así posicionar mejor tu sitio.</p>
+<h2 id="anadiendo-un-video">Añadiendo un video</h2>
+<p>Antaño, para añadir un video al sitio Web, necesitamos tener un reproductor que estaba elaborado en Adobe Flash Player y rezar porque funcionase. Sin embargo, con el tiempo, esto se ha solucionado implementando la etiqueta <code>&lt;video&gt;&lt;/video&gt;</code></p>
+<video src="/blog/mastering-html5/342125205.mp4" controls>Formato de video no soportado</video>
+
+<p>Esta etiqueta requiere del atributo src que apunte a la fuente del video. Se puede forzar la resolución del video utilizando los atributos:
+* <code>width</code>: Para el ancho en píxeles
+* <code>height</code>: Para la altura también en píxeles</p>
+<p>Para especificar el MIME-type del video, se utiliza el atributo <code>type="x/y"</code>.
+<code>type="video/mp4"</code>. Un MIME-type es básicamente informar al documento del tipo de contenido que se quiere mostrar. Aquí tienes una lista con multitud de <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types?target=_blank">tipos</a></p>
+<p>Por último el atributo controls que no posee un valor alguno, permite mostrar los controles del reproductor.</p>
+<p>Está muy bien añadir como contenido dentro de la etiqueta video (que como hemos visto queda vacía) un texto que comente "Video no soportado", para que aquella persona que espere a ver el video comprenda que su navegador no lo soporta.</p>
+<h2 id="anadiendo-un-audio">Añadiendo un audio</h2>
+<p>Exactamente se añade igual como el video solo que cambia la etiqueta <code>&lt;video&gt;</code> por <code>&lt;audio&gt;</code> y que por obligación, hay que especificar el atributo controls, si no, no funcionará a pesar de haberlo encontrado en su ruta.</p>
+<p><audio src="/blog/mastering-html5/Matty_M_September_Jam.mp3" controls></audio></p>
+<h2 id="tablas">Tablas</h2>
+<p>Si queremos organizar la información en tablas, simplemente tendremos que utilizar las siguientes etiquetas:</p>
+<ul>
+<li><code>&lt;table&gt;&lt;/table&gt;</code>: Construye una tabla.</li>
+<li><code>&lt;thead&gt;&lt;/thead&gt;</code>: Define el encabezado de la tabla.</li>
+<li><code>&lt;th&gt;&lt;/th&gt;</code>: Se incluye dentro de la etiqueta <code>&lt;thead&gt;&lt;/thead&gt;</code> para definir el nombre de las columnas</li>
+<li><code>&lt;tbody&gt;&lt;/tbody&gt;</code>: Define el contenido que irá en la tabla</li>
+<li><code>&lt;tfoot&gt;&lt;/tfoot&gt;</code>: Pie de la tabla</li>
+<li><code>&lt;tr&gt;&lt;/tr&gt;</code>: Define una nueva fila, requerido para <code>thead</code>,<code>tbody</code>, <code>tfoot</code></li>
+<li><code>&lt;td&gt;&lt;/td&gt;</code>: Se utiliza para definir el contenido de las celdas que van dentro de <code>&lt;tbody&gt;</code> y <code>&lt;tfoot&gt;</code></li>
+</ul>
+<p>Un ejemplo más sencillo:</p>
+<table>
+    <thead>
+        <tr>
+            <th>Cabecera tabla C1</th>
+            <th>Cabecera tabla C2</th>
+            <th>Cabecera tabla C3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Celda F1:C1</td>
+            <td>Celda F1:C2/td>
+            <td>Celda F1:C3</td>
+        </tr>
+        <tr>
+            <td>Celda F2:C1</td>
+            <td>Celda F2:C2/td>
+            <td>Celda F2:C3</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Pie de tabla C1</td>
+            <td>Pie de tabla C2</td>
+            <td>Pie de tabla C3</td>
+        </tr>
+    </tfoot>
+</table>
+
+<p>Y representada en forma de código:</p>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Cabecera tabla #1&lt;/th&gt;
+            &lt;th&gt;Cabecera tabla #2&lt;/th&gt;
+            &lt;th&gt;Cabecera tabla #3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Celda F1:C1&lt;/td&gt;
+            &lt;td&gt;Celda F1:C2&lt;/td&gt;
+            &lt;td&gt;Celda F1:C3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Celda F2:C1&lt;/td&gt;
+            &lt;td&gt;Celda F2:C2&lt;/td&gt;
+            &lt;td&gt;Celda F2:C3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Pie de tabla&lt;/td&gt;
+            &lt;td&gt;Pie de tabla&lt;/td&gt;
+            &lt;td&gt;Pie de tabla&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre>
+<h3 id="anadiendo-espacio">Añadiendo espacio</h3>
+<p>Se puede añadir un espacio en las columnas cuando no hay contenido que representar mediante el atributo <code>colspan="x"</code> en un <code>&lt;td&gt;</code> ó <code>&lt;th&gt;</code>, donde X es un número entero.</p>
+<p>No obstante, también podemos hacerlo en las filas con el atributo <code>rowspan="y"</code>, dónde y es un valor entero.</p>
+<h2 id="formularios">Formularios</h2>
+<p>En HTML se nos permite generar formularios para recoger datos.</p>
+<p><em><strong>NOTA: No mostraremos en esta misma página los inputs, porque dan lugar conflictos con estilo y JS, sin embargo, hemos añadido el mismo código con la descripción en el servicio "JSFiddle" que puedes acceder desde <a href="https://jsfiddle.net/sincorchetes/rgnxpjqu/10?target=_blank">aquí</a>. Solo hay que pulsar en RUN y en la parte inferior derecha aparecerá una pequeña ventana con el código resultante.
+</strong></em></p>
+<p><code>&lt;form&gt;&lt;/form&gt;</code>: Creamos los formularios y los cerramos de la siguiente forma. Esta etiqueta posee una serie de atributos muy especiales como es <code>method=""</code> y <code>action=""</code>.
+* <code>method=""</code>: Especificamos el encabezado HTTP que queramos utilizar, existen 5, pero comentaremos los 3 más utilizados:
+  * <code>GET</code>: Los datos que se envían se pueden ver a través del campo URL del explorador. Se suele utilizar para obtener información de un servidor de un recurso específico.
+  * <code>POST</code>: Los datos se envían como si fuera un modelo de caja negra, no se ven. Este método se suele utilizar para enviar información al servidor y que este sea recepcionado por un lenguaje o sistema de fondo.
+  *  <code>PUT</code>: Muy común para subir archivos.</p>
+<ul>
+<li><code>action=""</code>: Define a qué ruta enviar la información, si hay un fichero que lo trata del lado del servidor elaborado con PHP, Ruby on Rails.. o que sea procesado con JS mediante un AJAX... mil posibilidades.</li>
+</ul>
+<h3 id="etiqueta">Etiqueta <label></h3>
+<p>Esta etiqueta se utiliza para asociar un control de un formulario y se vincula con un input, este provee de una breve descripción. Este hace uso de un atributo llamado <code>for</code> cuyo valor es el id del input.</p>
+<p>Por ejemplo:
+<label for="idExample">Nombre y apellidos:</label>
+<input type="text" id="idExample"></p>
+<h2 id="elementos-del-formulario">Elementos del formulario</h2>
+<p>Un formulario no es un formulario solo por tener una etiqueta que lo defina, si no tenemos una serie de elementos que nos permitan interactuar con la persona que se encuentra detrás de la pantalla, poco podemos hacer con él.</p>
+<h3 id="informacion-tipeada">Información tipeada</h3>
+<p>Los siguientes elementos nos permiten recoger información escrita por el usuario.</p>
+<ul>
+<li>Permite recoger texto en una sola línea. <code>&lt;input type="text"&gt;</code></li>
+<li>Recuadro ajustable de texto en el que se puede visualizar lo escrito en múltiples líneas. <code>&lt;textarea&gt;&lt;/textarea&gt;</code></li>
+<li>Campo tipo input que tiene una validación que no permite al usuario enviar la información si no inserta una dirección mail válida. <code>&lt;input type="email"&gt;</code></li>
+<li>Elemento del formulario que permite verificar si la URL introducida es correcta, sin embargo, en aquellos navegadores que no soporten este campo se tornará en un input tipo texto. <code>&lt;input type="url"&gt;</code></li>
+<li>Campo tipo text con opciones adicionales como un icono con el que se puede eliminar lo previamente escrito además de soportar (según el navegador) un pequeño historial de búsqueda realizada. <code>&lt;input type="search"&gt;</code></li>
+<li>Elemento del formulario en un navegador de escritorio no se aprecia la diferencia, pero si utilizamos un smartphone o un dispositivo móvil. A la hora de escribir, el teclado se alternará mostrando únicamente el "dial pad". <code>&lt;input type="tel"&gt;</code></li>
+</ul>
+<h3 id="fecha-y-hora">Fecha y hora</h3>
+<p>Si queremos recoger campos de fecha y de hora, utilizaremos:</p>
+<ul>
+<li>Permite establecer una fecha. <code>&lt;input type="date"&gt;</code></li>
+<li>Permite escoger un mes del año y muestra el año del mes seleccionado. <code>&lt;input type="month"&gt;</code></li>
+<li>Muestra la semana seleccionada y muestra el año de la semana seleccionada. <code>&lt;input type="week"&gt;</code></li>
+<li>Permite seleccionado una fecha (MM/DD/YYYY) y además, hora (HH:MM:SS)<code>&lt;input type="datetime-local"&gt;</code></li>
+<li>Muestra la hora en formato 12H y la hora asignada. <code>&lt;input type="time"&gt;</code></li>
+</ul>
+<h3 id="opciones-yo-elecciones">Opciones y/o elecciones</h3>
+<p>Los siguientes elementos a nuestra disposición para seguir recolectando datos de usuario:</p>
+<ul>
+<li>Representa una casilla para marcar múltiples opciones, muy útil para representar las famosas casillas de "Acepto..." o múltiples subscripciones. <code>&lt;input type="checkbox"&gt;</code></li>
+<li>Opción única dentro de un conjunto de opciones múltiples. <code>&lt;input type="radio"&gt;</code></li>
+<li>Permite seleccionar un valor representado en una barra y que devuelve un número entero. <code>&lt;input type="range"&gt;</code></li>
+</ul>
+<h3 id="select">Select</h3>
+<p>Los select son inputs que agrupan opciones que se muestran a través de una lista desplegable cuando se quiere escoger una opción. </p>
+<p>Su sintaxis es:</p>
+<pre><code>&lt;select&gt;
+    &lt;option&gt;&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+<p>Una de las diferencias importantes del select es que el atributo <code>value</code> no se asigna en <code>&lt;select&gt;&lt;/select&gt;</code>, si no que se asigna en cada una de las opciones.</p>
+<p>También se puede definir una opción por defecto utilizando un atributo sin valor llamado <code>default</code>.</p>
+<pre><code>&lt;select name=&quot;select&quot;&gt;
+    &lt;option value=&quot;1&quot;&gt;Opción #1&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;Opción #2&lt;/option&gt;
+    &lt;option value=&quot;3&quot; selected&gt;Opción #3&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+<h3 id="otros-input">Otros input</h3>
+<p>Estos inputs son especiales ya que el usuario no marca casillas, elige opciones, o escribe en recuadros de texto.</p>
+<ul>
+<li>Envía un fichero para su posterior procesamiento. <code>&lt;input type="file"&gt;</code></li>
+<li>Permite seleccionar una imagen. <code>&lt;input type="image"&gt;</code></li>
+<li>Lo que se conoce como "Color picker" o selector de color, permite seleccionar un color y obtener un código hexadecimal (RGB). <code>&lt;input type="color"&gt;</code></li>
+<li>Añade un input con un valor X oculto en el formulario: <code>&lt;input type="hidden"&gt;</code></li>
+<li>Suprime toda información contenida en los campos del formulario: <code>&lt;input type="reset"&gt;</code></li>
+</ul>
+<h3 id="enviando-datos">Enviando datos</h3>
+<p>Para poder enviar los datos del formulario necesitaremos un input que actúe de botón y los pueda enviar. También se pueden utilizar otros elementos y hacer el envío mediante JS, pero eso se verá en otros posts.</p>
+<ul>
+<li><code>&lt;input type="submit"&gt;</code> Enviando datos:</li>
+</ul>
+<p>Se puede modificar el mensaje de "Submit" utilizando el atributo value: <code>&lt;input type="submit" value="Enviar"&gt;</code></p>
+<h3 id="atributos-adicionales">Atributos adicionales</h3>
+<p>Podemos añadir ciertos atributos que nos pueden ser útiles a la hora de verificar que el usuario realmente va a enviar información y no la envía vacia, también podemos añadir una pequeña descripción dentro del input para que el usuario se percate que tipear. Algunos de estos atributos son característicos porque no es necesario que se le asigne un valor.</p>
+<ul>
+<li>Evitar que el usuario envíe información vacía <code>required</code>.</li>
+<li>Añadir una descripción <code>placeholder="Descripción"</code></li>
+<li>Deshabilitar la edición del input <code>readonly</code></li>
+<li>Deshabilitar un input <code>disabled</code></li>
+<li>Especificar tamañado del input <code>size=X</code></li>
+<li>Definir el límite de caracteres permitido <code>maxlength=X</code></li>
+<li>Establecer el primer input al que introducir información <code>autofocus</code></li>
+<li>Establecer valores máximos y mínimos <code>max=X</code> y <code>min=Y</code></li>
+</ul>
+<p>Hay muchos más atributos <a href="https://www.w3schools.com/html/html_form_attributes.asp?target=_blank">aquí</a></p>
+<h2 id="fuentes">Fuentes:</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input?target=_blank">MDN Web Doc</a></li>
+<li><a href="https://www.w3.org?target=_blank">W3 Consortium</a></li>
+<li><a href="https://www.w3schools.com?target=_blank">W3Schools</a></li>
+<li><a href="https://blog.bannersnack.com/responsive-html5-banner-ads?target=_blank">Banner HTML5</a></li>
+<li><a href="https://click.dj/freemusichouse/matty-m-september-jam-metal?target=_blank">Tema de sonido</a></li>
+<li><a href="https://videos.pexels.com/videos/matrix-console-hacking-code-852292?target=_blank">Video</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

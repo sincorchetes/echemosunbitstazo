@@ -1,0 +1,457 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-bash-buscando-archivos-y-directorios/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering en Bash - Buscando archivos y directorios - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-en-bash-buscando-archivos-y-directorios" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering en Bash - Buscando archivos y directorios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-en-bash-buscando-archivos-y-directorios">Mastering en Bash - Buscando archivos y directorios</h1>
+<h1 id="en-busca-de-wally">En busca de Wally</h1>
+<p>¿A quién no le interesa encontrar a esta buscada ballena en medio de un océano tan grande? Pues a nosotros no la verdad, preferimos buscar otro tipo de cosas como archivos y directorios en nuestro sistema. Para ello haremos uso de los comandos <code>find(1)</code>, <code>locate(1)</code>, <code>whois(1)</code>,<code>whereis(1)</code>.</p>
+<h1 id="diferencias">Diferencias</h1>
+<p><code>find(1)</code> a diferencia de <code>locate(1)</code> es un comando que busca a tiempo real y tiene muchísimas funcionalidades añadidas como filtrar por nombre, tipo de ejecutable, fecha, hora.... e incluso, eliminar los ficheros que hemos querido encontrar, mientras que <code>locate(1)</code> trabaja junto con una base de datos generada por <code>updatedb(8)</code> reduciendo drásticamente la actualización puntera de la ubicación de los ficheros y directorios además de no tener la afinidad que posee <code>find(1)</code>.</p>
+<p><a href="https://asciinema.org/a/182400"><img alt="asciicast" src="https://asciinema.org/a/182400.png" /></a></p>
+<h2 id="trabajando-con-find1">Trabajando con <code>find(1)</code></h2>
+<p>En este artículo vamos a guiarnos más por los ejemplos que por explicar la sintaxis o los parámetros de uno en uno.</p>
+<p>Encontrar todos aquellos ficheros y directorios que se encuentren en el directorio <code>/etc</code>, y que aquellos directorios a los que no no podamos acceder a su contenido, no nos muestre el error de permisos.</p>
+<pre><code>find /etc 2&gt;/dev/null 
+</code></pre>
+<p>Encontrar todos aquellos archivos en <code>/var/</code> cuya extensión sea .log, y que por supuesto, no muestre aquellos directorios que requieran permisos para su acceso.</p>
+<pre><code>find /var -name &quot;*.log&quot; 2&gt;/dev/null
+</code></pre>
+<p>Mostrar todos los directorios de nuestro <code>/home</code> sin contar los archivos</p>
+<pre><code>find ~ -type d
+</code></pre>
+<p>Encontrar archivos vacíos en nuestro <code>/home</code> y eliminarlos todos</p>
+<pre><code>find ~ -empty -type f -exec rm -rf {} \;
+</code></pre>
+<p>Encontrar ficheros con extensión .log y copiarlos en una carpeta dentro de nuestro home con permisos de superusuario</p>
+<pre><code>sudo find /var -name &quot;.log&quot; -exec cp {} /home/sincorchetes/LOGS \;
+</code></pre>
+<p>Buscando archivos cuya fecha de modificación sea de hace un minuto en nuestro <code>/home</code></p>
+<pre><code>find ~ -cmin 1 
+</code></pre>
+<p>Ficheros que han sido accedidos hace 10 minutos</p>
+<pre><code>find ~ -amin 10
+</code></pre>
+<p>Visualizar archivos que contengan .log de extensión, contengan permisos 644</p>
+<pre><code>sudo find /var -name &quot;*.log&quot; -perm 644
+</code></pre>
+<p>Ver archivos que pesen igual o redondeando den 2GB en nuestro directorio</p>
+<pre><code>find ~ -size 2G
+</code></pre>
+<p>Buscar directorios que contengan nuestro nombre de usuario, con permisos 777.</p>
+<pre><code>find / -user sincorchetes -type d -perm 777
+</code></pre>
+<p>Mostrar todos los archivos o directorios simbólicos que se encuentren en el directorio <code>/dev</code> y mostrarlo como si ejcutásemos un <code>ls(1)</code></p>
+<pre><code>sudo find /dev -type l -ls
+</code></pre>
+<p>Listando aquellos archivos de nuestro <code>/home</code> cuya extensión contenga "*.avi" y sean iguales o superiores a 1G</p>
+<pre><code>find ~ -name &quot;*.avi&quot; -a -size 1G
+</code></pre>
+<p>Suprimiendo los .rpm que encontremos que lleguen a 10 megas</p>
+<pre><code>sudo find /var/cache/rpm -name &quot;*.rpm&quot; -a -size 10M -exec rm -rf {} \;
+</code></pre>
+<p>Podemos seguir ejemplos del manpages de <code>find(1)</code> o imaginarnos lo que se nos ocurra que podamos hacer en un futuro, estos son solo pequeños ejemplos de lo que podemos hacer con esta fantástica utilidad.</p>
+<h2 id="trabajando-con-locate1">Trabajando con <code>locate(1)</code></h2>
+<p>Bien, como hemos dicho anteriormente, este comando hace uso de una base de datos que por lo general suele ubicarse en <code>/var/lib/mlocate/mlocate.db</code>, y su fichero de configuración suele encontrarse en <code>/etc/updatedb.conf</code> todo depende de la distribución que utilicemos.</p>
+<p>También podemos hacer un indexado que es registrar todos los archivos y directorios que queramos y se almacenen por un cierto orden en la base de datos de locate, sin tener que hacer uso de superusuario o creando un daemon en el sistema.</p>
+<h2 id="regenerando-las-bases-de-datos">Regenerando las bases de datos</h2>
+<p>Podemos hacer que nos indexe todo lo que contenga el sistema y que lo puedan ver tod@s l@s usuari@s.</p>
+<pre><code>sudo updatedb
+</code></pre>
+<p>O bien, podemos generar una base de datos para nosotr@s.</p>
+<pre><code>mkdir .locate
+updatedb -l 0 -U /DIR -o .locate/db_file
+</code></pre>
+<p><code>-l 0</code>: Permite entre otras cosas, crear el fichero de la base de datos utilizando nuestro usuario.
+<code>-U /DIR</code>: Directorio a idnexar
+<code>-o nombre_fichero</code>: El nombre que le pondremos a la db</p>
+<p>Si queremos añadir más directorios, tendremos que ejecutar el comando modificando <code>/DIR</code></p>
+<h2 id="buscando-archivos-o-directorios">Buscando archivos o directorios</h2>
+<p>Basta con ejecutar <code>locate nombre_archivo/nombre_dir</code> y el comando nos arrojará una salida completa con las coincidencias que encuentre en la db.</p>
+<p>Sin embargo, si queremos ejecutar nuestro fichero, tendremos que especificárselo a <code>locate(1)</code></p>
+<pre><code>locate nombre_directorio/nombre_archivo -d .locate/db_file
+</code></pre>
+<h2 id="visualizando-estadisticas">Visualizando estadísticas</h2>
+<p>Se pueden ver cuántos archivos y directorios tenemos actualmente registrados en cada db.</p>
+<pre><code>locate -S 
+</code></pre>
+<p>ó </p>
+<pre><code>locate -Sd .locate/db_file
+</code></pre>
+<h1 id="el-comando-whereis1">El comando <code>whereis(1)</code></h1>
+<p>Este comando nos viene de fábula cuando queremos encontrar algún binario, archivo fuente o incluso páginas de manual de <code>man(1)</code>, para hacerlo, este lleva una búsqueda en aquellos directorios que se encuentren declarados en la variable <code>$PATH</code> y <code>$MANPATH</code>. Estas variables las podemos encontrar en <code>/etc/profile</code> o en <code>~/.bash_profile</code>
+ (en nuestro caso)</p>
+<pre><code>echo $PATH
+</code></pre>
+<p>Nuestra salida:</p>
+<pre><code>echo $PATH
+/usr/lib/qtchooser:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/sincorchetes/.composer/vendor/bin:/home/sincorchetes/.local/bin:/home/sincorchetes/bin:/home/sincorchetes/.bin/scripts
+</code></pre>
+<p>Vamos a visualizar un par de ejemplos.</p>
+<p>Buscando una página con la coincidencia <code>cat(1)</code></p>
+<pre><code>whereis -m cat
+</code></pre>
+<p>Encontrando la ubicación del binario</p>
+<pre><code>whereis -b cat
+</code></pre>
+<p>Buscando la fuente de un kernel de Fedora 28</p>
+<pre><code>whereis -s 4.16.8-300.fc28.
+</code></pre>
+<h1 id="comando-whatis1">Comando <code>whatis(1)</code></h1>
+<p>Este comando nos permite buscar en las páginas de <code>man(1)</code> y nos devuelve una descripción del mismo en una sola línea, en caso de que encuentre varios resultados, mostrará ambos o más y su categoría dentro de <code>man(1)</code>.</p>
+<pre><code>whatis cat
+</code></pre>
+<p>Salida:</p>
+<pre><code>cat (1p)             - concatenate and print files
+cat (1)              - concatenate files and print on the standard output
+</code></pre>
+<p>Podemos especificar un directorio diferente para que busque en otras páginas de <code>man(1)</code> pues que no tengamos instaladas en el directorio raíz o no se encuentren registradas en <code>~/.bash_profile</code></p>
+<pre><code>whatis -M ~/.man/ cat
+</code></pre>
+<p>Entre otras cosas</p>
+<h1 id="comando-apropos1">Comando <code>apropos(1)</code></h1>
+<p>Este comando es parecido al anterior, lo que utiliza directamente <code>mandb(1)</code>, también permite utilizar otra ruta de directorio para los manpages...etc</p>
+<pre><code>apropos whatis
+</code></pre>
+<p>Salida:</p>
+<pre><code>whatis (1)           - display one-line manual page descriptions
+</code></pre>
+<p>Y con esto acabamos el artículo de hoy, esperemos que os haya gustado.</p>
+<p>¡Un saludo!</p>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li>manpages</li>
+<li><code>find(1)</code></li>
+<li><code>locate(1)</code></li>
+<li><code>updatedb(1)</code></li>
+<li><code>whereis(1)</code></li>
+<li><code>whatis(1)</code></li>
+<li><code>apropos(1)</code></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

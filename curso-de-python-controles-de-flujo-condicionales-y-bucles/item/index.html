@@ -1,0 +1,546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/curso-de-python-controles-de-flujo-condicionales-y-bucles/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Curso de Python - Controles de flujo, condicionales y bucles - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-python-controles-de-flujo-condicionales-y-bucles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Curso de Python - Controles de flujo, condicionales y bucles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="curso-de-python-controles-de-flujo-condicionales-y-bucles">Curso de Python - Controles de flujo, condicionales y bucles</h1>
+<h1 id="control-de-flujo">Control de flujo</h1>
+<p>Los controles de flujo se utilizan para definir cómo va actuar un script, aplicación... y qué va aplicarse inmediatamente después de evaluar la condición cuando se compare.</p>
+<h2 id="if"><code>if</code></h2>
+<p>Esta estructura de control te permite evaluar una condición y ejecutar un trozo de código si la cumple.</p>
+<pre><code>&gt;&gt;&gt; if (condición):
+&gt;&gt;&gt;  Bloque de código
+</code></pre>
+<h2 id="if-else"><code>if-else</code></h2>
+<p>El <code>if-else</code> es una estructura de control que permite hacer 1 cosa si se cumple la condicioń, si esta no se cumple, únicamente se ejecutará un bloque de código sin contemplar otras posibilidades.</p>
+<pre><code>if (condición 1):
+  Bloque de código
+else:
+  Bloque de código
+</code></pre>
+<p>Veamos un ejemplo, Si tenemos un coche de marca Opel, emitirás un mensaje que diga "Tienes un Opel", si no es así, mostraremos un mensaje que diga que "No tienes un coche Opel".</p>
+<pre><code>&gt;&gt;&gt; marca = &quot;Citröen&quot;
+&gt;&gt;&gt; if (marca == &quot;Opel&quot;):
+&gt;&gt;&gt;   print(&quot;Tienes un Opel&quot;)
+&gt;&gt;&gt; else:
+&gt;&gt;&gt;  print(&quot;No tienes un coche Opel&quot;)
+'No tienes un coche Opel'
+</code></pre>
+<h2 id="if-elif-else"><code>if-elif-else</code></h2>
+<p>¿Pero qué pasa cuando queremos comprobar múltiples condiciones? No podemos estar anidando <code>if-else</code> como si no hubiese un mañana uno dentro del otro. Para eso tenemos la estructura <code>if-elif-else</code>. Esta estructura nos permite hacer 1 cosa u otra en base a una condición, la cuál estará compuesto por uno o múltiples operadores como aritméticos, lógicos...</p>
+<pre><code>if (ondición 1):
+  Bloque de código
+elif (condición3):
+  Bloque de código
+elif (condición2):
+  Bloque de código
+else:
+  Bloque de código
+</code></pre>
+<p>Veamos un ejemplo, Si tenemos un coche de marca Opel, emitirás un mensaje que diga "Tienes un Opel", si no es así, mostraremos un mensaje que diga que "No tienes un coche Opel".</p>
+<pre><code>&gt;&gt;&gt; marca = &quot;Citröen&quot;
+&gt;&gt;&gt; if (marca == &quot;Opel&quot;)
+&gt;&gt;&gt;   print(&quot;Tienes un Opel&quot;)
+&gt;&gt;&gt; elif (marca == &quot;Citröen&quot;)
+&gt;&gt;&gt;   print(&quot;Tienes un coche Opel&quot;)
+&gt;&gt;&gt; elif (marca == &quot;Audi&quot;):
+&gt;&gt;&gt;   print(&quot;Tienes un Audi&quot;)
+&gt;&gt;&gt; else:
+&gt;&gt;&gt;   print(&quot;Tu marca de coche no está registrada&quot;)
+Tienes un coche Citröen
+</code></pre>
+<p>Todo esto se puede complicar aún más haciendo uso de otros operadores y de otros <code>if-elif-else</code> anidados, por ejemplo, utilizaremos los operadores de comparación con lógicos tal que así:</p>
+<pre><code>&gt;&gt;&gt; marca_coche = &quot;Toyota&quot;
+&gt;&gt;&gt; modelo_coche = &quot;AE87&quot;
+&gt;&gt;&gt; motor_coche = 1600
+&gt;&gt;&gt; if (marca_coche == &quot;Toyota&quot; and modelo_coche == &quot;AE92&quot;):
+&gt;&gt;&gt;   if (motor_coche == 1600):
+&gt;&gt;&gt;     print(&quot;Perfecto&quot;)
+&gt;&gt;&gt;   elif (motor_coche == 1400):
+&gt;&gt;&gt;     print(&quot;Bien&quot;)
+&gt;&gt;&gt;   elif (motor_coche == 1200):
+&gt;&gt;&gt;     print(&quot;Cuidado con las cuestas&quot;)
+&gt;&gt;&gt;   else:
+&gt;&gt;&gt;     print(&quot;Esto huele a chasis&quot;)
+&gt;&gt;&gt; elif (marca_coche == &quot;Citröen&quot; and modelo_coche == &quot;Saxo&quot;):
+&gt;&gt;&gt;   print(&quot;Enhorabuena, tienes un coche que pesa poco y corre mucho.&quot;)
+&gt;&gt;&gt; else:
+&gt;&gt;&gt;   print(&quot;Error 404, Tu coche no encontrado.&quot;)
+
+Error 404, Tu coche no encontrado.
+</code></pre>
+<p>Este mensaje se produce porque en el primer condicional estamos esperando recibir el modelo AE92, y sin embargo, recibimos el AE87; como en la segunda condición (<code>elif</code>) requiere del modelo "Citröen" también queda descartado imprimiendo el mensaje "Error 404, Tu coche no encontrado.". No obstante, si cambiamos <code>modelo_coche</code> por AE92 y volvemos a ejecutar las sentencias, veremos que recibiremos el mensaje de: "Perfecto".</p>
+<h2 id="bucle-for">Bucle <code>for</code></h2>
+<p>¿Qué ocurre si queremos recorrer una lista o generar múltiples ejecuciones de código? Pues evidetenmente con un <code>if</code> no nos vale, ya que solo nos permite validar una condicioń, y cuando la valide, esta dejará de ejecutarse.</p>
+<pre><code>for variable_interactiva in secuencia:
+  Bloque código
+</code></pre>
+<p>¿Cómo funciona?
+En <code>secuencia</code> va una condición, podemos poner que recorra todos los valores de una lista y nos lo imprima por <code>variable_interactiva</code>.</p>
+<pre><code>&gt;&gt;&gt; frutas = [ &quot;Peras&quot;, &quot;Manzanas&quot;, &quot;Arándanos&quot;, &quot;Pomelo&quot;]
+&gt;&gt;&gt; for fruta in frutas:
+&gt;&gt;&gt;   print(fruta)
+Peras
+Manzanas
+Arándanos
+Pomelo
+</code></pre>
+<p>También se puede hacer ejecuciones por el tamaño de la lista:</p>
+<pre><code>&gt;&gt;&gt; frutas = [ &quot;Peras&quot;, &quot;Manzanas&quot;, &quot;Arándanos&quot;, &quot;Pomelo&quot;]
+&gt;&gt;&gt; for fruta in range(0 ,len(frutas)):
+&gt;&gt;&gt;   print(&quot;Esta es la posición&quot;, fruta,&quot;de la fruta: &quot;,frutas[fruta])
+Esta es la posición 0 de la fruta:  Peras
+Esta es la posición 1 de la fruta:  Manzanas
+Esta es la posición 2 de la fruta:  Arándanos
+Esta es la posición 3 de la fruta:  Pomelo
+</code></pre>
+<p>¿Cómo podemos hacer, que se hagan <code>n</code> ejecuciones para hacer tal cosa? Con la función range().</p>
+<pre><code>&gt;&gt;&gt; for x in range(0,100):
+&gt;&gt;&gt;   print(x)
+0
+1
+2
+3
+4
+[... Corto aquí porque llega hasta 99 ...]
+</code></pre>
+<p>¿Por qué hasta 99 y no 100? Porque recordemos que el valor 0 es una posición que se cuenta, realmente es <code>n - 1</code>.</p>
+<h3 id="como-puedo-romper-una-ejecucion">¿Cómo puedo romper una ejecución?</h3>
+<p>Tenemos el comando break que rompe la ejecución del código, por lo que me han enseñado, es mejor finalizar las cosas como tocan en vez de usar este tipo de "cañones". Pero que sepamos que lo podemos usar. Normalmente se usan cuando hay condicionales añadidos, esto no quiere decir que se siga ejecutándo el resto del programa que tengamos, solo se frena el bucle <code>for</code> que hemos invocado en nuestro fragmento de código.</p>
+<pre><code>&gt;&gt;&gt; for x in range(0,100):
+&gt;&gt;&gt;   print(x)
+&gt;&gt;&gt;   if (x == 4):
+&gt;&gt;&gt;     break
+0
+1
+2
+3
+4
+[... Se para la ejecución ...]
+</code></pre>
+<h2 id="bucle-while">Bucle <code>while</code></h2>
+<p>Este bucle se repetirá hasta que la condición se cumpla. </p>
+<pre><code>&gt;&gt;&gt; while ( condicion ):
+&gt;&gt;&gt;   # Bloque de código
+</code></pre>
+<p>Un ejemplo sencillo puede ser:</p>
+<pre><code>&gt;&gt;&gt; a = 1
+&gt;&gt;&gt; while a &lt; 10:
+&gt;&gt;&gt;   print(a)
+&gt;&gt;&gt;   a += 2
+0
+2
+4
+6
+8
+</code></pre>
+<h2 id="break-continue-pass"><code>break</code>, <code>continue</code>, <code>pass</code></h2>
+<p>Estas tres sentencias permiten modificar la interacción de los bucles.
+<code>break</code>: Rompe toda la ejecución de un bucle.</p>
+<pre><code>for x in range(0,10):
+  if x == 5:
+    break
+  print(x)
+</code></pre>
+<p>Veremos que la ejecución cuando llega a 5 el bucle se para a pesar de que le hemos dicho que el bucle vaya de 0 a 10 e imprimirá como último valor 4.</p>
+<p><code>continue</code>: Se salta la ejecución en ese momento de la condición del bucle, pero sigue iterando el resto de elementos del bucle hasta finalizar.</p>
+<pre><code>for x in range(0,10):
+  if x == 5:
+    continue
+  print(x)
+</code></pre>
+<p>En este caso, observamos que cuando detecte que <code>x = 5</code>, el valor 5 no se imprimirá, pero continuará realizando el resto de condición.</p>
+<p><code>pass</code>: No ejecuta nada y deja que continue el flujo del bucle.</p>
+<pre><code>for x in range(0,10):
+  if x == 5:
+    pass
+  print(x)
+</code></pre>
+<p>Se ejecutará como si no existiera la palabra reservada <code>pass</code>.</p>
+<h3 id="juego-dragon-vs-personaje">Juego, Dragón VS Personaje</h3>
+<p>Un dragón nos estará golpeando hasta que nosotros matemos al dragón o el dragón nos mate a nosotros:</p>
+<p><em>NOTA</em>: Vamos a llamar al módulo <code>random</code> y lo llamaremos como <code>TirarDados</code> que más tarde utilizaremos el método <code>.random()</code> para generar números aleatorios que están comprendidos entre 0.n y 1.n y que, haciendo uso del método <code>.round()</code> aproximaremos el número a favor del 1 o del 0.</p>
+<pre><code>#!/usr/bin/env python3
+#
+# Juego elaborado por Álvaro Castillo
+# GPLv2
+#
+from random import random as TirarDados
+dragon_hp = 100
+personaje_hp = 100
+hit_dragon = 5
+hit_personaje = 5
+
+while True: 
+  if personaje_hp == 0:
+    print(&quot;Hemos ganado :)&quot;)
+    break
+  elif dragon_hp == 0:
+    print(&quot;Ganó el Dragón :(&quot;)
+    break
+  else:
+    pass
+  dados=round(TirarDados())
+  if ( dados == 0 ):
+    dragon_hp -= hit_dragon
+    print(&quot;¡Hemos golpeado al dragón!, le queda: &quot;, dragon_hp, &quot;de vida.&quot;)
+  elif ( dados == 1):
+   personaje_hp -= hit_personaje
+   print(&quot;¡El dragón nos ha golpeado!, tenemos de vida:&quot;, personaje_hp,&quot;.&quot;)
+  else:
+   print(&quot;Hubo un fallo&quot;)
+</code></pre>
+<p>Este es el análisis resumido de este juego:
+1. La vida de ambos duelistas están asignadas en una variable
+2. El daño que quita cada uno de ellos también
+3. La condición siempre es <code>True</code> por lo que siempre se ejecutará originando un bucle infinito <code>infinityLoop</code>
+4. Si la vida de alguno de los duelistas llega a <code>0</code>, se interrumpe el bucle usando <code>break</code>
+5. La variable <code>dados</code> obtiene un número aproximado a <code>1|0</code> dependiendo lo que salga.
+6. Hay un condicional que dice si <code>datos=1</code> ataca el dragón, si <code>dados=0</code> atacamos nosotros.
+7. Haciendo uso de los operadores de asignación, restamos el valor de afección a la vida del duelista afectado y se imprime un mensaje indicando quién ha golpeado a quién y cuánta vida le queda al duelista contrario.
+8. Se repite el proceso hasta llegar al punto 4</p>
+<p>Dando como resultado algo parecido a esto:</p>
+<pre><code>¡El dragón nos ha golpeado!, tenemos de vida: 95 .
+¡Hemos golpeado al dragón!, le queda:  95 de vida.
+¡Hemos golpeado al dragón!, le queda:  90 de vida.
+¡Hemos golpeado al dragón!, le queda:  85 de vida.
+¡El dragón nos ha golpeado!, tenemos de vida: 90 .
+¡Hemos golpeado al dragón!, le queda:  80 de vida.
+¡Hemos golpeado al dragón!, le queda:  75 de vida.
+[...]
+</code></pre>
+<p>Espero que os haya gustado, en ya hemos aprendido hacer un montón de cosas con estos cursos:
+* Qué es Python
+* Cómo declarar variables
+* Qué y cuáles son los tipos de datos
+* Cómo trabajar con los tipos de datos
+* Cómo utilizar módulos
+* Cómo elaborar un control de flujo</p>
+<p>En las siguientes entregas hablaremos de más cosas que tengo preparadas como las funciones, cómo imprimir datos utilizando diversas formas de hacerlo y algunos ejercicios de ejemplo. ¡Espero que cómo siempre os haya gustado!</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

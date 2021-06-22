@@ -1,0 +1,548 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/instalando-docker-en-centos-8/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Instalando Docker en CentOS 8 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalando-docker-en-centos-8" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalando Docker en CentOS 8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="instalando-docker-en-centos-8">Instalando Docker en CentOS 8</h1>
+<p>¿Te imaginas tener un sistema que te permitira probar aplicaciones sin tener que desplegar máquinas virtuales? Ese proceso tan engorroso de tener que estar descargando una .iso, esperar a que descargue, crear la máquina virtual, instalarla, actualizarla, buscar las dependencias... todo ese proceso engorroso que te afecta si lo único que quieres probar es tu aplicación.</p>
+<p>Pues hay una alternativa, y esa alternativa es Docker. Docker es un gestor de despliegue de contenedores que te permite ejecutar con un tamaño muy reducido comparado con el de una máquina virtual tu aplicación en un par de segundos y de forma aislada de tu sistema haciendo uso de un servicio.</p>
+<p style="text-align:center">
+    <img src="https://echemosunbitstazo.es/blog/instalando-docker-en-centos-8/docker.png" style="img-fluid">
+</p>
+
+<h1 id="conceptos-basicos">Conceptos básicos</h1>
+<p>Vamos a explicar unos cuántos conceptos básicos, no te preocupes si hay algunas cosas que no entiendas, lo iré explicando en entregas posteriores.</p>
+<h2 id="contenedor-que-es-eso">¿Contenedor? ¿Qué es eso?</h2>
+<p>Un contenedor es la unidad de Docker, los contenedores son imágenes que se han desplegado y que están ocupando una serie de recursos de tu sistema para que puedan funcionar. Estos pueden contener software adicional que es añadido por un particular, empresa o proyecto que elabore esas imágenes.</p>
+<h2 id="que-es-una-imagen">¿Qué es una imagen?</h2>
+<p>Una imagen contiene un nombre único y un sistema base Linux mínimo para que pueda ejecutarse así mismo, ésta imagen utiliza un sistema de archivos llamado overlay2 que utiliza capas como mecanismo de control de cambios. Éstas capas se van añadiendo en el proceso de construcción de una imagen. Un ejemplo más cercano y no muy bien explicado, sería, instalar un sistema mínimo de alguna distribución de Linux (<em>da igual cual sea</em>), comprimimos todo el sistema con un .tar.gz y ya tendríamos nuestra imagen. Después, vas añadiendo más información en este .tar.gz, esto sería una capa nueva en una imagen de Docker.</p>
+<h2 id="quien-construye-las-imagenes">¿Quién construye las imágenes?</h2>
+<p>Las imágenes suelen construirse por un particular, una empresa, una organización...o espera... ¡Tú también puedes hacerlo! más adelante explicaremos cómo lo puedes hacer.</p>
+<h2 id="los-contenedores-se-ejecutan-de-forma-aislada">¿Los contenedores se ejecutan de forma aislada?</h2>
+<p>Sí, los contenedores son como cajas de arena con las que puedes jugar sin afectar a tu propio sistema, ¡eso es lo bueno que tiene! Podemos desplegar un servidor Web NGINX con PHP incorporado y un sistema gestor de base de datos como es MariaDB ¡en segundos! ¡Nos dejamos de instalar esas engorrosas máquinas virtuales!</p>
+<h2 id="se-pueden-definir-limites-de-recursos-del-sistema-por-contenedor">¿Se pueden definir límites de recursos del sistema por contenedor?</h2>
+<p>Sí, podemos decirle a los contenedores que no superen los recursos que le podemos asignar como es la memoria o el CPU entre otras cosas. También lo veremos más adelante.</p>
+<h2 id="los-contenedores-son-efimeros">¿Los contenedores son efímeros?</h2>
+<p>Sí, los contenedores pueden desaparecer y todo lo que haya dentro de elimina, por lo que si tu aplicación necesita guardar los archivos en algún sitito, es mejor que creas un volumen persistente.</p>
+<h2 id="que-son-los-volumenes-persistentes">¿Qué son los volúmenes persistentes?</h2>
+<p>Son como "particiones" de disco que podemos montar en nuestro contenedor o contenedores y permiten guardar archivos en ellos. Éstos se almacenan en un directorio del sistema.</p>
+<h2 id="se-puede-usar-un-directorio-del-sistema-como-volumen-persistente">¿Se puede usar un directorio del sistema como volumen persistente?</h2>
+<p>Sí, podemos usar un directorio actual cómo <code>/home/sincorchetes/Descargas</code> y montarlo como un volumen persistente en el contenedor, esto provocará que los archivos se guarden ahí.</p>
+<h2 id="si-los-contenedores-se-ejecutan-de-forma-aislada-como-podemos-acceder-a-ellos">Si los contenedores se ejecutan de forma aislada, ¿Cómo podemos acceder a ellos?</h2>
+<p>Se puede acceder, al instalar Docker en tu sistema, se crea una nueva interfaz en modo puente llamada <code>docker0</code> y ademñas se crean unas rutas estáticas para llegar a esta red. Ésta interfaz de red suele tener una ip 172.17.0.1/16 y si ejecutamos un contenedor de Docker por defecto, éste contenedor se ejecutará utilizando esta red con la que podremos acceder a él si exponemos sus puertos. Es como cuando queremos acceder desde fuera al router de nuestra casa, exponemos el puerto 80 en el firewall y podemos acceder. Algo similar.</p>
+<p>Cuando lo instalemos, ejecutamos <code>nmcli</code>, podemos ver como está en modo bridge por software:</p>
+<pre><code>docker0: connected to docker0
+        &quot;docker0&quot;
+        bridge, 02:42:BE:58:51:06, sw, mtu 1500
+        inet4 172.17.0.1/16
+        route4 172.17.0.0/16
+        inet6 fe80::42:beff:fe58:5106/64
+        route6 fe80::/64
+        route6 ff00::/8
+</code></pre>
+<p>Y podemos ver la ruta estática que se crea con el comando <code>ip addr</code>:</p>
+<pre><code>default via 192.168.1.1 dev enp0s3 proto dhcp metric 100 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+192.168.1.0/24 dev enp0s3 proto kernel scope link src 192.168.1.167 metric 100 
+</code></pre>
+<p>Por otro lado, podemos acceder a la shell del contenedor mediante comandos que veremos más adelante, por lo que tenemos acceso a la gestión interna del contenedor por consola y acceso a las aplicaciones expuestas por puertos.</p>
+<h2 id="puertos-redes-pueden-los-contenedores-tener-otras-redes">¿Puertos? ¿Redes? ¿Pueden los contenedores tener otras redes?</h2>
+<p>Sí, los contenedores podemos exponerlos o no para poder acceder a las aplicaciones que se ejecutan dentro, es decir, si tienes un servidor Web NGINX escuchando las peticiones en el puerto 80 (<em>como es habitual</em>), le tienes que decir que acepte peticiones desde fuera de esta red, por lo que estamos exponiendo ese contenedor hacia fuera mediante unos puertos específicos. Esto lo explicaremos más adelante.</p>
+<p>Y sí, en Docker hay tres tipos de red que se pueden utilizar, una interfaz puente, una red aislada, o una red interna, ¡se pueden hacer maravillas! Pero este contenido se me escapa de las manos.</p>
+<h2 id="pero-espera-de-donde-se-sacan-las-imagenes">Pero... espera. ¿De dónde se sacan las imágenes?</h2>
+<p>Docker tiene la capacidad de buscar las imágenes dentro de un "Registry". Un "Registry" es un servidor o conjunto de servidores que nos ofertan múltiples imágenes y que también podemos interactuar con él (<em>o ellos</em>) como por ejemplo subir|eliminar|descargar las imágenes que hemos construido (<em>si tenemos permisos para hacerlo</em>). </p>
+<p>Las imágenes contienen unas etiquetas que podemos especificarle o no (<em>tags</em>) éstas identifican la versión mayor, menor o si es la última versión liberada. Cada vez que se añadan capas nuevas o se modifique el contenido de una imagen, ésta se actualizará con un etiqueta nueva. Si no especificamos la etiqueta nueva, la última imagen que haya en el "registry" local no tendrá la etiqueta <code>latest</code>, la imagen que se descarga sí que la contendrá.</p>
+<p>Por defecto Docker conecta con DockerHub y consulta las imágenes ahí.</p>
+<p>Entonces el proceso de despliegue de una imagen es de la siguiente manera:</p>
+<p style="text-align:center">
+  <img src="https://echemosunbitstazo.es/blog/instalando-docker-en-centos-8/diagrama.png" style="img-fluid">
+</p>
+
+<h2 id="entonces-quiere-decir-que-tenemos-un-registry-en-nuestro-sistema">Entonces... ¿Quiere decir que tenemos un Registry en nuestro sistema?</h2>
+<p>¡Sí! lo tendremos. Cuando descargamos la imagen, ésta se descarga por defecto en un directorio llamado <code>/var/lib/docker/</code>, cuando queramos desplegar una imagen la buscará aquí primero antes de tirar de otro registry.</p>
+<h2 id="muy-bien-podemos-empezar">¡Muy bien! ¿Podemos empezar?</h2>
+<p>¡Pues claro!</p>
+<h1 id="instalando-docker-en-centos-8_1">Instalando Docker en CentOS 8</h1>
+<p>Primero quiero hacer una puntualización, Red Hat y las distribuciones como Fedora y CentOS están recomendando utilizar Podman. Podman es también un sistema de gestión de despliegues de contenedores muy parecido a Docker pero que utiliza un aislamiento mucho más estricto ya que dicen que el que Docker utiliza un servicio para gestionarlo todo es un agujero muy grande de seguridad y tiene razón, Docker tampoco es compatible con la nueva versión de cgroups. Los cgroups conocidos como "<em>Control Groups</em>" es una colección de procesos que están balanceados y están asociados con un conjunto de parámetros o límites. Estos grupos pueden ser jerárquicos refiriéndose a que cada grupo hereda los límites de su grupo padre. El núcleo accede a los múltiples controladores (también llamados subsistemas) a través de un interfaz cgroup; por ejemplo, el controlador de la "memoria" limita el uso de la memoria, "cpuacct" el uso de las cuentas de CPU...</p>
+<p>Por lo visto, se reescribió la versión de CGroup en su segunda versión, y tanto CentOS 8 como Fedora usan la versión 2 que no está soportada por Docker. Para ello tenemos que añadir la siguiente línea en la línea del núcleo.</p>
+<h2 id="habilitando-cgroup-v1">Habilitando cgroup v1</h2>
+<p>Hacemos una copia de seguridad de este archivo:</p>
+<pre><code># cp -va /etc/default/grub /etc/default/grub.bck.$(date +%d-%m-%y_%H_%M)
+</code></pre>
+<p>Editamos el archivo y añadimos al final de la variable <code>GRUB_CMDLINE_LINUX=</code></p>
+<pre><code>systemd.unified_cgroup_hierarchy=0
+</code></pre>
+<p>Por ejemplo, en mi máquina lo tengo así:</p>
+<pre><code>GRUB_CMDLINE_LINUX=&quot;crashkernel=auto resume=/dev/mapper/cl_docker--server-swap rd.lvm.lv=cl_docker-server/root rd.lvm.lv=cl_docker-server/swap rhgb quiet systemd.unified_cgroup_hierarchy=0&quot;
+</code></pre>
+<p>Regeneramos el fichero de configuración de arranque:</p>
+<ul>
+<li>Si usas UEFI, este estará en:</li>
+</ul>
+<pre><code># grub2-mkconfig -o /boot/efi/EFI/centos/grub.cfg
+</code></pre>
+<ul>
+<li>Si usas MBR:</li>
+</ul>
+<pre><code># grub2-mkconfig -o /boot/grub2/grub.cfg
+</code></pre>
+<p>Reiniciamos el sistema.</p>
+<h2 id="instalando-docker-ce">Instalando Docker-CE</h2>
+<p>CentOS no posee una versión de Docker por lo que hemos comentado más arriba. Siguiendo parte de la <a href="https://docs.docker.com/engine/install/centos/" target="blank">documentación oficial</a>, instalaremos la versión estable y comunitaria mediante los repositorios oficiales de Docker-CE (<em>Community Edition</em>).</p>
+<pre><code># dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# dnf config-manager --enable docker-ce-stable
+# dnf check-update
+# dnf install docker-ce docker-ce-cli containerd.io --nobest
+</code></pre>
+<p>Como curiosidad podemos ver las múltiples versiones disponibles que podemos instalar:</p>
+<pre><code>$ dnf list docker-ce --showduplicates | sort -r
+Installed Packages
+docker-ce.x86_64            3:19.03.8-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:19.03.7-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:19.03.6-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:19.03.5-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:19.03.4-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:19.03.3-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:19.03.2-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:19.03.1-3.el7                    docker-ce-stable 
+...
+</code></pre>
+<p>Arrancando los servicios de Docker</p>
+<pre><code># systemctl start docker.service
+</code></pre>
+<p>Revisamos que se está ejecutando correctamente:</p>
+<pre><code>$ sudo systemctl status docker.service
+
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor pre&gt;
+   Active: active (running) since Sun 2020-05-03 18:09:57 CEST; 3s ago
+     Docs: https://docs.docker.com
+ Main PID: 25800 (dockerd)
+    Tasks: 17
+   Memory: 49.6M
+   CGroup: /system.slice/docker.service
+           ├─25800 /usr/bin/dockerd -H fd://
+           └─25809 containerd --config /var/run/docker/containerd/containerd.to&gt;
+</code></pre>
+<p>Ya que vemos que funciona, lo dejamos habilitado al arranque de la máquina:</p>
+<pre><code>$ systemctl enable docker.service
+</code></pre>
+<p>Probamos a correr un contenedor <code>hello-world</code> de Docker:</p>
+<pre><code> # docker run hello-world
+</code></pre>
+<p>Como explicamos anteriormente, como la imagen <code>hello-world</code> no está en nuestro registry local, va a buscarla a Docker Hub por defecto, la descargará y luego creará el contenedor. Esta es la salida correcta:
+ ```
+ Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+0e03bdcc26d7: Pull complete 
+Digest: sha256:8e3114318a995a1ee497790535e7b88365222a21771ae7e53687ad76563e8e76
+Status: Downloaded newer image for hello-world:latest</p>
+<p>Hello from Docker!
+This message shows that your installation appears to be working correctly.</p>
+<p>To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.</p>
+<p>To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash</p>
+<p>Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/</p>
+<p>For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+ ```</p>
+<p>¡Con esto ya habremos acabado!</p>
+<p><strong>NOTA:</strong> _Si quieres simplificar el proceso de administración en un servidor de pruebas, puedes añadir tu usuario al grupo docker para que no solicite privilegios, pero esto se considera un fallo de seguridad ya que puedes escalar privilegios. Así que cuidado. <code># usermod -aG docker your-user</code></p>
+<h2 id="comandos-de-docker">Comandos de Docker</h2>
+<p>Si ejecutamos el comando <code>docker</code> a secas, veremos una lista enorme de opciones que podemos utilizar. Por un lado tenemos las opciones de gestión:</p>
+<pre><code>  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  engine      Manage the docker engine
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+</code></pre>
+<p>Y por otro lado, tenemos comandos:</p>
+<pre><code>  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  deploy      Deploy a new stack or update an existing stack
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+</code></pre>
+<p>En los siguientes tutoriales veremos como utilizar los comandos de gestión de Docker.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,640 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/escuchando-musica-con-mpd-ncmpcpp/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Escuchando música con MPD y ncmpcp - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#escuchando-musica-con-mpd-y-ncmpcp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Escuchando música con MPD y ncmpcp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="escuchando-musica-con-mpd-y-ncmpcp">Escuchando música con MPD y ncmpcp</h1>
+<h1 id="vida-sin-musica">¿Vida sin música?</h1>
+<p>¿Cuántos de nosotr@s nos hemos hecho esta pregunta? ¿Qué sería de la vida sin música? ¿Qué sería de la vida sin letras de canciones que denuncien, que estimen, que compartan dolor, amor, qué irradien ira o revolución? ¿Qué solo contenga ritmo para hacer ejercicio físico sin problemas? ¿Cuándo estamos solos y afligidos, cuándo queremos compartir momentos de celebración?
+Parece mentira pero la música nos despierta y nos anima. Pero más nos anima si la escuchamos haciendo uso del mínimo de recursos posibles sin perder calidad. Entonces, eso es amor.</p>
+<p>Después de esta reflexión que parece sacada de un capítulo de Anatomía de Gray, vamos a proceder instalar el servidor de audio MPD, conocido como <em>Music Player Daemon</em> junto con el cliente <code>ncmpcp(1)</code> con el que interactuaremos cuando queramos escuchar música.</p>
+<p>MPD es un servidor de audio que permite no solo escuchar música en local soportando multitud de códecs de audio como Ogg Vorbis, FLAC, Opus, WavPack, MP2, MP3, MP4/AAC, Mod..., si no que también puede transmitirla via streamming por el protocolo HTTP capaz de reproducir ficheros MP3 y OGG Vorbis. En suma, se puede gestionar el servidor a través de la red tanto por IPv4 como por redes IPv6, lee meta-información como las etiquetas ID3v1 y ID3v2, comentarios en Vorbis, MP4...; soporta reprodución contínua, una vez para de reproducirse una, se añaden unos segunos para "hacer creer" que sigue siendo un solo archivo (<em>crossfading</em>) y un millar de características más que si las seguimos mencionando no acabamos.</p>
+<h1 id="instalacion">Instalación</h1>
+<p>Aquí añadimos varias formas de instalarlo en diferentes distribuciones, vamos a llevarlo a cabo en todas que utilicen <code>systemd(1)</code> junto con <code>pulseaudio(1)</code>.</p>
+<p><em>NOTA: Hay distribuciones que por licencias privativas, no se incluye software privativo de manera oficial como es el caso de Fedora, así que revisen que códecs son necesarios para nuestro sistema después de instalar el servidor y posteriormente el cliente con el que nos conectaremos.</em></p>
+<h2 id="fedora">Fedora</h2>
+<p>Para instalar en Fedora con ejecutar el siguiente comando se nos instalará pero no olvidemos instalar posteriormente los códecs para formatos MP3 desde los repositorios RPM Fusion:</p>
+<pre><code>sudo dnf install mpd
+</code></pre>
+<h2 id="ubuntu">Ubuntu</h2>
+<p>En Ubuntu, vale tanto aptitude como la suite <code>apt(1)</code>, hay que tener habilitado los repositorios Universe.</p>
+<pre><code>sudo apt-get install mpd
+</code></pre>
+<h2 id="debian">Debian</h2>
+<p>Como en Ubuntu, pero se encuentra en repositorio stable:</p>
+<pre><code>sudo apt-get install mpd
+</code></pre>
+<h2 id="archlinux">Archlinux</h2>
+<p>Tenemos que tener habilitado el repositorio extra:</p>
+<pre><code>sudo pacman -S mpd
+</code></pre>
+<h2 id="gentoo">Gentoo</h2>
+<p>No nos olvidemos de aplicar las USE que queramos para que se instale con los códecs y características que queramos. Puedes ver la lista pulsando <a href="https://packages.gentoo.org/packages/media-sound/mpd?target=_blank">aquí</a></p>
+<pre><code>sudo emerge -av media-sound/mpd
+</code></pre>
+<h2 id="opensuse-leap-423">openSUSE Leap 42.3</h2>
+<p>La instalación en openSUSE requiere que se habilite el repositorio <a href="https://build.opensuse.org/project/show/multimedia:apps?target=_blank"><code>multimedia:apps</code></a> porque no se encuentra soportado en los repositorios principales. </p>
+<h2 id="centos-7">CentOS 7</h2>
+<p>Es necesario habilitar los repositorios <a href="https://li.nux.ro/repos.html?target=_blank"><code>nux</code></a></p>
+<pre><code>sudo yum install mpd
+</code></pre>
+<h1 id="configuracion">Configuración</h1>
+<p>La configuración como hemos dicho, haremos uso de <code>pulseaudio(1)</code> y lo ejecutaremos mediante nuestro usuario para evitar utilizar el usuario <code>root</code> que explicaremos en siguientes post que es este usuario y por qué se encuentra en el sistema.</p>
+<ol>
+<li>Creamos los directorios para albergar las configuraciones, playlists...etc
+    <code>mkdir ~/.mpd/{database,playlists,logs}</code></li>
+<li>Copiamos el fichero de configuración de ejemplo que nos proporciona mpd.
+    <code>cp /etc/mpd.conf ~/.mpd/</code></li>
+<li>Editamos el fichero de configuración y tienen que estar descomentadas y editadas las siguientes líneas:
+    <code>music_directory "~/Music"
+    playlist_directory "~/.mpd/playlists"
+    db_file "~/.mpd/database/mpd.db"                                           
+    log_file "~/.mpd/logs/mpd.log"
+    user "sincorchetes"
+    auto_update "yes"
+    audio_output {
+      type "pulse"
+      name "My Pulse Output"
+    }
+    filesystem_charset "UTF-8"$</code></li>
+</ol>
+<p>Explicaremos qué quiere decir cada línea:
+1. Es el directorio dónde tengamos almacenada la música que queramos escuchar.
+2. El directorio dónde se almacenarán las listas de reproducción personalizadas.
+3. Fichero en el cuál se alojará los registros de cada archivo de reproducción.
+4. Fichero de registro
+5. Nuestro usuario
+6. Se actualizará MPD de forma automática cuando MPD detecte cambios en el directorio
+7. Habilitando PulseAudio en MPD (líneas 7,8 y 9)
+8. Soporte UTF-8</p>
+<p>Ahora para probar esta configuración, bastará con correr el servidor apuntando al fichero.</p>
+<pre><code>mpd ~/.mpd/mpd.conf
+</code></pre>
+<p>Puede que nos aparezca un mensaje como este:</p>
+<pre><code>exception: bind to '0.0.0.0:6600' failed (continuing anyway, because binding to '[::]:6600' succeeded): Failed to bind socket: Address already in use
+</code></pre>
+<p>Comunicándonos que se está utilizando el puerto que usa MPD, no pasa nada, lo omitimos y listo.</p>
+<h2 id="ncmpcpp">ncmpcpp</h2>
+<p>En este apartado, instalaremos y explicaremos como utilizar el cliente.</p>
+<h3 id="instalando-el-cliente">Instalando el cliente</h3>
+<p>Hay varios clientes para utilizar MPD, incluyendo clientes gráficos, pero a nosotros personalmente nos agrada utilizar <code>ncmpcpp(1)</code> más que nada por gustos.</p>
+<h4 id="fedora_1">Fedora</h4>
+<p>Para añadirlo a este SO:</p>
+<pre><code>sudo dnf install ncmpcpp
+</code></pre>
+<h4 id="centos-7_1">CentOS 7</h4>
+<p>Hay que tener habilitado el repositorio de <code>nux</code> como hemos mencionado anteriormente:</p>
+<pre><code>sudo yum install ncmpcpp
+</code></pre>
+<h4 id="ubuntu_1">Ubuntu</h4>
+<p>Hay que tener habilitado el repositorio <code>universe</code></p>
+<pre><code>sudo apt-get install ncmpcpp
+</code></pre>
+<h4 id="debian_1">Debian</h4>
+<p>Con un solo comando:</p>
+<pre><code>sudo apt-get install ncmpcpp
+</code></pre>
+<h4 id="archlinux_1">Archlinux</h4>
+<p>Tenemos que tener habilitado el repositorio <code>Community</code></p>
+<pre><code>sudo pacman -S ncmpcpp
+</code></pre>
+<h4 id="gentoo_1">Gentoo</h4>
+<p>No nos olvidemos de que tenemos que declarar las variables <a href="https://packages.gentoo.org/packages/media-sound/ncmpcpp?target=_blank">USE</a> para soportar determinadas características.</p>
+<pre><code>sudo emerge -av media-sound/ncmpcpp
+</code></pre>
+<h4 id="opensuse">openSUSE</h4>
+<p>Desafortunadamente no hay cliente para openSUSE, hay que compilarlo.</p>
+<h2 id="probando">Probando</h2>
+<p>Para probarlo tan solo tenemos que ejecutar <code>ncmpcpp(1)</code></p>
+<script src="https://asciinema.org/a/181165.js" id="asciicast-181165" async></script>
+
+<h2 id="como-manejarnos">¿Cómo manejarnos?</h2>
+<p>Bueno <code>ncmpcpp(1)</code> se utiliza mediante las flechas de dirección y algunas teclas preconfiguradas como las que recogemos en la siguiente tabla.</p>
+<table>
+<thead>
+<tr>
+<th>Combinación de teclas</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>a</kbd></td>
+<td>Añade un tema a una lista de reproducción, ya puede ser nueva o actual</td>
+</tr>
+<tr>
+<td><kbd>&uarr;</kbd></td>
+<td>Sube por los elementos</td>
+</tr>
+<tr>
+<td><kbd>&darr;</kbd></td>
+<td>Desciende por los elementos</td>
+</tr>
+<tr>
+<td><kbd>Shift</kbd> + <kbd>&uarr;</kbd></td>
+<td>Selecciona elementos hacia arriba</td>
+</tr>
+<tr>
+<td><kbd>Shift</kbd> + <kbd>&darr;</kbd></td>
+<td>Selecciona elementos hacia abajo</td>
+</tr>
+<tr>
+<td><kbd>[</kbd></td>
+<td>Desciende por el álbum</td>
+</tr>
+<tr>
+<td><kbd>]</kbd></td>
+<td>Asciende por el álbum</td>
+</tr>
+<tr>
+<td><kbd>{</kbd></td>
+<td>Asciende según el artista</td>
+</tr>
+<tr>
+<td><kbd>}</kbd></td>
+<td>Desciende según el artista</td>
+</tr>
+<tr>
+<td><kbd>Page Up</kbd></td>
+<td>Asciende muchos ítems</td>
+</tr>
+<tr>
+<td><kbd>Pade Down</kbd></td>
+<td>Desciende muchos ítems</td>
+</tr>
+<tr>
+<td><kbd>Insert</kbd></td>
+<td>Selecciona ítem</td>
+</tr>
+<tr>
+<td><kbd>Enter</kbd></td>
+<td>Según en la vista, puede reproduci, ingresar en un directorio...etc</td>
+</tr>
+<tr>
+<td><kbd>Espacio</kbd></td>
+<td>Según la vista, puede añadir un elemento a la lista de reproducción, actualizar las letras según cambie la canción, cambiar el tipo de visualización...</td>
+</tr>
+<tr>
+<td><kbd>Delete</kbd></td>
+<td>Borra ítems de la lista, del buscador...</td>
+</tr>
+<tr>
+<td><kbd>&larr;</kbd></td>
+<td>Bajar el volumen, columna anterior, pantalla máster</td>
+</tr>
+<tr>
+<td><kbd>&rarr;</kbd></td>
+<td>Subir el volumen, siguiente columna...</td>
+</tr>
+<tr>
+<td><kbd>TAB</kbd></td>
+<td>Siguiente vista</td>
+</tr>
+<tr>
+<td><kbd>Shift</kbd> +  <kbd>TAB</kbd></td>
+<td>Vista anterior</td>
+</tr>
+<tr>
+<td><kbd>F1</kbd></td>
+<td>Muestra la ayuda</td>
+</tr>
+<tr>
+<td><kbd>1</kbd></td>
+<td>Vista: Lista de reproducción</td>
+</tr>
+<tr>
+<td><kbd>2</kbd></td>
+<td>Vista: Buscador</td>
+</tr>
+<tr>
+<td><kbd>3</kbd></td>
+<td>Vista: Modo navegador de archivos</td>
+</tr>
+<tr>
+<td><kbd>4</kbd></td>
+<td>Vista: Interactuar con la biblioteca</td>
+</tr>
+<tr>
+<td><kbd>5</kbd></td>
+<td>Vista: Editor de listas de reproducción</td>
+</tr>
+<tr>
+<td><kbd>6</kbd></td>
+<td>Vista: Editor de etiquetas</td>
+</tr>
+<tr>
+<td><kbd>7</kbd></td>
+<td>Vista: Muestra los métodos de salida</td>
+</tr>
+<tr>
+<td><kbd>8</kbd></td>
+<td>Vista: Visualizador de música (no lo hemos incluído en este post)</td>
+</tr>
+<tr>
+<td><kbd>=</kbd></td>
+<td>Vista: Muestra un reloj digital</td>
+</tr>
+<tr>
+<td><kbd> @ </kbd></td>
+<td>Vista: Muestra la información del servidor</td>
+</tr>
+<tr>
+<td><kbd>s</kbd></td>
+<td>Para la reproducción</td>
+</tr>
+<tr>
+<td><kbd>p</kbd></td>
+<td>Pausa la reproducción</td>
+</tr>
+<tr>
+<td><kbd>&gt;</kbd></td>
+<td>Siguiente tema</td>
+</tr>
+<tr>
+<td><kbd>&lt;</kbd></td>
+<td>Tema anterior</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd> + <kbd>h</kbd></td>
+<td>En el modo navegador de archivos, vuelve un directorio hacia atrás</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd> + <kbd>h</kbd></td>
+<td>Repite la canción en modo reproducción</td>
+</tr>
+<tr>
+<td><kbd>Backspace</kbd></td>
+<td>En modo navegador sube un directorio</td>
+</tr>
+<tr>
+<td><kbd>Backspace</kbd></td>
+<td>En modo reproductor repite la canción</td>
+</tr>
+<tr>
+<td><kbd>f</kbd></td>
+<td>Reproduce más rápido</td>
+</tr>
+<tr>
+<td><kbd>b</kbd></td>
+<td>Rebovina</td>
+</tr>
+<tr>
+<td><kbd>r</kbd></td>
+<td>Modo repetición</td>
+</tr>
+<tr>
+<td><kbd>z</kbd></td>
+<td>Reproducción aleatoria</td>
+</tr>
+<tr>
+<td><kbd>y</kbd></td>
+<td>Tiene múltiples funciones, buscador de canciones, detecto de cambios en etiquetas, comenzar a buscar...</td>
+</tr>
+<tr>
+<td><kbd>Y</kbd></td>
+<td>Modo reproducción de una única canción</td>
+</tr>
+<tr>
+<td><kbd>u</kbd></td>
+<td>Actualizar la DB</td>
+</tr>
+</tbody>
+</table>
+<p>En fin hemos comentado medio archivo de atajos de teclado que viene por defecto. Puedes crearte uno propio creando el directorio <code>~/.ncmpcpp/bindings</code>.</p>
+<h1 id="fuentes">Fuentes</h1>
+<ul>
+<li>Archlinux ~ MPD</li>
+<li>man packages<ul>
+<li>mpd.conf(5)</li>
+<li>mpd(1)</li>
+<li>ncmpcpp(1)</li>
+</ul>
+</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

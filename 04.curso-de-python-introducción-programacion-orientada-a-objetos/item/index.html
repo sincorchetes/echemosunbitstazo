@@ -1,0 +1,487 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/04.curso-de-python-introducci%C3%B3n-programacion-orientada-a-objetos/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Curso de Python - Introducción a la programación orientada a objetos - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-python-introduccion-a-la-programacion-orientada-a-objetos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Curso de Python - Introducción a la programación orientada a objetos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="curso-de-python-introduccion-a-la-programacion-orientada-a-objetos">Curso de Python - Introducción a la programación orientada a objetos</h1>
+<p>En este post aprenderás los principios básicos del POO o también llamada programación orientada a objetos que es uno de los paradigmas de la programación. En los post siguientes iré explicando más sobre lo que podemos hacer con ella además de mostrar algunos ejercicios.</p>
+<h1 id="programacion-orientada-a-objetos-o-poo">Programación orientada a objetos o POO</h1>
+<p>Python es un lenguaje como ya mencionamos anteriormente orientado a objetos. Los objetos contienen una serie de métodos y propiedades que lo definen. Si pensamos en un humano, tenemos como propiedades el color de ojos, color de piel, altura... y los métodos serían las acciones como el baile, leer, saltar, correr...</p>
+<p>Esta metodología de programación nos permite reusar el código las veces que queramos sin tener que estar escribiendo múltiples líneas con funciones específicas para determinadas partes de nuestro código si lo hicieramos en una programacioń estructurada o procedural.</p>
+<h2 id="principios-basicos-de-poo">Principios básicos de POO</h2>
+<p>En Python tenemos los siguientes principios:
+* Clase: Tipo de dato que contiene un esquema de métodos y propiedades que se usarán para construir un objeto.
+* Objeto: Una clase que se ha inicializado, es decir, existe y tiene nombres y apellidos propios en su ejecucioń.
+* Herencia: Propiedades o métodos que ha recibido una clase hija por parte de una clase padre, esto no quiere decir que vaya a heredar todos los métodos y propiedades, solo aquellos que se le permitan.
+* Encapsulación: La habilidad de enseñar aquello que solo se pueda mostrar y esconder lo que no nos interesa visibilizar.
+* Polimorfismo: La capacidad que tiene un objeto para cambiar su rol al mismo tiempo, puede actuar de un rol y en otro rol al mismo tiempo.</p>
+<h3 id="que-es-una-clase">¿Qué es una clase?</h3>
+<p>Una clase es la plantilla que tendrá el objeto que queremos crear, contiene una serie de méotodos y propiedades que los utilizaremos una vez generemos el objeto. Por supuesto, una clase es un tipo de dato dentro de Python.</p>
+<h3 id="como-declaramos-una-clase">¿Cómo declaramos una clase?</h3>
+<p>Para generar una clase seguiremos esta sintaxis:</p>
+<pre><code>class NombreClase:
+  # Bloque de código
+</code></pre>
+<h3 id="como-podemos-anadirle-propiedades-y-metodos-a-una-clase">¿Cómo podemos añadirle propiedades y métodos a una clase?</h3>
+<p>De la siguiente forma:</p>
+<pre><code>class Coche:
+  propiedad = valor
+
+  def método(self):
+    # Bloque de código
+</code></pre>
+<p>Un ejemplo podría ser:</p>
+<pre><code>class Coche:
+  marca = &quot;Toyota&quot;
+  modelo = &quot;Corolla&quot;
+
+  def publicidad(self):
+    print(&quot;De 0 a 100 en 10 segundos&quot;)
+</code></pre>
+<p>Tenemos la clase Coche, con unas propiedades definidas que son la marca y el modelo, además, tenemos un método llamado publicidad que muestra un mensaje. En el siguiente apartado, veremos como trabajar con esta clase pero desde la vista de un objeto.</p>
+<h3 id="que-es-un-objeto">¿Qué es un objeto?</h3>
+<p>Un objeto es la materialización de una clase, es decir, cuando lo generamos a partir de unas instrucciones ya empieza a existir en nuestro programa que estemos desarrollando. Por ejemplo, tenemos la clase Casa, evidentemente, las casas que declaremos tiene propiedades y métodos diferentes, por ejemplo, tiene una dirección, un número, una elevación, una función, un espacio diferente. Si creamos 5 casas, hemos creado 5 objetos partiendo de una sola clase que es la clase Casa.</p>
+<p>En resumen:
+* Es la unidad básica de POO
+* Representa una instancia particular partiendo de una clase
+* Puede haber más instancias partiendo de una misma clase
+* Cada objeto puede contener y mantener su información</p>
+<h3 id="como-declaramos-un-objeto">¿Cómo declaramos un objeto?</h3>
+<p>La sintaxis es:</p>
+<pre><code>NombreObjeto = NombreClase()
+</code></pre>
+<p>En este ejemplo creamos 3 objetos diferentes partiendo de la clase anterior.</p>
+<pre><code>NombreObjeto = NombreClase()
+NombreObjeto2 = NombreClase()
+NombreObjeto3 = NombreClase()
+</code></pre>
+<p>Para acceder a sus propiedades:</p>
+<pre><code>NombreObjeto.propiedad1
+</code></pre>
+<p>Para acceder a sus métodos:</p>
+<pre><code>NombreObjeto.método1()
+</code></pre>
+<p>Utilizando el ejemplo que hemos creado antes:</p>
+<pre><code>class Coche:
+  marca = &quot;Toyota&quot;
+  modelo = &quot;Corolla&quot;
+  publicidad = &quot;De 0 a 100 en 10 segundos&quot;
+
+  def eslogan(self):
+    print(&quot;Este es un método&quot;,self.publicidad)
+
+Sara = Coche()
+Ionela = Coche()
+</code></pre>
+<p>Tenemos a dos personas que utilizan el mismo coche Ionela y Sara y lo vemos:</p>
+<pre><code>print(Ionela.marca,Ionela.modelo)
+Toyota Corolla
+Ionela.eslogan()
+De 0 a 100 en 10 segundos
+
+print(Sara.marca,Sara.modelo)
+Toyota Corolla
+Sara.eslogan()
+De 0 a 100 en 10 segundos
+</code></pre>
+<p>¿Qué pasa si Sara quiere cambiar de coche?</p>
+<pre><code>Sara.marca = &quot;Citröen&quot;
+Sara.modelo = &quot;Xsara&quot;
+Sara.publicidad = &quot;El confort no es discutible.&quot;
+print(Sara.marca,Sara.modelo)
+Citröen Xsara
+Sara.eslogan()
+El confort no es discutible.
+</code></pre>
+<p>¿Pero Ionela ha cambiado de coche?</p>
+<pre><code>print(Ionela.marca,Ionela.modelo)
+Toyota Corolla
+Ionela.eslogan()
+De 0 a 100 en 10 segundos
+</code></pre>
+<p>¡Ya lo tenemos! Podemos instanciar objetos diferentes partiendo de una misma clase y cambiar sus propiedades sin afectar al resto de objetos. ¿A qué es sencillo? Pero, ¿Qué pasa si queremos cualquier persona pueda tener un coche diferente desde el principio?</p>
+<p>Pues a pesar de que se puede hacer creando un método que le asigne el valor a las propiedades, lo más correcto es utilizando el método <code>__init__</code>. Este método <code>constructor</code> (<em>que permite inicializar un objeto</em>) asigna valores a las propiedades del objeto cuando se construye, por ejemplo.</p>
+<pre><code>class NombreClase:
+  def __init__(self, valor_propiedad1, valor_propiedad2):
+    self.propiedad1 = valor_propiedad1
+    self.propiedad2 = valor_propiedad2
+
+  def metodo1(self):
+    # Bloque de código
+</code></pre>
+<p>Para crear el objeto:</p>
+<pre><code>Variable=NombreClase(&quot;Valor de ejemplo n1&quot;,&quot;Valor de ejemplo n2&quot;)
+</code></pre>
+<p>Si parece dificultoso de entender, no pasa nada, este es otro ejemplo con comentarios (<em>¡Será por ejemplos!</em>):</p>
+<pre><code># Definimos la clase Coche
+class Coche:
+
+  # Definimos el constructor que sustituirá los 
+  # valores de las propiedades cuando las definamos al inicializar el objeto.
+
+  def __init__(self,marca,modelo, velocidad):
+    self.marca = marca
+    self.modelo = modelo
+    self.velocidad = velocidad
+
+  # Cuando se llama a este método la velocidad se incrementa +1.
+  def acelerar(self):
+    self.velocidad += 1
+    print(self.velocidad)
+
+  # Cuando se llama a este método la velocidad disminuye en -1.  
+  def frenar(self):
+   self.velocidad -= 1
+   print(self.velocidad)
+
+# Creamos los objetos:
+
+Chami = Coche(&quot;Nissan&quot;, &quot;Almera&quot;, 0)
+Jose = Coche(&quot;Toyota&quot;,&quot;Corolla AE92 GTi Twin Cam&quot;, 0)
+
+# Imprimimos los valores que tienen las propiedades de cada objeto:
+
+print(&quot;El coche de Chami es un:&quot;,Chami.marca,Chami.modelo,&quot;y ahora va a&quot;,Chami.velocidad,&quot;km/h.&quot;)
+print(&quot;El coche de Jose es un:&quot;,Jose.marca,Jose.modelo,&quot;y ahora va a&quot;,Jose.velocidad,&quot;km/h.&quot;)
+
+# Aumentamos la velocidad a uno de los objetos:
+Chami.acelerar()
+
+# Si queremos aumentar más veces la velocidad, podemos usar un bucle
+for x in range(0, 100):
+  Chami.acelerar()
+
+# Imprimimos la velocidad actual
+print(&quot;Chami va a una velocidad de %i&quot; % Chami.velocidad)
+</code></pre>
+<p>Este ejemplo si lo ejecutamos dará como resultado:</p>
+<pre><code>El coche de Chami es un: Nissan Almaera y ahora va a 0 km/h.
+El coche de Jose es un: Toyota Corolla AE92 GTi Twin Cam y ahora va a 0 km/h.
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

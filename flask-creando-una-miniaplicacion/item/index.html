@@ -1,0 +1,485 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/flask-creando-una-miniaplicacion/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Flask - Creando una mini aplicación - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flask-creando-una-mini-aplicacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Flask - Creando una mini aplicación
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="flask-creando-una-mini-aplicacion">Flask - Creando una mini aplicación</h1>
+<p>En este tutorial aprenderás a utilizar Flask. Flask es un web framework elaborado en Python que te permite crear aplicaciones web bastante sencillas, pero potentes ya que el potencial se lo das tu elaborando tu propio sistema de validación, tus propios métodos de conexión a bases de datos... etc porque no olvidemos que es un microframework y no tiene muchas cosas como quizás tendría un framework como Django que contiene muchas más herramientas y desarrrollo.</p>
+<p>Este tutorial lo he hecho basándome en la documentación oficial, pero con toques personales, así evito reproducir contenido una y otra vez.</p>
+<h1 id="que-necesito">¿Qué necesito?</h1>
+<ul>
+<li>Tener Python 3.5 o superior instalado y PyPy</li>
+<li>Aunque soporte 2.7, no es recomendable utilizar esta versión porque el 31 de diciembre del año pasado se dejó de mantener la rama 2.x</li>
+<li>Una o varias tazas de café</li>
+</ul>
+<h1 id="como-empezar">¿Cómo empezar?</h1>
+<p>A mi modo de ver las cosas y para no mezclar, siempre es mejor que utilices un entorno virtual que no el propio entorno del sistema, es decir, para instalar Flask hay que descargar una serie de códigos que se instalarán en tu sistema. Sin embargo, con un entorno virtual, puedes instalar, eliminar... o lo que quieras hacer sin dañar la instalación de Python del sistema base, ya sea Fedora, CentOS...etc</p>
+<h2 id="creando-un-entorno-virtual">Creando un entorno virtual</h2>
+<pre><code>$ python3 -m venv proyecto_flask
+</code></pre>
+<p>Cuando se haya creado, entonces ejecutamos:</p>
+<pre><code>$ flask/bin/activate
+</code></pre>
+<p>Este script carga variables de entorno y rutas para que puedas trabajar con tu proyecto, si te fijas, en el prompt de la terminal ya no está mostrándose como <code>"$"</code>, si no, <code>"(proyecto_flask) $"</code></p>
+<h3 id="instalando-flask">Instalando Flask</h3>
+<p>Para instalar Flask, con el entorno virtual activo:</p>
+<pre><code>(proyecto_flask) $ pip install flask
+</code></pre>
+<p>Esto es todo, ya lo tendremos instalado.</p>
+<h1 id="creando-la-mini-aplicacion">Creando la mini aplicación</h1>
+<p>Utilizamos de ejemplo este directorio: <code>/home/sincorchetes/proyecto_flask</code>, si utilizas otro, que me imagino que sí, adáptalo al que utilices, y crea un subdirectorio llamado <code>app</code>.</p>
+<p>Crea un archivo vacio y llámalo <code>core.py</code> (<em>puedes llamarlo como quieras si luego defines que cargue el nombre correcto</em>) y añades el siguiente contenido.</p>
+<h4 id="appcorepy"><code>app/core.py</code></h4>
+<pre><code>from flask import Flask
+proyecto = Flask(_name_)
+
+@proyecto.route('/')
+def hola_mundo():
+  return 'Hola Mundo'
+</code></pre>
+<ul>
+<li>La primera línea, importará el módulo Flask.</li>
+<li>La segunda, inicializamos un objeto llamado proyecto que tiene una clase Flask y que hace referencia a sí mismo.</li>
+<li>En la tercera línea, <code>@proyecto.route('/')</code> estamos diciendo que cuando el visitante acceda a: http://pepitodelospalotes.es verá lo que se haya definido en la función de abajo.</li>
+<li>En las últimas líneas, desarrollamos la lógica de la aplicación, con la función <code>hola_mundo()</code>, le decimos que cuando el visitante acceda a la página verá lo que hay dentro del <code>return</code>, que en este caso es <code>Hola Mundo</code>.</li>
+</ul>
+<p>Guarda el archivo, abre una terminal y sitúate en el directorio de la aplicación.</p>
+<pre><code>export FLASK_APP=/home/sincorchetes/proyecto_flask/app/core.py &amp;&amp; \
+export FLASK_DEBUG=1 &amp;&amp; \
+flask run 
+</code></pre>
+<p>La variables <code>FLASK_APP</code>, defines el <code>core</code> de la aplicación, <code>FLASK_DEBUG</code> permite activar el modo depuración que viene con ayuda para que nos muestre de dónde puede provenir los errores...etc y <code>flask run</code> levanta un servidor de desarrollo para que puedas ver los cambios sin tener que utilizar un servidor web como Nginx o Apache.</p>
+<p>Una vez levantada la aplicación, si accedemos a http://localhost:5000 verás el Hola Mundo que has definido en el archivo <code>core.py</code>.</p>
+<p><img alt="" src="../hola_mundo.png" /></p>
+<h2 id="como-creo-una-pagina">¿Cómo creo una página?</h2>
+<p>Como he dicho anteriormente, Flask permite crear aplicaciones web, esto no solo incluye la parte de backend que es dónde definimos la lógica de la aplicación, si no que también puedes crear la parte frontend, la parte de visible con la que el usuario interactuará.</p>
+<p>Hay que crear el directorio<code>templates</code> para añadir las páginas .html</p>
+<p>Una vez hecho esto, creas el archivo <code>app/templates/index.html</code> y le añades el siguiente contenido:</p>
+<h4 id="indexhtml"><code>index.html</code></h4>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;Ejemplo de aplicación hecha en Flask&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;contenedor&quot;&gt;
+      &lt;div class=&quot;titulo&quot;&gt;
+        &lt;h1&gt;¡Bienvenidos a mi página Web!&lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;tareas&quot;&gt;
+        &lt;p&gt;¿Te gustan los perros y los coches? Esta es tú página ideal.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Actualiza el fichero <code>core.py</code> de tal modo que se quede así:</p>
+<h4 id="appcorepy_1"><code>app/core.py</code></h4>
+<pre><code>from flask import Flask, render_template
+proyecto = Flask(_name_)
+
+@proyecto.route('/')
+def hola_mundo():
+  return render_template('index.html')
+</code></pre>
+<p>He añadido <code>render_template</code> que permite renderizar contenido .html en el proceso de importar módulos y en la última línea llamamos al método cuyo valor es el archivo que has creado.</p>
+<p>Verás una página como esta:
+<img alt="" src="../mi_pagina.png" /></p>
+<h2 id="como-anado-hojas-de-estilo-o-codigo-javascript">¿Cómo añado hojas de estilo o código JavaScript?</h2>
+<p>Hay crear un directorio llamado <code>static</code> tal que así:</p>
+<pre><code>(proyecto_flask) $ mkdir /home/sincorchetes/proyecto_flask/app/static
+</code></pre>
+<p>Dentro de él, añade todo el contenido CSS o JS que cargará la página, lo que suelo hacer, es crear un subdirectorio css y para las hojas de estilo y js para la lógica de eventos para el usuario.</p>
+<p>Para llamarlo, bastará con importar el módulo <code>url_for</code> y luego referenciarlo en el index.html. 
+<code>core.py</code></p>
+<pre><code>from flask import Flask,render_template,url_for
+</code></pre>
+<h4 id="apptemplatesindexhtml"><code>app/templates/index.html</code></h4>
+<pre><code>&lt;head&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for('static',filename='css/nombre_archivo.css) }}&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script src=&quot;url_for('static',filename='js/nombre_archivo.js) }}&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Con esto bastará, creamos un archivo en <code>app/static/css/ejemplo.css</code> y añade el siguiente código:</p>
+<h4 id="appstaticcssejemplocss"><code>app/static/css/ejemplo.css</code></h4>
+<pre><code>.body{
+  font-family: Arial;
+}
+.contenedor {
+  border-radius: 30px;
+  padding:20px;
+  background-color: #D3D7CF;
+}
+.titulo {
+  text-align:center;
+}
+.tareas {
+  background-color: white;
+  border-radius: 30px;
+  padding:10px;
+}
+.date {
+    font-size: 0.4em;
+    text-align: right;
+    padding-left:40%;
+}
+</code></pre>
+<p>Creamos un archivo llamado ejemplo.js que mostrará un cuadro de diálogo:</p>
+<h4 id="appstaticjsejemplojs"><code>app/static/js/ejemplo.js</code></h4>
+<pre><code>alert(&quot;Bienvenido usuario&quot;)
+</code></pre>
+<h4 id="indexhtml_1"><code>index.html</code></h4>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;Ejemplo de aplicación hecha en Flask&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for('static', filename='css/ejemplo.css') }}&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;contenedor&quot;&gt;
+      &lt;div class=&quot;titulo&quot;&gt;
+        &lt;h1&gt;¡Bienvenidos a mi página Web!&lt;/h1&gt;
+        &lt;hr&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;tareas&quot;&gt;
+        &lt;h2&gt;Flask es un microframework web - &lt;span class=&quot;date&quot;&gt;Editado 19-09-2020 09:20:00 am&lt;/span&gt;&lt;/h2&gt; 
+        &lt;p&gt;En el siguiente artículo hablaré de las maravillas de Flask....&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;{{ url_for('static', filename='js/ejemplo.js') }}&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Cuando accedas a http://localhost:5000 vas a ver una página como esta:
+<img alt="" src="../ejemplo.png" /></p>
+<p>No es que digas ¡como mola esta página!, simplemente es para que veas cómo se pueden crear rutas, cómo renderizar contenido .html desde el backend y cargar archivos css y js para la parte frontend de la aplicación.</p>
+<p>En las próximas entregas, verás como trabajar con variables, listas...etc que se renderizarán en la página y con un toque más profesional en el diseño con Bootstrap.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

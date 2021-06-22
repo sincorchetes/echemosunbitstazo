@@ -1,0 +1,524 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-css3-primeros-pasos/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering CSS - Primeros pasos - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-css-primeros-pasos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering CSS - Primeros pasos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-css-primeros-pasos">Mastering CSS - Primeros pasos</h1>
+<h1 id="que-es-el-css">¿Qué es el CSS?</h1>
+<p>CSS proviene del inglés <em>Cascade Style Sheet</em> traducido al español como hoja de estilos en cascada que como su nombre propio indica, le atribuye estilo como colores, formas, bordes, dimensiones a determinados elementos o un conjunto de elementos de una página elaborada con lenguaje de etiquetado HTML.</p>
+<h1 id="por-que-css-y-no-css3">¿Por qué CSS y no CSS3?</h1>
+<p>CSS ha tenido varias versiones a lo largo de los años, CSS2 según el portal de documentación Mozilla Developer, necesitó de 9 años para su estandarización desde agosto del 2002 hasta junio del 2011. Con lo que hace lento su normalización. Sin embargo, adaptaremos el contenido para la última pre-versión.</p>
+<h1 id="reglas">Reglas</h1>
+<p>En el CSS tenemos lo que se llaman reglas con las que <em>estilizar</em> los elementos del documento Web. Estas reglas están formadas por un selector que es un elemento Web como puede ser un anclaje (<code>&lt;a&gt;</code>); un párrafo (<code>&lt;p&gt;</code>), una tabla (<code>&lt;table&gt;</code>)... una propiedad que puede ser común para muchos elementos como <code>color</code> para un texto, anclaje... y un valor que suele determinarse según lo que tengamos que declarar en la propiedad, ya sean píxels, porcentajes, números y texto...etc Tanto la propiedad como el valor, van incluídos dentro de llaves <code>{}</code></p>
+<pre><code>| Selector |
+  --------           Valor
+     |           | -------- |
+     body {            |
+        font-family: Sans;
+        -----------
+             |
+         Propiedad
+
+     }
+</code></pre>
+<p><em>NOTA: Se pueden añadir tantas propiedades como uno quiera, o el selector lo permita.</em></p>
+<h2 id="prioridad">Prioridad</h2>
+<p>Cuando nosotros declaramos una regla a un elemento padre que engloba a muchos hijos tipo <code>body</code>. Todos los elementos heredarán las propiedades junto con el valor y se representarán como tal (siempre que el elemento lo permita). Sin embargo, cuando hacemos reglas específicas, siempre prevalecerán las específicas sobre las general. Por ejemplo, si tenemos un <code>body</code> con un color de fondo en negro, y párrafos con un fondo rojo. Los párrafos utilizarán de fondo el color rojo que se interpreta aquí como un subrayado.</p>
+<h1 id="maneras-de-introducir-css">Maneras de introducir CSS</h1>
+<p>Existen 3 formas de enmaquetación Web con las hojas de estilo que pueden alternarse entre sí, pero es preferible escoger 1, y a ser posible la última de todas estas. Más que nada por legibilidad del código y la propia separación de los demás lenguajes de marcas como es HTML del de programación Web como Javascript entre otros.
+1. Etiqueta <code>&lt;style&gt;</code>
+2. Atributo <code>style=""</code>
+3. Fichero separado <code>.css</code></p>
+<h2 id="etiqueta-style">Etiqueta <code>&lt;style&gt;</code></h2>
+<p>Esta etiqueta se añade al elemento <code>&lt;head&gt;&lt;/head&gt;</code> la etiqueta <code>&lt;style&gt;&lt;/style&gt;</code> en la cuál, declararemos nuestro código CSS.</p>
+<p>Ejemplo:</p>
+<pre><code>&lt;head&gt;
+    &lt;style&gt;
+        body {
+            background-color: black;
+            color: green;
+            font-family: Sans;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+<h2 id="atributo-style">Atributo <code>style=""</code></h2>
+<p>Se le puede designar a un elemento un estilo más específico como un atributo.</p>
+<p>Por ejemplo:</p>
+<pre><code>&lt;body&gt;
+    &lt;h1&gt;Cuando éramos jóvenes&lt;/h1&gt;
+    &lt;p style=&quot;color:brown&quot;&gt; Correteábamos en la playa con un cubito que llenábamos de agua del mar para hacer nuestros castillos más fuertes, mientras que otros en otras zonas de la península....&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<h2 id="fichero-separado-css">Fichero separado .css</h2>
+<p>Sin duda alguna, esta es la mejor forma de enmaquetar una paǵina Web. Tener un directorio en nuestro proyecto llamado <code>css/</code> al que añadir todas nuestras hojas de estilo personalizadas sin tener que buscar dentro de 1000 líneas de css.</p>
+<p>Para incluirna en nuestra Web, bastará con añadir la siguiente etiqueta en <code>&lt;head&gt;&lt;/head&gt;</code></p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/example.css&quot;&gt;
+</code></pre>
+<p>Pongámos un ejemplo:</p>
+<pre><code>/var/www/html/mi_pagina
+|
+|-- doc.html
+|-- css/
+     |
+     |-- example.css
+</code></pre>
+<p>doc.html</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Mi primera página Web&lt;/title&gt;
+        &lt;meta author=&quot;Álvaro Castillo&quot;&gt;
+        &lt;meta keywords=&quot;web, html5, css&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/example.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Cuando éramos jóvenes&lt;/h1&gt;
+        &lt;p&gt; Correteábamos en la playa con un cubito que llenábamos de agua del mar para hacer nuestros castillos más fuertes, mientras que otros en otras zonas de la península....&lt;/p&gt;
+    &lt;/body&gt;
+</code></pre>
+<p>example.css</p>
+<pre><code>body {
+    background-color: yellow;
+    font-size: 20px;
+}
+p {
+    font-family: Sans;
+    color: cyan;
+}
+</code></pre>
+<p>El resultado:
+* Fondo en todo el body de color amarillo.
+* Tamaño fuente general para todos los elementos de la página a tamaño 20
+* Tipo de familia de la tipografía que utilizarán los párrafos es Sans.
+* Color de las letras de todos los párrafos utilizará el color Azul Cian.</p>
+<h2 id="enmaquetacion-basica">Enmaquetación básica</h2>
+<p>A continuación veremos algunas propiedades con las que podremos jugar con diferentes elementos.</p>
+<h3 id="fuentes">Fuentes</h3>
+<p>Las fuentes son muy importantes para el diseño de nuestro proyecto. No solo porque le otorgamos un cierto caracter y estilo, sino porque también ayudaremos al lector a poder comprenderlo y sobre todo qué sencación de seguridad podemos darle. Recordemos que las fuentes influyen en el punto de vista del lector que pueden determinar insconcientemente algunos sentimientos como bien se recoge en algunos artículos de la <a href="https://www.websa100.com/blog/psicologia-de-la-tipografia?target=_blank">psicología de la tipografía</a>.</p>
+<h4 id="tamano-de-letra">Tamaño de letra</h4>
+<p>Cuando queremos modificar el tamaño de las fuentes de nuestro documento, nos encontramos con una propiedad clave como <code>font-size</code>. Esta nos permite asignar un valor que se puede declarar como %, unidades de longitud, una cadena como valor y/o em.</p>
+<ul>
+<li>Los porcentajes tienden muchas veces a fallarnos y a no comportarse como uno quiere ya que los navegadores no los interpretan igual, mencionar que está disponible para utilizarse pero que no son recomendados.</li>
+<li>Por otro lado, tenemos diferentes medidas de longitud como los píxeles (px), centímetros (cm)...<ul>
+<li>Una medida interesante es el <code>em</code>, es un tamaño relativo de fuente. Si utilizamos 2 ems quiere decir que equivale 2 veces el tamaño de la fuente actual. Suele utilizarse mucho en diseños "responsive"</li>
+</ul>
+</li>
+<li>medium, xx-small, small, large, x-large, xx-large, initial, inherit...: Son valores no numéricos que predefinen el tamaño de una fuente.</li>
+</ul>
+<h4 id="colores">Colores</h4>
+<p>Los colores pueden mostrase de diversas formas y diferentes esquemas del color:
+* Palabras clave
+* Esquema RGB 
+* Esquema HSL
+* Canales alfa</p>
+<h5 id="palabras-clave">Palabras clave</h5>
+<p>Éstas contienen un código hexadecimal que ya interpreta el navegador directamente a pesar de ser un código hexadecimal encubierto no requiere más que utilizar la palabra clave para su uso.
+* cyan: Azul Cian
+* pink: Rosa
+* yellow: Amarillo
+* brown: Marrón
+* blue: Azul</p>
+<p>Y así un sin fin más, podemos ver una lista completa a través de la página de la <a href="https://www.w3.org/TR/css-color-3/#svg-color?target=_blank">w3</a>.</p>
+<h5 id="rgb">RGB</h5>
+<p><a href="https://es.wikipedia.org/wiki/Modelo_de_color_RGB?target=_blank"><em>Red Green Blue</em></a> es un modelo de color que trabaja con los colores primarios, y que a su vez, la mezcla de estos generan diferentes colores aplicando una intensidad de color diferente en cada uno de estos 3 colores. Este modo de color pueden llegar a crear 16.7 millones de colores solo haciendo uso de estos 3 colores.
+Para poder darle un valor, se utiliza numeración decimal que va desde el 255 (saturación máxima de colores) hasta el 0 (ausencia total de color), o bien, mediante representación hexadecimal completa o abreviada.</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Valor decimal</th>
+<th>Valor hexadecimal</th>
+<th>Hexadecimal abreviado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rojo</td>
+<td>255 0 0</td>
+<td>##FF0000</td>
+<td>#FF0</td>
+</tr>
+<tr>
+<td>Verde</td>
+<td>0   255 0</td>
+<td>##00FF00</td>
+<td>#0F0</td>
+</tr>
+<tr>
+<td>Azul</td>
+<td>0   0  255</td>
+<td>##0000FF</td>
+<td>#00F</td>
+</tr>
+</tbody>
+</table>
+<p><em>NOTA: En el tutorial para <a href="../conversion-de-numeros?target=_blank">convertir unidades</a>, explicamos como pasar de decimal a hexadecimal o viceversa. La representación abreviada del hexadecimal, solo puede hacerse si coinciden las 3 primeras cifras de cada color. F= Rojo, F=Verde, F=Azul</em></p>
+<h5 id="hsl">HSL</h5>
+<p><a href="https://es.wikipedia.org/wiki/Modelo_de_color_HSL?target=_blank">HSL</a> o <em>Hue, Saturation, Lightness</em> es un modo de color basado en matriz, saturación y luminosidad. La matriz comprende un valor entre 0 y/o 360 refiriéndose a los grados en los que rotará en el espectro de colores. Mientras que la saturación y el brillo tiene una relación en porcentajes comprendidos entre 0 y 100.</p>
+<h5 id="canales-alfa">Canales alfa</h5>
+<p>El canal alfa se añadió en CSS3 como una mejora para añadir cierto efecto a las fuentes añdiendo un grado de transparencia tanto para el modo de color RGB como para el HSL, eso sí, no podemos declararlo en valores hexadecimales.</p>
+<h4 id="propiedades">Propiedades</h4>
+<p>Aquí dejamos una lista con algunas propiedades y sus valores para trabajar con el texto:</p>
+<ul>
+<li><code>font-size: px|%|small,large...</code>: Permite establecer el tamaño de la fuente mediante:<ul>
+<li>Unidad de longitud (px, cm, em...)</li>
+<li>Porcentaje</li>
+<li>Palabras clave como medium, small, large... </li>
+</ul>
+</li>
+<li><code>font-family; a,b,c,d...</code>: Permite definir que tipografía utilizar, y sobre todo, en caso de que no la tenga el sistema o no se descargue bien de un CDN, mostrar la siguiente fuente especificada.</li>
+<li><code>font-style; normal|italic|oblique</code>: Muestra como se verá la fuente:<ul>
+<li><code>normal</code>: Formato limpio</li>
+<li><code>italic</code>: Tipo itálica, en HTML sería lo equivalente a -&gt; <code>&lt;em&gt;&lt;/em&gt;</code></li>
+<li><code>oblique</code>: Parecido a itálica, pero con otro estilo</li>
+</ul>
+</li>
+<li><code>font-weight: normal|bold</code>: Permite añadir negrita o no</li>
+<li><code>color: valor:</code>: Establece un valor para la fuente:<ul>
+<li>RGB =&gt; Hexadecimal: <code>#000000</code></li>
+<li>RGB =&gt; Hexadecimal abreviado: <code>#000</code></li>
+<li>RGB =&gt; Decimal:   <code>rgb(rrr,ggg,bbb)</code></li>
+<li>RGB =&gt; Decimal con canal alfa: <code>rgba(rrr,ggg,bbb,A)</code></li>
+<li>HSL =&gt; <code>hsl(grados,%,%)</code></li>
+<li>HSL =&gt; Con canal alfa: <code>hsla(grados,%,%,A)</code></li>
+</ul>
+</li>
+<li><code>background-color:</code>: Establece un subrayado en la fuente parecido al que utilizamos para recalcar lo importante en los libros, se pueden declarar los mimos valores de la propiedad color.</li>
+</ul>
+<h1 id="finalizando">Finalizando</h1>
+<p>En las siguientes entregas hablaremos sobre la teoría de las cajas, modificar vistas en relación a la resolución de pantalla, jugar con los selectores y frameworks más utilizados.</p>
+<p>¡Un saludo!</p>
+<h1 id="fuentes_1">Fuentes</h1>
+<p><a href="https://www.wikipedia.org?target=_blank">Wikipedia</a>
+<a href="https://www.w3.org?target=_blank">W3</a>
+<a href="https://developer.mozilla.org/es/docs/Web/CSS?target=_blank">Mozilla Developer Portal</a>
+<a href="https://lenguajecss.com/p/css/propiedades/colores-css?target=_blank">LenguajeCSS</a>
+<a href="http://www.makdigitaldesign.com/web-design/css3s-new-font-display-property-is-here?target=_blank">CSS3 banner</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

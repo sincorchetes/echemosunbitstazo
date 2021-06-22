@@ -1,0 +1,411 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-bash-grep-y-sus-amigos/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering en Bash - grep y sus amigos - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-en-bash-grep-y-sus-amigos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering en Bash - grep y sus amigos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-en-bash-grep-y-sus-amigos">Mastering en Bash - grep y sus amigos</h1>
+<h1 id="volvemos-a-la-carga">Volvemos a la carga</h1>
+<p>Como hemos comentado en el post <a href="https://echemosunbitstazo.es/blog/mastering-bash-redireccionamientos-tuberias?target=_blank">anterior</a> relacionado con este Mastering, queríamos dedicarle una publicación directamente a los comando <code>grep(1)</code> y <code>cut(1)</code>, pues aquí esta uno de ellos.
+Ya hemos visto lo siguiente en este Mastering en Bash:
+ * Qué es una shell y qué es Bash
+ * Qué son las entradas y salidas en una shell
+ * Qué son los modificadores en los comandos
+ * Trabajando con directorios y archivos
+   * Mostrando archivos ocultos
+   * Qué son las rutas absolutas y relativas
+   * Cómo posicionarse en directorios superiores
+   * Obtener la ruta del directorio actual
+   * Gestionando directorio: crear, mover, copiar, renombrar, eliminar
+   * Listar archivos y directorios
+   * Tipos de archivo
+   * Crear ficheros vacíos
+   * Mostrando información de un fichero
+   * Trabajando con archivos de texto:
+     * Mostrar o redireccionar texto
+     * Crear archivo y añadir texto directamente
+   * Copias de seguridad
+* Qué son las tuberías y redireccionamiento</p>
+<p>Y todavía nos faltan muchos comandos y sobre todo, el área de scripting que es el área dónde pondremos en práctica lo aprendido para que nos pueda ser útil en un futuro.</p>
+<h1 id="comando-grep1">Comando <code>grep(1)</code></h1>
+<p>Este es uno de los comandos más esencial de Bash, nos permite mostrar coincidencias en archivos en base a la cadena de caracteres que nosotr@s le pasemos, en otras palabras, si queremos buscar una palabra en un archivo de texto, <code>grep(1)</code> es nuestro comando.</p>
+<h2 id="sintaxis-y-ejemplos">Sintaxis y ejemplos</h2>
+<p>Acorde con las indicaciones que nos proporciona la todopoderosa biblia de los comandos, <code>man(1)</code> estos son 3 ejemplos que nos da <code>man 1 grep</code>. </p>
+<pre><code>grep [OPCIONES] PATRÓN [FICHERO...]
+grep [OPCIONES] -e PATRÓN ... [FICHERO...]
+grep [OPCIONES] -f FICHERO ... [FICHERO...]
+</code></pre>
+<p>Tanto las opciones, como los patrones y los ficheros se pueden repetir dentro de la línea de ejecución de nuestro comando.</p>
+<p>Vamos con los ejemplos:</p>
+<pre><code>grep -o &quot;Linux&quot; /proc/version
+</code></pre>
+<p>Imprimirá la cadena "Linux" si la encuentra en el archivo, y la imprime tantas veces como la encuentre.</p>
+<pre><code>grep -q &quot;Linux&quot; /proc/version
+</code></pre>
+<p>No imprime nada, es una opción en la que se omite la salida, si encuentra una coincidencia con dicha palabra, devolverá en el estado de la shell un 0.
+<code>echo $?</code> = 0 si se encontró y = 1 en el caso contrario.</p>
+<pre><code>grep -H &quot;sda&quot; /proc/* 2&gt;/dev/null
+</code></pre>
+<p>Muestra en cada línea en la que encuentre coincidencias, también el nombre del archivo y omite errores.</p>
+<pre><code>grep -A 2 &quot;_this_module&quot; /proc/kallsyms
+</code></pre>
+<p>Muestra las 2 líneas siguientes de haber encontrado la coincidencia en la o las líneas.</p>
+<pre><code>grep -B 2 &quot;_this_module&quot; /proc/kallsyms
+</code></pre>
+<p>La inversa de la anterior, en vez de mostrar las 2 líneas siguientes, muestra las dos líneas anteriores a la coincidencia.</p>
+<pre><code>grep -C 2 &quot;_this_module&quot; /proc/kallsyms
+</code></pre>
+<p>Si la A y la B hacía cada cosa por separado, con la C podemos mostrar tanto las líneas anteriores como las posteriores. En este caso muestra el resultado de las dos sentencias anteriores en una sola sentencia.</p>
+<pre><code>grep -rA 2 &quot;gcc&quot; /proc/ 2&gt;/dev/null
+</code></pre>
+<p>Buscará de forma recursiva en todos los ficheros y directorios que se encuentren dentro del directorio especificado y cuándo obtenga una coincidencia, imprimirá las 2 líneas anteriores a la coincidencia incluyendo el nombre del archivo en el que se encuentre.</p>
+<p><em>NOTA: El uso del parámetro -r ya incluye el parámetro -H por defecto</em></p>
+<pre><code>grep -U &quot;note&quot; /bin/cp
+</code></pre>
+<p>Pretendemos encontrar una coincidencia dentro de un binario, y que en caso de encontrarla, ésta nos lo diga mediante un mensaje de salida.</p>
+<pre><code>grep -ob &quot;root&quot; /etc/passwd
+</code></pre>
+<p>Nos mostrará las líneas en dónde la coincidencia se haya repetido n veces dentro de un fichero especificado.</p>
+<pre><code>grep -obrA 2 &quot;root&quot; /etc 2&gt;/dev/null
+</code></pre>
+<p>Permite efectuar lo mismo, pero se visualizarán las 2 líneas en cada coincidencia encontrada, número de línea, nombre de archivo dentro de un directorio y se omitirán los mensajes de error.</p>
+<pre><code>grep -FrB 2 '/usr' /proc 2&gt;/dev/null
+</code></pre>
+<p>Permite utilizar caracteres especiales para la búsqueda de coincidencias. Este comando buscará de forma recursiva la cadena que contiene un carácter "prohibido" y mostrará las 2 líneas anteriores cada vez que encuentre una coincidencia. También omitirán los mensajes de error.</p>
+<pre><code>grep -ErC 2 '??linux' /proc 2&gt;/dev/null
+</code></pre>
+<p>Al contrario que el anterior, aquí utilizaremos expresiones regulares como es el caso de ?? que sustituye a un caracter por signo de interrogación que no recordemos o no estemos seguro de cuál puede ser. Esta sentencia imprimirá las dos líneas siguientes a las coincidencias así mismo como las 2 anteriores, los mensajes de error se omitirán y se visualizará el nombre de los archivos que contengan dichas coincidencias</p>
+<h1 id="los-amigos-de-grep-fgrep1-y-egrep1">Los amigos de grep, <code>fgrep(1)</code> y <code>egrep(1)</code></h1>
+<p>Pues ya los hemos dado en los dos ejemplos anteriores, aunque no lo creamos, <code>fgrep(1)</code> como <code>egrep(1)</code> son dos comandos que actúan como alias.
+ * <code>fgrep(1)</code> equivale a <code>grep -F</code>
+ * <code>egrep(1)</code> es igual a <code>grep -E</code></p>
+<h1 id="fuentes">Fuentes</h1>
+<ul>
+<li>man pages ~ <code>grep(1)</code></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

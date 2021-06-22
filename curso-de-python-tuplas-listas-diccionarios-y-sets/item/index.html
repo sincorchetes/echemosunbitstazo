@@ -1,0 +1,529 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/curso-de-python-tuplas-listas-diccionarios-y-sets/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Curso de Python - Tuplas, listas, diccionarios y sets - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-python-tuplas-listas-diccionarios-y-sets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Curso de Python - Tuplas, listas, diccionarios y sets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tuplas-tuple" class="md-nav__link">
+    Tuplas tuple
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listas" class="md-nav__link">
+    Listas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diccionarios" class="md-nav__link">
+    Diccionarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    Sets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="curso-de-python-tuplas-listas-diccionarios-y-sets">Curso de Python - Tuplas, listas, diccionarios y sets</h1>
+<p>A continuación vamos a ver algunos de los tipos de datos clave en Python junto con alguno de sus métodos, de los cuáles nos serán útiles para empezar.</p>
+<h2 id="tuplas-tuple">Tuplas <code>tuple</code></h2>
+<p>Conjunto de valores que no cambian dentro del flujo de la ejecución del programa. Pueden contener como valor todo tipo de dato incluyendo otra tupla.</p>
+<p><em>Más info en la <a href="https://docs.python.org/3/library/stdtypes.html?highlight=tuple#tuple" target="blank">doc oficial de Python</em></a></p>
+<pre><code>&gt;&gt;&gt; nacionalidad = ( 'Español', 'Turco', 'Italiano')
+&gt;&gt;&gt; paises = ( 'España', nacionalidad, 'Turquía', 'Italia' )
+&gt;&gt;&gt; print(paises)
+('España', ('Español', 'Turco', 'Italiano'), 'Turquía', 'Italia')
+</code></pre>
+<p>Añadir elementos a la tupla:</p>
+<pre><code>&gt;&gt;&gt; nacionalidad = ( 'Español', 'Turco', 'Italiano')
+&gt;&gt;&gt; paises = ( 'España', nacionalidad, 'Turquía', 'Italia' )
+&gt;&gt;&gt; paises += ('Francia', 'Munich')
+&gt;&gt;&gt; print(paises)
+('España', ('Español', 'Turco', 'Italiano'), 'Turquía', 'Italia', 'Francia', 'Munich')
+</code></pre>
+<p>Duplicar el <code>str</code> o caracter que obtengamos por un nº de veces:</p>
+<pre><code>&gt;&gt;&gt; nacionalidad = ( 'Español', 'Turco', 'Italiano')
+&gt;&gt;&gt; nacionalidad * 2
+('Español', 'Turco', 'Italiano', 'Español', 'Turco', 'Italiano')
+</code></pre>
+<p>Muestra el <code>str</code> que esté ubicada en una posición:</p>
+<pre><code>&gt;&gt;&gt; nacionalidad = ( 'Español', 'Turco', 'Italiano')
+&gt;&gt;&gt; print(nacionalidad[2])
+'Italiano'
+</code></pre>
+<p>Mostrar un conjunto de valores específicos de la tupla haciendo uso de su posición:</p>
+<pre><code>&gt;&gt;&gt; paises = ( 'España', nacionalidad, 'Turquía', 'Italia','Francia', 'Munich')
+&gt;&gt;&gt; print(paises[3:5])
+('Italia', 'Francia')
+</code></pre>
+<h2 id="listas">Listas</h2>
+<p>Grupo de valores representados dentro de unos [], se pueden cambiar de forma simple y sencilla.
+<em>Más info en la <a href="https://docs.python.org/3/library/stdtypes.html?highlight=list#list" target="blank">doc oficial de Python</em></a></p>
+<p>Declarando una lista:</p>
+<pre><code>&gt;&gt;&gt; animales = [ 'gato', 'perro', 'búho' ]
+</code></pre>
+<p>Añadir valores en la última posición de la lista, (<em>similar a la tupla</em>):</p>
+<pre><code>&gt;&gt;&gt; animales = [ 'gato', 'perro', 'búho' ]
+&gt;&gt;&gt; animales += [ 'lagartija', 'pez' ]
+&gt;&gt;&gt; print(animales)
+['gato', 'perro', 'búho', 'lagartija', 'pez']
+</code></pre>
+<p>También podemos utilizar <code>.extend()</code>:</p>
+<pre><code>&gt;&gt;&gt; animales = [ 'gato', 'perro', 'búho' ]
+&gt;&gt;&gt; animales.extend([ 'lagartija', 'pez' ])
+&gt;&gt;&gt; print(animales)
+['gato', 'perro', 'búho', 'lagartija', 'pez']
+</code></pre>
+<p>Por otro lado podemos añadir un valor a partir de una posición específica dentro de la lista <code>.insert()</code></p>
+<pre><code>&gt;&gt;&gt; animales = [ 'gato', 'perro', 'búho' ]
+&gt;&gt;&gt; animales.insert(0, 'lagartija')
+&gt;&gt;&gt; print(animales)
+['lagartija', 'gato', 'perro', 'búho']
+</code></pre>
+<p>Eliminar un valor de la lista:</p>
+<pre><code>&gt;&gt;&gt; animales = [ 'gato', 'perro', 'búho' ]
+&gt;&gt;&gt; animales.remove('gato')
+&gt;&gt;&gt; print(animales)
+[ 'perro', 'búho' ]
+</code></pre>
+<p>Multiplicar el nº veces los valores de la lista:</p>
+<pre><code>&gt;&gt;&gt; animales = [ 'gato', 'perro', 'búho' ]
+&gt;&gt;&gt; animales * 2
+['gato', 'perro', 'búho', 'gato', 'perro', 'búho']
+</code></pre>
+<p>Mostrar valores específicos utilizando la posición de dichos valores en la lista:</p>
+<pre><code>&gt;&gt;&gt; animales = [ 'gato', 'perro', 'búho' ]
+&gt;&gt;&gt; print(animales[0:2])
+['gato', 'perro']
+</code></pre>
+<h2 id="diccionarios">Diccionarios</h2>
+<p>Son un conjunto de valores que se almacenan en modo <em>clave:valor</em>, separados los valores por comas, y todas las claves y sus valores van encerrados en <code>{}</code> como JSON. Las claves no pueden contener tuplas, diccionarios, sets... solo <code>str</code> o <code>int</code>.
+<em>Más info en la <a href="https://docs.python.org/3/library/stdtypes.html?highlight=dictionary#dict" target="blank">doc oficial de Python</em></a></p>
+<pre><code>&gt;&gt;&gt; ciudades = { 'Andalucía': 'Sevilla', 'País Vasco': 'Bilbao', 'Baleares':'Palma' }
+</code></pre>
+<p>Accediendo a un valor del diccionario:</p>
+<pre><code>&gt;&gt;&gt; ciudades = { 'Andalucía': 'Sevilla', 'País Vasco': 'Bilbao', 'Baleares':'Palma' }
+&gt;&gt;&gt; print(ciudades['Andalucía'])
+Sevilla
+</code></pre>
+<p>Obtener el nº de posiciones de una lista:</p>
+<pre><code>&gt;&gt;&gt; ciudades = { 'Andalucía': 'Sevilla', 'País Vasco': 'Bilbao', 'Baleares':'Palma' }
+&gt;&gt;&gt; len(ciudades)
+3
+</code></pre>
+<p>Obtener las claves de un diccionario:</p>
+<pre><code>&gt;&gt;&gt; ciudades = { 'Andalucía': 'Sevilla', 'País Vasco': 'Bilbao', 'Baleares':'Palma' }
+&gt;&gt;&gt; ciudades.keys()
+dict_keys(['Andalucía', 'País Vasco', 'Baleares'])
+</code></pre>
+<p>Obtener los valores de un diccionario:</p>
+<pre><code>&gt;&gt;&gt; ciudades = { 'Andalucía': 'Sevilla', 'País Vasco': 'Bilbao', 'Baleares':'Palma' }
+&gt;&gt;&gt; ciudades.values()
+dict_values(['Sevilla', 'Bilbao', 'Palma'])
+</code></pre>
+<p>Obtener un valor de una clave del diccionario:</p>
+<pre><code>&gt;&gt;&gt; print(ciudades.get('Baleares'))
+</code></pre>
+<p>Eliminar un valor de una clave del diccionario:</p>
+<pre><code>del ciudades['Baleares']
+
+# Esto de volverá None.
+print(ciudades.get('Baleares'))
+</code></pre>
+<p>Cambiar el valor de una clave del diccionario:</p>
+<pre><code>ciudades['Baleares'] = 'Menorca'
+
+# Esto de volverá Menorca.
+print(ciudades.get('Baleares'))
+</code></pre>
+<h2 id="sets">Sets</h2>
+<p>Son un conjunto sin orden de valores encerrados en <code>{}</code> que se ordenan cuando se imprimen:
+<em>Más info en la <a href="https://docs.python.org/3.8/library/stdtypes.html#set-types-set-frozenset" target="blank">doc oficial de Python</em></a></p>
+<pre><code>&gt;&gt;&gt; marcas_coche = { 'Opel', 'Citröen', 'Tesla' }
+&gt;&gt;&gt; print(marcas_coche)
+{'Citröen', 'Opel', 'Tesla'}
+</code></pre>
+<p>Comparar 2 sets y mostrar los valores no duplicados de ambas listas</p>
+<pre><code>&gt;&gt;&gt; marcas_coche = { 'Opel', 'Citröen', 'Tesla' }
+&gt;&gt;&gt; marcas_moto = { 'Suzuki', 'Citröen', 'Tesla', 'Yamaha' }
+&gt;&gt;&gt; marcas_coche | marcas_moto
+{'Citröen', 'Opel', 'Suzuki', 'Tesla', 'Yamaha'}
+</code></pre>
+<p>Comparar 2 sets y mostrar los valores duplicados de ambas listas como sin repetirlos.</p>
+<pre><code>&gt;&gt;&gt; marcas_coche = { 'Opel', 'Citröen', 'Tesla' }
+&gt;&gt;&gt; marcas_moto = { 'Suzuki', 'Citröen', 'Tesla', 'Yamaha' }
+&gt;&gt;&gt; marcas_coche &amp; marcas_moto
+{'Citröen', 'Tesla'}
+</code></pre>
+<p>Comparar 2 sets y mostrar diferencias:</p>
+<pre><code>&gt;&gt;&gt; marcas_coche = { 'Opel', 'Citröen', 'Tesla' }
+&gt;&gt;&gt; marcas_moto = { 'Suzuki', 'Citröen', 'Tesla', 'Yamaha' }
+&gt;&gt;&gt; marcas_coche - marcas_moto
+{'Opel'}
+&gt;&gt;&gt; marcas_moto - marcas_coche
+{'Suzuki', 'Yamaha'}
+</code></pre>
+<p>Añadir un conjunto de valores a un set y que queden en primer lugar.</p>
+<pre><code>marcas_coche.update([[&quot;2&quot;,&quot;3&quot;,&quot;4&quot;])
+print(marcas_coche)
+{2, 3, 4, 'Opel', 'Citröen', 'Tesla'}
+</code></pre>
+<p>Añadir un valor al set</p>
+<pre><code>marcas_coche.add(&quot;Valor&quot;)
+print(marcas_coche)
+{2, 3, 4, 'Opel', 'Citröen', 'Tesla', 'Valor'}
+</code></pre>
+<p>Eliminar un valor del set</p>
+<pre><code>marcas_coche.remove(&quot;Opel&quot;)
+print(marcas_coche)
+{2, 3, 4, 'Citröen', 'Tesla', 'Valor'}
+</code></pre>
+<p>Imprimir dos sets en uno:</p>
+<pre><code>setA = {1,2,3,4,5}
+setB = {6,7,8,9,10}
+print(setA|setB)
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+</code></pre>
+<p>¡Ya sabemos trabajar mínimamente con estos tipos de datos en Python! En los próximos cursos veremos como trabajar con el control de flujo, es decir, añadiendo condicionales para encausar las decisiones imperativas de nuestro script o programa, y también como iterar diferentes tipos de valores mediante el uso de los bucles.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

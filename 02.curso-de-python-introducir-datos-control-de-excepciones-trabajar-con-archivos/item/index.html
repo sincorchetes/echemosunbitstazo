@@ -1,0 +1,509 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/02.curso-de-python-introducir-datos-control-de-excepciones-trabajar-con-archivos/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Curso de Python - Introducir datos, control de excepciones, trabajar con archivos - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-python-introducir-datos-control-de-excepciones-trabajar-con-archivos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Curso de Python - Introducir datos, control de excepciones, trabajar con archivos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="curso-de-python-introducir-datos-control-de-excepciones-trabajar-con-archivos">Curso de Python - Introducir datos, control de excepciones, trabajar con archivos</h1>
+<p>Bienvenidos al nuevo post del curso de Python, al terminar este post ya sabrás como introducir datos por el teclado, cómo gestionar el control de excepciones y mostrar lo que te interesa según el error y sobre todo, trabajar con archivos de texto. </p>
+<h1 id="obtener-datos-introducidos-por-el-usuario">Obtener datos introducidos por el usuario</h1>
+<p>Tenemos una función que es <code>input()</code> y podemos solicitar al usuario que introduzca un dato y que este se almacene en una variable, esto nos puede ayudar a dinamizar los programas interactuando con los usuarios:</p>
+<pre><code>input('Aquí va un mensaje')
+</code></pre>
+<p><strong>NOTA:</strong> Los datos introducidos se almacenan como un <code>str</code>, por lo que si quieres almacenar datos tipo <code>float</code>, <code>int</code> tendrás que usar la función de conversión que hemos hablado en el apartado de Tipos de datos en Python.
+Vamos hacer este ejemplo:</p>
+<pre><code>nombre = input(&quot;¿Cómo te llamas? &quot;)
+edad = int(input(&quot;¿Qué edad tienes? &quot;))
+print(&quot;Me llamo %s y tengo %i años.&quot; % (nombre,edad))
+</code></pre>
+<p>Imprimirá un resultado como:</p>
+<pre><code>¿Cómo te llamas? Alvaro
+¿Qué edad tienes? 26
+Me llamo Álvaro y tengo 26 años.
+</code></pre>
+<h1 id="control-de-excepciones">Control de excepciones</h1>
+<p>¿Qué ocurre si queremos ejecutar un código y depende de una serie de datos que no se han inicializado? No pasa nada, tenemos un mecanismo que controla las excepciones.</p>
+<h2 id="try-except"><code>try-except</code></h2>
+<pre><code>try:
+  # Bloque de código que se probará antes de ejecutar
+except:
+  # Bloque de código que se ejecutará si ocurre algún error.
+</code></pre>
+<p>Por ejemplo:</p>
+<pre><code>try:
+    print(a)
+except:
+    print(&quot;Hubo un problema.&quot;)
+</code></pre>
+<p>Esto nos imprimirá <code>Hubo un problema.</code> pero no nos dice en ningún momento dónde está el error. Evidentemente, el error es que la variable <code>a</code> no contiene ningún tipo de valor. Pero, ¿Qué ocurre si quiero personalizar estos errores y mostrar información según convenga?</p>
+<p>No pasa nada, podemos añadir excepciones por error, por ejemplo, si la variable <code>a</code> no existía, podemos crear una excepción que permita decir que no existe porque no está creada de la siguiente forma.</p>
+<ol>
+<li>Primero identificamos como se llama el error en Python:</li>
+</ol>
+<pre><code>print(A)
+Traceback (most recent call last):
+
+  File &quot;/tmp/untitled0.py&quot;, line 9, in &lt;module&gt;
+    print(a)
+
+NameError: name 'a' is not defined
+</code></pre>
+<p>El nombre del error que tenemos que utilizar es <code>NameError</code>.</p>
+<ol>
+<li>Definimos el <code>try-except</code> de la siguiente manera:</li>
+</ol>
+<pre><code>try:
+  print(a)
+except NameError:
+  print(&quot;La variable no se ha asignao, por favor, revisa el programa.&quot;)
+except:
+  print(&quot;Hubo un problema, contacte con el desarrollador de la aplicación.&quot;)
+</code></pre>
+<p>¿Se pueden definir múltiples errores y que impiman un mensaje?
+Sí que se puede, esto además nos permite ahorrar mucho código.</p>
+<pre><code>try:
+  pass
+except(NameError, TypeError, ValueError):
+  pass
+except:
+  pass
+</code></pre>
+<p>También podemos usar un alias e imprimir solo el mensaje de error:</p>
+<pre><code>try:
+  print(a)
+except(NameError, TypeError, ValueError) as EstoEsUnError:
+  print(EstoEsUnError)
+except:
+  pass
+</code></pre>
+<p>¿Para qué nos sirve esto? Para tener un mayor control en la validación e impresión de nuestro código. <code>EstoEsUnError</code> imprimirá: <code>NameError: name 'a' is not defined</code>, con este <code>str</code> podemos iniciar una validación on <code>if-elif-else</code>.</p>
+<h2 id="with"><code>with</code></h2>
+<p><code>with</code> es un método que permite realizar acciones que posteriormente necesitan limpiarse para que no queden restos en memoria, un ejemplo muy común y extendido es cuando se trabaja con archivos.</p>
+<pre><code>with open('nombreArchivo.ext', modo') as fichero:
+  # Bloque de código
+</code></pre>
+<p>Cuando abrimos el archivo de esta forma, aunque hayan problemas con el archivo, este termina cerrándose y dejando de existir en la memoria. Sin embargo, si trabajamos con el archivo de la siguiente forma, el archivo quedará en la memoria de forma casi indefinida en el tiempo generando datos basura:</p>
+<pre><code>fichero = open('nombreArchivo.ext','modo')
+</code></pre>
+<p>Además, de que hay que cerrarlo debidamente:</p>
+<pre><code>fichero.close()
+</code></pre>
+<p>En el siguiente punto trabajaremos más con los archivos, no nos alarmemos.</p>
+<p>Puedes consultar más información sobre este apartado en este <a href="https://docs.python.org/3/tutorial/errors.html" target="blank">hilo</a> de la documentación.</p>
+<h1 id="trabajando-con-archivos-en-python">Trabajando con archivos en Python</h1>
+<p>¿Qué podemos hacer en Python con los archivos? ¿Podemos trabajar con ellos?
+La cuestión es que sí, podemos abrir, leer, escribir o crear y eliminar archivos, las operaciones básicas que nos deja hacer un SO si estuvieramos en una shell como <code>bash</code> o <code>zsh</code>.</p>
+<h2 id="abriendo-un-archivo">Abriendo un archivo</h2>
+<p>La sintaxis que se utiliza es:</p>
+<pre><code>fichero = open(&quot;ruta del archivo&quot;, modo)
+</code></pre>
+<p>La sintaxis <strong>correcta</strong>,que <strong>debe usarse</strong> y que utilizaremos en estos ejemplos es:</p>
+<pre><code>with open(&quot;ruta del archivo&quot;, modo) as nombreFichero:
+  # Bloque de código
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="center">Modo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>r</code></td>
+<td>Lectura, es el valor por defecto, abre el archivo para que se pueda leer y da un error si el archivo no existe.</td>
+</tr>
+<tr>
+<td align="center"><code>a</code></td>
+<td>Abre un archivo para agregarle información al final, si no existe el archivo lo crea.</td>
+</tr>
+<tr>
+<td align="center"><code>w</code></td>
+<td>Sobreescribe cualquier contendio que haya en el archivo que esté abierto y/o crea el archivo si no existe.</td>
+</tr>
+<tr>
+<td align="center"><code>x</code></td>
+<td>Crea el archivo, si devuelve error quiere decir que ya existe.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="leer-archivo">Leer archivo</h2>
+<p>Creamos este archivo:</p>
+<pre><code>$ cd /home/$USER/
+$ cat &lt;&lt; EOF &gt;&gt; hola.txt
+&gt; Hola Mundo
+&gt; EOF
+</code></pre>
+<p>Si hacemos un <code>cat hola.txt</code> nos mostrará <code>Hola Mundo</code>.
+Bien, abrimos el archivo con Python</p>
+<pre><code>&gt;&gt;&gt; with open(&quot;hola.txt&quot;,&quot;r&quot;) as fichero:
+&gt;&gt;&gt;   fichero.read()
+Hola Mundo
+</code></pre>
+<p>Este método también permite decirle que nos imprima los n caracteres del principio del texto con <code>.read(4)</code>.</p>
+<h3 id="devuelve-una-linea">Devuelve una línea</h3>
+<p>Si tenemos un archivo con más líneas, podemos imprimirlas con <code>.readline()</code> en vez de <code>.read()</code>. Sin embargo, si queremos imprimir mas líneas, tenemos que llamar varias veces al método.</p>
+<pre><code>&gt;&gt;&gt; fichero.readline()
+&gt;&gt;&gt; fichero.readline()
+</code></pre>
+<h3 id="leer-el-archivo-completo">Leer el archivo completo</h3>
+<p>Con ayuda de un bucle <code>for</code> lo hacemos:</p>
+<pre><code>&gt;&gt;&gt; with open(&quot;ejemplo.txt&quot;, &quot;r&quot;) as fichero:
+&gt;&gt;&gt; for linea in fichero:
+&gt;&gt;&gt;   print(linea)
+</code></pre>
+<h3 id="creando-un-archivo-nuevo">Creando un archivo nuevo</h3>
+<p>Si el archivo existe, dará error.</p>
+<pre><code>&gt;&gt;&gt; with open(&quot;ejemplo.txt&quot;, &quot;x&quot;) as fichero:
+</code></pre>
+<p>Cuando terminemos de escribir en un archivo, lo cerramos para que no quede en memoria.</p>
+<pre><code>fichero.close()
+</code></pre>
+<h3 id="anadir-informacion-al-archivo">Añadir información al archivo</h3>
+<p>En esta línea añadimos el siguiente texto.</p>
+<pre><code>&gt;&gt;&gt; with open(&quot;hola.txt&quot;,&quot;a&quot;) as fichero:
+&gt;&gt;&gt; fichero.write(&quot;Esta es una línea de ejemplo&quot;)
+</code></pre>
+<p>Cuando terminemos de escribir en un archivo, lo cerramos para que no quede en memoria.</p>
+<pre><code>fichero.close()
+</code></pre>
+<h3 id="sobreescribir-en-el-archivo">Sobreescribir en el archivo</h3>
+<p>Sobreescribimos el archivo si lo abrimos con el modo <code>w</code>:</p>
+<pre><code>&gt;&gt;&gt; with open(&quot;hola.txt&quot;,&quot;w&quot;) as fichero:
+&gt;&gt;&gt; fichero.write(&quot;Te he sobreescrito el contenido con esta línea&quot;)
+</code></pre>
+<p>Cuando terminemos de escribir en un archivo, lo cerramos para que no quede en memoria.</p>
+<pre><code>fichero.close()
+</code></pre>
+<h3 id="eliminar-un-archivo">Eliminar un archivo</h3>
+<p>Hay que importar un módulo llamado <code>os</code>:</p>
+<pre><code>import os
+
+os.remove(&quot;hola.txt&quot;)
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,670 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/curso-de-python-tipos-de-operadores-e-introduccion-con-modulos/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Curso de Python - Tipos de operadores e introducción con módulos - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#curso-de-python-tipos-de-operadores-e-introduccion-con-modulos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Curso de Python - Tipos de operadores e introducción con módulos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="curso-de-python-tipos-de-operadores-e-introduccion-con-modulos">Curso de Python - Tipos de operadores e introducción con módulos</h1>
+<p>En esta entrega vamos a ver cómo trabajar con los diferentes operadores que tenemos disponibles en Python, ¡que no son pocos! y además lo justo para trabajar con módulos.</p>
+<h1 id="tipos-de-operadores">Tipos de operadores</h1>
+<p>En Python tenemos varios tipos de oepradores para hacer comparaciones, cálculos, valorar expresiones lógicas....
+* Aritmético
+* Asignación
+* Comparación
+* Lógico
+* Bit a bit (<em>bitwise</em>)
+* Identidad
+* Membresía</p>
+<h2 id="aritmeticos">Aritméticos</h2>
+<p>Se utiliza para realizar operaciones matemáticas y se utilizando dos operandos para llevarlas a cabo.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operador</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">+</td>
+<td>Se utiliza para realizar operaciones de adicción (suma)</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td>Operaciones de sustracción (resta)</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>Multiplicación</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td>División (cociente)</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td>Módulo (<em>resto de una división</em>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adiccion">Adicción</h3>
+<pre><code>&gt;&gt;&gt; 2 + 3
+5
+</code></pre>
+<h3 id="sustraccion">Sustracción</h3>
+<pre><code>&gt;&gt;&gt; 1 - 2
+-1
+</code></pre>
+<h3 id="multiplicacion">Multiplicación</h3>
+<pre><code>&gt;&gt;&gt; 2 * 1
+2
+</code></pre>
+<h3 id="division-cociente">División (cociente)</h3>
+<pre><code>&gt;&gt;&gt; 4 / 2
+0
+</code></pre>
+<h3 id="modulo-resto-de-una-division">Módulo, (<em>resto de una división</em>)</h3>
+<pre><code>&gt;&gt;&gt; 4 % 2
+2.0
+</code></pre>
+<h2 id="operadores-de-asignacion">Operadores de asignación</h2>
+<p>Estos operadores permiten asignar valores, por norma general a variables, pero no olvidemos que podemos involucrar otros tipos de identificadores como pueden ser listas, tuplas...</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operador</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">=</td>
+<td>Asigna un valor</td>
+</tr>
+<tr>
+<td align="center">+=</td>
+<td>Suma un valor al valor actual y guardar el nuevo valor</td>
+</tr>
+<tr>
+<td align="center">-=</td>
+<td>Resta un valor al valor actual y guardar el nuevo valor</td>
+</tr>
+<tr>
+<td align="center">*=</td>
+<td>Multiplica un valor al valor actual y guardar el nuevo valor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="igual">Igual (=)</h3>
+<pre><code>&gt;&gt;&gt; variable = 10
+&gt;&gt;&gt; print(variable)
+10
+</code></pre>
+<h3 id="mas-e-igual">Más e igual (+=)</h3>
+<pre><code>&gt;&gt;&gt; variable = 1
+&gt;&gt;&gt; variable += 2
+&gt;&gt;&gt; print(variable)
+3
+</code></pre>
+<h3 id="menos-e-igual-">Menos e igual (-=)</h3>
+<pre><code>&gt;&gt;&gt; variable = 1
+&gt;&gt;&gt; variable -= 2
+&gt;&gt;&gt; print(variable)
+-1
+</code></pre>
+<h3 id="multiplicar-e-igual">Multiplicar e igual (*=)</h3>
+<pre><code>&gt;&gt;&gt; variable = 2
+&gt;&gt;&gt; variable *= 2
+&gt;&gt;&gt; print(variable)
+4
+</code></pre>
+<h2 id="operadores-de-comparacion">Operadores de comparación</h2>
+<p>Estos operadores te permiten realizar una comparación entre dos valores, son muy utilizados en los condicionales o en validaciones como pueden ser bucles...etc. Además, los valores comparados devuelven un <code>True</code> o un <code>False</code> (<em>booleano</em>) si la comparación se cumple o no.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operador</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">&lt;</td>
+<td>Menor que</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td>Mayor que</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td>Menor o igual que</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td>Mayor o igual que</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td>Distinto de</td>
+</tr>
+</tbody>
+</table>
+<h3 id="menor-que">Menor que</h3>
+<pre><code>&gt;&gt;&gt; 1 &lt; 2
+True
+</code></pre>
+<h3 id="mayor-que">Mayor que</h3>
+<pre><code>&gt;&gt;&gt; 1 &gt; 2
+False
+</code></pre>
+<h3 id="menor-igual-que">Menor igual que</h3>
+<pre><code>&gt;&gt;&gt; 1 &lt;= 2
+True
+</code></pre>
+<h3 id="mayor-igual-que">Mayor igual que</h3>
+<pre><code>&gt;&gt;&gt; 1 &gt;= 2
+False
+</code></pre>
+<h3 id="distinto-de">Distinto de</h3>
+<pre><code>&gt;&gt;&gt; 1 != 2
+True
+</code></pre>
+<h2 id="operadores-logicos">Operadores lógicos</h2>
+<p>Estos permiten realizar operaciones lógicas y devuelven <code>True</code> o <code>False</code> según el resultado.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operador</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>and</code></td>
+<td>Deben cumplirse las condiciones sí o sí</td>
+</tr>
+<tr>
+<td align="center"><code>or</code></td>
+<td>Debe cumplir al menos una de las condiciones evaluadas</td>
+</tr>
+<tr>
+<td align="center"><code>not</code></td>
+<td>Devuelve <code>False</code> si el resultado es verdadero</td>
+</tr>
+</tbody>
+</table>
+<h3 id="and"><code>and</code></h3>
+<pre><code>&gt;&gt;&gt; 1&lt;2 and 2&lt;3
+True
+&gt;&gt;&gt; x = 100 &lt; 20 and 2&gt;3
+&gt;&gt;&gt;print(x)
+False
+</code></pre>
+<h3 id="or"><code>or</code></h3>
+<pre><code>&gt;&gt;&gt; 1&lt;2 and 100&gt;100
+True
+</code></pre>
+<h3 id="not"><code>not</code></h3>
+<pre><code>&gt;&gt;&gt; not(2 != 100 and 90&lt;200)
+False
+</code></pre>
+<h2 id="operadores-bitwise">Operadores <em>bitwise</em></h2>
+<table>
+<thead>
+<tr>
+<th align="center">Operadores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">&amp;</td>
+<td>Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº. Cuando se encuentra 1 bit en el primer nº, y en el segundo también, se establece 1. Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 0.</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td>Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº. Cuando se encuentra 1 bit en el primer nº, y en el segundo también, se establece 1. Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 1.</td>
+</tr>
+<tr>
+<td align="center">&gt;&gt;</td>
+<td>Convierte el primer y segundo nº decimal en nº binarios, compara ambos nº. Cuando se encuentra 1 bit en el segundo nº, y se desplaza el bit en el segundo también, se establece 1. Cuando se encuentra 1 bit en el primer nº y un 0 en el segundo también se establece un 1.</td>
+</tr>
+<tr>
+<td align="center">&lt;&lt;</td>
+<td>Lo anterior pero desde la izquierda</td>
+</tr>
+<tr>
+<td align="center">~</td>
+<td>Devuelve el complemento del nº menos el nº que obtenemos cambiado cada 1 por un 0 y un 0 por un 1. Es lo mismo que -nº-1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ampersan">Ampersan (&amp;)</h3>
+<pre><code>&gt;&gt;&gt; 7 &amp; 2
+2
+</code></pre>
+<p>¿Por qué nos devuelve 2?
+Si nosotros pasamos a binario ambos números:</p>
+<pre><code>7 = 0 0 0 0 0 1 1 1
+2 = 0 0 0 0 0 0 1 0
+</code></pre>
+<p>Cuando coincida el 1 del primer valor, con el 1 del segundo quedará como 1. Si el primer valor hay un 0 y en el segundo hay 1, se quedará el 0 por encima del 1 quedando tal que así:</p>
+<pre><code>0 0 0 0 0 1 1 1
+0 0 0 0 0 0 1 0
+---------------------
+0 0 0 0 0 0 1 0
+</code></pre>
+<p>Si conviertes este número binario a decimal te dará 2.</p>
+<h3 id="tuberia-o-pipe">Tubería o <em>pipe</em></h3>
+<pre><code>&gt;&gt;&gt; 190 | 9
+191
+</code></pre>
+<p>¿Por qué nos devuelve 191?
+Si nosotros pasamos a binario ambos números:</p>
+<pre><code>190 = 1 0 1 1 1 1 1 0
+9 = 0 0 0 0 1 0 0 1
+</code></pre>
+<p>Cuando coincida el 1 del primer valor, con el 1 del segundo quedará como 1. Si el primer valor hay un 0 y en el segundo hay 1, se quedará el 1 por encima del 0 quedando tal que así:</p>
+<pre><code>1 0 1 1 1 1 1 0
+0 0 0 1 0 0 0 1
+---------------------
+1 0 1 1 1 1 1 1
+</code></pre>
+<p>Si conviertes este número binario a decimal te dará 191.
+PENDIENTE DE REVISAR</p>
+<h3 id="desplazamiento-hacia-la-derecha-o-shift-to-right">Desplazamiento hacia la derecha o (<em>shift-to-right</em>)</h3>
+<pre><code>&gt;&gt;&gt; 10 &gt;&gt; 2
+2
+</code></pre>
+<p>¿Por qué nos devuelve 2?</p>
+<p>Si pasas el nº 10 a binario:</p>
+<pre><code>10 = 0 0 0 0 1 0 1 0
+</code></pre>
+<p>Desplazas 2 posiciones añadiendo dos ceros hacia la derecha, y te quedaría:</p>
+<pre><code>0 0 0 0 0 0 1 0
+</code></pre>
+<p>Si conviertes este número binario a decimal te dará 2.</p>
+<h3 id="desplazamiento-hacia-la-izquierda-o-shift-to-left">Desplazamiento hacia la izquierda o (<em>shift-to-left</em>)</h3>
+<p>Este procedimiento es el mismo que el anterior, pero hacia el otro lado.</p>
+<pre><code>&gt;&gt;&gt; 10 &lt;&lt; 2
+40
+</code></pre>
+<p>¿Por qué devuelve 2?</p>
+<p>Si pasas a binario el nº 10:</p>
+<pre><code>10 = 0 0 0 0 1 0 1 0
+</code></pre>
+<p>Desplazas 2 posiciones añadiendo dos ceros hacia la izquierda, y te quedaría:</p>
+<pre><code>0 0 1 0 1 0 0 0
+</code></pre>
+<p>Si conviertes este número binario a decimal te dará 40.</p>
+<h3 id="inversion-bitwise">Inversión bitwise</h3>
+<pre><code>&gt;&gt;&gt; ~100
+-101
+</code></pre>
+<p>¿Por qué devuelve -101?</p>
+<p>Devuelve el complemento del nº menos el nº que obtenemos cambiado cada 1 por un 0 y un 0 por un 1. Es lo mismo que -nº-1</p>
+<h2 id="operador-de-identidad">Operador de identidad</h2>
+<p>Prueba si dos operandos comparten una identidad. Aquí hay dos tipos de operadores <code>is</code> e <code>is not</code>.</p>
+<h3 id="is"><code>is</code></h3>
+<p>Por ejemplo, comparamos si un valor almacenado en x es igual a su valor.</p>
+<pre><code>&gt;&gt;&gt; x = 10
+&gt;&gt;&gt; x is 10
+True
+</code></pre>
+<h3 id="is-not"><code>is not</code></h3>
+<p>Aquí utilizamos el ejemplo anterior pero a la inversa.</p>
+<pre><code>&gt;&gt;&gt; x = 10
+&gt;&gt;&gt; x is not 10
+False
+</code></pre>
+<h2 id="operadores-de-membresia">Operadores de membresía</h2>
+<p>Estos operadores permiten verificar si hay un <code>str</code> en otro <code>str</code>, <code>lista</code>, <code>diccionario</code>, <code>tupla</code>... (<em>estos 3 últimos los verás más adelante</em>). Se utiliza <code>in</code> para buscar y devolver <code>True</code> si encuentra dicho <code>str</code>, o, <code>not in</code> para verificar que no está.</p>
+<h3 id="in"><code>in</code></h3>
+<pre><code>&gt;&gt;&gt; &quot;echemos&quot; in &quot;echemos un bitstazo&quot;
+True
+</code></pre>
+<h3 id="not-in"><code>not in</code></h3>
+<pre><code>&gt;&gt;&gt; &quot;.es&quot; not in &quot;echemos un bitstazo&quot;
+True
+</code></pre>
+<h1 id="modulos">Módulos</h1>
+<p>¿Qué son los módulos? Los módulos son fragmentos de código que contienen librerías... que elaboran otros usuarios o que ya vienen integradas con Python. Hay muchos módulos que vienen ya pre-instalados en el sistema como pueden ser <code>os</code> que permite interactuar con el sistema operativo; <code>subprocess</code> que permite ejecutar comandos de shell; <code>json</code> con el que podremos trabajar con archivos o salidas JSON...</p>
+<h2 id="como-cargar-este-codigo">¿Cómo cargar este código?</h2>
+<p>El código de los módulos puede cargarse utilizando la palabra <code>import</code>, como en el siguiente ejemplo:</p>
+<pre><code>&gt;&gt;&gt; import json
+</code></pre>
+<p>También podemos cargar parte del código de los módulos como por ejemplo <code>random</code> es un módulo que contiene métodos y propiedades. Podemos cargar solo uno de los métodos que tienes como es <code>.random()</code> y asignarle un alias para trabajar con él como en le siguiente ejemplo:</p>
+<pre><code>&gt;&gt;&gt; from random import random as GenerarAleatorio
+&gt;&gt;&gt; GenerarAleatorio()
+0.9037083824066462
+</code></pre>
+<h3 id="que-pasa-si-no-me-se-las-propiedades-o-metodos-de-un-modulo">¿Qué pasa si no me sé las propiedades o métodos de un módulo?</h3>
+<p>No pasa nada, puedes revisar siempre la documentación de Python pulsando <a href="https://docs.python.org/3/" target="blank" >aquí.</a></p>
+<p>Espero que os haya gustado esta entrega, para la próxima, trabajaremos con listas, tuplas, sets y diccionarios.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/instalando-mongodb-en-centos-8/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Instalando MongoDB en CentOS 8 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instalando-mongodb-en-centos-8" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalando MongoDB en CentOS 8
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../about.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://example.com/" class="md-tabs__link">
+      Issue Tracker
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://example.com/" class="md-nav__link">
+        Issue Tracker
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="instalando-mongodb-en-centos-8">Instalando MongoDB en CentOS 8</h1>
+<p>Bueno, antes de entrar en materia quiero comentar que las instrucciones que hay aquí descritas se han obtenido de la <a href="https://docs.mongodb.com/manual" target="blank">documentación oficial de MongoDB</a> y las he probado personalmente para asegurar que funciona este procedimiento.</p>
+<p><img alt="Imagen obtenida de MongoDB.com" src="../MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png" /></p>
+<p>Para empezar, MongoDB es una base de datos (<em>NoSQL</em>) orientada a documentos y utiliza un formato de intercambio de datos llamado <a href="https://docs.mongodb.com/manual/reference/bson-types/" target="blank">BSON</a> que es una representación binaria de estructuras de datos y mapas JSON. Sin más tapujos, entraremos al trapo.</p>
+<h1 id="requisitos-previos">Requisitos previos</h1>
+<p><strong>Importante</strong>: Sacar un snapshot o copia de seguridad antes de comenzar:</p>
+<ul>
+<li>Actualizamos el SO antes de comenzar:</li>
+</ul>
+<pre><code># dnf upgrade -y
+</code></pre>
+<ul>
+<li><strong>NOTA:</strong> Reiniciamos si hemos aplicado un nuevo kernel o systemd antes de proceder.</li>
+</ul>
+<h1 id="instalando-mongodb">Instalando MongoDB</h1>
+<ul>
+<li>Creamos el siguiente archivo <code>/etc/yum.repos.d/mongodb-org-4.2.repo</code> y añadimos las siguientes líneas:</li>
+</ul>
+<pre><code>[mongodb-org-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+</code></pre>
+<ul>
+<li>Refrescamos los repositorios:</li>
+</ul>
+<pre><code># dnf check-update
+</code></pre>
+<ul>
+<li>Instalamos el servidor y la consola de acceso:</li>
+</ul>
+<pre><code># dnf install -y mongodb-org
+</code></pre>
+<ul>
+<li>MongoDB por defecto, almacenará todo su contenido en los directorios:</li>
+<li><code>/var/lib/mongo</code> ----&gt; Directorio de datos</li>
+<li>
+<p><code>/var/lib/mongodb</code> --&gt; Directorio de registros</p>
+</li>
+<li>
+<p>Si queremos hacer alguna modificación, la configuración está en: <code>/etc/mongod.conf</code> hay que recordar, que MongoDB se ejecuta utilizando el <code>usuario:grupo</code> <code>mongod:mongod</code>. Por lo tanto,
+si hacemos alguna modificación en las rutas, tendremos que cambiar su <code>$HOME</code>, y otorgarle los permisos correspondientes <code>usuario:grupo</code> a los nuevos directorios. Y también actualizar la definición de los mismos en el fichero de configuración. </p>
+</li>
+</ul>
+<p><strong>NOTA:</strong> Es mejor tener un FS separado de <code>/</code> para evitar el colapso del mismo cuando hay mucha información almacenada, porque evitaría que el sistema no pudiera trabajar correctamente forzando un reinicio.</p>
+<ul>
+<li>Comprobar el servicio que esté parado</li>
+</ul>
+<pre><code>$ systemctl status mongod.service
+● mongod.service - MongoDB Database Server
+   Loaded: loaded (/usr/lib/systemd/system/mongod.service; enabled; vendor pres&gt;
+   Active: inactive (dead)
+     Docs: https://docs.mongodb.org/manual
+</code></pre>
+<h1 id="gestionando-los-permisos-de-selinux">Gestionando los permisos de SELinux</h1>
+<p>Como ya he mencionado en un par de artículos anteriores, SELinux es un conjunto de políticas de seguridad que trabajan junto con el núcleo de Linux e impiden que se ejecuten exploits o malware que pueda afectar a la seguridad de la máquina. Esta modificación que vamos a implementar, permitirá a MongoDB acceder a <code>/sys/fs/cgroup</code> para que pueda identificar cuánta memoria hay disponible en el sistema.</p>
+<ul>
+<li>Asegurándonos de que el paquete <code>checkpolicy</code> está instalado en nuestro sistema:</li>
+</ul>
+<pre><code># dnf install checkpolicy
+</code></pre>
+<p><strong>NOTA</strong>: Si lo tienes instalado saldrá una salida tal que así:</p>
+<pre><code>Last metadata expiration check: 0:11:28 ago on Wed 13 May 2020 11:06:20 PM CEST.
+Package checkpolicy-2.9-1.el8.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+</code></pre>
+<ul>
+<li>Creamos un fichero de políticas llamado <code>mongodb_cgroup_memory.te</code>:</li>
+</ul>
+<pre><code># cat &gt; mongodb_cgroup_memory.te &lt;&lt;EOF
+module mongodb_cgroup_memory 1.0;
+
+require {
+  type cgroup_t;
+  type mongod_t;
+  class dir search;
+  class file { getattr open read };
+}
+
+#============= mongod_t ==============
+allow mongod_t cgroup_t:dir search;
+allow mongod_t cgroup_t:file { getattr open read };
+EOF
+</code></pre>
+<ul>
+<li>Compilamos y cargamos este módulo de políticas:</li>
+</ul>
+<pre><code># checkmodule -M -m -o mongodb_cgroup_memory.mod mongodb_cgroup_memory.te
+# semodule_package -o mongodb_cgroup_memory.pp -m mongodb_cgroup_memory.mod
+# semodule -i mongodb_cgroup_memory.pp
+</code></pre>
+<ul>
+<li>
+<p>Creamos un servicio que deshabilite el THP (<em>Transparent Huge Pages</em>) <code>/etc/systemd/system/disable-transparent-huge-pages.service</code></p>
+</li>
+<li>
+<p><strong>NOTA</strong>: Según MongoDB en su documentación, comentan que deshabilitar este sistema de administración de memoria de Linux, reducirá la sobrecarga de las búsquedas de búfer de traducción (TLB) en máquinas con grandes cantidades de memoria mediante el uso de páginas de memoria más grandes. Por lo visto, MongoDB funciona mal con este sistema y se recomienda deshabilitarlo.</p>
+</li>
+</ul>
+<pre><code>[Unit]
+Description=Disable Transparent Huge Pages (THP)
+DefaultDependencies=no
+After=sysinit.target local-fs.target
+Before=mongod.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'echo never | tee /sys/kernel/mm/transparent_hugepage/enabled &gt; /dev/null'
+
+[Install]
+WantedBy=basic.target
+</code></pre>
+<ul>
+<li>Iniciamos y habilitamos el servicio <code>disable-transparent-huge-pages.service</code></li>
+</ul>
+<pre><code># systemctl enable --now disable-transparent-huge-pages.service
+</code></pre>
+<ul>
+<li><strong>NOTA</strong>: Si hacemos un <code>status</code> del servicio <code>disable-transparent-huge-pages.service</code> veremos que está <code>inactive</code>, esto es porque
+los servicios tipos <code>oneshot</code> solo ejecutan una acción cuando se inician, y se paran cuando el proceso termina. Si queremos comprobar que ha cambiado
+el valor en el <code>/sys/kernel/mm/transparent_hugepage/enabled</code>.</li>
+</ul>
+<pre><code>$ cat /sys/kernel/mm/transparent_hugepage/enabled
+</code></pre>
+<ul>
+<li>Iniciamos el servicio de MongoDB</li>
+</ul>
+<pre><code># systemctl start mongod.service
+</code></pre>
+<ul>
+<li>Verificando que el servicio está funcionando</li>
+</ul>
+<pre><code>$ systemctl status mongod.service
+● mongod.service - MongoDB Database Server
+   Loaded: loaded (/usr/lib/systemd/system/mongod.service; enabled; vendor pres&gt;
+   Active: active (running) since Wed 2020-05-13 20:24:38 CEST; 2min 34s ago
+     Docs: https://docs.mongodb.org/manual
+  Process: 13799 ExecStart=/usr/bin/mongod $OPTIONS (code=exited, status=0/SUCC&gt;
+  Process: 13797 ExecStartPre=/usr/bin/chmod 0755 /var/run/mongodb (code=exited&gt;
+  Process: 13795 ExecStartPre=/usr/bin/chown mongod:mongod /var/run/mongodb (co&gt;
+  Process: 13794 ExecStartPre=/usr/bin/mkdir -p /var/run/mongodb (code=exited, &gt;
+ Main PID: 13802 (mongod)
+   Memory: 79.0M
+   CGroup: /system.slice/mongod.service
+           └─13802 /usr/bin/mongod -f /etc/mongod.conf
+May 13 20:24:37 test systemd[1]: Starting MongoDB Database Server...
+May 13 20:24:37 test mongod[13799]: about to fork child process, waiting until &gt;
+May 13 20:24:37 test mongod[13799]: forked process: 13802
+May 13 20:24:38 test mongod[13799]: child process started successfully, parent &gt;
+May 13 20:24:38 test systemd[1]: Started MongoDB Database Server.
+</code></pre>
+<ul>
+<li>Habilitando el servicio al arranque del sistema</li>
+</ul>
+<pre><code># systemctl enable mongod.service
+</code></pre>
+<h1 id="habilitando-el-control-de-acceso-de-usuarios-basado-en-roles-o-rbac">Habilitando el control de acceso de usuarios basado en roles o RBAC</h1>
+<p>A pesar de que MongoDB no permite aceptar conexiones remotas (se puede configurar editando <code>/etc/mongod.conf</code> en la directiva <code>bindIp</code>), no hay un sistema de control de acceso configurado por defecto, por lo que vamos a configurarlo aquí.</p>
+<ul>
+<li>Comprobamos que la instancia de Mongo está levantada:</li>
+</ul>
+<pre><code>$ ps -e| grep 'mongod'
+</code></pre>
+<p>Veremos una salida tal que así:</p>
+<pre><code>13802 ?        00:00:48 mongod
+</code></pre>
+<ul>
+<li>Nos conectamos al SGBD</li>
+</ul>
+<pre><code>mongo --host 127.0.0.1 --port 27017
+</code></pre>
+<ul>
+<li>Veremos un mensaje como este:</li>
+</ul>
+<pre><code>MongoDB shell version v4.2.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&amp;gssapiServiceName=mongodb
+Implicit session: session { &quot;id&quot; : UUID(&quot;2f1c42a5-ed69-4535-a84d-3cf14489ac86&quot;) }
+MongoDB server version: 4.2.6
+Server has startup warnings: 
+2020-05-14T19:10:57.742+0200 I  CONTROL  [initandlisten] 
+2020-05-14T19:10:57.742+0200 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2020-05-14T19:10:57.742+0200 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2020-05-14T19:10:57.742+0200 I  CONTROL  [initandlisten] 
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+</code></pre>
+<ul>
+<li>Cambiamos a la base de datos de admin</li>
+</ul>
+<pre><code>use admin
+</code></pre>
+<ul>
+<li>Creamos el usuario <code>root</code> con el método <code>db.createUser()</code></li>
+</ul>
+<pre><code>db.createUser(
+  {
+    user: &quot;superuser&quot;,
+    pwd: &quot;cambiameEstaPwdConUnaMasFuerte&quot;,
+    roles: [ &quot;root&quot; ]
+  }
+)
+</code></pre>
+<ul>
+<li>Obtendremos una salida como esta:</li>
+</ul>
+<pre><code>Successfully added user: { &quot;user&quot; : &quot;superuser&quot;, &quot;roles&quot; : [ &quot;root&quot; ] }
+</code></pre>
+<ul>
+<li>Mostramos los usuarios:</li>
+</ul>
+<pre><code>show users
+</code></pre>
+<ul>
+<li>Obtendremos un solo usuario que es el que utilizaremos para administrar MongoDB</li>
+</ul>
+<pre><code>{
+    &quot;_id&quot; : &quot;admin.superuser&quot;,
+    &quot;userId&quot; : UUID(&quot;40f946bd-5740-42b1-a89b-811a41a10150&quot;),
+    &quot;user&quot; : &quot;superuser&quot;,
+    &quot;db&quot; : &quot;admin&quot;,
+    &quot;roles&quot; : [
+        {
+            &quot;role&quot; : &quot;root&quot;,
+            &quot;db&quot; : &quot;admin&quot;
+        }
+    ],
+    &quot;mechanisms&quot; : [
+        &quot;SCRAM-SHA-1&quot;,
+        &quot;SCRAM-SHA-256&quot;
+    ]
+}
+</code></pre>
+<ul>
+<li>Apagamos la DB desde la shell</li>
+</ul>
+<pre><code>&gt; db.shutdownServer()
+&gt; exit
+</code></pre>
+<ul>
+<li>Editamos el archivo <code>/etc/mongod.conf</code> y añadimos las siguientes líneas debajo del apartado <code># network interfaces</code>:</li>
+</ul>
+<pre><code>security:
+  authorization: enabled
+</code></pre>
+<ul>
+<li>Reiniciamos el servicio</li>
+</ul>
+<pre><code># systemctl restart mongod.service
+</code></pre>
+<ul>
+<li>Accedemos</li>
+</ul>
+<pre><code>$ mongo --host 127.0.0.1 --port 27017
+</code></pre>
+<ul>
+<li>Notaremos que ya no nos aparece el mensaje de advertencia de que el RBAC no está habilitado:</li>
+</ul>
+<pre><code>MongoDB shell version v4.2.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&amp;gssapiServiceName=mongodb
+Implicit session: session { &quot;id&quot; : UUID(&quot;6ffb9ae6-6a13-42a1-b7f7-046d60085e86&quot;) }
+MongoDB server version: 4.2.6
+</code></pre>
+<ul>
+<li>Tratamos de apagar la DB</li>
+</ul>
+<pre><code>&gt; use admin
+&gt; db.shutdownServer()
+2020-05-14T19:21:32.489+0200 E  QUERY    [js] Error: shutdownServer failed: {
+    &quot;ok&quot; : 0,
+    &quot;errmsg&quot; : &quot;command shutdown requires authentication&quot;,
+    &quot;code&quot; : 13,
+    &quot;codeName&quot; : &quot;Unauthorized&quot;
+} :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+DB.prototype.shutdownServer@src/mongo/shell/db.js:426:19
+@(shell):1:1
+</code></pre>
+<ul>
+<li>Ahora vemos que no se ha apagado la DB, para conectarnos con el usuario que hemos creado:</li>
+</ul>
+<pre><code>$ mongo --host 127.0.0.1 --port 27017 --username superuser
+MongoDB shell version v4.2.6
+Enter password: 
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&amp;gssapiServiceName=mongodb
+Implicit session: session { &quot;id&quot; : UUID(&quot;c82db55b-3170-493b-9bf5-7be269539025&quot;) }
+MongoDB server version: 4.2.6
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+&gt; 
+</code></pre>
+<p>En este post hemos aprendido a:
+* Qué es MongoDB
+* Cómo instalar MongoDB en CentOS
+* Cómo mejorar la integridad con el ecosistema de CentOS (SELinux, y THP)
+* Habilitar un sistema de RBAC en MongoDB para securizar el SDGB</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>
