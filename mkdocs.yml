@@ -2,3 +2,7 @@ site_name: My Docs
 site_url: https://sincorchetes.github.io/echemosunbitstazo
 theme:
   name: material
+nav:
+    - Introduction: 'index.md'
+    - 'about.md'
+    - 'Issue Tracker': 'https://example.com/'
