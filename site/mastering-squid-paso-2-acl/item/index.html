@@ -1,0 +1,3600 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://sincorchetes.github.io/echemosunbitstazo/mastering-squid-paso-2-acl/item/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+    
+    
+      
+        <title>Mastering Squid - ACL - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mastering-squid-acl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastering Squid - ACL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        01.curso de python imprimir valores y funciones
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="01.curso de python imprimir valores y funciones" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          01.curso de python imprimir valores y funciones
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01.curso-de-python-imprimir-valores-y-funciones/item/" class="md-nav__link">
+        Curso de Python - Imprimir valores y funciones
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        02.curso de python introducir datos control de excepciones trabajar con archivos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="02.curso de python introducir datos control de excepciones trabajar con archivos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          02.curso de python introducir datos control de excepciones trabajar con archivos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02.curso-de-python-introducir-datos-control-de-excepciones-trabajar-con-archivos/item/" class="md-nav__link">
+        Curso de Python - Introducir datos, control de excepciones, trabajar con archivos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        03.curso de python fecha y hora
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="03.curso de python fecha y hora" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          03.curso de python fecha y hora
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03.curso-de-python-fecha-y-hora/item/" class="md-nav__link">
+        Curso de Python - Fecha y hora
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        04.curso de python introducción programacion orientada a objetos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="04.curso de python introducción programacion orientada a objetos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          04.curso de python introducción programacion orientada a objetos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04.curso-de-python-introducci%C3%B3n-programacion-orientada-a-objetos/item/" class="md-nav__link">
+        Curso de Python - Introducción a la programación orientada a objetos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        05.curso de python herencia
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="05.curso de python herencia" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          05.curso de python herencia
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05.curso-de-python-herencia/item/" class="md-nav__link">
+        Curso de Python - Herencia
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        06.curso de python encapsulamiento
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="06.curso de python encapsulamiento" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          06.curso de python encapsulamiento
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06.curso-de-python-encapsulamiento/item/" class="md-nav__link">
+        Curso de Python - Encapsulamiento y polimorfismo
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Actualiza de fedora 31 a fedora 32
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Actualiza de fedora 31 a fedora 32" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Actualiza de fedora 31 a fedora 32
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actualiza-de-fedora-31-a-fedora-32/item/" class="md-nav__link">
+        Actualiza de Fedora 31 a Fedora 32
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Automatizar con ansible es la clave
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Automatizar con ansible es la clave" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Automatizar con ansible es la clave
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../automatizar-con-ansible-es-la-clave/item/" class="md-nav__link">
+        Automatizar con Ansible es la clave
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Cambiando interfaz qtconfig
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cambiando interfaz qtconfig" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Cambiando interfaz qtconfig
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cambiando-interfaz-qtconfig/item/" class="md-nav__link">
+        Ajustando la apariencia en aplicaciones Qt
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Como anadir rpmfusion en fedora
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Como anadir rpmfusion en fedora" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Como anadir rpmfusion en fedora
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como-anadir-rpmfusion-en-fedora/item/" class="md-nav__link">
+        Como añadir RPM Fusion en Fedora
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Como clonar discos duros en linux usando clonezilla
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Como clonar discos duros en linux usando clonezilla" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Como clonar discos duros en linux usando clonezilla
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como-clonar-discos-duros-en-linux-usando-clonezilla/item/" class="md-nav__link">
+        Como clonar discos duros en Linux usando Clonezilla
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Como crear tu propio repo en centos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Como crear tu propio repo en centos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Como crear tu propio repo en centos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como-crear-tu-propio-repo-en-centos/item/" class="md-nav__link">
+        Como crear tu propio repositorio en CentOS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        Como gestionar software en linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Como gestionar software en linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Como gestionar software en linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como-gestionar-software-en-linux/item/" class="md-nav__link">
+        ¿Cómo gestionar el software en Linux?
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+      
+      <label class="md-nav__link" for="__nav_15">
+        Como instalar packet tracer en linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Como instalar packet tracer en linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          Como instalar packet tracer en linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como-instalar-packet-tracer-en-linux/item/" class="md-nav__link">
+        Como instalar Packet Tracer 7.3 en Linux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+      
+      <label class="md-nav__link" for="__nav_16">
+        Como obtener ayuda sistemas unix like
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Como obtener ayuda sistemas unix like" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          Como obtener ayuda sistemas unix like
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como-obtener-ayuda-sistemas-unix-like/item/" class="md-nav__link">
+        Como obtener ayuda en sistemas UNIX-like
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17" type="checkbox" id="__nav_17" >
+      
+      <label class="md-nav__link" for="__nav_17">
+        Como solucionar el problema de vivaldi netflix en linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Como solucionar el problema de vivaldi netflix en linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_17">
+          <span class="md-nav__icon md-icon"></span>
+          Como solucionar el problema de vivaldi netflix en linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../como-solucionar-el-problema-de-vivaldi-netflix-en-linux/item/" class="md-nav__link">
+        Como solucionar el problema de Netflix y Vivaldi en Linux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18" type="checkbox" id="__nav_18" >
+      
+      <label class="md-nav__link" for="__nav_18">
+        Conversion de numeros
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Conversion de numeros" data-md-level="1">
+        <label class="md-nav__title" for="__nav_18">
+          <span class="md-nav__icon md-icon"></span>
+          Conversion de numeros
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conversion-de-numeros/item/" class="md-nav__link">
+        Conversión de números
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19" type="checkbox" id="__nav_19" >
+      
+      <label class="md-nav__link" for="__nav_19">
+        Conversor hdmi vga aukey
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Conversor hdmi vga aukey" data-md-level="1">
+        <label class="md-nav__title" for="__nav_19">
+          <span class="md-nav__icon md-icon"></span>
+          Conversor hdmi vga aukey
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conversor-hdmi-vga-aukey/item/" class="md-nav__link">
+        Conversor HDMI-VGA Aukey
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20" >
+      
+      <label class="md-nav__link" for="__nav_20">
+        Curso de python controles de flujo condicionales y bucles
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Curso de python controles de flujo condicionales y bucles" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Curso de python controles de flujo condicionales y bucles
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curso-de-python-controles-de-flujo-condicionales-y-bucles/item/" class="md-nav__link">
+        Curso de Python - Controles de flujo, condicionales y bucles
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_21" type="checkbox" id="__nav_21" >
+      
+      <label class="md-nav__link" for="__nav_21">
+        Curso de python funcion print type y ver los diferentes tipos de datos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Curso de python funcion print type y ver los diferentes tipos de datos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_21">
+          <span class="md-nav__icon md-icon"></span>
+          Curso de python funcion print type y ver los diferentes tipos de datos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curso-de-python-funcion-print-type-y-ver-los-diferentes-tipos-de-datos/item/" class="md-nav__link">
+        Curso de Python - Función print, type y ver los diferentes tipos de datos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_22" type="checkbox" id="__nav_22" >
+      
+      <label class="md-nav__link" for="__nav_22">
+        Curso de python interprete comentarios identificadores y palabras clave
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Curso de python interprete comentarios identificadores y palabras clave" data-md-level="1">
+        <label class="md-nav__title" for="__nav_22">
+          <span class="md-nav__icon md-icon"></span>
+          Curso de python interprete comentarios identificadores y palabras clave
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curso-de-python-interprete-comentarios-identificadores-y-palabras-clave/item/" class="md-nav__link">
+        Curso de Python - Intérprete, comentarios, identificadores y palabras clave
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_23" type="checkbox" id="__nav_23" >
+      
+      <label class="md-nav__link" for="__nav_23">
+        Curso de python preparando el entorno
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Curso de python preparando el entorno" data-md-level="1">
+        <label class="md-nav__title" for="__nav_23">
+          <span class="md-nav__icon md-icon"></span>
+          Curso de python preparando el entorno
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curso-de-python-preparando-el-entorno/item/" class="md-nav__link">
+        Curso de Python - Introducción y preparación del entorno
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_24" type="checkbox" id="__nav_24" >
+      
+      <label class="md-nav__link" for="__nav_24">
+        Curso de python tipos de operadores e introduccion con modulos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Curso de python tipos de operadores e introduccion con modulos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_24">
+          <span class="md-nav__icon md-icon"></span>
+          Curso de python tipos de operadores e introduccion con modulos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curso-de-python-tipos-de-operadores-e-introduccion-con-modulos/item/" class="md-nav__link">
+        Curso de Python - Tipos de operadores e introducción con módulos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_25" type="checkbox" id="__nav_25" >
+      
+      <label class="md-nav__link" for="__nav_25">
+        Curso de python tuplas listas diccionarios y sets
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Curso de python tuplas listas diccionarios y sets" data-md-level="1">
+        <label class="md-nav__title" for="__nav_25">
+          <span class="md-nav__icon md-icon"></span>
+          Curso de python tuplas listas diccionarios y sets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curso-de-python-tuplas-listas-diccionarios-y-sets/item/" class="md-nav__link">
+        Curso de Python - Tuplas, listas, diccionarios y sets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_26" type="checkbox" id="__nav_26" >
+      
+      <label class="md-nav__link" for="__nav_26">
+        Detecta cambios en tus archivos con aide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Detecta cambios en tus archivos con aide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_26">
+          <span class="md-nav__icon md-icon"></span>
+          Detecta cambios en tus archivos con aide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../detecta-cambios-en-tus-archivos-con-aide/item/" class="md-nav__link">
+        Detecta cambios en tus archivos con AIDE
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_27" type="checkbox" id="__nav_27" >
+      
+      <label class="md-nav__link" for="__nav_27">
+        Distrochooser descarga distros desde terminal facilmente
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Distrochooser descarga distros desde terminal facilmente" data-md-level="1">
+        <label class="md-nav__title" for="__nav_27">
+          <span class="md-nav__icon md-icon"></span>
+          Distrochooser descarga distros desde terminal facilmente
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../distrochooser-descarga-distros-desde-terminal-facilmente/item/" class="md-nav__link">
+        Distrochooser, descarga fácilmente distros de Linux desde CLI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_28" type="checkbox" id="__nav_28" >
+      
+      <label class="md-nav__link" for="__nav_28">
+        Entornos de escritorio y gestores de ventanas
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Entornos de escritorio y gestores de ventanas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_28">
+          <span class="md-nav__icon md-icon"></span>
+          Entornos de escritorio y gestores de ventanas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../entornos-de-escritorio-y-gestores-de-ventanas/item/" class="md-nav__link">
+        Entornos de escritorio y gestores de ventanas
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_29" type="checkbox" id="__nav_29" >
+      
+      <label class="md-nav__link" for="__nav_29">
+        Escuchando musica con mpd ncmpcpp
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Escuchando musica con mpd ncmpcpp" data-md-level="1">
+        <label class="md-nav__title" for="__nav_29">
+          <span class="md-nav__icon md-icon"></span>
+          Escuchando musica con mpd ncmpcpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../escuchando-musica-con-mpd-ncmpcpp/item/" class="md-nav__link">
+        Escuchando música con MPD y ncmpcp
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_30" type="checkbox" id="__nav_30" >
+      
+      <label class="md-nav__link" for="__nav_30">
+        Fedora 28 liberada
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Fedora 28 liberada" data-md-level="1">
+        <label class="md-nav__title" for="__nav_30">
+          <span class="md-nav__icon md-icon"></span>
+          Fedora 28 liberada
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fedora-28-liberada/item/" class="md-nav__link">
+        Fedora 28 liberada
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_31" type="checkbox" id="__nav_31" >
+      
+      <label class="md-nav__link" for="__nav_31">
+        Flask creando una miniaplicacion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Flask creando una miniaplicacion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_31">
+          <span class="md-nav__icon md-icon"></span>
+          Flask creando una miniaplicacion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flask-creando-una-miniaplicacion/item/" class="md-nav__link">
+        Flask - Creando una mini aplicación
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_32" type="checkbox" id="__nav_32" >
+      
+      <label class="md-nav__link" for="__nav_32">
+        Foreman una manera de supervisar y gestionar tus servidores
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Foreman una manera de supervisar y gestionar tus servidores" data-md-level="1">
+        <label class="md-nav__title" for="__nav_32">
+          <span class="md-nav__icon md-icon"></span>
+          Foreman una manera de supervisar y gestionar tus servidores
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foreman-una-manera-de-supervisar-y-gestionar-tus-servidores/item/" class="md-nav__link">
+        Foreman - Una manera de supervisar y gestionar tus servidores
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_33" type="checkbox" id="__nav_33" >
+      
+      <label class="md-nav__link" for="__nav_33">
+        Gestiona maquinas virtuales en qemu kvm facilmente con qemuzier
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gestiona maquinas virtuales en qemu kvm facilmente con qemuzier" data-md-level="1">
+        <label class="md-nav__title" for="__nav_33">
+          <span class="md-nav__icon md-icon"></span>
+          Gestiona maquinas virtuales en qemu kvm facilmente con qemuzier
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gestiona-maquinas-virtuales-en-qemu-kvm%20facilmente-con-qemuzier/item/" class="md-nav__link">
+        Gestiona máquinas virtuales en QEMU/KVM fácilmente con QEMUzier
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_34" type="checkbox" id="__nav_34" >
+      
+      <label class="md-nav__link" for="__nav_34">
+        Gestionando aplicaciones por defecto en linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gestionando aplicaciones por defecto en linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_34">
+          <span class="md-nav__icon md-icon"></span>
+          Gestionando aplicaciones por defecto en linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gestionando-aplicaciones-por-defecto-en-linux/item/" class="md-nav__link">
+        Gestionando aplicaciones por defecto en Linux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_35" type="checkbox" id="__nav_35" >
+      
+      <label class="md-nav__link" for="__nav_35">
+        Gestor de paquetes rpm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Gestor de paquetes rpm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_35">
+          <span class="md-nav__icon md-icon"></span>
+          Gestor de paquetes rpm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gestor-de-paquetes-rpm/item/" class="md-nav__link">
+        Gestor de paquetes y paquería RPM
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_36" type="checkbox" id="__nav_36" >
+      
+      <label class="md-nav__link" for="__nav_36">
+        Instala otras versiones de software en centos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Instala otras versiones de software en centos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_36">
+          <span class="md-nav__icon md-icon"></span>
+          Instala otras versiones de software en centos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instala-otras-versiones-de-software-en-centos/item/" class="md-nav__link">
+        Instala otras versiones de software en CentOS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_37" type="checkbox" id="__nav_37" >
+      
+      <label class="md-nav__link" for="__nav_37">
+        Instalando docker en centos 8
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Instalando docker en centos 8" data-md-level="1">
+        <label class="md-nav__title" for="__nav_37">
+          <span class="md-nav__icon md-icon"></span>
+          Instalando docker en centos 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalando-docker-en-centos-8/item/" class="md-nav__link">
+        Instalando Docker en CentOS 8
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_38" type="checkbox" id="__nav_38" >
+      
+      <label class="md-nav__link" for="__nav_38">
+        Instalando gentoo con lvm luks y selinux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Instalando gentoo con lvm luks y selinux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_38">
+          <span class="md-nav__icon md-icon"></span>
+          Instalando gentoo con lvm luks y selinux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalando-gentoo-con-lvm-luks-y-selinux/item/" class="md-nav__link">
+        Instalando Gentoo con LVM,LUKS, SELinux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_39" type="checkbox" id="__nav_39" >
+      
+      <label class="md-nav__link" for="__nav_39">
+        Instalando mongodb en centos 8
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Instalando mongodb en centos 8" data-md-level="1">
+        <label class="md-nav__title" for="__nav_39">
+          <span class="md-nav__icon md-icon"></span>
+          Instalando mongodb en centos 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalando-mongodb-en-centos-8/item/" class="md-nav__link">
+        Instalando MongoDB en CentOS 8
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_40" type="checkbox" id="__nav_40" >
+      
+      <label class="md-nav__link" for="__nav_40">
+        Instalando sonarqube en centos 8
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Instalando sonarqube en centos 8" data-md-level="1">
+        <label class="md-nav__title" for="__nav_40">
+          <span class="md-nav__icon md-icon"></span>
+          Instalando sonarqube en centos 8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalando-sonarqube-en-centos-8/item/" class="md-nav__link">
+        Instalando SonarQube en CentOS 8
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_41" type="checkbox" id="__nav_41" >
+      
+      <label class="md-nav__link" for="__nav_41">
+        Instalar netbsd 80
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Instalar netbsd 80" data-md-level="1">
+        <label class="md-nav__title" for="__nav_41">
+          <span class="md-nav__icon md-icon"></span>
+          Instalar netbsd 80
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalar-netbsd-80/item/" class="md-nav__link">
+        Instalar NetBSD 8.0
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_42" type="checkbox" id="__nav_42" >
+      
+      <label class="md-nav__link" for="__nav_42">
+        Instalar telnet
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Instalar telnet" data-md-level="1">
+        <label class="md-nav__title" for="__nav_42">
+          <span class="md-nav__icon md-icon"></span>
+          Instalar telnet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalar-telnet/item/" class="md-nav__link">
+        Instalar Telnet en nuestro sistema
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_43" type="checkbox" id="__nav_43" >
+      
+      <label class="md-nav__link" for="__nav_43">
+        Mastering bash buscando archivos y directorios
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering bash buscando archivos y directorios" data-md-level="1">
+        <label class="md-nav__title" for="__nav_43">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering bash buscando archivos y directorios
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-bash-buscando-archivos-y-directorios/item/" class="md-nav__link">
+        Mastering en Bash - Buscando archivos y directorios
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_44" type="checkbox" id="__nav_44" >
+      
+      <label class="md-nav__link" for="__nav_44">
+        Mastering bash condicionales
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering bash condicionales" data-md-level="1">
+        <label class="md-nav__title" for="__nav_44">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering bash condicionales
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-bash-condicionales/item/" class="md-nav__link">
+        Mastering en Bash - Condicionales
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_45" type="checkbox" id="__nav_45" >
+      
+      <label class="md-nav__link" for="__nav_45">
+        Mastering bash enlaces simbolicos duros y alias
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering bash enlaces simbolicos duros y alias" data-md-level="1">
+        <label class="md-nav__title" for="__nav_45">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering bash enlaces simbolicos duros y alias
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-bash-enlaces-simbolicos-duros-y-alias/item/" class="md-nav__link">
+        Mastering en Bash - Enlaces simbólicos o duros y alias
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_46" type="checkbox" id="__nav_46" >
+      
+      <label class="md-nav__link" for="__nav_46">
+        Mastering bash grep y sus amigos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering bash grep y sus amigos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_46">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering bash grep y sus amigos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-bash-grep-y-sus-amigos/item/" class="md-nav__link">
+        Mastering en Bash - grep y sus amigos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_47" type="checkbox" id="__nav_47" >
+      
+      <label class="md-nav__link" for="__nav_47">
+        Mastering bash primero scripting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering bash primero scripting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_47">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering bash primero scripting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-bash-primero-scripting/item/" class="md-nav__link">
+        Mastering en Bash - Primero de Scripting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_48" type="checkbox" id="__nav_48" >
+      
+      <label class="md-nav__link" for="__nav_48">
+        Mastering bash primeros pasos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering bash primeros pasos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_48">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering bash primeros pasos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-bash-primeros-pasos/item/" class="md-nav__link">
+        Mastering Bash - Primeros pasos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_49" type="checkbox" id="__nav_49" >
+      
+      <label class="md-nav__link" for="__nav_49">
+        Mastering bash redireccionamientos tuberias
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering bash redireccionamientos tuberias" data-md-level="1">
+        <label class="md-nav__title" for="__nav_49">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering bash redireccionamientos tuberias
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-bash-redireccionamientos-tuberias/item/" class="md-nav__link">
+        Mastering Bash - Redireccionamientos y tuberías
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_50" type="checkbox" id="__nav_50" >
+      
+      <label class="md-nav__link" for="__nav_50">
+        Mastering bash trabajando con textos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering bash trabajando con textos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_50">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering bash trabajando con textos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-bash-trabajando-con-textos/item/" class="md-nav__link">
+        Mastering en Bash - Trabajando con textos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_51" type="checkbox" id="__nav_51" >
+      
+      <label class="md-nav__link" for="__nav_51">
+        Mastering css3 primeros pasos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering css3 primeros pasos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_51">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering css3 primeros pasos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-css3-primeros-pasos/item/" class="md-nav__link">
+        Mastering CSS - Primeros pasos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_52" type="checkbox" id="__nav_52" >
+      
+      <label class="md-nav__link" for="__nav_52">
+        Mastering html5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering html5" data-md-level="1">
+        <label class="md-nav__title" for="__nav_52">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering html5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-html5/item/" class="md-nav__link">
+        Mastering HTML5
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_53" type="checkbox" id="__nav_53" >
+      
+      <label class="md-nav__link" for="__nav_53">
+        Mastering squid paso 1 instalacion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering squid paso 1 instalacion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_53">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering squid paso 1 instalacion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mastering-squid-paso-1-instalacion/item/" class="md-nav__link">
+        Mastering Squid - Instalación
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_54" type="checkbox" id="__nav_54" checked>
+      
+      <label class="md-nav__link" for="__nav_54">
+        Mastering squid paso 2 acl
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mastering squid paso 2 acl" data-md-level="1">
+        <label class="md-nav__title" for="__nav_54">
+          <span class="md-nav__icon md-icon"></span>
+          Mastering squid paso 2 acl
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Mastering Squid - ACL
+      </a>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_55" type="checkbox" id="__nav_55" >
+      
+      <label class="md-nav__link" for="__nav_55">
+        Monta tu lamp en menos de dos minutos
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Monta tu lamp en menos de dos minutos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_55">
+          <span class="md-nav__icon md-icon"></span>
+          Monta tu lamp en menos de dos minutos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../monta-tu-lamp-en-menos-de-dos-minutos/item/" class="md-nav__link">
+        Monta tu LAMP+ en menos de dos minutos
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_56" type="checkbox" id="__nav_56" >
+      
+      <label class="md-nav__link" for="__nav_56">
+        Mypassport wd soporte linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Mypassport wd soporte linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_56">
+          <span class="md-nav__icon md-icon"></span>
+          Mypassport wd soporte linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mypassport-wd-soporte-linux/item/" class="md-nav__link">
+        No podemos montar My Passport WD en Linux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_57" type="checkbox" id="__nav_57" >
+      
+      <label class="md-nav__link" for="__nav_57">
+        No ip
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="No ip" data-md-level="1">
+        <label class="md-nav__title" for="__nav_57">
+          <span class="md-nav__icon md-icon"></span>
+          No ip
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../no-ip/item/" class="md-nav__link">
+        No-IP - ¿Cómo obtener un acceso fijo a un servidor?
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_58" type="checkbox" id="__nav_58" >
+      
+      <label class="md-nav__link" for="__nav_58">
+        Observa telecom
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Observa telecom" data-md-level="1">
+        <label class="md-nav__title" for="__nav_58">
+          <span class="md-nav__icon md-icon"></span>
+          Observa telecom
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observa-telecom/item/" class="md-nav__link">
+        Configuración Router BHS-RTA, Home Station
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_59" type="checkbox" id="__nav_59" >
+      
+      <label class="md-nav__link" for="__nav_59">
+        Os6850
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Os6850" data-md-level="1">
+        <label class="md-nav__title" for="__nav_59">
+          <span class="md-nav__icon md-icon"></span>
+          Os6850
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os6850/item/" class="md-nav__link">
+        Trabajando con Alcatel OS6850
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_60" type="checkbox" id="__nav_60" >
+      
+      <label class="md-nav__link" for="__nav_60">
+        Parcellite un portapapeles liviano
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Parcellite un portapapeles liviano" data-md-level="1">
+        <label class="md-nav__title" for="__nav_60">
+          <span class="md-nav__icon md-icon"></span>
+          Parcellite un portapapeles liviano
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parcellite-un-portapapeles-liviano/item/" class="md-nav__link">
+        Parcellite - un portapapeles liviano
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_61" type="checkbox" id="__nav_61" >
+      
+      <label class="md-nav__link" for="__nav_61">
+        Que es gentoo linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Que es gentoo linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_61">
+          <span class="md-nav__icon md-icon"></span>
+          Que es gentoo linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../que-es-gentoo-linux/item/" class="md-nav__link">
+        ¿Qué es Gentoo Linux?
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_62" type="checkbox" id="__nav_62" >
+      
+      <label class="md-nav__link" for="__nav_62">
+        Que es php y como funciona
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Que es php y como funciona" data-md-level="1">
+        <label class="md-nav__title" for="__nav_62">
+          <span class="md-nav__icon md-icon"></span>
+          Que es php y como funciona
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../que-es-php-y-como-funciona/item/" class="md-nav__link">
+        ¿Qué es PHP y cómo funciona?
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_63" type="checkbox" id="__nav_63" >
+      
+      <label class="md-nav__link" for="__nav_63">
+        Recuperando acceso root live
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Recuperando acceso root live" data-md-level="1">
+        <label class="md-nav__title" for="__nav_63">
+          <span class="md-nav__icon md-icon"></span>
+          Recuperando acceso root live
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recuperando-acceso-root-live/item/" class="md-nav__link">
+        Recuperando el acceso al usuario root
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_64" type="checkbox" id="__nav_64" >
+      
+      <label class="md-nav__link" for="__nav_64">
+        Rs232 link
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Rs232 link" data-md-level="1">
+        <label class="md-nav__title" for="__nav_64">
+          <span class="md-nav__icon md-icon"></span>
+          Rs232 link
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rs232-link/item/" class="md-nav__link">
+        Conexión RS-232-USB
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_65" type="checkbox" id="__nav_65" >
+      
+      <label class="md-nav__link" for="__nav_65">
+        Share your doc una version minimalista de pastebin
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Share your doc una version minimalista de pastebin" data-md-level="1">
+        <label class="md-nav__title" for="__nav_65">
+          <span class="md-nav__icon md-icon"></span>
+          Share your doc una version minimalista de pastebin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../share-your-doc-una-version-minimalista-de-pastebin/item/" class="md-nav__link">
+        Share Your Doc una versión minimalista de Pastebin
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_66" type="checkbox" id="__nav_66" >
+      
+      <label class="md-nav__link" for="__nav_66">
+        Transfersh sube archivos desde terminal
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Transfersh sube archivos desde terminal" data-md-level="1">
+        <label class="md-nav__title" for="__nav_66">
+          <span class="md-nav__icon md-icon"></span>
+          Transfersh sube archivos desde terminal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../transfersh-sube-archivos-desde-terminal/item/" class="md-nav__link">
+        Transfer.sh, sube archivos desde Bash
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_67" type="checkbox" id="__nav_67" >
+      
+      <label class="md-nav__link" for="__nav_67">
+        Twister gestiona frameworks frontend populares
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Twister gestiona frameworks frontend populares" data-md-level="1">
+        <label class="md-nav__title" for="__nav_67">
+          <span class="md-nav__icon md-icon"></span>
+          Twister gestiona frameworks frontend populares
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twister-gestiona-frameworks-frontend-populares/item/" class="md-nav__link">
+        Gestiona tus frameworks frontend más populares desde Bash
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_68" type="checkbox" id="__nav_68" >
+      
+      <label class="md-nav__link" for="__nav_68">
+        Usuarios y grupos linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Usuarios y grupos linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_68">
+          <span class="md-nav__icon md-icon"></span>
+          Usuarios y grupos linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usuarios-y-grupos-linux/item/" class="md-nav__link">
+        Gestión y administración de usuari@s y grupos en Linux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_69" type="checkbox" id="__nav_69" >
+      
+      <label class="md-nav__link" for="__nav_69">
+        Viendo el tiempo en tu terminal
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Viendo el tiempo en tu terminal" data-md-level="1">
+        <label class="md-nav__title" for="__nav_69">
+          <span class="md-nav__icon md-icon"></span>
+          Viendo el tiempo en tu terminal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../viendo-el-tiempo-en-tu-terminal/item/" class="md-nav__link">
+        Viendo el tiempo en tu terminal
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_70" type="checkbox" id="__nav_70" >
+      
+      <label class="md-nav__link" for="__nav_70">
+        Vivaldi un navegador impresionante
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Vivaldi un navegador impresionante" data-md-level="1">
+        <label class="md-nav__title" for="__nav_70">
+          <span class="md-nav__icon md-icon"></span>
+          Vivaldi un navegador impresionante
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivaldi-un-navegador-impresionante/item/" class="md-nav__link">
+        Vivaldi un navegador Web impresionante
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_71" type="checkbox" id="__nav_71" >
+      
+      <label class="md-nav__link" for="__nav_71">
+        Ya esta con nosotros fedora 32
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Ya esta con nosotros fedora 32" data-md-level="1">
+        <label class="md-nav__title" for="__nav_71">
+          <span class="md-nav__icon md-icon"></span>
+          Ya esta con nosotros fedora 32
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ya-esta-con-nosotros-fedora-32/item/" class="md-nav__link">
+        ¡Ya está con nosotros Fedora 32!
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mastering-squid-acl">Mastering Squid - ACL</h1>
+<h1 id="introduccion">Introducción</h1>
+<p>Bienvenid@s a la segunda parte de este "<em>Mastering in Squid</em>", en esta parte del curso, os explicaremos qué son las listas de control de acceso una parte de las directivas de Squid, para qué se utilizan y cómo utilizarlas, no nos lo podemos perder.</p>
+<h1 id="que-son-las-acl">¿Qué son las ACL?</h1>
+<p>Las ACL (<em>Access Control List</em>) o en español <em>Listas de Control de Acceso</em> es un concepto de seguridad informática que utiliza para fomentar la separación de privilegios, en nuestro caso, ayudará a separar url, ips o nombres de máquinas para posteriormente hacer algo con ellas, como por ejemplo, en un instituo, permitir el acceso a redes sociales a los profesores, pero no a los ordenadores de los alumnos...</p>
+<h1 id="como-definimos-las-acl">¿Cómo definimos las ACL?</h1>
+<p>Existen dos tipos de sintaxis, en línea o apuntando a un archivo.
+ * En línea: Es más cómodo cuando apuntamos 2,3 datos, más se puede volver ilegible y engorroso.</p>
+<pre><code>acl nombre_de_lista tipo_acl dato1 dato2 dato3
+</code></pre>
+<ul>
+<li>
+<p>Apuntando a un archivo: Se utiliza cuando apuntamos más de 3 datos, se permiten comentarios.</p>
+<p>acl nomnre_de_lista tipo_acl "/DIRECTORIO/ARCHIVO"</p>
+</li>
+</ul>
+<h1 id="que-tipos-de-acl-tenemos">¿Qué tipos de ACL tenemos?</h1>
+<p>Tenemos multitud de ellos como:</p>
+<ul>
+<li><code>arp [DIRECCION_MAC]</code>: Crea una ACL con una o varias dirección(es) MAC.</li>
+<li>_Notas:<ul>
+<li>No funciona con todos los sistemas operativos, según la documentación trabaja correctamente con Linux, Solaris, Windows, FreeBSD y otras variantes de BSD.</li>
+<li>Squid solo puede determinar la dirección MAC/EUI para clientes IPv4 que se encuentren en la misma subred, si están en otras subredes Squid no puede reconocer qué equipo es.</li>
+<li>El protocolo IPv6 no contiene ARP, se utiliza ND (Neighbor Discovery) que es parecido, con lo que esta directiva no funciona para IPv6._</li>
+</ul>
+</li>
+<li>clientside mark[/mask]
+        -Esta aplicación hay que investigarla</li>
+<li><code>srcdomain .google.es</code>: Permite definir un dominio o dirección IP/direcciones origen</li>
+<li><code>dstdomain dirección_destino</code>: Puede ser una url, ip o conjunto de direcciones ips.</li>
+<li><code>srcdom_regex \.google\.*</code>: Igual que srdomain pero con la opción de usar expresiones regulares.</li>
+<li><code>dstdom_regex \.google\.*</code>: Especifica dirección destino haciendo uso de expresiones regulares.<ul>
+<li>src_as number</li>
+<li>dst_as number</li>
+</ul>
+</li>
+<li><code>time [DIA DE LA SEMANA] [HORA1]-[HORA2]</code>: Establece un periodo de conexión:<ul>
+<li>Se define la semana como:<ul>
+<li>M -&gt; Lunes</li>
+<li>T -&gt; Martes</li>
+<li>W -&gt; Miércoles</li>
+<li>H -&gt; Jueves</li>
+<li>F -&gt; Viernes</li>
+<li>A -&gt; Sábado</li>
+</ul>
+</li>
+<li>Se define la HORA1 y HORA2 como: hh:mm</li>
+</ul>
+</li>
+<li><code>url_regex ^http://</code>: Permite bloquear urls haciendo uso de expresiones regulares.</li>
+<li><code>urllogin [^a-zA-Z0-9]</code>: Busca una expresión regular que coincida con un campo login</li>
+<li><code>urlpath_regex \.exe(\?.*)?$</code>: Encuentra un directorio y permite filtrar contenido</li>
+<li><code>port 80 70 120</code>: Permite definir un puerto o varios, se permiten rangos destino TCP</li>
+<li><code>localport 3128</code>: Puerto de cliente TCP conectado a</li>
+<li><code>myportname 3128</code>: Refleja si los detalles de conexión TCP equivalen al puerto declarado en el fichero de configuración de Squid.</li>
+<li><code>proto HTTP FTP...</code>: Se pueden bloquear protocolos como FTP para que no se pueda acceder.</li>
+<li><code>method GET PUT POST</code>: Especifica si se puede utilizar o no los métodos de solicitud del protocolo HTTP.</li>
+<li><code>http_status 404 200</code>: Especifica el código de respuesta del servidor</li>
+<li><code>browser Mozilla</code>: Especifica el navegador al que bloquear o no, se identifica mediante el UserAgent.</li>
+<li><code>referer_regex regexp</code>: Permite encontrar un patrón relacionado con la expresión regular que definimos, es muy difícil de aplicar, por lo que hay que tener cuidado.</li>
+<li><code>ident cadena</code>: Busca una cadena</li>
+<li><code>ident_regex patrón</code>: Busca una cadena relacionada con lo declarado.</li>
+<li>
+<p><code>acl aclname proxy_auth [-i] username</code>: ...
+    acl aclname proxy_auth_regex [-i] pattern ...
+      # perform http authentication challenge to the client and match against
+      # supplied credentials [slow]
+      #
+      # takes a list of allowed usernames.
+      # use REQUIRED to accept any valid username.
+      #
+      # Will use proxy authentication in forward-proxy scenarios, and plain
+      # http authenticaiton in reverse-proxy scenarios
+      #
+      # NOTE: when a Proxy-Authentication header is sent but it is not
+      # needed during ACL checking the username is NOT logged
+      # in access.log.
+      #
+      # NOTE: proxy_auth requires a EXTERNAL authentication program
+      # to check username/password combinations (see
+      # auth_param directive).
+      #
+      # NOTE: proxy_auth can't be used in a transparent/intercepting proxy
+      # as the browser needs to be configured for using a proxy in order
+      # to respond to proxy authentication.</p>
+<p>acl aclname snmp_community string ...
+  # A community string to limit access to your SNMP Agent [fast]
+  # Example:
+  #
+  # acl snmppublic snmp_community public</p>
+<p>acl aclname maxconn number
+  # This will be matched when the client's IP address has
+  # more than <number> TCP connections established. [fast]
+  # NOTE: This only measures direct TCP links so X-Forwarded-For
+  # indirect clients are not counted.</p>
+<p>acl aclname max_user_ip [-s] number
+  # This will be matched when the user attempts to log in from more
+  # than <number> different ip addresses. The authenticate_ip_ttl
+  # parameter controls the timeout on the ip entries. [fast]
+  # If -s is specified the limit is strict, denying browsing
+  # from any further IP addresses until the ttl has expired. Without
+  # -s Squid will just annoy the user by "randomly" denying requests.
+  # (the counter is reset each time the limit is reached and a
+  # request is denied)
+  # NOTE: in acceleration mode or where there is mesh of child proxies,
+  # clients may appear to come from multiple addresses if they are
+  # going through proxy farms, so a limit of 1 may cause user problems.</p>
+<p>acl aclname random probability
+  # Pseudo-randomly match requests. Based on the probability given.
+  # Probability may be written as a decimal (0.333), fraction (1/3)
+  # or ratio of matches:non-matches (3:5).</p>
+<p>acl aclname req_mime_type [-i] mime-type ...
+  # regex match against the mime type of the request generated
+  # by the client. Can be used to detect file upload or some
+  # types HTTP tunneling requests [fast]
+  # NOTE: This does NOT match the reply. You cannot use this
+  # to match the returned file type.</p>
+<p>acl aclname req_header header-name [-i] any.regex.here
+  # regex match against any of the known request headers.  May be
+  # thought of as a superset of "browser", "referer" and "mime-type"
+  # ACL [fast]</p>
+<p>acl aclname rep_mime_type [-i] mime-type ...
+  # regex match against the mime type of the reply received by
+  # squid. Can be used to detect file download or some
+  # types HTTP tunneling requests. [fast]
+  # NOTE: This has no effect in http_access rules. It only has
+  # effect in rules that affect the reply data stream such as
+  # http_reply_access.</p>
+<p>acl aclname rep_header header-name [-i] any.regex.here
+  # regex match against any of the known reply headers. May be
+  # thought of as a superset of "browser", "referer" and "mime-type"
+  # ACLs [fast]</p>
+<p>acl aclname external class_name [arguments...]
+  # external ACL lookup via a helper class defined by the
+  # external_acl_type directive [slow]</p>
+<p>acl aclname user_cert attribute values...
+  # match against attributes in a user SSL certificate
+  # attribute is one of DN/C/O/CN/L/ST or a numerical OID [fast]</p>
+<p>acl aclname ca_cert attribute values...
+  # match against attributes a users issuing CA SSL certificate
+  # attribute is one of DN/C/O/CN/L/ST or a numerical OID  [fast]</p>
+<p>acl aclname ext_user username ...
+acl aclname ext_user_regex [-i] pattern ...
+  # string match on username returned by external acl helper [slow]
+  # use REQUIRED to accept any non-null user name.</p>
+<p>acl aclname tag tagvalue ...
+  # string match on tag returned by external acl helper [fast]
+  # DEPRECATED. Only the first tag will match with this ACL.
+  # Use the 'note' ACL instead for handling multiple tag values.</p>
+<p>acl aclname hier_code codename ...
+  # string match against squid hierarchy code(s); [fast]
+  #  e.g., DIRECT, PARENT_HIT, NONE, etc.
+  #
+  # NOTE: This has no effect in http_access rules. It only has
+  # effect in rules that affect the reply data stream such as
+  # http_reply_access.</p>
+<p>acl aclname note [-m[=delimiters]] name [value ...]
+  # match transaction annotation [fast]
+  # Without values, matches any annotation with a given name.
+  # With value(s), matches any annotation with a given name that
+  # also has one of the given values.
+  # If the -m flag is used, then the value of the named
+  # annotation is interpreted as a list of tokens, and the ACL
+  # matches individual name=token pairs rather than whole
+  # name=value pairs. See "ACL Options" above for more info.
+  # Annotation sources include note and adaptation_meta directives
+  # as well as helper and eCAP responses.</p>
+<p>acl aclname adaptation_service service ...
+  # Matches the name of any icap_service, ecap_service,
+  # adaptation_service_set, or adaptation_service_chain that Squid
+  # has used (or attempted to use) for the master transaction.
+  # This ACL must be defined after the corresponding adaptation
+  # service is named in squid.conf. This ACL is usable with
+  # adaptation_meta because it starts matching immediately after
+  # the service has been selected for adaptation.</p>
+<p>acl aclname transaction_initiator initiator ...
+  # Matches transaction's initiator [fast]
+  #
+  # Supported initiators are:
+  #  esi: matches transactions fetching ESI resources
+  #  certificate-fetching: matches transactions fetching
+  #     a missing intermediate TLS certificate
+  #  cache-digest: matches transactions fetching Cache Digests
+  #     from a cache_peer
+  #  htcp: matches HTCP requests from peers
+  #  icp: matches ICP requests to peers
+  #  icmp: matches ICMP RTT database (NetDB) requests to peers
+  #  asn: matches asns db requests
+  #  internal: matches any of the above
+  #  client: matches transactions containing an HTTP or FTP
+  #     client request received at a Squid *_port
+  #  all: matches any transaction, including internal transactions
+  #     without a configurable initiator and hopefully rare
+  #     transactions without a known-to-Squid initiator
+  #
+  # Multiple initiators are ORed.</p>
+<p>acl aclname has component
+  # matches a transaction "component" [fast]
+  #
+  # Supported transaction components are:
+  #  request: transaction has a request header (at least)
+  #  response: transaction has a response header (at least)
+  #  ALE: transaction has an internally-generated Access Log Entry
+  #       structure; bugs notwithstanding, all transaction have it
+  #
+  # For example, the following configuration helps when dealing with HTTP
+  # clients that close connections without sending a request header:
+  #
+  #  acl hasRequest has request
+  #  acl logMe note important_transaction
+  #  # avoid "logMe ACL is used in context without an HTTP request" warnings
+  #  access_log ... logformat=detailed hasRequest logMe
+  #  # log request-less transactions, instead of ignoring them
+  #  access_log ... logformat=brief !hasRequest
+  #
+  # Multiple components are not supported for one "acl" rule, but
+  # can be specified (and are ORed) using multiple same-name rules:
+  #
+  #  # OK, this strange logging daemon needs request or response,
+  #  # but can work without either a request or a response:
+  #  acl hasWhatMyLoggingDaemonNeeds has request
+  #  acl hasWhatMyLoggingDaemonNeeds has response</p>
+</li>
+</ul>
+<p>IF USE_OPENSSL
+    acl aclname ssl_error errorname
+      # match against SSL certificate validation error [fast]
+      #
+      # For valid error names see in /usr/local/squid/share/errors/templates/error-details.txt
+      # template file.
+      #
+      # The following can be used as shortcuts for certificate properties:
+      #  [ssl::]certHasExpired: the "not after" field is in the past
+      #  [ssl::]certNotYetValid: the "not before" field is in the future
+      #  [ssl::]certUntrusted: The certificate issuer is not to be trusted.
+      #  [ssl::]certSelfSigned: The certificate is self signed.
+      #  [ssl::]certDomainMismatch: The certificate CN domain does not
+      #         match the name the name of the host we are connecting to.
+      #
+      # The ssl::certHasExpired, ssl::certNotYetValid, ssl::certDomainMismatch,
+      # ssl::certUntrusted, and ssl::certSelfSigned can also be used as
+      # predefined ACLs, just like the 'all' ACL.
+      #
+      # NOTE: The ssl_error ACL is only supported with sslproxy_cert_error,
+      # sslproxy_cert_sign, and sslproxy_cert_adapt options.</p>
+<pre><code>acl aclname server_cert_fingerprint [-sha1] fingerprint
+  # match against server SSL certificate fingerprint [fast]
+  #
+  # The fingerprint is the digest of the DER encoded version 
+  # of the whole certificate. The user should use the form: XX:XX:...
+  # Optional argument specifies the digest algorithm to use.
+  # The SHA1 digest algorithm is the default and is currently
+  # the only algorithm supported (-sha1).
+
+acl aclname at_step step
+  # match against the current step during ssl_bump evaluation [fast]
+  # Never matches and should not be used outside the ssl_bump context.
+  #
+  # At each SslBump step, Squid evaluates ssl_bump directives to find
+  # the next bumping action (e.g., peek or splice). Valid SslBump step
+  # values and the corresponding ssl_bump evaluation moments are:
+  #   SslBump1: After getting TCP-level and HTTP CONNECT info.
+  #   SslBump2: After getting SSL Client Hello info.
+  #   SslBump3: After getting SSL Server Hello info.
+
+acl aclname ssl::server_name [option] .foo.com ...
+  # matches server name obtained from various sources [fast]
+  #
+  # The ACL computes server name(s) using such information sources as
+  # CONNECT request URI, TLS client SNI, and TLS server certificate 
+  # subject (CN and SubjectAltName). The computed server name(s) usually
+  # change with each SslBump step, as more info becomes available:
+  # * SNI is used as the server name instead of the request URI,
+  # * subject name(s) from the server certificate (CN and
+  #   SubjectAltName) are used as the server names instead of SNI.
+  #
+  # When the ACL computes multiple server names, matching any single
+  # computed name is sufficient for the ACL to match.
+  #
+  # The "none" name can be used to match transactions where the ACL
+  # could not compute the server name using any information source
+  # that was both available and allowed to be used by the ACL options at
+  # the ACL evaluation time.
+  #
+  # Unlike dstdomain, this ACL does not perform DNS lookups.
+  #
+  # An ACL option below may be used to restrict what information 
+  # sources are used to extract the server names from:
+  #
+  # --client-requested
+  #   The server name is SNI regardless of what the server says.
+  # --server-provided
+  #   The server name(s) are the certificate subject name(s), regardless
+  #   of what the client has requested. If the server certificate is
+  #   unavailable, then the name is "none".
+  # --consensus
+  #   The server name is either SNI (if SNI matches at least one of the
+  #   certificate subject names) or "none" (otherwise). When the server
+  #   certificate is unavailable, the consensus server name is SNI.
+  #
+  # Combining multiple options in one ACL is a fatal configuration
+  # error.
+  #
+  # For all options: If no SNI is available, then the CONNECT request
+  # target (a.k.a. URI) is used instead of SNI (for an intercepted
+  # connection, this target is the destination IP address).
+
+acl aclname ssl::server_name_regex [-i] \.foo\.com ...
+  # regex matches server name obtained from various sources [fast]
+
+acl aclname connections_encrypted
+  # matches transactions with all HTTP messages received over TLS
+  # transport connections. [fast]
+  #
+  # The master transaction deals with HTTP messages received from
+  # various sources. All sources used by the master transaction in the
+  # past are considered by the ACL. The following rules define whether
+  # a given message source taints the entire master transaction,
+  # resulting in ACL mismatches:
+  #
+  #  * The HTTP client transport connection is not TLS.
+  #  * An adaptation service connection-encryption flag is off.
+  #  * The peer or origin server transport connection is not TLS.
+  #
+  # Caching currently does not affect these rules. This cache ignorance
+  # implies that only the current HTTP client transport and REQMOD
+  # services status determine whether this ACL matches a from-cache
+  # transaction. The source of the cached response does not have any
+  # effect on future transaction that use the cached response without
+  # revalidation. This may change.
+  #
+  # DNS, ICP, and HTCP exchanges during the master transaction do not
+  # affect these rules.
+</code></pre>
+<p>ENDIF
+    acl aclname any-of acl1 acl2 ...
+      # match any one of the acls [fast or slow]
+      # The first matching ACL stops further ACL evaluation.
+      #
+      # ACLs from multiple any-of lines with the same name are ORed.
+      # For example, A = (a1 or a2) or (a3 or a4) can be written as
+      #   acl A any-of a1 a2
+      #   acl A any-of a3 a4
+      #
+      # This group ACL is fast if all evaluated ACLs in the group are fast
+      # and slow otherwise.</p>
+<pre><code>acl aclname all-of acl1 acl2 ... 
+  # match all of the acls [fast or slow]
+  # The first mismatching ACL stops further ACL evaluation.
+  #
+  # ACLs from multiple all-of lines with the same name are ORed.
+  # For example, B = (b1 and b2) or (b3 and b4) can be written as
+  #   acl B all-of b1 b2
+  #   acl B all-of b3 b4
+  #
+  # This group ACL is fast if all evaluated ACLs in the group are fast
+  # and slow otherwise.
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../mastering-squid-paso-1-instalacion/item/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mastering Squid - Instalación" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Mastering Squid - Instalación
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../monta-tu-lamp-en-menos-de-dos-minutos/item/" class="md-footer__link md-footer__link--next" aria-label="Next: Monta tu LAMP+ en menos de dos minutos" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Monta tu LAMP+ en menos de dos minutos
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+    
+  </body>
+</html>
